@@ -1,0 +1,36 @@
+import { Button } from "@/components/ui/button";
+
+const Header = () => {
+  return (
+    <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          <h1 className="text-xl font-bold text-primary">NewsDelivered.com</h1>
+        </div>
+        
+        <nav className="hidden md:flex items-center space-x-6">
+          <a href="#features" className="text-foreground hover:text-primary transition-colors">
+            Features
+          </a>
+          <a href="#pricing" className="text-foreground hover:text-primary transition-colors">
+            Pricing
+          </a>
+          <a href="#contact" className="text-foreground hover:text-primary transition-colors">
+            Contact
+          </a>
+        </nav>
+        
+        <div className="flex items-center space-x-4">
+          <Button variant="ghost" className="hidden md:inline-flex">
+            Sign In
+          </Button>
+          <Button variant="hero">
+            Get Started
+          </Button>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
