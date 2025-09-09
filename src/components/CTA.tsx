@@ -10,12 +10,11 @@ const CTA = () => {
         <Card className="max-w-4xl mx-auto shadow-elegant">
           <CardContent className="p-12 text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Ready to Transform Your 
-              <span className="bg-gradient-hero bg-clip-text text-transparent"> News Delivery?</span>
+              Let's make your newsletter your customers' 
+              <span className="bg-gradient-hero bg-clip-text text-transparent"> favorite email.</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of publishers who trust NewsDelivered.com to reach their audience 
-              and drive results. Start your free trial today.
+              Stop sending emails that get ignored. Start building a channel your audience actually loves.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8">
@@ -25,7 +24,7 @@ const CTA = () => {
                 className="flex-1"
               />
               <Button variant="hero" className="group">
-                Get Started
+                Request Your Free Audit
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
