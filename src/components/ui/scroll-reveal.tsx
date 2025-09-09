@@ -1,22 +1,22 @@
-import React from 'react';
+import { useRef, ReactNode } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 interface ScrollRevealProps {
-  children: React.ReactNode;
+  children: ReactNode;
   direction?: 'up' | 'down' | 'left' | 'right';
   delay?: number;
   duration?: number;
   className?: string;
 }
 
-const ScrollReveal: React.FC<ScrollRevealProps> = ({
+const ScrollReveal = ({
   children,
   direction = 'up',
   delay = 0,
   duration = 0.6,
   className
-}) => {
-  const ref = React.useRef(null);
+}: ScrollRevealProps) => {
+  const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const directions = {

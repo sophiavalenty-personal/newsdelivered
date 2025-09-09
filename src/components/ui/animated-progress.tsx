@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
@@ -10,14 +10,14 @@ interface AnimatedProgressProps {
   className?: string;
 }
 
-const AnimatedProgress: React.FC<AnimatedProgressProps> = ({
+const AnimatedProgress = ({
   value,
   label,
   color = "bg-primary",
   delay = 0,
   className
-}) => {
-  const ref = React.useRef(null);
+}: AnimatedProgressProps) => {
+  const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
