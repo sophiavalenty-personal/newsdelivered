@@ -1,6 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
+import ScrollReveal from "@/components/ui/scroll-reveal";
+import AnimatedProgress from "@/components/ui/animated-progress";
 
 const Solution = () => {
   return (
@@ -54,28 +57,40 @@ const Solution = () => {
               </div>
             </div>
             
-            <div className="relative">
-              <Card className="bg-gradient-to-br from-primary/10 to-accent/10 p-8">
+            <ScrollReveal direction="right" delay={0.4}>
+              <Card className="bg-gradient-to-br from-primary/10 to-accent/10 p-8 hover:shadow-elegant transition-all duration-500">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold mb-6">Content Formula</h3>
-                  <div className="space-y-4">
-                    <div className="relative">
-                      <div className="h-16 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-semibold">
-                        80% Value Content
-                      </div>
-                    </div>
-                    <div className="relative">
-                      <div className="h-8 bg-accent rounded-lg flex items-center justify-center text-accent-foreground font-semibold">
-                        20% Promotion
-                      </div>
-                    </div>
+                  
+                  <div className="space-y-6">
+                    <AnimatedProgress 
+                      value={80} 
+                      label="Value Content"
+                      color="bg-primary"
+                      delay={0.5}
+                    />
+                    <AnimatedProgress 
+                      value={20} 
+                      label="Strategic Promotion"
+                      color="bg-accent"
+                      delay={0.8}
+                    />
                   </div>
-                  <div className="mt-6 text-sm text-muted-foreground">
-                    Visual representation of our proven 80/20 content strategy
-                  </div>
+                  
+                  <motion.div 
+                    className="mt-8 p-4 bg-background/50 rounded-lg"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 1.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="text-sm text-muted-foreground">
+                      Visual representation of our proven 80/20 content strategy
+                    </div>
+                  </motion.div>
                 </div>
               </Card>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>
