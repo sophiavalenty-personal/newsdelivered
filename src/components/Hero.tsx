@@ -126,32 +126,6 @@ const Hero = () => {
                 />
               </Card>
               
-              {/* Floating stats with animations */}
-              <motion.div
-                initial={{ opacity: 0, y: 20, x: -20 }}
-                animate={{ opacity: 1, y: 0, x: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-              >
-                <Card className="absolute -bottom-4 -left-4 bg-background p-4 shadow-glow hover:scale-110 transition-transform duration-300 cursor-pointer">
-                  <div className="text-2xl font-bold text-primary">
-                    <AnimatedCounter end={27} suffix="%" />
-                  </div>
-                  <div className="text-sm text-muted-foreground">Avg Open Rate</div>
-                </Card>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: -20, x: 20 }}
-                animate={{ opacity: 1, y: 0, x: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-              >
-                <Card className="absolute -top-4 -right-4 bg-background p-4 shadow-glow hover:scale-110 transition-transform duration-300 cursor-pointer">
-                  <div className="text-2xl font-bold text-primary">
-                    +<AnimatedCounter end={30} suffix="%" />
-                  </div>
-                  <div className="text-sm text-muted-foreground">Click Increase</div>
-                </Card>
-              </motion.div>
             </motion.div>
           </ScrollReveal>
         </div>
