@@ -23,7 +23,7 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.8 }}
-              >Your audience is bored. You need more engagement.</motion.span>
+              >Your audience is bored. We can fix that.</motion.span>
             </motion.h1>
             <motion.p 
               className="text-xl text-muted-foreground mb-8 leading-relaxed"
