@@ -32,70 +32,80 @@ const Hero = () => {
                 transition={{ duration: 1, delay: 1.0 }}
               >We can fix that.</motion.span>
             </motion.h1>
-            <motion.p 
-              className="text-xl text-muted-foreground mb-8 leading-relaxed"
+            
+            <motion.div 
+              className="mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              High engagement newsletters grow brand loyalty and drive revenue -- without being "salesy"<br/>
-              <strong className="text-foreground">News Delivered makes that happen.</strong>
-            </motion.p>
-            
-            <motion.div
-              className="mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <h3 className="text-lg font-semibold mb-4 text-foreground">Services:</h3>
-              {[
-                { text: "Handle my newsletter for me", delay: 0.8 },
-                { text: "Show me how to do it", delay: 1.0 },
-                { text: "Audit my current strategy (Free)", delay: 1.2 }
-              ].map((item, index) => (
+              <h3 className="text-xl font-semibold mb-4 text-foreground">Content done right:</h3>
+              <div className="space-y-2">
                 <motion.div 
-                  key={index}
-                  className="flex items-center space-x-4 mb-3"
+                  className="flex items-start space-x-3"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: item.delay }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
                 >
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.4, delay: item.delay + 0.2 }}
-                    className="text-primary text-lg font-bold"
-                  >
-                    →
-                  </motion.div>
-                  <span className="text-foreground">{item.text}</span>
+                  <span className="text-primary text-lg font-bold mt-1">•</span>
+                  <span className="text-foreground">Keeps people happy and returning</span>
                 </motion.div>
-              ))}
+                <motion.div 
+                  className="flex items-start space-x-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                  <span className="text-primary text-lg font-bold mt-1">•</span>
+                  <span className="text-foreground">Drives sales and revenue (without being salesy)</span>
+                </motion.div>
+              </div>
             </motion.div>
             
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col gap-4 mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="w-full"
               >
-                <Button variant="hero" size="lg" className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300">
-                  Request Your Free Audit
+                <Button variant="hero" size="lg" className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300 w-full">
+                  → Audit my current strategy (Free)
                 </Button>
               </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button variant="hero-outline" size="lg" className="text-lg px-8 py-6">
-                  See Sample Work
-                </Button>
-              </motion.div>
+            </motion.div>
+            
+            <motion.div 
+              className="text-center mb-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+            >
+              <p className="text-muted-foreground mb-4">Want us to just handle it all for you?</p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex-1"
+                >
+                  <Button variant="hero-outline" size="lg" className="text-lg px-6 py-4 w-full">
+                    → Handle my content for me
+                  </Button>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex-1"
+                >
+                  <Button variant="hero-outline" size="lg" className="text-lg px-6 py-4 w-full">
+                    → Teach me
+                  </Button>
+                </motion.div>
+              </div>
             </motion.div>
           </ScrollReveal>
           
