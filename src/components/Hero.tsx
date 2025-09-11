@@ -1,17 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import AnimatedCounter from "@/components/ui/animated-counter";
-import heroImage from "@/assets/hero-news-delivery.jpg";
 
 const Hero = () => {
   return (
     <section className="pt-32 pb-20 bg-gradient-to-br from-background to-muted">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <ScrollReveal direction="left">
+        <div className="max-w-4xl mx-auto text-center">
+          <ScrollReveal direction="up">
             <motion.h1 
               className="text-4xl md:text-6xl font-bold leading-tight mb-6"
               initial={{ opacity: 0, y: 20 }}
@@ -40,9 +36,9 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <h3 className="text-xl font-semibold mb-4 text-foreground">Content done right:</h3>
-              <div className="space-y-2">
+              <div className="space-y-2 max-w-2xl mx-auto">
                 <motion.div 
-                  className="flex items-start space-x-3"
+                  className="flex items-start space-x-3 justify-center"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
@@ -51,7 +47,7 @@ const Hero = () => {
                   <span className="text-foreground">Keeps people happy and returning</span>
                 </motion.div>
                 <motion.div 
-                  className="flex items-start space-x-3"
+                  className="flex items-start space-x-3 justify-center"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
@@ -63,7 +59,7 @@ const Hero = () => {
             </motion.div>
             
             <motion.div 
-              className="flex flex-col gap-4 mb-6"
+              className="flex flex-col gap-4 mb-6 max-w-md mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
@@ -86,7 +82,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 1.2 }}
             >
               <p className="text-muted-foreground mb-4">Want us to just handle it all for you?</p>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -106,26 +102,6 @@ const Hero = () => {
                   </Button>
                 </motion.div>
               </div>
-            </motion.div>
-          </ScrollReveal>
-          
-          <ScrollReveal direction="right" delay={0.4}>
-            <motion.div 
-              className="relative"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <Card className="overflow-hidden shadow-elegant hover:shadow-glow transition-all duration-500">
-                <motion.img 
-                  src={heroImage} 
-                  alt="News delivery platform dashboard showing global reach and analytics"
-                  className="w-full h-auto"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </Card>
-              
             </motion.div>
           </ScrollReveal>
         </div>
