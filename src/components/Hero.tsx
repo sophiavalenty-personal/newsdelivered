@@ -18,13 +18,12 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              We turn your newsletter into a
               <motion.span 
                 className="bg-gradient-hero bg-clip-text text-transparent"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.8 }}
-              > must-read magazine.</motion.span>
+              >Your audience is bored. You need more engagement.</motion.span>
             </motion.h1>
             <motion.p 
               className="text-xl text-muted-foreground mb-8 leading-relaxed"
@@ -32,32 +31,41 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Your customers don't want another sales email. They want value, entertainment, and insights. 
-              We build engaging newsletters that grow loyalty — while subtly driving revenue.
+              High engagement newsletters grow brand loyalty and drive revenue -- without being "salesy"<br/>
+              <strong className="text-foreground">News Delivered makes that happen.</strong>
             </motion.p>
             
-            {[
-              { text: "80% value-driven content", delay: 0.6 },
-              { text: "20% strategic promotion", delay: 0.8 },
-              { text: "Newsletters customers love to read", delay: 1.0 }
-            ].map((item, index) => (
-              <motion.div 
-                key={index}
-                className="flex items-center space-x-4 mb-8"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: item.delay }}
-              >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.4, delay: item.delay + 0.2 }}
+            <motion.div
+              className="mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <h3 className="text-lg font-semibold mb-4 text-foreground">Services:</h3>
+              {[
+                { text: "Handle my newsletter for me", delay: 0.8 },
+                { text: "Show me how to do it", delay: 1.0 },
+                { text: "Audit my current strategy (Free)", delay: 1.2 }
+              ].map((item, index) => (
+                <motion.div 
+                  key={index}
+                  className="flex items-center space-x-4 mb-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: item.delay }}
                 >
-                  <CheckCircle className="text-primary w-5 h-5" />
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.4, delay: item.delay + 0.2 }}
+                    className="text-primary text-lg font-bold"
+                  >
+                    →
+                  </motion.div>
+                  <span className="text-foreground">{item.text}</span>
                 </motion.div>
-                <span className="text-foreground">{item.text}</span>
-              </motion.div>
-            ))}
+              ))}
+            </motion.div>
             
             <motion.div 
               className="flex flex-col sm:flex-row gap-4"
