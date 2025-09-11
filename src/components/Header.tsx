@@ -13,7 +13,7 @@ const Header = () => {
             Features
           </a>
           <a href="/blog" className="text-foreground hover:text-primary transition-colors">
-            Blog
+            Our Way
           </a>
           <a href="#pricing" className="text-foreground hover:text-primary transition-colors">
             Pricing

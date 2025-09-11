@@ -13,7 +13,7 @@ const Blog = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Newsletter Insights & Tips
+                Our Way
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Expert advice on creating newsletters that your audience actually wants to read
