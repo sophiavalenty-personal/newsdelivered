@@ -32,6 +32,7 @@ const FinalCTA = () => {
                     variant="hero" 
                     size="lg" 
                     className="text-xl px-12 py-6 hover:shadow-glow transition-all duration-300"
+                    onClick={() => window.location.href = '/contact'}
                   >
                     Help Me NOW! (We're ready...)
                   </Button>

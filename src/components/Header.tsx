@@ -18,7 +18,7 @@ const Header = () => {
           <a href="#pricing" className="text-foreground hover:text-primary transition-colors">
             Pricing
           </a>
-          <a href="#contact" className="text-foreground hover:text-primary transition-colors">
+          <a href="/contact" className="text-foreground hover:text-primary transition-colors">
             Contact
           </a>
         </nav>
@@ -27,7 +27,7 @@ const Header = () => {
           <Button variant="ghost" className="hidden md:inline-flex">
             Sign In
           </Button>
-          <Button variant="hero">
+          <Button variant="hero" onClick={() => window.location.href = '/contact'}>
             Get Started
           </Button>
         </div>

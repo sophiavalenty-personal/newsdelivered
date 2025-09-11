@@ -69,7 +69,12 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 className="w-full"
               >
-                <Button variant="hero" size="lg" className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300 w-full">
+                <Button 
+                  variant="hero" 
+                  size="lg" 
+                  className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300 w-full"
+                  onClick={() => window.location.href = '/contact'}
+                >
                   → Audit my current strategy (Free)
                 </Button>
               </motion.div>
@@ -88,7 +93,12 @@ const Hero = () => {
                   whileTap={{ scale: 0.95 }}
                   className="flex-1"
                 >
-                  <Button variant="hero-outline" size="lg" className="text-lg px-6 py-4 w-full">
+                  <Button 
+                    variant="hero-outline" 
+                    size="lg" 
+                    className="text-lg px-6 py-4 w-full"
+                    onClick={() => window.location.href = '/contact'}
+                  >
                     → Handle my content for me
                   </Button>
                 </motion.div>
@@ -97,7 +107,12 @@ const Hero = () => {
                   whileTap={{ scale: 0.95 }}
                   className="flex-1"
                 >
-                  <Button variant="hero-outline" size="lg" className="text-lg px-6 py-4 w-full">
+                  <Button 
+                    variant="hero-outline" 
+                    size="lg" 
+                    className="text-lg px-6 py-4 w-full"
+                    onClick={() => window.location.href = '/contact'}
+                  >
                     → Teach me
                   </Button>
                 </motion.div>
