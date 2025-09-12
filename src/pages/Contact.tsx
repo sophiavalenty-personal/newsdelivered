@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Checkbox } from "@/components/ui/checkbox";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import { useForm } from "react-hook-form";
@@ -13,21 +15,36 @@ import { toast } from "@/hooks/use-toast";
 import { Mail, Phone } from "lucide-react";
 
 const formSchema = z.object({
-  contact: z.string().min(1, "Phone or email is required"),
+  name: z.string().min(1, "Name is required"),
+  preferredContact: z.enum(["phone", "email"], { required_error: "Please select your preferred contact method" }),
+  phone: z.string().optional(),
+  email: z.string().email("Please enter a valid email").optional(),
   company: z.string().optional(),
-  niche: z.string().min(1, "Please tell us about your company/niche"),
-  goal: z.string().min(1, "Please tell us about your main goal/KPI"),
+  goals: z.array(z.string()).min(1, "Please select at least one goal"),
   comments: z.string().optional(),
+}).refine((data) => {
+  if (data.preferredContact === "phone" && !data.phone) {
+    return false;
+  }
+  if (data.preferredContact === "email" && !data.email) {
+    return false;
+  }
+  return true;
+}, {
+  message: "Please provide your preferred contact information",
+  path: ["preferredContact"],
 });
 
 const Contact = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      contact: "",
+      name: "",
+      preferredContact: undefined,
+      phone: "",
+      email: "",
       company: "",
-      niche: "",
-      goal: "",
+      goals: [],
       comments: "",
     },
   });
@@ -53,30 +70,48 @@ const Contact = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
               Let's Get Started
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl text-muted-foreground leading-relaxed mb-8">
               Real people on the other side of your screen are ready to help you today
             </p>
+            
+            <Card className="shadow-elegant mb-8">
+              <CardContent className="p-8 text-center">
+                <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Email us directly</h3>
+                <a 
+                  href="mailto:experts@newsdelivered.com"
+                  className="text-primary hover:text-primary/80 font-medium transition-colors text-lg"
+                >
+                  experts@newsdelivered.com
+                </a>
+                <div className="flex items-center justify-center my-6">
+                  <div className="border-t border-border w-20"></div>
+                  <span className="mx-4 text-muted-foreground font-medium">or</span>
+                  <div className="border-t border-border w-20"></div>
+                </div>
+                <p className="text-muted-foreground">
+                  Send us your info and we'll get back to you within 24 hours:
+                </p>
+              </CardContent>
+            </Card>
           </motion.div>
         </ScrollReveal>
 
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-          <ScrollReveal direction="left">
+        <div className="max-w-2xl mx-auto">
+          <ScrollReveal>
             <Card className="shadow-elegant hover:shadow-glow transition-all duration-500">
-              <CardHeader>
-                <CardTitle className="text-2xl text-center">Get In Touch</CardTitle>
-              </CardHeader>
-              <CardContent>
+              <CardContent className="p-8">
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <FormField
                       control={form.control}
-                      name="contact"
+                      name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Phone or Email *</FormLabel>
+                          <FormLabel>Name *</FormLabel>
                           <FormControl>
                             <Input 
-                              placeholder="your.email@company.com or +1 (555) 123-4567" 
+                              placeholder="Your full name" 
                               {...field} 
                             />
                           </FormControl>
@@ -87,64 +122,152 @@ const Contact = () => {
 
                     <FormField
                       control={form.control}
-                      name="company"
+                      name="preferredContact"
                       render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Company (optional)</FormLabel>
+                        <FormItem className="space-y-3">
+                          <FormLabel>Preferred contact method *</FormLabel>
                           <FormControl>
-                            <Input 
-                              placeholder="Your company name" 
-                              {...field} 
-                            />
+                            <RadioGroup
+                              onValueChange={field.onChange}
+                              value={field.value}
+                              className="flex flex-row space-x-6"
+                            >
+                              <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="phone" id="phone" />
+                                <Label htmlFor="phone">Phone</Label>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="email" id="email" />
+                                <Label htmlFor="email">Email</Label>
+                              </div>
+                            </RadioGroup>
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
 
-                    <FormField
-                      control={form.control}
-                      name="niche"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>What's your company / niche? *</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="Tell us about your business, industry, or niche..."
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Phone</FormLabel>
+                            <FormControl>
+                              <Input 
+                                placeholder="+1 (555) 123-4567" 
+                                {...field} 
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
 
-                    <FormField
-                      control={form.control}
-                      name="goal"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>What's your goal / main KPI you want to improve? *</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="e.g., Increase open rates, grow subscriber list, boost revenue..."
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Email</FormLabel>
+                            <FormControl>
+                              <Input 
+                                placeholder="your.email@company.com" 
+                                type="email"
+                                {...field} 
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="border-t pt-6">
+                      <h4 className="text-sm font-medium text-muted-foreground mb-4">Optional</h4>
+                      
+                      <FormField
+                        control={form.control}
+                        name="company"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Company Name</FormLabel>
+                            <FormControl>
+                              <Input 
+                                placeholder="Your company name" 
+                                {...field} 
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="border-t pt-6">
+                      <FormField
+                        control={form.control}
+                        name="goals"
+                        render={() => (
+                          <FormItem>
+                            <div className="mb-4">
+                              <FormLabel className="text-base">Goals *</FormLabel>
+                            </div>
+                            <div className="space-y-3">
+                              {[
+                                { id: "existing-newsletter", label: "I have a newsletter, I want help getting more out of it" },
+                                { id: "new-newsletter", label: "I don't have a newsletter but I need one" }
+                              ].map((item) => (
+                                <FormField
+                                  key={item.id}
+                                  control={form.control}
+                                  name="goals"
+                                  render={({ field }) => {
+                                    return (
+                                      <FormItem
+                                        key={item.id}
+                                        className="flex flex-row items-start space-x-3 space-y-0"
+                                      >
+                                        <FormControl>
+                                          <Checkbox
+                                            checked={field.value?.includes(item.id)}
+                                            onCheckedChange={(checked) => {
+                                              return checked
+                                                ? field.onChange([...field.value, item.id])
+                                                : field.onChange(
+                                                    field.value?.filter(
+                                                      (value) => value !== item.id
+                                                    )
+                                                  )
+                                            }}
+                                          />
+                                        </FormControl>
+                                        <FormLabel className="text-sm font-normal leading-relaxed">
+                                          {item.label}
+                                        </FormLabel>
+                                      </FormItem>
+                                    )
+                                  }}
+                                />
+                              ))}
+                            </div>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
 
                     <FormField
                       control={form.control}
                       name="comments"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Other comments (optional)</FormLabel>
+                          <FormLabel>Anything else you'd like us to know</FormLabel>
                           <FormControl>
                             <Textarea 
-                              placeholder="Anything else you'd like us to know..."
+                              placeholder="Tell us more about your specific needs, challenges, or questions..."
+                              className="min-h-[100px]"
                               {...field} 
                             />
                           </FormControl>
@@ -160,58 +283,6 @@ const Contact = () => {
                 </Form>
               </CardContent>
             </Card>
-          </ScrollReveal>
-
-          <ScrollReveal direction="right">
-            <div className="space-y-8">
-              <Card className="shadow-elegant">
-                <CardContent className="p-8 text-center">
-                  <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Email Us Directly</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Prefer email? Send us a message directly:
-                  </p>
-                  <a 
-                    href="mailto:experts@newsdelivered.com"
-                    className="text-primary hover:text-primary/80 font-medium transition-colors"
-                  >
-                    experts@newsdelivered.com
-                  </a>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-elegant">
-                <CardContent className="p-8">
-                  <h3 className="text-xl font-semibold mb-4 text-center">What Happens Next?</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-sm font-bold">
-                        1
-                      </div>
-                      <p className="text-muted-foreground">
-                        We'll review your information and goals
-                      </p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-sm font-bold">
-                        2
-                      </div>
-                      <p className="text-muted-foreground">
-                        Our expert will reach out within 24 hours
-                      </p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-sm font-bold">
-                        3
-                      </div>
-                      <p className="text-muted-foreground">
-                        We'll create a custom strategy for your needs
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
           </ScrollReveal>
         </div>
       </div>
