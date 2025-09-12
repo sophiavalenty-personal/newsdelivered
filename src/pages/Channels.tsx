@@ -94,38 +94,38 @@ const Channels = () => {
     <div className="min-h-screen">
       <Header />
       <main className="pt-20">
-        <section className="py-20 bg-gradient-soft">
+        <section className="py-20 bg-gradient-elegant">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               {/* How It Works Section */}
               <div className="mb-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                   <ScrollReveal direction="up" delay={0.1}>
-                    <Card className="group h-full bg-white/80 backdrop-blur-sm border-0 shadow-soft hover:shadow-warm transition-all duration-300">
+                    <Card className="group h-full bg-white/70 backdrop-blur-sm border-0 shadow-subtle hover:shadow-elegant transition-all duration-500">
                       <CardContent className="p-8 text-center h-full flex flex-col justify-center">
                         <motion.div
-                          whileHover={{ scale: 1.1, rotate: 5 }}
-                          transition={{ duration: 0.3 }}
-                          className="w-20 h-20 bg-gradient-warm rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-warm"
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.4, ease: "easeOut" }}
+                          className="w-20 h-20 bg-elegant-slate-light rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-subtle"
                         >
-                          <Target className="w-10 h-10 text-white" />
+                          <Target className="w-10 h-10 text-elegant-charcoal" />
                         </motion.div>
-                        <h3 className="text-2xl font-bold mb-4 text-foreground">We'll curate the best content for your audience</h3>
+                        <h3 className="text-2xl font-semibold mb-4 text-foreground">We'll curate the best content for your audience</h3>
                       </CardContent>
                     </Card>
                   </ScrollReveal>
 
                   <ScrollReveal direction="up" delay={0.2}>
-                    <Card className="group h-full bg-white/80 backdrop-blur-sm border-0 shadow-soft hover:shadow-warm transition-all duration-300">
+                    <Card className="group h-full bg-white/70 backdrop-blur-sm border-0 shadow-subtle hover:shadow-elegant transition-all duration-500">
                       <CardContent className="p-8 text-center h-full flex flex-col justify-center">
                         <motion.div
-                          whileHover={{ scale: 1.1, rotate: -5 }}
-                          transition={{ duration: 0.3 }}
-                          className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-elegant"
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.4, ease: "easeOut" }}
+                          className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-subtle"
                         >
-                          <Rocket className="w-10 h-10 text-white" />
+                          <Rocket className="w-10 h-10 text-primary" />
                         </motion.div>
-                        <h3 className="text-2xl font-bold mb-4 text-foreground">Publish it to all your platforms</h3>
+                        <h3 className="text-2xl font-semibold mb-4 text-foreground">Publish it to all your platforms</h3>
                         <p className="text-lg text-muted-foreground font-medium">
                           Site posts, Email Newsletters, Social -- All done for you.
                         </p>
@@ -137,60 +137,60 @@ const Channels = () => {
                 {/* Results Section */}
                 <ScrollReveal direction="up" delay={0.3}>
                   <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold mb-12 text-foreground">
+                    <h2 className="text-4xl font-semibold mb-12 text-foreground">
                       Results You'll See
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                       <motion.div
-                        whileHover={{ y: -8, scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
+                        whileHover={{ y: -4, scale: 1.01 }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
                       >
-                        <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-0 shadow-soft hover:shadow-warm transition-all duration-300">
+                        <Card className="bg-elegant-pearl border-0 shadow-subtle hover:shadow-elegant transition-all duration-500">
                           <CardContent className="p-8 text-center">
                             <motion.div
-                              whileHover={{ scale: 1.2, rotate: 10 }}
-                              transition={{ duration: 0.3 }}
-                              className="w-16 h-16 bg-gradient-warm rounded-xl flex items-center justify-center mx-auto mb-4 shadow-warm"
+                              whileHover={{ scale: 1.1 }}
+                              transition={{ duration: 0.4 }}
+                              className="w-16 h-16 bg-gradient-to-br from-orange-200 to-orange-300 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-subtle"
                             >
-                              <Flame className="w-8 h-8 text-white" />
+                              <Flame className="w-8 h-8 text-orange-700" />
                             </motion.div>
-                            <h4 className="text-xl font-bold text-foreground">Warmer leads</h4>
+                            <h4 className="text-xl font-semibold text-foreground">Warmer leads</h4>
                           </CardContent>
                         </Card>
                       </motion.div>
                       
                       <motion.div
-                        whileHover={{ y: -8, scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
+                        whileHover={{ y: -4, scale: 1.01 }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
                       >
-                        <Card className="bg-gradient-to-br from-green-50 to-emerald-100 border-0 shadow-soft hover:shadow-warm transition-all duration-300">
+                        <Card className="bg-elegant-pearl border-0 shadow-subtle hover:shadow-elegant transition-all duration-500">
                           <CardContent className="p-8 text-center">
                             <motion.div
-                              whileHover={{ scale: 1.2, rotate: -10 }}
-                              transition={{ duration: 0.3 }}
-                              className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg"
+                              whileHover={{ scale: 1.1 }}
+                              transition={{ duration: 0.4 }}
+                              className="w-16 h-16 bg-gradient-to-br from-emerald-200 to-emerald-300 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-subtle"
                             >
-                              <DollarSign className="w-8 h-8 text-white" />
+                              <DollarSign className="w-8 h-8 text-emerald-700" />
                             </motion.div>
-                            <h4 className="text-xl font-bold text-foreground">More opportunities to convert</h4>
+                            <h4 className="text-xl font-semibold text-foreground">More opportunities to convert</h4>
                           </CardContent>
                         </Card>
                       </motion.div>
                       
                       <motion.div
-                        whileHover={{ y: -8, scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
+                        whileHover={{ y: -4, scale: 1.01 }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
                       >
-                        <Card className="bg-gradient-to-br from-blue-50 to-indigo-100 border-0 shadow-soft hover:shadow-warm transition-all duration-300">
+                        <Card className="bg-elegant-pearl border-0 shadow-subtle hover:shadow-elegant transition-all duration-500">
                           <CardContent className="p-8 text-center">
                             <motion.div
-                              whileHover={{ scale: 1.2, rotate: 10 }}
-                              transition={{ duration: 0.3 }}
-                              className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4 shadow-elegant"
+                              whileHover={{ scale: 1.1 }}
+                              transition={{ duration: 0.4 }}
+                              className="w-16 h-16 bg-gradient-to-br from-blue-200 to-blue-300 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-subtle"
                             >
-                              <Smile className="w-8 h-8 text-white" />
+                              <Smile className="w-8 h-8 text-blue-700" />
                             </motion.div>
-                            <h4 className="text-xl font-bold text-foreground">Happier customers</h4>
+                            <h4 className="text-xl font-semibold text-foreground">Happier customers</h4>
                           </CardContent>
                         </Card>
                       </motion.div>
@@ -201,13 +201,14 @@ const Channels = () => {
                 <ScrollReveal direction="up" delay={0.4}>
                   <div className="text-center">
                     <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.98 }}
+                      transition={{ duration: 0.2 }}
                     >
                       <Button 
                         variant="hero" 
                         size="lg"
-                        className="text-lg px-8 py-4 shadow-warm hover:shadow-glow transition-all duration-300"
+                        className="text-lg px-8 py-4 shadow-subtle hover:shadow-elegant transition-all duration-400"
                         onClick={() => window.location.href = '/contact'}
                       >
                         Get Started Today
@@ -220,10 +221,10 @@ const Channels = () => {
               {/* News Channels Section */}
               <ScrollReveal direction="up" delay={0.5}>
                 <div className="text-center mb-16">
-                  <h2 className="text-3xl font-bold text-foreground mb-4">
+                  <h2 className="text-3xl font-semibold text-foreground mb-4">
                     News we've delivered...
                   </h2>
-                  <div className="w-24 h-1 bg-gradient-warm mx-auto rounded-full"></div>
+                  <div className="w-24 h-0.5 bg-elegant-slate mx-auto rounded-full"></div>
                 </div>
               </ScrollReveal>
 
@@ -235,34 +236,35 @@ const Channels = () => {
                     delay={index * 0.05}
                   >
                     <motion.div
-                      whileHover={{ y: -8, scale: 1.02 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      whileHover={{ y: -4, scale: 1.01 }}
+                      transition={{ duration: 0.4, ease: "easeOut" }}
                     >
-                      <Card className="group h-full bg-white/90 backdrop-blur-sm border-0 shadow-soft hover:shadow-warm transition-all duration-300 overflow-hidden">
+                      <Card className="group h-full bg-white/80 backdrop-blur-sm border-0 shadow-subtle hover:shadow-elegant transition-all duration-500 overflow-hidden">
                         <CardHeader className="text-center pb-4 relative">
                           <motion.div
-                            whileHover={{ scale: 1.1, rotate: 5 }}
-                            transition={{ duration: 0.3 }}
-                            className="text-5xl mb-4 group-hover:animate-bounce-gentle"
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.4 }}
+                            className="text-4xl mb-4 opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                           >
                             {channel.icon}
                           </motion.div>
-                          <CardTitle className="text-lg font-bold text-foreground">
+                          <CardTitle className="text-lg font-semibold text-foreground">
                             {channel.title}
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="flex flex-col justify-between flex-1 p-6">
-                          <CardDescription className="text-sm text-muted-foreground mb-6 text-center leading-relaxed font-medium">
+                          <CardDescription className="text-sm text-muted-foreground mb-6 text-center leading-relaxed">
                             {channel.description}
                           </CardDescription>
                           <motion.div
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            transition={{ duration: 0.2 }}
                           >
                             <Button 
                               variant="hero" 
                               size="sm" 
-                              className="w-full font-semibold shadow-soft hover:shadow-warm transition-all duration-300"
+                              className="w-full font-medium shadow-subtle hover:shadow-elegant transition-all duration-400"
                               onClick={() => window.location.href = '/contact'}
                             >
                               Use This Channel

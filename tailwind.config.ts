@@ -73,19 +73,31 @@ export default {
 					peach: 'hsl(var(--warm-peach))',
 					'blue': 'hsl(var(--soft-blue))',
 					'blue-light': 'hsl(var(--soft-blue-light))'
+				},
+				elegant: {
+					slate: 'hsl(var(--elegant-slate))',
+					'slate-light': 'hsl(var(--elegant-slate-light))',
+					cream: 'hsl(var(--elegant-cream))',
+					pearl: 'hsl(var(--elegant-pearl))',
+					charcoal: 'hsl(var(--elegant-charcoal))',
+					mist: 'hsl(var(--elegant-mist))'
 				}
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-warm': 'var(--gradient-warm)',
-				'gradient-soft': 'var(--gradient-soft)'
+				'gradient-soft': 'var(--gradient-soft)',
+				'gradient-elegant': 'var(--gradient-elegant)',
+				'gradient-subtle': 'var(--gradient-subtle)',
+				'gradient-soft-warm': 'var(--gradient-soft-warm)'
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',
 				'glow': 'var(--shadow-glow)',
 				'warm': 'var(--shadow-warm)',
-				'soft': 'var(--shadow-soft)'
+				'soft': 'var(--shadow-soft)',
+				'subtle': 'var(--shadow-subtle)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
