@@ -1,29 +1,35 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <h1 className="text-xl font-bold text-primary">NewsDelivered.com</h1>
+          <Link to="/" className="text-xl font-bold text-primary hover:text-primary/80 transition-colors">
+            NewsDelivered.com
+          </Link>
         </div>
         
         <nav className="hidden md:flex items-center space-x-6">
+          <Link to="/" className="text-foreground hover:text-primary transition-colors">
+            Home
+          </Link>
           <a href="#features" className="text-foreground hover:text-primary transition-colors">
             Got You!
           </a>
-          <a href="/blog" className="text-foreground hover:text-primary transition-colors">
+          <Link to="/blog" className="text-foreground hover:text-primary transition-colors">
             Our Way
-          </a>
-          <a href="/channels" className="text-foreground hover:text-primary transition-colors">
+          </Link>
+          <Link to="/channels" className="text-foreground hover:text-primary transition-colors">
             Channels
-          </a>
+          </Link>
           <a href="#pricing" className="text-foreground hover:text-primary transition-colors">
             Pricing
           </a>
-          <a href="/contact" className="text-foreground hover:text-primary transition-colors">
+          <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
             Contact
-          </a>
+          </Link>
         </nav>
         
         <div className="flex items-center space-x-4">
