@@ -1,8 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const words = ["profit center", "lead generator", "prospect warming oven"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prev) => (prev + 1) % words.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="pt-32 pb-20 bg-gradient-to-br from-background to-muted">
       <div className="container mx-auto px-4">
@@ -19,14 +31,26 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.8 }}
-              >Your audience is bored.</motion.span>
+              >Expert content marketing done for you.</motion.span>
               <br />
               <motion.span 
                 className="text-foreground"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1.0 }}
-              >We can fix that.</motion.span>
+              >
+                Make email a{" "}
+                <motion.span 
+                  key={currentWordIndex}
+                  className="text-primary"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {words[currentWordIndex]}
+                </motion.span>
+              </motion.span>
             </motion.h1>
             
             <motion.div 
