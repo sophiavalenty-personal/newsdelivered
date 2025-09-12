@@ -4,7 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import { Target, Rocket, Flame, DollarSign, Smile } from "lucide-react";
+import { Target, Rocket, Flame, DollarSign, Smile, Users } from "lucide-react";
+import contentCurationImage from "@/assets/content-curation.jpg";
+import contentPublishingImage from "@/assets/content-publishing.jpg";
 
 const Channels = () => {
   const channels = [
@@ -97,40 +99,135 @@ const Channels = () => {
         <section className="py-20 bg-gradient-elegant">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              {/* How It Works Section */}
+              {/* Our Experts Header */}
+              <ScrollReveal direction="up" delay={0.1}>
+                <div className="text-center mb-16">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="flex items-center justify-center mb-6"
+                  >
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 10 }}
+                      transition={{ duration: 0.3 }}
+                      className="w-16 h-16 bg-elegant-sage/20 rounded-full flex items-center justify-center mr-4 shadow-subtle"
+                    >
+                      <Users className="w-8 h-8 text-elegant-sage" />
+                    </motion.div>
+                    <h1 className="text-4xl md:text-5xl font-light text-foreground">
+                      Our experts
+                    </h1>
+                  </motion.div>
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: "4rem" }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    className="h-0.5 bg-elegant-sage mx-auto rounded-full"
+                  />
+                </div>
+              </ScrollReveal>
+
+              {/* Expert Services Section */}
               <div className="mb-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                  <ScrollReveal direction="up" delay={0.1}>
-                    <Card className="group h-full bg-white/70 backdrop-blur-sm border-0 shadow-subtle hover:shadow-elegant transition-all duration-500">
-                      <CardContent className="p-8 text-center h-full flex flex-col justify-center">
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.4, ease: "easeOut" }}
-                          className="w-20 h-20 bg-elegant-slate-light rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-subtle"
-                        >
-                          <Target className="w-10 h-10 text-elegant-charcoal" />
-                        </motion.div>
-                        <h3 className="text-2xl font-semibold mb-4 text-foreground">We'll curate the best content for your audience</h3>
-                      </CardContent>
-                    </Card>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                  <ScrollReveal direction="left" delay={0.2}>
+                    <motion.div
+                      whileHover={{ y: -6, scale: 1.01 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                    >
+                      <Card className="group h-full bg-white/80 backdrop-blur-sm border-0 shadow-subtle hover:shadow-elegant transition-all duration-700 overflow-hidden">
+                        <CardContent className="p-0">
+                          <div className="relative overflow-hidden rounded-t-lg">
+                            <motion.img
+                              src={contentCurationImage}
+                              alt="Content curation process"
+                              className="w-full h-48 object-cover"
+                              whileHover={{ scale: 1.05 }}
+                              transition={{ duration: 0.6 }}
+                            />
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              whileHover={{ opacity: 1 }}
+                              transition={{ duration: 0.3 }}
+                              className="absolute inset-0 bg-elegant-sage/10 flex items-center justify-center"
+                            >
+                              <motion.div
+                                initial={{ scale: 0 }}
+                                whileHover={{ scale: 1 }}
+                                transition={{ duration: 0.3, delay: 0.1 }}
+                                className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-elegant"
+                              >
+                                <Target className="w-8 h-8 text-elegant-sage" />
+                              </motion.div>
+                            </motion.div>
+                          </div>
+                          <div className="p-8 text-center">
+                            <motion.h3 
+                              className="text-2xl font-medium mb-4 text-foreground"
+                              whileHover={{ scale: 1.02 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              Curate the best content for your audience
+                            </motion.h3>
+                            <p className="text-muted-foreground leading-relaxed">
+                              Our experts carefully review and select the most engaging, relevant content that resonates with your specific audience.
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
                   </ScrollReveal>
 
-                  <ScrollReveal direction="up" delay={0.2}>
-                    <Card className="group h-full bg-white/70 backdrop-blur-sm border-0 shadow-subtle hover:shadow-elegant transition-all duration-500">
-                      <CardContent className="p-8 text-center h-full flex flex-col justify-center">
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.4, ease: "easeOut" }}
-                          className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-subtle"
-                        >
-                          <Rocket className="w-10 h-10 text-primary" />
-                        </motion.div>
-                        <h3 className="text-2xl font-semibold mb-4 text-foreground">Publish it to all your platforms</h3>
-                        <p className="text-lg text-muted-foreground font-medium">
-                          Site posts, Email Newsletters, Social -- All done for you.
-                        </p>
-                      </CardContent>
-                    </Card>
+                  <ScrollReveal direction="right" delay={0.3}>
+                    <motion.div
+                      whileHover={{ y: -6, scale: 1.01 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                    >
+                      <Card className="group h-full bg-white/80 backdrop-blur-sm border-0 shadow-subtle hover:shadow-elegant transition-all duration-700 overflow-hidden">
+                        <CardContent className="p-0">
+                          <div className="relative overflow-hidden rounded-t-lg">
+                            <motion.img
+                              src={contentPublishingImage}
+                              alt="Content publishing across platforms"
+                              className="w-full h-48 object-cover"
+                              whileHover={{ scale: 1.05 }}
+                              transition={{ duration: 0.6 }}
+                            />
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              whileHover={{ opacity: 1 }}
+                              transition={{ duration: 0.3 }}
+                              className="absolute inset-0 bg-elegant-sage/10 flex items-center justify-center"
+                            >
+                              <motion.div
+                                initial={{ scale: 0 }}
+                                whileHover={{ scale: 1 }}
+                                transition={{ duration: 0.3, delay: 0.1 }}
+                                className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-elegant"
+                              >
+                                <Rocket className="w-8 h-8 text-elegant-sage" />
+                              </motion.div>
+                            </motion.div>
+                          </div>
+                          <div className="p-8 text-center">
+                            <motion.h3 
+                              className="text-2xl font-medium mb-4 text-foreground"
+                              whileHover={{ scale: 1.02 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              Publish that content to all your platforms
+                            </motion.h3>
+                            <p className="text-muted-foreground leading-relaxed mb-4">
+                              Seamlessly distribute your content across websites, email newsletters, and social media platforms.
+                            </p>
+                            <p className="text-sm text-muted-foreground/80 italic">
+                              All done for you, automatically.
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
                   </ScrollReveal>
                 </div>
 
