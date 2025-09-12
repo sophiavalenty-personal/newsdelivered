@@ -39,9 +39,9 @@ const Hero = () => {
                   variant="hero" 
                   size="lg" 
                   className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300 w-full"
-                  onClick={() => window.location.href = '/contact'}
+                  onClick={() => window.location.href = '/channels'}
                 >
-                  → Audit my current strategy (Free)
+                  → View Channels
                 </Button>
               </motion.div>
             </motion.div>
