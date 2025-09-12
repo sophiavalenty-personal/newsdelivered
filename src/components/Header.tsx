@@ -10,7 +10,7 @@ const Header = () => {
         
         <nav className="hidden md:flex items-center space-x-6">
           <a href="#features" className="text-foreground hover:text-primary transition-colors">
-            Features
+            Got You!
           </a>
           <a href="/blog" className="text-foreground hover:text-primary transition-colors">
             Our Way
