@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ContentDoneRight from "@/components/ContentDoneRight";
+import EmailTransformation from "@/components/EmailTransformation";
 import Problem from "@/components/Problem";
 import Solution from "@/components/Solution";
 import HowItWorks from "@/components/HowItWorks";
@@ -19,6 +20,7 @@ const Index = () => {
       <main>
         <Hero />
         <ContentDoneRight />
+        <EmailTransformation />
         <Problem />
         <Solution />
         <HowItWorks />
