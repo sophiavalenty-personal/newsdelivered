@@ -96,86 +96,79 @@ const Channels = () => {
         <section className="py-20 bg-gradient-to-br from-background to-muted">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <ScrollReveal direction="up">
-                <div className="text-center mb-16">
-                  <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                    <span className="bg-gradient-hero bg-clip-text text-transparent">
-                      Choose Your Content Channels
-                    </span>
-                  </h1>
-                  <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                    Select from our curated news feeds to power your email campaigns. 
-                    Each channel delivers fresh, engaging content tailored to your audience.
-                  </p>
-                </div>
-              </ScrollReveal>
-
-              {/* What You Get Section */}
+              {/* How It Works Section */}
               <div className="mb-20">
-                <ScrollReveal direction="up" delay={0.2}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                  <ScrollReveal direction="up" delay={0.1}>
+                    <motion.div
+                      whileHover={{ scale: 1.02, y: -4 }}
+                      transition={{ duration: 0.2 }}
+                      className="text-center p-8"
+                    >
+                      <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span className="text-3xl">🎯</span>
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4">We'll curate the best content for your audience</h3>
+                    </motion.div>
+                  </ScrollReveal>
+
+                  <ScrollReveal direction="up" delay={0.2}>
+                    <motion.div
+                      whileHover={{ scale: 1.02, y: -4 }}
+                      transition={{ duration: 0.2 }}
+                      className="text-center p-8"
+                    >
+                      <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span className="text-3xl">🚀</span>
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4">Publish it to all your platforms</h3>
+                      <p className="text-lg text-muted-foreground">
+                        Site posts, Email Newsletters, Social -- All done for you.
+                      </p>
+                    </motion.div>
+                  </ScrollReveal>
+                </div>
+
+                {/* Results Section */}
+                <ScrollReveal direction="up" delay={0.3}>
                   <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold mb-4">
+                    <h2 className="text-3xl font-bold mb-8">
                       <span className="bg-gradient-hero bg-clip-text text-transparent">
-                        News Delivered
+                        Results
                       </span>
                     </h2>
-                    <p className="text-lg text-muted-foreground">
-                      Real human experts that handle content from A to Z.
-                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                        className="p-6"
+                      >
+                        <div className="text-4xl mb-3">🔥</div>
+                        <h4 className="text-xl font-semibold">Warmer leads</h4>
+                      </motion.div>
+                      
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                        className="p-6"
+                      >
+                        <div className="text-4xl mb-3">💰</div>
+                        <h4 className="text-xl font-semibold">More opportunities to convert</h4>
+                      </motion.div>
+                      
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                        className="p-6"
+                      >
+                        <div className="text-4xl mb-3">😊</div>
+                        <h4 className="text-xl font-semibold">Happier customers</h4>
+                      </motion.div>
+                    </div>
                   </div>
                 </ScrollReveal>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                  <ScrollReveal direction="up" delay={0.3}>
-                    <motion.div
-                      whileHover={{ scale: 1.02, y: -4 }}
-                      transition={{ duration: 0.2 }}
-                      className="text-center p-6"
-                    >
-                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-2xl">🎯</span>
-                      </div>
-                      <h3 className="text-xl font-semibold mb-3">We Find Content</h3>
-                      <p className="text-muted-foreground">
-                        We'll find the right content for your audience and publish it to all your platforms.
-                      </p>
-                    </motion.div>
-                  </ScrollReveal>
-
-                  <ScrollReveal direction="up" delay={0.4}>
-                    <motion.div
-                      whileHover={{ scale: 1.02, y: -4 }}
-                      transition={{ duration: 0.2 }}
-                      className="text-center p-6"
-                    >
-                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-2xl">📧</span>
-                      </div>
-                      <h3 className="text-xl font-semibold mb-3">We Specialize</h3>
-                      <p className="text-muted-foreground">
-                        We <em>specialize</em> in high engaging email newsletters that convert.
-                      </p>
-                    </motion.div>
-                  </ScrollReveal>
-
-                  <ScrollReveal direction="up" delay={0.5}>
-                    <motion.div
-                      whileHover={{ scale: 1.02, y: -4 }}
-                      transition={{ duration: 0.2 }}
-                      className="text-center p-6"
-                    >
-                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-2xl">💝</span>
-                      </div>
-                      <h3 className="text-xl font-semibold mb-3">What You Get?</h3>
-                      <p className="text-muted-foreground">
-                        Happy, warm customers and leads. More opportunities to convert.
-                      </p>
-                    </motion.div>
-                  </ScrollReveal>
-                </div>
-
-                <ScrollReveal direction="up" delay={0.6}>
+                <ScrollReveal direction="up" delay={0.4}>
                   <div className="text-center">
                     <motion.div
                       whileHover={{ scale: 1.05 }}
@@ -192,6 +185,15 @@ const Channels = () => {
                   </div>
                 </ScrollReveal>
               </div>
+
+              {/* News Channels Section */}
+              <ScrollReveal direction="up" delay={0.5}>
+                <div className="text-center mb-12">
+                  <h2 className="text-2xl font-bold text-muted-foreground">
+                    News we've delivered...
+                  </h2>
+                </div>
+              </ScrollReveal>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {channels.map((channel, index) => (
