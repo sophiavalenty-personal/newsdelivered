@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const Hero = () => {
 
   return (
-    <section className="pt-32 pb-20 bg-gradient-to-br from-background to-muted">
+    <section className="py-24 bg-gradient-to-br from-background to-muted">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal direction="up">
