@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import NewsletterFavorite from "@/components/NewsletterFavorite";
 import ContentDoneRight from "@/components/ContentDoneRight";
 import EmailTransformation from "@/components/EmailTransformation";
 import Problem from "@/components/Problem";
@@ -19,6 +20,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <NewsletterFavorite />
         <Problem />
         <Solution />
         <ContentDoneRight />
