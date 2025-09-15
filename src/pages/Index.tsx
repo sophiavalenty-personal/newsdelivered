@@ -19,10 +19,10 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <ContentDoneRight />
-        <EmailTransformation />
         <Problem />
         <Solution />
+        <ContentDoneRight />
+        <EmailTransformation />
         <HowItWorks />
         <Proof />
         <Pricing />
