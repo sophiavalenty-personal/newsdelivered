@@ -6,7 +6,7 @@ import { Stars, Sparkles } from "lucide-react";
 const Hero = () => {
 
   return (
-    <section className="relative py-32 bg-gradient-to-br from-background via-background to-muted/20 overflow-hidden">
+    <section className="relative py-32 bg-white overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-20 h-20 bg-primary/5 rounded-full blur-xl"></div>

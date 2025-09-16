@@ -5,7 +5,9 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const FinalCTA = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-background to-muted">
+    <section className="py-20 bg-muted/30 relative">
+      {/* Geometric separator from previous section */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-white transform -skew-y-1 origin-top-left"></div>
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <Card className="max-w-4xl mx-auto shadow-elegant hover:shadow-glow transition-all duration-500">
