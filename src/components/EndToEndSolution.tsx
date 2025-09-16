@@ -55,7 +55,7 @@ const EndToEndSolution = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div className="space-y-8 mb-16">
             <ScrollReveal direction="left">
               <Card className="h-full">
                 <CardContent className="p-8">
@@ -95,14 +95,11 @@ const EndToEndSolution = () => {
                         <div className="flex items-center justify-center w-8 h-8 bg-primary text-primary-foreground rounded-full mr-4 flex-shrink-0 font-bold">
                           {step.number}
                         </div>
-                        <div className="flex-1">
-                          <step.icon className="w-5 h-5 text-primary mb-2" />
-                          <p className="text-sm leading-relaxed">{step.title}</p>
-                        </div>
-                        {index < steps.length - 1 && (
-                          <ArrowRight className="w-4 h-4 text-muted-foreground ml-4 mt-2" />
-                        )}
-                      </motion.div>
+                         <div className="flex-1">
+                           <step.icon className="w-5 h-5 text-primary mb-2" />
+                           <p className="text-sm leading-relaxed">{step.title}</p>
+                         </div>
+                       </motion.div>
                     ))}
                   </div>
                 </CardContent>
