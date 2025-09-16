@@ -21,7 +21,7 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.8 }}
-              >Expert content marketing done for you.</motion.span>
+              >Content marketing, professionally done for you.</motion.span>
             </motion.h1>
             
             <motion.div
@@ -39,50 +39,11 @@ const Hero = () => {
                   variant="hero" 
                   size="lg" 
                   className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300 w-full"
-                  onClick={() => window.location.href = '/channels'}
+                  onClick={() => window.location.href = '/contact'}
                 >
-                  → View Channels
+                  Need an expert?
                 </Button>
               </motion.div>
-            </motion.div>
-            
-            <motion.div 
-              className="text-center mb-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-            >
-              <p className="text-muted-foreground mb-4">Want us to just handle it all for you?</p>
-              <div className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex-1"
-                >
-                  <Button 
-                    variant="hero-outline" 
-                    size="lg" 
-                    className="text-lg px-6 py-4 w-full"
-                    onClick={() => window.location.href = '/contact'}
-                  >
-                    → Handle my content for me
-                  </Button>
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex-1"
-                >
-                  <Button 
-                    variant="hero-outline" 
-                    size="lg" 
-                    className="text-lg px-6 py-4 w-full"
-                    onClick={() => window.location.href = '/contact'}
-                  >
-                    → Teach me
-                  </Button>
-                </motion.div>
-              </div>
             </motion.div>
           </ScrollReveal>
         </div>
