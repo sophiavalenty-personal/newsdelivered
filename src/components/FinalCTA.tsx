@@ -16,13 +16,9 @@ const FinalCTA = () => {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="text-4xl mb-6">👉</div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                  "Let's make your newsletter your customers' favorite email."
+                  Want NewsDelivered Today?
                 </h2>
-                <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-                  Stop sending emails that get ignored. Start building a channel your audience actually loves.
-                </p>
                 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -34,7 +30,7 @@ const FinalCTA = () => {
                     className="text-xl px-12 py-6 hover:shadow-glow transition-all duration-300"
                     onClick={() => window.location.href = '/contact'}
                   >
-                    Help Me NOW! (We're ready...)
+                    → Talk with an expert now
                   </Button>
                 </motion.div>
               </motion.div>

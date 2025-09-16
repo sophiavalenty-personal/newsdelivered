@@ -1,16 +1,9 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import NewsletterFavorite from "@/components/NewsletterFavorite";
-import ContentDoneRight from "@/components/ContentDoneRight";
-import EmailTransformation from "@/components/EmailTransformation";
-import Problem from "@/components/Problem";
-import Solution from "@/components/Solution";
-import HowItWorks from "@/components/HowItWorks";
-import Proof from "@/components/Proof";
-import Pricing from "@/components/Pricing";
-import CTA from "@/components/CTA";
-import Expertise from "@/components/Expertise";
-import Expectations from "@/components/Expectations";
+import ContentStrategy from "@/components/ContentStrategy";
+import EndToEndSolution from "@/components/EndToEndSolution";
+import WherePeopleGoWrong from "@/components/WherePeopleGoWrong";
+import ProvenFormula from "@/components/ProvenFormula";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -19,18 +12,11 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <main>
-        <NewsletterFavorite />
         <Hero />
-        <Problem />
-        <Solution />
-        <ContentDoneRight />
-        <EmailTransformation />
-        <HowItWorks />
-        <Proof />
-        <Pricing />
-        <CTA />
-        <Expertise />
-        <Expectations />
+        <ContentStrategy />
+        <EndToEndSolution />
+        <WherePeopleGoWrong />
+        <ProvenFormula />
         <FinalCTA />
       </main>
       <Footer />

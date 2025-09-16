@@ -21,7 +21,10 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.8 }}
-              >Content marketing, professionally done for you.</motion.span>
+              >
+                Content Marketing<br />
+                Professionally Done for You
+              </motion.span>
             </motion.h1>
             
             <motion.div
@@ -41,7 +44,7 @@ const Hero = () => {
                   className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300 w-full"
                   onClick={() => window.location.href = '/contact'}
                 >
-                  Need an expert?
+                  → Need an expert?
                 </Button>
               </motion.div>
             </motion.div>
