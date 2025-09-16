@@ -14,20 +14,20 @@ const EndToEndSolution = () => {
   const steps = [
     {
       number: 1,
-      title: "Research your audience",
-      description: "Deep dive into your target market and customer needs",
+      title: "Audience Research",
+      description: "Experts in your field will deep dive into your specific audience and customer needs",
       icon: Search
     },
     {
       number: 2,
-      title: "Create a content strategy that brings value to you and your customers / readers",
-      description: "Develop content that resonates and drives results",
+      title: "Winning Strategy",
+      description: "Create a content strategy that brings value to you AND your readers, customers and leads",
       icon: FileText
     },
     {
       number: 3,
-      title: "Publish it for you on all your desired platforms (website, newsletter, social media, etc.)",
-      description: "Multi-channel distribution for maximum reach",
+      title: "Make it Real",
+      description: "We'll publish content that works for you across all your desired platforms",
       icon: Share2
     }
   ];
@@ -58,13 +58,22 @@ const EndToEndSolution = () => {
               </motion.h2>
               
               <motion.h3 
-                className="text-3xl md:text-4xl font-semibold mb-12 text-primary"
+                className="text-3xl md:text-4xl font-semibold mb-6 text-primary"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 Getting NewsDelivered Means…
               </motion.h3>
+              
+              <motion.p 
+                className="text-xl md:text-2xl text-muted-foreground mb-12 font-medium"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                You focus on what you do best, our experts will take care of the rest
+              </motion.p>
             </div>
           </ScrollReveal>
 
@@ -189,41 +198,12 @@ const EndToEndSolution = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <Card className="h-full shadow-lg border-primary/20 bg-gradient-to-br from-muted/30 to-primary/5 hover:shadow-xl transition-all duration-500 group">
-                      <CardContent className="p-8 h-full flex flex-col">
-                        <div className="flex items-center gap-3 mb-6 justify-center">
-                          <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <Users className="w-5 h-5 text-primary-foreground" />
-                          </div>
-                          <h4 className="text-xl md:text-2xl font-bold text-foreground">We'll Keep The News Delivered</h4>
+                      <CardContent className="p-8 h-full flex flex-col justify-center items-center text-center">
+                        <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                          <Users className="w-8 h-8 text-primary-foreground" />
                         </div>
-                        <p className="text-base font-medium mb-8 text-center text-muted-foreground">Our experts will take care of the rest...</p>
-                        
-                        <div className="space-y-6 flex-1">
-                          {steps.map((step, index) => (
-                            <motion.div 
-                              key={step.number}
-                              className="flex items-start relative group/step"
-                              initial={{ opacity: 0, x: 20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.5, delay: index * 0.2 }}
-                              whileHover={{ x: 5 }}
-                            >
-                              <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-full mr-4 flex-shrink-0 font-semibold text-sm shadow-md group-hover/step:scale-105 transition-transform duration-300">
-                                {step.number}
-                              </div>
-                              <div className="flex-1">
-                                <div className="flex items-center mb-2">
-                                  <div className="w-8 h-8 bg-primary/15 rounded-full flex items-center justify-center mr-3">
-                                    <step.icon className="w-4 h-4 text-primary" />
-                                  </div>
-                                  <div className="h-0.5 bg-gradient-to-r from-primary/30 to-transparent flex-1 rounded-full"></div>
-                                </div>
-                                <h5 className="text-base font-bold mb-2 text-foreground leading-tight">{step.title}</h5>
-                                <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-                              </div>
-                            </motion.div>
-                          ))}
-                        </div>
+                        <h4 className="text-2xl md:text-3xl font-bold text-foreground mb-4">We'll Keep The News Delivered</h4>
+                        <p className="text-lg text-muted-foreground font-medium">Our experts will take care of the rest...</p>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -231,6 +211,65 @@ const EndToEndSolution = () => {
               </div>
             </ScrollReveal>
           </div>
+
+          {/* Our Process Section */}
+          <ScrollReveal direction="up">
+            <div className="mb-20">
+              <div className="text-center mb-16">
+                <motion.h3 
+                  className="text-3xl md:text-4xl font-bold mb-4 text-foreground"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  Our Process
+                </motion.h3>
+                <motion.p 
+                  className="text-xl text-muted-foreground"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                  It's all part of the package
+                </motion.p>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                {steps.map((step, index) => (
+                  <motion.div 
+                    key={step.number}
+                    className="relative group"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    whileHover={{ y: -5 }}
+                  >
+                    <Card className="h-full shadow-lg border-primary/20 bg-gradient-to-br from-background to-muted/30 hover:shadow-xl transition-all duration-500 group-hover:border-primary/40">
+                      <CardContent className="p-8 text-center">
+                        <div className="flex items-center justify-center mb-6">
+                          <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-full flex items-center justify-center font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            {step.number}
+                          </div>
+                        </div>
+                        
+                        <div className="w-12 h-12 bg-primary/15 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/25 transition-colors duration-300">
+                          <step.icon className="w-6 h-6 text-primary" />
+                        </div>
+                        
+                        <h4 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
+                          {step.title}
+                        </h4>
+                        
+                        <p className="text-muted-foreground leading-relaxed">
+                          {step.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
 
           <ScrollReveal>
             <div className="text-center">
