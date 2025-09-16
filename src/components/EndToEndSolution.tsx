@@ -74,7 +74,7 @@ const EndToEndSolution = () => {
                 <div className="inline-flex items-center gap-4 px-8 py-6 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 border border-primary/20">
                   <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
                   <p className="text-xl font-semibold text-foreground">
-                    So you can focus on <span className="text-primary font-bold">what you do best</span>
+                    You focus on <span className="text-primary font-bold">what you do best</span>
                   </p>
                 </div>
                 <div className="flex flex-wrap justify-center gap-4 text-base">
@@ -106,9 +106,9 @@ const EndToEndSolution = () => {
                     <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center">
                       <Users className="w-6 h-6 text-primary-foreground" />
                     </div>
-                    <h4 className="text-2xl md:text-3xl font-bold text-foreground">We'll Keep NewsDelivered</h4>
+                    <h4 className="text-2xl md:text-3xl font-bold text-foreground">We'll Keep The News Delivered</h4>
                   </div>
-                  <p className="text-lg font-medium mb-12 text-center text-muted-foreground">Our content marketing experts will</p>
+                  <p className="text-lg font-medium mb-12 text-center text-muted-foreground">Our experts will take care of the rest...</p>
                   <div className="relative">
                     {/* Enhanced connecting line */}
                     <div className="absolute left-8 top-16 bottom-0 w-1 bg-gradient-to-b from-primary/40 via-primary/20 to-transparent rounded-full"></div>
