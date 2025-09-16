@@ -69,41 +69,71 @@ const EndToEndSolution = () => {
           </ScrollReveal>
 
           <div className="space-y-16 mb-20">
+            <ScrollReveal direction="left">
+              <div className="text-center">
+                <div className="inline-flex items-center gap-4 px-8 py-6 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 border border-primary/20">
+                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                  <p className="text-xl font-semibold text-foreground">
+                    So you can focus on <span className="text-primary font-bold">what you do best</span>
+                  </p>
+                </div>
+                <div className="flex flex-wrap justify-center gap-4 text-base">
+                  {focusAreas.map((area, index) => (
+                    <motion.span
+                      key={area.name}
+                      className="px-4 py-2 bg-gradient-to-r from-background to-background/80 rounded-full border border-primary/20 text-foreground font-medium shadow-sm"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      {area.name}
+                    </motion.span>
+                  ))}
+                  <span className="px-4 py-2 bg-gradient-to-r from-background to-background/80 rounded-full border border-primary/20 text-foreground font-medium shadow-sm">your passions</span>
+                  <span className="px-4 py-2 bg-gradient-to-r from-background to-background/80 rounded-full border border-primary/20 text-foreground font-medium shadow-sm">family time</span>
+                  <span className="px-4 py-2 bg-gradient-to-r from-background to-background/80 rounded-full border border-primary/20 text-foreground font-medium shadow-sm">customer relationships</span>
+                  <span className="px-4 py-2 bg-gradient-to-r from-background to-background/80 rounded-full border border-primary/20 text-foreground font-medium shadow-sm">product development</span>
+                  <span className="px-4 py-2 bg-gradient-to-r from-background to-background/80 rounded-full border border-primary/20 text-foreground font-medium shadow-sm">whatever drives you</span>
+                </div>
+              </div>
+            </ScrollReveal>
+
             <ScrollReveal direction="up">
-              <Card className="shadow-elegant border-primary/10 bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-glow transition-all duration-300">
-                <CardContent className="p-16">
-                  <div className="flex items-center gap-6 mb-12 justify-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center">
-                      <ArrowRight className="w-8 h-8 text-primary-foreground" />
+              <Card className="shadow-lg border-primary/10 bg-gradient-to-br from-muted/30 to-muted/10 hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-12">
+                  <div className="flex items-center gap-4 mb-8 justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center">
+                      <Users className="w-6 h-6 text-primary-foreground" />
                     </div>
-                    <h4 className="text-4xl md:text-5xl font-bold text-primary">We Handle Your Content Strategy</h4>
+                    <h4 className="text-2xl md:text-3xl font-bold text-foreground">We'll Keep NewsDelivered</h4>
                   </div>
-                  <p className="text-2xl font-semibold mb-16 text-center text-foreground">Our content marketing experts will</p>
+                  <p className="text-lg font-medium mb-12 text-center text-muted-foreground">Our content marketing experts will</p>
                   <div className="relative">
                     {/* Enhanced connecting line */}
-                    <div className="absolute left-10 top-20 bottom-0 w-2 bg-gradient-to-b from-primary/60 via-primary/40 to-transparent rounded-full"></div>
-                    <div className="space-y-16">
+                    <div className="absolute left-8 top-16 bottom-0 w-1 bg-gradient-to-b from-primary/40 via-primary/20 to-transparent rounded-full"></div>
+                    <div className="space-y-12">
                       {steps.map((step, index) => (
                         <motion.div 
                           key={step.number}
                           className="flex items-start relative group"
                           initial={{ opacity: 0, y: 30 }}
                           animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.6, delay: index * 0.3 }}
-                          whileHover={{ x: 15 }}
+                          transition={{ duration: 0.6, delay: index * 0.2 }}
+                          whileHover={{ x: 10 }}
                         >
-                          <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-full mr-10 flex-shrink-0 font-bold text-2xl shadow-lg relative z-10 group-hover:scale-110 transition-transform duration-300">
+                          <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-full mr-8 flex-shrink-0 font-semibold text-lg shadow-md relative z-10 group-hover:scale-105 transition-transform duration-300">
                             {step.number}
                           </div>
-                          <div className="flex-1 pt-4">
-                            <div className="flex items-center mb-6">
-                              <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mr-6">
-                                <step.icon className="w-8 h-8 text-primary" />
+                          <div className="flex-1 pt-2">
+                            <div className="flex items-center mb-4">
+                              <div className="w-12 h-12 bg-primary/15 rounded-full flex items-center justify-center mr-4">
+                                <step.icon className="w-6 h-6 text-primary" />
                               </div>
-                              <div className="h-1 bg-gradient-to-r from-primary/60 to-transparent flex-1 rounded-full"></div>
+                              <div className="h-0.5 bg-gradient-to-r from-primary/40 to-transparent flex-1 rounded-full"></div>
                             </div>
-                            <h5 className="text-2xl font-bold mb-4 text-foreground leading-tight">{step.title}</h5>
-                            <p className="text-lg text-muted-foreground leading-relaxed">{step.description}</p>
+                            <h5 className="text-xl font-bold mb-3 text-foreground leading-tight">{step.title}</h5>
+                            <p className="text-base text-muted-foreground leading-relaxed">{step.description}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -111,33 +141,6 @@ const EndToEndSolution = () => {
                   </div>
                 </CardContent>
               </Card>
-            </ScrollReveal>
-
-            <ScrollReveal direction="left">
-              <div className="text-center">
-                <div className="inline-flex items-center gap-4 px-6 py-4 bg-muted/50 rounded-full mb-4">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <p className="text-lg text-muted-foreground">
-                    So you can focus on <span className="font-medium text-foreground">what matters most to you</span>
-                  </p>
-                </div>
-                <div className="flex flex-wrap justify-center gap-3 text-sm text-muted-foreground">
-                  {focusAreas.map((area, index) => (
-                    <motion.span
-                      key={area.name}
-                      className="px-3 py-1 bg-background/80 rounded-full border border-muted"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
-                    >
-                      {area.name}
-                    </motion.span>
-                  ))}
-                  <span className="px-3 py-1 bg-background/80 rounded-full border border-muted">your passions</span>
-                  <span className="px-3 py-1 bg-background/80 rounded-full border border-muted">family time</span>
-                  <span className="px-3 py-1 bg-background/80 rounded-full border border-muted">whatever drives you</span>
-                </div>
-              </div>
             </ScrollReveal>
           </div>
 
