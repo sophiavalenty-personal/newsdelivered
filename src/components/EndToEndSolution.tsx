@@ -57,19 +57,19 @@ const EndToEndSolution = () => {
 
           <div className="space-y-8 mb-16">
             <ScrollReveal direction="left">
-              <Card className="h-full">
-                <CardContent className="p-8">
-                  <h4 className="text-xl font-semibold mb-6">You get to focus on what you do best…</h4>
-                  <ul className="space-y-4">
+              <Card className="h-full shadow-elegant border-primary/10 bg-gradient-to-br from-background to-background/50">
+                <CardContent className="p-10">
+                  <h4 className="text-2xl font-semibold mb-8 text-primary">You get to focus on what you do best…</h4>
+                  <ul className="space-y-6">
                     {focusAreas.map((area, index) => (
                       <motion.li 
                         key={area}
-                        className="flex items-center text-lg"
+                        className="flex items-center text-lg font-medium"
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: index * 0.1 }}
                       >
-                        <ArrowRight className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                        <div className="w-3 h-3 bg-primary rounded-full mr-4 flex-shrink-0"></div>
                         {area}
                       </motion.li>
                     ))}
@@ -79,28 +79,35 @@ const EndToEndSolution = () => {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <Card className="h-full">
-                <CardContent className="p-8">
-                  <h4 className="text-xl font-semibold mb-6">We'll keep the NewsDelivered</h4>
-                  <p className="text-lg font-medium mb-6">Our experts will</p>
-                  <div className="space-y-6">
-                    {steps.map((step, index) => (
-                      <motion.div 
-                        key={step.number}
-                        className="flex items-start"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.2 }}
-                      >
-                        <div className="flex items-center justify-center w-8 h-8 bg-primary text-primary-foreground rounded-full mr-4 flex-shrink-0 font-bold">
-                          {step.number}
-                        </div>
-                         <div className="flex-1">
-                           <step.icon className="w-5 h-5 text-primary mb-2" />
-                           <p className="text-sm leading-relaxed">{step.title}</p>
-                         </div>
-                       </motion.div>
-                    ))}
+              <Card className="h-full shadow-elegant border-primary/10 bg-gradient-to-br from-background to-background/50 relative">
+                <CardContent className="p-10">
+                  <h4 className="text-2xl font-semibold mb-4 text-primary">We'll keep the NewsDelivered</h4>
+                  <p className="text-xl font-semibold mb-10 text-foreground">Our experts will</p>
+                  <div className="relative">
+                    {/* Connecting line */}
+                    <div className="absolute left-6 top-12 bottom-0 w-0.5 bg-primary/20"></div>
+                    <div className="space-y-8">
+                      {steps.map((step, index) => (
+                        <motion.div 
+                          key={step.number}
+                          className="flex items-start relative"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: index * 0.2 }}
+                        >
+                          <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-full mr-6 flex-shrink-0 font-bold text-lg shadow-lg relative z-10">
+                            {step.number}
+                          </div>
+                          <div className="flex-1 pt-2">
+                            <div className="flex items-center mb-3">
+                              <step.icon className="w-6 h-6 text-primary mr-3" />
+                              <div className="h-0.5 bg-primary/30 flex-1"></div>
+                            </div>
+                            <p className="text-base leading-relaxed font-medium">{step.title}</p>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
