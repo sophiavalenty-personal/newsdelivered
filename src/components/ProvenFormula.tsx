@@ -44,7 +44,7 @@ const ProvenFormula = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Engagement that builds trust and drives results
+                Newsletters your customers actually look forward to reading
               </motion.p>
             </div>
           </ScrollReveal>
@@ -123,8 +123,7 @@ const ProvenFormula = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <p className="text-2xl font-bold mb-4 text-primary">The Result?</p>
-                <p className="text-xl font-medium text-foreground">Newsletters your customers actually look forward to reading.</p>
+                <p className="text-2xl font-bold text-foreground">Engagement builds trust and drives results</p>
               </motion.div>
             </div>
           </ScrollReveal>
