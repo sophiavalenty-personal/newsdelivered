@@ -84,7 +84,7 @@ const ContentStrategy = () => {
               
               {/* Reality Check Section */}
               <motion.div 
-                className="mb-12 p-8 bg-destructive/5 border border-destructive/20 rounded-xl max-w-4xl mx-auto"
+                className="p-8 bg-destructive/5 border border-destructive/20 rounded-xl max-w-4xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.0 }}
@@ -99,23 +99,6 @@ const ContentStrategy = () => {
                   Most company newsletters read like ads. Open rates sink below 25%, click-throughs drop even lower. 
                   Your audience tunes out — and you lose one of your best chances to stay top-of-mind.
                 </p>
-              </motion.div>
-              
-              <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-              >
-                <Button 
-                  variant="hero" 
-                  size="lg" 
-                  className="text-xl px-12 py-8 hover:shadow-glow transition-all duration-300 font-semibold"
-                  onClick={() => window.location.href = '/contact'}
-                >
-                  Get NewsDelivered
-                </Button>
               </motion.div>
             </div>
           </ScrollReveal>
