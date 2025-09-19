@@ -1,6 +1,7 @@
+import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import { ArrowRight, Users, Heart, Wrench } from "lucide-react";
+import { Users, Heart, Wrench, Mail } from "lucide-react";
 
 const EndToEndSolution = () => {
   const focusAreas = [
@@ -18,7 +19,7 @@ const EndToEndSolution = () => {
       </div>
 
       <div className="container mx-auto px-4 relative">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <ScrollReveal direction="up">
             <div className="text-center mb-20">
               <motion.h2 
@@ -41,118 +42,93 @@ const EndToEndSolution = () => {
             </div>
           </ScrollReveal>
 
-          {/* Timeline Flow */}
+          {/* Minimal Cards Layout */}
           <ScrollReveal direction="up">
-            <div className="relative">
-              {/* Timeline Line */}
-              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary/30 via-primary to-primary/30 -translate-y-1/2 z-0"></div>
+            <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
               
-              {/* Timeline Container */}
-              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center min-h-[400px]">
-                
-                {/* Left Section - You Focus */}
-                <motion.div 
-                  className="text-center lg:text-right"
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                >
-                  <div className="bg-white rounded-2xl p-8 shadow-elegant border border-primary/10 relative">
-                    <div className="absolute -right-4 top-1/2 w-8 h-8 bg-white border-4 border-primary rounded-full -translate-y-1/2 z-20"></div>
-                    
-                    <h4 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-                      You focus on <span className="text-primary">what you do best</span>
-                    </h4>
+              {/* Left Card - You Focus */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                whileHover={{ y: -5 }}
+                className="group"
+              >
+                <Card className="h-full shadow-elegant border-primary/20 bg-gradient-to-br from-background to-muted/30 hover:shadow-glow transition-all duration-500 group-hover:border-primary/40">
+                  <CardContent className="p-8 lg:p-12 text-center h-full flex flex-col justify-center">
+                    <div className="mb-8">
+                      <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary/10 to-primary/5 rounded-full mb-6 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
+                        <Heart className="w-10 h-10 text-primary" />
+                      </div>
+                      
+                      <h4 className="text-3xl md:text-4xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                        You focus on <br />
+                        <span className="text-primary">what you do best</span>
+                      </h4>
+                    </div>
                     
                     <div className="space-y-4">
                       {focusAreas.map((area, index) => (
                         <motion.div
                           key={area.name}
-                          className="flex items-center justify-center lg:justify-end gap-3 p-3 bg-primary/5 rounded-full border border-primary/10"
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
+                          className="flex items-center justify-center gap-3 p-4 bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl border border-primary/10 group-hover:from-primary/10 group-hover:to-primary/15 transition-all duration-300"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                          whileHover={{ scale: 1.05, x: -5 }}
+                          whileHover={{ scale: 1.02, x: 2 }}
                         >
-                          <area.icon className="w-5 h-5 text-primary" />
-                          <span className="font-medium text-foreground">{area.name}</span>
+                          <area.icon className="w-5 h-5 text-primary flex-shrink-0" />
+                          <span className="font-semibold text-foreground">{area.name}</span>
                         </motion.div>
                       ))}
                     </div>
-                  </div>
-                </motion.div>
+                  </CardContent>
+                </Card>
+              </motion.div>
 
-                {/* Center - Timeline Arrow */}
-                <motion.div 
-                  className="flex justify-center items-center"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                >
-                  <div className="relative">
-                    <motion.div 
-                      className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-glow"
-                      animate={{ rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                      <ArrowRight className="w-8 h-8 text-primary-foreground" />
-                    </motion.div>
+              {/* Right Card - We Handle */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                whileHover={{ y: -5 }}
+                className="group"
+              >
+                <Card className="h-full shadow-elegant border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-glow transition-all duration-500 group-hover:border-primary/50 group-hover:from-primary/10 group-hover:to-primary/15">
+                  <CardContent className="p-8 lg:p-12 text-center h-full flex flex-col justify-center relative overflow-hidden">
+                    {/* Subtle background pattern */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors duration-500"></div>
+                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/10 transition-colors duration-500"></div>
                     
-                    {/* Flowing particles */}
-                    <motion.div 
-                      className="absolute -top-2 -right-2 w-3 h-3 bg-primary/60 rounded-full"
-                      animate={{ 
-                        x: [0, 10, 0],
-                        y: [0, -5, 0],
-                        opacity: [0.4, 1, 0.4]
-                      }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    />
-                    <motion.div 
-                      className="absolute -bottom-2 -left-2 w-3 h-3 bg-primary/60 rounded-full"
-                      animate={{ 
-                        x: [0, 15, 0],
-                        y: [0, 5, 0],
-                        opacity: [0.4, 1, 0.4]
-                      }}
-                      transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
-                    />
-                  </div>
-                </motion.div>
-
-                {/* Right Section - We Handle */}
-                <motion.div 
-                  className="text-center lg:text-left"
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                >
-                  <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 shadow-elegant border border-primary/20 relative">
-                    <div className="absolute -left-4 top-1/2 w-8 h-8 bg-gradient-to-br from-primary to-primary/80 border-4 border-white rounded-full -translate-y-1/2 z-20"></div>
-                    
-                    <div className="flex justify-center lg:justify-start mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center">
-                        <Users className="w-8 h-8 text-primary-foreground" />
+                    <div className="relative z-10">
+                      <div className="mb-8">
+                        <motion.div 
+                          className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-full mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300"
+                          whileHover={{ rotate: 5 }}
+                        >
+                          <Mail className="w-10 h-10 text-primary-foreground" />
+                        </motion.div>
+                        
+                        <h4 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                          We'll Keep the <br />
+                          <span className="text-primary font-extrabold">NewsDelivered</span>
+                        </h4>
                       </div>
+                      
+                      <motion.div
+                        className="inline-flex items-center gap-3 px-6 py-4 bg-white/50 backdrop-blur-sm rounded-full border border-primary/20 shadow-sm group-hover:bg-white/70 group-hover:shadow-md transition-all duration-300"
+                        animate={{ 
+                          scale: [1, 1.02, 1],
+                        }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      >
+                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span className="font-semibold text-foreground text-lg">Complete newsletter management</span>
+                      </motion.div>
                     </div>
-                    
-                    <h4 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                      We'll Keep the <span className="text-primary">NewsDelivered</span>
-                    </h4>
-                    
-                    <motion.div
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary font-medium"
-                      animate={{ 
-                        scale: [1, 1.05, 1],
-                        opacity: [0.8, 1, 0.8]
-                      }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                      ✓ Complete newsletter management
-                    </motion.div>
-                  </div>
-                </motion.div>
-              </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </div>
           </ScrollReveal>
         </div>
