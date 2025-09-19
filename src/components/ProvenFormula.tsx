@@ -44,64 +44,27 @@ const ProvenFormula = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                An 80/20 content strategy that keeps readers engaged while building trust and driving results
+                Builds <span className="text-primary font-semibold">trust</span>, keeps readers <span className="text-primary font-semibold">engaged</span>, drives <span className="text-primary font-semibold">results</span>
               </motion.p>
             </div>
           </ScrollReveal>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <ScrollReveal direction="left">
-              <div className="space-y-8">
-                <motion.div 
-                  className="space-y-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <div className="p-6 bg-primary/10 rounded-lg border border-primary/20">
-                    <div className="flex items-center justify-between mb-2">
-                      <p className="text-lg font-semibold text-primary">Entertaining + Informative</p>
-                      <span className="text-3xl font-bold text-primary">80%</span>
-                    </div>
-                    <p className="text-muted-foreground">Industry insights, trends, lifestyle tips that your audience craves</p>
-                  </div>
+          <div className="flex justify-center mb-16">
+            <ScrollReveal direction="up">
+              <Card className="shadow-elegant hover:shadow-glow transition-all duration-500 max-w-2xl w-full">
+                <CardContent className="p-12">
+                  <h4 className="text-2xl font-semibold mb-12 text-center">Content Distribution</h4>
                   
-                  <div className="p-6 bg-secondary/10 rounded-lg border border-secondary/20">
-                    <div className="flex items-center justify-between mb-2">
-                      <p className="text-lg font-semibold text-secondary-foreground">Brand Promotion</p>
-                      <span className="text-3xl font-bold text-secondary-foreground">20%</span>
-                    </div>
-                    <p className="text-muted-foreground">Subtle, value-driven promotion that feels natural</p>
-                  </div>
-                </motion.div>
-                
-                <motion.div 
-                  className="p-6 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg border border-primary/10"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                >
-                  <p className="text-xl font-semibold mb-2">The Result?</p>
-                  <p className="text-lg font-medium text-primary">Newsletters your customers actually look forward to reading.</p>
-                </motion.div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right">
-              <Card className="shadow-elegant hover:shadow-glow transition-all duration-500">
-                <CardContent className="p-8">
-                  <h4 className="text-2xl font-semibold mb-8 text-center">Content Distribution</h4>
-                  
-                  <div className="h-80 w-full">
+                  <div className="h-96 w-full">
                     <ResponsiveContainer width="100%" height="100%">
                       <PieChart>
                         <Pie
                           data={data}
                           cx="50%"
                           cy="50%"
-                          innerRadius={60}
-                          outerRadius={120}
-                          paddingAngle={2}
+                          innerRadius={80}
+                          outerRadius={150}
+                          paddingAngle={3}
                           dataKey="value"
                         >
                           {data.map((entry, index) => (
@@ -111,9 +74,9 @@ const ProvenFormula = () => {
                         <Tooltip content={<CustomTooltip />} />
                         <Legend 
                           verticalAlign="bottom" 
-                          height={36}
+                          height={50}
                           formatter={(value, entry) => (
-                            <span className="text-sm font-medium" style={{ color: entry.color }}>
+                            <span className="text-base font-medium" style={{ color: entry.color }}>
                               {value}
                             </span>
                           )}
@@ -122,7 +85,7 @@ const ProvenFormula = () => {
                     </ResponsiveContainer>
                   </div>
                   
-                  <div className="mt-6 text-center">
+                  <div className="mt-8 text-center">
                     <p className="text-sm text-muted-foreground font-medium">
                       This proven ratio drives engagement and builds lasting relationships
                     </p>
@@ -131,6 +94,20 @@ const ProvenFormula = () => {
               </Card>
             </ScrollReveal>
           </div>
+
+          <ScrollReveal direction="up">
+            <div className="text-center">
+              <motion.div 
+                className="p-8 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl border border-primary/20 max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <p className="text-2xl font-bold mb-4 text-primary">The Result?</p>
+                <p className="text-xl font-medium text-foreground">Newsletters your customers actually look forward to reading.</p>
+              </motion.div>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
