@@ -26,7 +26,7 @@ const Hero = () => {
             >
               <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium">
                 <Sparkles className="w-4 h-4" />
-                Professional Content Marketing
+                Professional Newsletter Services
                 <Stars className="w-4 h-4" />
               </div>
             </motion.div>
@@ -43,7 +43,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
-                Content Marketing
+                Newsletters
               </motion.span>
               <motion.span 
                 className="text-foreground block mt-2"
@@ -51,7 +51,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                Professionally Done for You
+                Done For You
               </motion.span>
             </motion.h1>
             
@@ -61,7 +61,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
             >
-              Let our experts handle your content strategy while you focus on what you do best
+              Let our experts handle your newsletter strategy while you focus on what you do best
             </motion.p>
             
             <motion.div
