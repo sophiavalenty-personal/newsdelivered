@@ -8,18 +8,21 @@ const ContentStrategy = () => {
   const strategies = [
     {
       icon: Target,
-      title: "Entertain, Empower and Educate Your Audience",
-      description: "Create content that resonates and provides real value"
-    },
-    {
-      icon: TrendingUp,
-      title: "Build Brand Authority",
-      description: "Establish yourself as the trusted expert in your field"
+      title: "Entertain, Empower and Educate",
+      description: "Create content that resonates and provides real value",
+      highlighted: false
     },
     {
       icon: DollarSign,
       title: "Drive Sales and Revenue",
-      description: "Convert your audience into loyal customers"
+      description: "Convert your audience into loyal customers",
+      highlighted: true
+    },
+    {
+      icon: TrendingUp,
+      title: "Build Brand Authority",
+      description: "Establish yourself as the trusted expert in your field",
+      highlighted: false
     }
   ];
 
@@ -37,7 +40,7 @@ const ContentStrategy = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                Your Content Strategy Should
+                Your Newsletter Should
               </motion.h2>
             </div>
             
@@ -49,12 +52,12 @@ const ContentStrategy = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
-                  <Card className="h-full text-center shadow-elegant border-primary/10 bg-gradient-to-br from-background to-background/50 hover:shadow-glow transition-all duration-300">
+                  <Card className={`h-full text-center shadow-elegant border-primary/10 bg-gradient-to-br from-background to-background/50 hover:shadow-glow transition-all duration-300 ${strategy.highlighted ? 'ring-2 ring-primary/20 shadow-glow scale-105' : ''}`}>
                     <CardContent className="p-8">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <div className={`w-16 h-16 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto mb-6 ${strategy.highlighted ? 'from-primary to-primary/90 shadow-lg' : 'from-primary to-primary/80'}`}>
                         <strategy.icon className="w-8 h-8 text-primary-foreground" />
                       </div>
-                      <h3 className="text-xl font-bold mb-4 text-foreground leading-tight">
+                      <h3 className={`text-xl font-bold mb-4 leading-tight ${strategy.highlighted ? 'text-primary' : 'text-foreground'}`}>
                         {strategy.title}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
@@ -75,7 +78,7 @@ const ContentStrategy = () => {
               >
                 <CheckCircle className="w-6 h-6 text-primary" />
                 <p className="text-2xl font-semibold text-foreground">
-                  If it's not working for you, NewsDelivered can help.
+                  Need a newsletter that does all that?
                 </p>
               </motion.div>
               
@@ -92,7 +95,7 @@ const ContentStrategy = () => {
                   className="text-xl px-12 py-8 hover:shadow-glow transition-all duration-300 font-semibold"
                   onClick={() => window.location.href = '/contact'}
                 >
-                  → Get a Free Strategy Audit Now
+                  Get NewsDelivered
                 </Button>
               </motion.div>
             </div>
