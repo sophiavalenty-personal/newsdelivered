@@ -32,7 +32,7 @@ const Hero = () => {
             </motion.div>
 
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold leading-tight mb-8"
+              className="text-5xl md:text-7xl font-bold leading-tight mb-16"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -46,7 +46,7 @@ const Hero = () => {
                 Email Newsletters
               </motion.span>
               <motion.span 
-                className="text-foreground block mt-2"
+                className="text-foreground block mt-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -68,8 +68,8 @@ const Hero = () => {
               >
                 <Button 
                   variant="hero" 
-                  size="lg" 
-                  className="text-xl px-12 py-8 hover:shadow-glow transition-all duration-300 w-full font-semibold"
+                  size="default" 
+                  className="text-lg px-8 py-4 hover:shadow-glow transition-all duration-300 w-full font-semibold"
                   onClick={() => window.location.href = '/contact'}
                 >
                   → Need an expert?
