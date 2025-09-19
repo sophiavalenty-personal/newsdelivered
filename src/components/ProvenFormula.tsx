@@ -49,21 +49,36 @@ const ProvenFormula = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid lg:grid-cols-3 gap-8 items-center mb-16">
             <ScrollReveal direction="left">
+              <motion.div 
+                className="text-center lg:text-right space-y-4"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="inline-block lg:block">
+                  <span className="text-4xl lg:text-6xl font-bold text-primary block">80%</span>
+                  <h3 className="text-xl lg:text-2xl font-semibold text-primary mt-2">Entertaining + Informative</h3>
+                </div>
+                <p className="text-muted-foreground max-w-xs mx-auto lg:ml-auto lg:mr-0">
+                  Industry insights, trends, lifestyle tips that your audience craves
+                </p>
+              </motion.div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="up">
               <div className="flex justify-center">
-                <div className="w-full max-w-lg">
-                  <h4 className="text-2xl font-semibold mb-8 text-center">Content Distribution</h4>
-                  
-                  <div className="h-80 w-full">
+                <div className="w-full max-w-sm">
+                  <div className="h-64 w-full">
                     <ResponsiveContainer width="100%" height="100%">
                       <PieChart>
                         <Pie
                           data={data}
                           cx="50%"
                           cy="50%"
-                          innerRadius={60}
-                          outerRadius={120}
+                          innerRadius={50}
+                          outerRadius={100}
                           paddingAngle={3}
                           dataKey="value"
                         >
@@ -72,50 +87,31 @@ const ProvenFormula = () => {
                           ))}
                         </Pie>
                         <Tooltip content={<CustomTooltip />} />
-                        <Legend 
-                          verticalAlign="bottom" 
-                          height={50}
-                          formatter={(value, entry) => (
-                            <span className="text-base font-medium" style={{ color: entry.color }}>
-                              {value}
-                            </span>
-                          )}
-                        />
                       </PieChart>
                     </ResponsiveContainer>
                   </div>
+                  <p className="text-center text-sm text-muted-foreground mt-4 font-medium">
+                    The proven 80/20 content ratio
+                  </p>
                 </div>
               </div>
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="space-y-6">
-                <motion.div 
-                  className="p-6 bg-primary/10 rounded-lg border border-primary/20"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-semibold text-primary">Entertaining + Informative Content</h3>
-                    <span className="text-3xl font-bold text-primary">80%</span>
-                  </div>
-                  <p className="text-muted-foreground">Industry insights, trends, lifestyle tips that your audience craves</p>
-                </motion.div>
-                
-                <motion.div 
-                  className="p-6 bg-secondary/10 rounded-lg border border-secondary/20"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-semibold text-secondary-foreground">Brand Promotion</h3>
-                    <span className="text-3xl font-bold text-secondary-foreground">20%</span>
-                  </div>
-                  <p className="text-muted-foreground">Subtle, value-driven promotion that feels natural</p>
-                </motion.div>
-              </div>
+              <motion.div 
+                className="text-center lg:text-left space-y-4"
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <div className="inline-block lg:block">
+                  <span className="text-4xl lg:text-6xl font-bold text-secondary-foreground block">20%</span>
+                  <h3 className="text-xl lg:text-2xl font-semibold text-secondary-foreground mt-2">Brand Promotion</h3>
+                </div>
+                <p className="text-muted-foreground max-w-xs mx-auto lg:mr-auto lg:ml-0">
+                  Subtle, value-driven promotion that feels natural
+                </p>
+              </motion.div>
             </ScrollReveal>
           </div>
 
