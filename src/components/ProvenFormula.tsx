@@ -90,9 +90,6 @@ const ProvenFormula = () => {
                       </PieChart>
                     </ResponsiveContainer>
                   </div>
-                  <p className="text-center text-sm text-muted-foreground mt-4 font-medium">
-                    The proven 80/20 content ratio
-                  </p>
                 </div>
               </div>
             </ScrollReveal>
@@ -117,14 +114,20 @@ const ProvenFormula = () => {
 
           <ScrollReveal direction="up">
             <div className="text-center">
-              <motion.div 
-                className="p-8 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl border border-primary/20 max-w-2xl mx-auto"
+              <motion.p 
+                className="text-2xl md:text-3xl font-bold text-foreground relative inline-block"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <p className="text-2xl font-bold text-foreground">Engagement builds trust and drives results</p>
-              </motion.div>
+                Engagement builds trust and drives results
+                <motion.div 
+                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 1, delay: 0.8 }}
+                />
+              </motion.p>
             </div>
           </ScrollReveal>
         </div>
