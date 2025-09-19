@@ -44,26 +44,26 @@ const ProvenFormula = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Builds <span className="text-primary font-semibold">trust</span>, keeps readers <span className="text-primary font-semibold">engaged</span>, drives <span className="text-primary font-semibold">results</span>
+                Engagement that builds trust and drives results
               </motion.p>
             </div>
           </ScrollReveal>
 
-          <div className="flex justify-center mb-16">
-            <ScrollReveal direction="up">
-              <Card className="shadow-elegant hover:shadow-glow transition-all duration-500 max-w-2xl w-full">
-                <CardContent className="p-12">
-                  <h4 className="text-2xl font-semibold mb-12 text-center">Content Distribution</h4>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <ScrollReveal direction="left">
+              <div className="flex justify-center">
+                <div className="w-full max-w-lg">
+                  <h4 className="text-2xl font-semibold mb-8 text-center">Content Distribution</h4>
                   
-                  <div className="h-96 w-full">
+                  <div className="h-80 w-full">
                     <ResponsiveContainer width="100%" height="100%">
                       <PieChart>
                         <Pie
                           data={data}
                           cx="50%"
                           cy="50%"
-                          innerRadius={80}
-                          outerRadius={150}
+                          innerRadius={60}
+                          outerRadius={120}
                           paddingAngle={3}
                           dataKey="value"
                         >
@@ -84,14 +84,38 @@ const ProvenFormula = () => {
                       </PieChart>
                     </ResponsiveContainer>
                   </div>
-                  
-                  <div className="mt-8 text-center">
-                    <p className="text-sm text-muted-foreground font-medium">
-                      This proven ratio drives engagement and builds lasting relationships
-                    </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right">
+              <div className="space-y-6">
+                <motion.div 
+                  className="p-6 bg-primary/10 rounded-lg border border-primary/20"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-xl font-semibold text-primary">Entertaining + Informative Content</h3>
+                    <span className="text-3xl font-bold text-primary">80%</span>
                   </div>
-                </CardContent>
-              </Card>
+                  <p className="text-muted-foreground">Industry insights, trends, lifestyle tips that your audience craves</p>
+                </motion.div>
+                
+                <motion.div 
+                  className="p-6 bg-secondary/10 rounded-lg border border-secondary/20"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-xl font-semibold text-secondary-foreground">Brand Promotion</h3>
+                    <span className="text-3xl font-bold text-secondary-foreground">20%</span>
+                  </div>
+                  <p className="text-muted-foreground">Subtle, value-driven promotion that feels natural</p>
+                </motion.div>
+              </div>
             </ScrollReveal>
           </div>
 
