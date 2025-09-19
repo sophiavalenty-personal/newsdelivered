@@ -82,12 +82,31 @@ const ContentStrategy = () => {
                 </p>
               </motion.div>
               
+              {/* Reality Check Section */}
+              <motion.div 
+                className="mb-12 p-8 bg-destructive/5 border border-destructive/20 rounded-xl max-w-4xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.0 }}
+              >
+                <p className="text-xl md:text-2xl font-bold mb-4 text-destructive">
+                  But here's where most people are:
+                </p>
+                <p className="text-2xl md:text-3xl font-bold mb-4 text-destructive">
+                  80% of brand newsletters are ignored
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Most company newsletters read like ads. Open rates sink below 25%, click-throughs drop even lower. 
+                  Your audience tunes out — and you lose one of your best chances to stay top-of-mind.
+                </p>
+              </motion.div>
+              
               <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
               >
                 <Button 
                   variant="hero" 
