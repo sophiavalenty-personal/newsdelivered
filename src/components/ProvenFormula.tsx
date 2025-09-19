@@ -6,7 +6,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recha
 const ProvenFormula = () => {
   const data = [
     { name: 'Entertaining + Informative Content', value: 80, color: 'hsl(var(--primary))' },
-    { name: 'Brand Promotion', value: 20, color: 'hsl(var(--secondary))' }
+    { name: 'Brand Promotion', value: 20, color: 'hsl(142 76% 36%)' }
   ];
 
   const CustomTooltip = ({ active, payload }: any) => {
