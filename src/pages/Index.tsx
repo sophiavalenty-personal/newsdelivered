@@ -14,9 +14,9 @@ const Index = () => {
       <main>
         <Hero />
         <ContentStrategy />
+        <ProvenFormula />
         <EndToEndSolution />
         <WherePeopleGoWrong />
-        <ProvenFormula />
         <FinalCTA />
       </main>
       <Footer />
