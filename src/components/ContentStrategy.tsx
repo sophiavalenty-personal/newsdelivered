@@ -70,35 +70,49 @@ const ContentStrategy = () => {
             </div>
             
             <div className="text-center">
-              <motion.div
-                className="flex items-center justify-center gap-3 mb-8"
+              {/* Problem/Reality Check Section */}
+              <motion.div 
+                className="mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                <CheckCircle className="w-6 h-6 text-primary" />
-                <p className="text-2xl font-semibold text-foreground">
-                  Need a newsletter that does all that?
-                </p>
-              </motion.div>
-              
-              {/* Reality Check Section */}
-              <motion.div 
-                className="p-8 bg-destructive/5 border border-destructive/20 rounded-xl max-w-4xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-              >
-                <p className="text-xl md:text-2xl font-bold mb-4 text-destructive">
+                <p className="text-lg md:text-xl font-medium mb-6 text-muted-foreground">
                   But here's where most people are:
                 </p>
-                <p className="text-2xl md:text-3xl font-bold mb-4 text-destructive">
-                  80% of brand newsletters are ignored
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Most company newsletters read like ads. Open rates sink below 25%, click-throughs drop even lower. 
-                  Your audience tunes out — and you lose one of your best chances to stay top-of-mind.
-                </p>
+                
+                <div className="p-8 bg-gradient-to-br from-destructive/5 to-destructive/10 border border-destructive/20 rounded-2xl max-w-4xl mx-auto">
+                  <motion.p 
+                    className="text-4xl md:text-6xl font-bold mb-6 text-destructive"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 1.0 }}
+                  >
+                    80% of newsletters are ignored
+                  </motion.p>
+                  
+                  <motion.p 
+                    className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1.2 }}
+                  >
+                    Most company newsletters read like ads. Open rates sink below 25%, click-throughs drop even lower. 
+                    Your audience tunes out — and you lose one of your best chances to stay top-of-mind.
+                  </motion.p>
+                  
+                  {/* Transition to Solution */}
+                  <motion.div
+                    className="pt-6 border-t border-primary/20"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1.4 }}
+                  >
+                    <p className="text-xl md:text-2xl font-semibold text-primary">
+                      The Newsletter Strategy that ACTUALLY Works
+                    </p>
+                  </motion.div>
+                </div>
               </motion.div>
             </div>
           </ScrollReveal>
