@@ -55,20 +55,11 @@ const Hero = () => {
               </motion.span>
             </motion.h1>
             
-            <motion.p
-              className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-            >
-              Let our experts handle your newsletter strategy while you focus on what you do best
-            </motion.p>
-            
             <motion.div
               className="flex flex-col gap-4 mb-6 max-w-md mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
             >
               <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
