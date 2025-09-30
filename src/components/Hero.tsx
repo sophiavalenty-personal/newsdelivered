@@ -32,7 +32,7 @@ const Hero = () => {
             </motion.div>
 
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold leading-tight mb-16"
+              className="text-[3.5rem] font-normal leading-tight mb-16"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -46,7 +46,7 @@ const Hero = () => {
                 Irresistible Email Newsletters
               </motion.span>
               <motion.span 
-                className="text-foreground block mt-4 text-4xl md:text-5xl"
+                className="text-foreground block mt-4 font-bold"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
