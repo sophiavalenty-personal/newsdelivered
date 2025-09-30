@@ -8,7 +8,7 @@ const ContentStrategy = () => {
   const strategies = [
     {
       icon: Target,
-      title: "Entertain, Empower and Educate",
+      title: "Entertain, Inform, Empower",
       description: "Create content that resonates and provides real value",
       highlighted: false
     },

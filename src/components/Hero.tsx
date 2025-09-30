@@ -43,10 +43,10 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
-                Email Newsletters
+                Irresistible Email Newsletters
               </motion.span>
               <motion.span 
-                className="text-foreground block mt-4"
+                className="text-foreground block mt-4 text-4xl md:text-5xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}

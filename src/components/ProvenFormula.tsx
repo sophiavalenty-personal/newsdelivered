@@ -35,7 +35,7 @@ const ProvenFormula = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                The Proven NewsDelivered Formula
+                The Formula to Maximize Brand Engagement
               </motion.h2>
               
               <motion.p 
