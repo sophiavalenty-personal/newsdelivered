@@ -109,7 +109,7 @@ const ContentStrategy = () => {
                     transition={{ duration: 0.8, delay: 1.4 }}
                   >
                     <p className="text-xl md:text-2xl font-semibold text-primary">
-                      The Newsletter Strategy that ACTUALLY Works
+                      The Newsletter Strategy that Works
                     </p>
                   </motion.div>
                 </div>
