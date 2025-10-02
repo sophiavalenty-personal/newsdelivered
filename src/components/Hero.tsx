@@ -26,7 +26,7 @@ const Hero = () => {
             >
               <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium">
                 <Sparkles className="w-4 h-4" />
-                Professional Newsletter Services
+                Ai Assisted- Human Edited
                 <Stars className="w-4 h-4" />
               </div>
             </motion.div>
