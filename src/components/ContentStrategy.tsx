@@ -83,7 +83,7 @@ const ContentStrategy = () => {
                 
                 <div className="p-8 bg-gradient-to-br from-destructive/5 to-destructive/10 border border-destructive/20 rounded-2xl max-w-4xl mx-auto">
                   <motion.p 
-                    className="text-4xl md:text-6xl font-bold mb-6 text-destructive"
+                    className="text-[3.6rem] font-normal mb-6 text-destructive leading-tight"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 1.0 }}
