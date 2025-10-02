@@ -32,28 +32,22 @@ const Hero = () => {
             </motion.div>
 
             <motion.h1 
-              className="text-[3.5rem] font-normal leading-tight mb-16"
+              className="text-5xl font-normal leading-tight mb-4 bg-gradient-hero bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <motion.span 
-                className="bg-gradient-hero bg-clip-text text-transparent block"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.5 }}
-              >
-                Irresistible Newsletters
-              </motion.span>
-              <motion.span 
-                className="text-foreground block mt-4 font-normal"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-              >
-                Made-For-You
-              </motion.span>
+              Irresistible Newsletters
             </motion.h1>
+            
+            <motion.h2 
+              className="text-3xl font-bold text-foreground mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              Made-For-You
+            </motion.h2>
             
             <motion.div
               className="flex flex-col gap-4 mb-6 max-w-md mx-auto"
