@@ -43,7 +43,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
-                We Make Newsletters
+                Irresistible Newsletters
               </motion.span>
               <motion.span 
                 className="text-foreground block mt-4 font-bold"
@@ -51,7 +51,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                Irresistible
+                Made-For-You
               </motion.span>
             </motion.h1>
             
