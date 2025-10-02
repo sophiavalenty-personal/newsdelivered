@@ -66,7 +66,7 @@ const Hero = () => {
                   className="text-lg px-8 py-4 hover:shadow-glow transition-all duration-300 w-full font-semibold"
                   onClick={() => window.location.href = '/contact'}
                 >
-                  → Need an expert?
+                  → Expert Included
                 </Button>
               </motion.div>
             </motion.div>
