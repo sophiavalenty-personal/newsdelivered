@@ -32,7 +32,7 @@ const Hero = () => {
             </motion.div>
 
             <motion.h1 
-              className="text-5xl font-normal leading-tight mb-4 bg-gradient-hero bg-clip-text text-transparent"
+              className="text-[3.6rem] font-normal leading-tight mb-4 bg-gradient-hero bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -41,7 +41,7 @@ const Hero = () => {
             </motion.h1>
             
             <motion.h2 
-              className="text-3xl font-bold text-foreground mb-16"
+              className="text-4xl font-bold text-foreground mb-16"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
