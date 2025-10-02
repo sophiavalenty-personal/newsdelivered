@@ -46,7 +46,7 @@ const Hero = () => {
                 Irresistible Newsletters
               </motion.span>
               <motion.span 
-                className="text-foreground block mt-4 font-bold"
+                className="text-foreground block mt-4 font-normal"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
