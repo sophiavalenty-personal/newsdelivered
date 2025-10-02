@@ -37,7 +37,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Irresistible Newsletters
+              Killer Email Newsletters
             </motion.h1>
             
             <motion.h2 
@@ -46,7 +46,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              Made-For-You
+              Done For You
             </motion.h2>
             
             <motion.div
