@@ -37,7 +37,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Super Human Newsletters
+              Expert Newsletter Management
             </motion.h1>
             
             <motion.h2 
