@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <Link to="/" className="text-xl font-bold text-primary hover:text-primary/80 transition-colors">
-            NewsDelivered.com
+          <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
+            <img src={logo} alt="NewsDelivered.com" className="h-8" />
           </Link>
         </div>
         
