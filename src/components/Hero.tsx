@@ -46,7 +46,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              That Drives Revenue
+              That Drives Revenue Growth
             </motion.h2>
             
             <motion.div
