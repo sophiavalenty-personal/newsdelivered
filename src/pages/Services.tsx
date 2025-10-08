@@ -93,35 +93,35 @@ const Services = () => {
 
         {/* Industries Section */}
         <section className="container mx-auto px-4 mb-20">
-          <ScrollReveal>
-            <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-foreground">
                 Need an email strategy that boosts customer lifetime value?
               </h2>
               <p className="text-lg text-center mb-8 text-muted-foreground">
                 We've got you covered whether you're in
               </p>
-              
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                {industries.map((industry, index) => (
-                  <ScrollReveal key={index} delay={index * 0.1}>
-                    <Card className="text-center p-4 hover:shadow-lg transition-shadow">
-                      <CardContent className="p-2">
-                        <p className="font-medium text-foreground">{industry}</p>
-                      </CardContent>
-                    </Card>
-                  </ScrollReveal>
-                ))}
-              </div>
-
-              <p className="text-lg text-center mb-4 text-foreground">
-                Email should be a key sales driver, no matter your industry.
-              </p>
-              <p className="text-xl font-semibold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                News Delivered can help your marketing strategy go from zero to HERO.
-              </p>
+            </ScrollReveal>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+              {industries.map((industry, index) => (
+                <ScrollReveal key={index} delay={index * 0.1}>
+                  <Card className="text-center p-4 hover:shadow-lg transition-shadow">
+                    <CardContent className="p-2">
+                      <p className="font-medium text-foreground">{industry}</p>
+                    </CardContent>
+                  </Card>
+                </ScrollReveal>
+              ))}
             </div>
-          </ScrollReveal>
+
+            <p className="text-lg text-center mb-4 text-foreground">
+              Email should be a key sales driver, no matter your industry.
+            </p>
+            <p className="text-xl font-semibold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              News Delivered can help your marketing strategy go from zero to HERO.
+            </p>
+          </div>
         </section>
 
         {/* Engagement Section */}
