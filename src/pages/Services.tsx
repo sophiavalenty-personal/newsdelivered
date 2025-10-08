@@ -2,8 +2,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Search, Target, Wrench, BarChart, Code, Send, Shield, TrendingUp, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Search, Target, Wrench, BarChart, Code, Send, Shield, TrendingUp, ArrowRight, Quote, CheckCircle2 } from "lucide-react";
 import ScrollReveal from "@/components/ui/scroll-reveal";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const steps = [
@@ -66,6 +69,50 @@ const Services = () => {
     "And More"
   ];
 
+  const testimonials = [
+    {
+      quote: "Working with News Delivered transformed our email strategy. Our open rates increased by 180% and we're seeing consistent engagement from our audience.",
+      author: "Sarah Johnson",
+      company: "TechStart Inc.",
+      result: "+180% Open Rates"
+    },
+    {
+      quote: "Finally, an email partner that understands the balance between promotion and value. Our customers actually look forward to our emails now.",
+      author: "Michael Chen",
+      company: "Wellness Co.",
+      result: "+250% Click-Through Rate"
+    },
+    {
+      quote: "The ROI has been incredible. We've seen a 3x increase in revenue directly attributed to our improved email strategy.",
+      author: "Emily Rodriguez",
+      company: "E-commerce Brand",
+      result: "3x Revenue Growth"
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "How long until we see results?",
+      answer: "Most clients start seeing improved engagement within 2-3 weeks of launching their new strategy. Significant revenue impact typically becomes evident within 60-90 days as we optimize and refine your approach."
+    },
+    {
+      question: "What if we already have an email strategy?",
+      answer: "Perfect! We'll conduct a comprehensive audit of your current strategy and identify opportunities for improvement. We can either enhance what you have or help you transition to a more effective approach."
+    },
+    {
+      question: "What ESPs do you work with?",
+      answer: "We work with all major email service providers including Mailchimp, Klaviyo, SendGrid, ConvertKit, ActiveCampaign, and more. If you have a specific platform, we can work with it."
+    },
+    {
+      question: "How much time commitment is required from us?",
+      answer: "Minimal! That's the beauty of our done-for-you service. We typically need 1-2 hours per month for strategy alignment calls. We handle all the heavy lifting - content creation, design, sending, and reporting."
+    },
+    {
+      question: "Do you offer custom pricing?",
+      answer: "Yes! Every business has unique needs. We'll create a custom package based on your email list size, sending frequency, and specific requirements. Contact us for a personalized quote."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -73,9 +120,25 @@ const Services = () => {
         {/* Hero Section */}
         <section className="container mx-auto px-4 mb-20">
           <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent">
               End to End Newsletter Management
             </h1>
+          </ScrollReveal>
+          
+          <ScrollReveal delay={0.2}>
+            <p className="text-xl md:text-2xl text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
+              We're a whole extension of your marketing department, at a fraction of the cost, while we multiply your results.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.3}>
+            <div className="flex justify-center gap-4">
+              <Link to="/contact">
+                <Button size="lg" className="text-lg px-8">
+                  Schedule Free Audit
+                </Button>
+              </Link>
+            </div>
           </ScrollReveal>
 
           {/* Steps Process */}
@@ -154,53 +217,10 @@ const Services = () => {
               </ScrollReveal>
             ))}
           </div>
-
-          {/* Value Proposition */}
-          <ScrollReveal>
-            <div className="text-center max-w-3xl mx-auto mb-20">
-              <p className="text-xl md:text-2xl font-semibold mb-6 text-foreground">
-                We're a whole extension of your marketing department, at a fraction of the cost, while we multiply your results.
-              </p>
-            </div>
-          </ScrollReveal>
         </section>
 
-        {/* Industries Section */}
+        {/* Engagement Section - Moved Up */}
         <section className="container mx-auto px-4 mb-20">
-          <div className="max-w-4xl mx-auto">
-            <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-foreground">
-                Need an email strategy that boosts customer lifetime value?
-              </h2>
-              <p className="text-lg text-center mb-8 text-muted-foreground">
-                We've got you covered whether you're in
-              </p>
-            </ScrollReveal>
-            
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
-              {industries.map((industry, index) => (
-                <ScrollReveal key={index} delay={index * 0.05}>
-                  <Badge 
-                    variant="outline" 
-                    className="px-6 py-2 text-base font-medium border-primary/30 text-foreground"
-                  >
-                    {industry}
-                  </Badge>
-                </ScrollReveal>
-              ))}
-            </div>
-
-            <p className="text-lg text-center mb-4 text-foreground">
-              Email should be a key sales driver, no matter your industry.
-            </p>
-            <p className="text-xl font-semibold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              News Delivered can help your marketing strategy go from zero to HERO.
-            </p>
-          </div>
-        </section>
-
-        {/* Engagement Section */}
-        <section className="container mx-auto px-4">
           <ScrollReveal>
             <div className="max-w-4xl mx-auto bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 md:p-12 border border-primary/20">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-foreground">
@@ -213,6 +233,161 @@ const Services = () => {
                 <p className="font-medium text-foreground">
                   News Delivered will deliver emails your customers and readers get excited to read and interact with and keep you top of mind and end of wallet... ;)
                 </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </section>
+
+        {/* Industries Section - Streamlined */}
+        <section className="container mx-auto px-4 mb-20">
+          <div className="max-w-4xl mx-auto text-center">
+            <ScrollReveal>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
+                We Work With Businesses Across Industries
+              </h2>
+              <p className="text-lg mb-6 text-muted-foreground">
+                Email should be a key sales driver, no matter your industry
+              </p>
+            </ScrollReveal>
+            
+            <div className="flex flex-wrap justify-center gap-3">
+              {industries.map((industry, index) => (
+                <ScrollReveal key={index} delay={index * 0.05}>
+                  <Badge 
+                    variant="outline" 
+                    className="px-6 py-2 text-base font-medium border-primary/30 text-foreground"
+                  >
+                    {industry}
+                  </Badge>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Social Proof Section */}
+        <section className="container mx-auto px-4 mb-20">
+          <div className="max-w-6xl mx-auto">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <Badge className="mb-4">Proven Results</Badge>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                  Don't Just Take Our Word For It
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  See what our clients have achieved with their newsletter strategy
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {testimonials.map((testimonial, index) => (
+                <ScrollReveal key={index} delay={index * 0.15}>
+                  <Card className="h-full border-primary/20 hover:border-primary/40 transition-all">
+                    <CardContent className="p-6">
+                      <Quote className="w-8 h-8 text-primary/40 mb-4" />
+                      <p className="text-muted-foreground mb-6 italic">
+                        "{testimonial.quote}"
+                      </p>
+                      <div className="border-t border-border pt-4">
+                        <p className="font-semibold text-foreground">{testimonial.author}</p>
+                        <p className="text-sm text-muted-foreground mb-3">{testimonial.company}</p>
+                        <Badge variant="secondary" className="bg-primary/10 text-primary">
+                          {testimonial.result}
+                        </Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </ScrollReveal>
+              ))}
+            </div>
+
+            {/* Trust Signals */}
+            <ScrollReveal delay={0.4}>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 p-8 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl border border-primary/10">
+                <div className="text-center">
+                  <p className="text-3xl md:text-4xl font-bold text-primary mb-2">5+</p>
+                  <p className="text-sm text-muted-foreground">Years in Business</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-3xl md:text-4xl font-bold text-primary mb-2">100+</p>
+                  <p className="text-sm text-muted-foreground">Newsletters Managed</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-3xl md:text-4xl font-bold text-primary mb-2">5M+</p>
+                  <p className="text-sm text-muted-foreground">Subscribers Reached</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-3xl md:text-4xl font-bold text-primary mb-2">98%</p>
+                  <p className="text-sm text-muted-foreground">Client Satisfaction</p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="container mx-auto px-4 mb-20">
+          <div className="max-w-3xl mx-auto">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                  Frequently Asked Questions
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Everything you need to know about our services
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`item-${index}`}>
+                    <AccordionTrigger className="text-left text-lg font-semibold">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-primary via-primary-glow to-secondary rounded-2xl p-8 md:p-12 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Transform Your Email Strategy?
+              </h2>
+              <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+                Let's discuss how we can help you build a newsletter your audience loves and drive real business results.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/contact">
+                  <Button size="lg" variant="secondary" className="text-lg px-8">
+                    Schedule Your Free Audit
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button size="lg" variant="outline" className="text-lg px-8 bg-white/10 text-white border-white/30 hover:bg-white/20">
+                    Talk to an Expert
+                  </Button>
+                </Link>
+              </div>
+              <div className="mt-8 flex items-center justify-center gap-6 text-white/80 text-sm">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5" />
+                  <span>No commitment required</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5" />
+                  <span>Custom pricing</span>
+                </div>
               </div>
             </div>
           </ScrollReveal>
