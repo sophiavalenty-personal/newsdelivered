@@ -5,36 +5,90 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const FinalCTA = () => {
   return (
-    <section className="py-20 bg-muted/30 relative">
-      {/* Geometric separator from previous section */}
-      <div className="absolute top-0 left-0 right-0 h-16 bg-white transform -skew-y-1 origin-top-left"></div>
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-gradient-to-br from-primary/5 via-primary/10 to-primary/5 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative">
         <ScrollReveal>
-          <Card className="max-w-4xl mx-auto shadow-elegant hover:shadow-glow transition-all duration-500">
-            <CardContent className="text-center p-12">
+          <Card className="max-w-4xl mx-auto shadow-2xl border-primary/20 overflow-hidden">
+            <CardContent className="text-center p-12 md:p-16 bg-gradient-to-br from-background to-background/95">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                  Want NewsDelivered Today?
-                </h2>
-                
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="inline-block mb-6"
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                  }}
+                  transition={{ 
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
                 >
-                  <Button 
-                    variant="hero" 
-                    size="lg" 
-                    className="text-xl px-12 py-6 hover:shadow-glow transition-all duration-300"
-                    onClick={() => window.location.href = '/contact'}
-                  >
-                    → Talk with an expert now
-                  </Button>
+                  <span className="text-5xl">📧</span>
                 </motion.div>
+
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
+                  Ready to Transform Your <span className="bg-gradient-hero bg-clip-text text-transparent">Newsletter Strategy?</span>
+                </h2>
+
+                <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+                  Join the hundreds of businesses getting newsletters their customers actually read. 
+                  <span className="font-semibold text-foreground"> Let's turn your emails into revenue.</span>
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button 
+                      variant="hero" 
+                      size="lg" 
+                      className="text-xl px-12 py-6 hover:shadow-glow transition-all duration-300 font-semibold"
+                      onClick={() => window.location.href = '/contact'}
+                    >
+                      → Get Your Free Audit
+                    </Button>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button 
+                      variant="hero-outline" 
+                      size="lg" 
+                      className="text-xl px-12 py-6 transition-all duration-300 font-semibold"
+                      onClick={() => window.location.href = '/contact'}
+                    >
+                      Talk to an Expert
+                    </Button>
+                  </motion.div>
+                </div>
+
+                <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+                  <span className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Free strategy session
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    No commitment required
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Results in 90 days or less
+                  </span>
+                </div>
               </motion.div>
             </CardContent>
           </Card>

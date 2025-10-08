@@ -1,98 +1,107 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Search, Target, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
+import { Search, Lightbulb, Send, ArrowRight } from "lucide-react";
 
 const HowItWorks = () => {
   const steps = [
     {
-      icon: <Search className="w-8 h-8 text-primary" />,
+      icon: Search,
       number: "01",
-      title: "Free Audit",
-      description: "We review your current newsletter, highlight quick wins."
+      title: "Content Discovery",
+      description: "We research trending topics and curate relevant content that resonates with your audience"
     },
     {
-      icon: <Target className="w-8 h-8 text-primary" />,
-      number: "02", 
-      title: "Engagement Plan",
-      description: "Select high engaging subjects in your niche"
+      icon: Lightbulb,
+      number: "02",
+      title: "Strategic Creation",
+      description: "Our team crafts engaging newsletters using the proven 80/20 formula for maximum impact"
     },
     {
-      icon: <Rocket className="w-8 h-8 text-primary" />,
+      icon: Send,
       number: "03",
-      title: "Start Publishing", 
-      description: "Optimize engagement for what you need it for."
+      title: "Delivery & Optimization",
+      description: "We handle publishing, track performance, and continuously optimize for better results"
     }
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal>
+    <section className="py-24 bg-gradient-to-b from-muted/30 to-white relative">
+      {/* Geometric separator from previous section */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-white transform -skew-y-1 origin-top-left"></div>
+      
+      <div className="container mx-auto px-4 relative">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal direction="up">
             <div className="text-center mb-16">
-              <Badge variant="secondary" className="mb-4">Process</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Three steps to an 
-                <span className="bg-gradient-hero bg-clip-text text-transparent"> engaging newsletter.</span>
-              </h2>
+              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
+                Simple Process
+              </Badge>
+              <motion.h2 
+                className="text-3xl md:text-4xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                How It Works
+              </motion.h2>
+              <motion.p 
+                className="text-lg text-muted-foreground max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                From strategy to execution, we handle everything so you can focus on your business
+              </motion.p>
             </div>
           </ScrollReveal>
-          
+
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {steps.map((step, index) => (
-              <ScrollReveal key={index} delay={index * 0.2}>
+              <ScrollReveal key={index} direction="up" delay={index * 0.2}>
                 <motion.div
-                  whileHover={{ y: -10, scale: 1.02 }}
+                  whileHover={{ y: -8 }}
                   transition={{ duration: 0.3 }}
+                  className="relative"
                 >
-                  <Card className="relative overflow-hidden hover:shadow-elegant transition-all duration-300 group">
-                    <CardContent className="p-8 text-center">
-                      <motion.div 
-                        className="absolute top-4 right-4 text-6xl font-bold text-muted/20 group-hover:text-primary/30 transition-colors duration-300"
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
-                        viewport={{ once: true }}
-                      >
+                  <Card className="h-full shadow-elegant hover:shadow-glow transition-all duration-500 border-primary/20 bg-gradient-to-br from-background to-background/50 overflow-hidden group">
+                    {/* Step number badge */}
+                    <div className="absolute top-6 right-6">
+                      <Badge className="bg-primary/10 text-primary font-bold text-lg px-3 py-1 border-primary/20">
                         {step.number}
-                      </motion.div>
-                      <motion.div 
-                        className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300"
-                        initial={{ scale: 0, rotate: -180 }}
-                        whileInView={{ scale: 1, rotate: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.2 }}
-                        viewport={{ once: true }}
-                      >
-                        {step.icon}
-                      </motion.div>
-                      <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
+                      </Badge>
+                    </div>
+
+                    <CardContent className="p-8 pt-20">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <step.icon className="w-8 h-8 text-primary-foreground" />
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold mb-4 text-foreground">
+                        {step.title}
+                      </h3>
+                      
                       <p className="text-muted-foreground leading-relaxed">
                         {step.description}
                       </p>
+
+                      {index < steps.length - 1 && (
+                        <div className="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 z-10">
+                          <ArrowRight className="w-8 h-8 text-primary/30" />
+                        </div>
+                      )}
                     </CardContent>
                   </Card>
                 </motion.div>
               </ScrollReveal>
             ))}
           </div>
-          
-          <ScrollReveal delay={0.8}>
-            <div className="text-center">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button variant="hero" size="lg" className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300">
-                  Request Your Free Audit
-                </Button>
-              </motion.div>
-            </div>
-          </ScrollReveal>
         </div>
       </div>
+
+      {/* Geometric separator to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-white transform skew-y-1 origin-bottom-left"></div>
     </section>
   );
 };

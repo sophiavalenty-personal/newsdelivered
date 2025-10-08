@@ -26,16 +26,25 @@ const Hero = () => {
             </motion.h1>
             
             <motion.h2 
-              className="text-4xl font-bold text-foreground mb-16"
+              className="text-4xl font-bold text-foreground mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               That Drives Revenue Growth
             </motion.h2>
+
+            <motion.p 
+              className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              Stop wasting time on newsletters nobody reads. We create engaging email campaigns that your audience actually looks forward to — turning subscribers into customers.
+            </motion.p>
             
             <motion.div
-              className="flex flex-col gap-4 mb-6 max-w-md mx-auto"
+              className="flex flex-col sm:flex-row gap-4 mb-8 max-w-2xl mx-auto justify-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
@@ -43,18 +52,40 @@ const Hero = () => {
               <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full"
               >
                 <Button 
                   variant="hero" 
-                  size="default" 
-                  className="text-lg px-8 py-4 hover:shadow-glow transition-all duration-300 w-full font-semibold"
+                  size="lg" 
+                  className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300 font-semibold"
                   onClick={() => window.location.href = '/contact'}
                 >
-                  → Show Me the Money
+                  → Get Your Free Audit
+                </Button>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button 
+                  variant="hero-outline" 
+                  size="lg" 
+                  className="text-lg px-8 py-6 transition-all duration-300 font-semibold"
+                  onClick={() => window.location.href = '/services'}
+                >
+                  See How It Works
                 </Button>
               </motion.div>
             </motion.div>
+
+            <motion.p 
+              className="text-sm text-muted-foreground"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1 }}
+            >
+              ✓ No long-term contracts  ✓ 47% average open rate  ✓ Results in 90 days
+            </motion.p>
           </ScrollReveal>
         </div>
       </div>
