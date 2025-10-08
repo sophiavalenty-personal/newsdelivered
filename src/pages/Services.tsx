@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Search, Target, Wrench, BarChart, Code, Send, Shield, TrendingUp, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 
@@ -176,14 +177,15 @@ const Services = () => {
               </p>
             </ScrollReveal>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
               {industries.map((industry, index) => (
-                <ScrollReveal key={index} delay={index * 0.1}>
-                  <Card className="text-center p-4 hover:shadow-lg transition-shadow">
-                    <CardContent className="p-2">
-                      <p className="font-medium text-foreground">{industry}</p>
-                    </CardContent>
-                  </Card>
+                <ScrollReveal key={index} delay={index * 0.05}>
+                  <Badge 
+                    variant="outline" 
+                    className="px-6 py-2 text-base font-medium border-primary/30 text-foreground"
+                  >
+                    {industry}
+                  </Badge>
                 </ScrollReveal>
               ))}
             </div>
