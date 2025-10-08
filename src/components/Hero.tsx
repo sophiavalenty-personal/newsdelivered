@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import { Stars, Sparkles } from "lucide-react";
 
 const Hero = () => {
 
@@ -17,21 +16,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative">
         <div className="max-w-5xl mx-auto text-center">
           <ScrollReveal direction="up">
-            {/* Decorative element */}
-            <motion.div
-              className="flex justify-center mb-6"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium">
-                <Sparkles className="w-4 h-4" />
-                Ai Assisted- Human Edited
-                <Stars className="w-4 h-4" />
-              </div>
-            </motion.div>
-
-            <motion.h1 
+            <motion.h1
               className="text-[3.6rem] font-normal leading-tight mb-4 bg-gradient-hero bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
