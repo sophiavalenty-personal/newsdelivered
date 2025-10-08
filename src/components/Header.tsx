@@ -13,9 +13,9 @@ const Header = () => {
         </div>
         
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#services" className="text-foreground hover:text-primary transition-colors">
+          <Link to="/services" className="text-foreground hover:text-primary transition-colors">
             Services
-          </a>
+          </Link>
           <a href="#tools" className="text-foreground hover:text-primary transition-colors">
             Tools
           </a>
