@@ -55,7 +55,14 @@ export const channelSources: Record<string, ChannelData> = {
     id: "survival-tactical",
     title: "Survival & Tactical",
     description: "Practical survival skills, tactical knowledge, and preparedness strategies",
-    sources: []
+    sources: [
+      {
+        id: "modernsurvival",
+        name: "Modern Survival",
+        url: "https://modernsurvival.org/feed",
+        description: "Practical survival and preparedness tips"
+      }
+    ]
   },
   "money-finance": {
     id: "money-finance",
