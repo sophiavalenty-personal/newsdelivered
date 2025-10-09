@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import { Newspaper, Heart, Shield, DollarSign, Lightbulb, TrendingUp } from "lucide-react";
+import { Newspaper, Heart, Shield, DollarSign, Lightbulb, TrendingUp, Star, Plane, UtensilsCrossed } from "lucide-react";
 
 const Channels = () => {
   const channels = [
@@ -49,6 +49,27 @@ const Channels = () => {
       icon: TrendingUp,
       color: "from-purple-200 to-purple-300",
       iconColor: "text-purple-700"
+    },
+    {
+      title: "Product Reviews",
+      description: "In-depth reviews and comparisons to help make informed purchasing decisions",
+      icon: Star,
+      color: "from-yellow-200 to-yellow-300",
+      iconColor: "text-yellow-700"
+    },
+    {
+      title: "Travel & Lifestyle",
+      description: "Discover destinations, travel tips, and lifestyle inspiration for your next adventure",
+      icon: Plane,
+      color: "from-cyan-200 to-cyan-300",
+      iconColor: "text-cyan-700"
+    },
+    {
+      title: "Food & Drink",
+      description: "Recipes, restaurant reviews, culinary trends, and food culture",
+      icon: UtensilsCrossed,
+      color: "from-orange-200 to-orange-300",
+      iconColor: "text-orange-700"
     }
   ];
 
