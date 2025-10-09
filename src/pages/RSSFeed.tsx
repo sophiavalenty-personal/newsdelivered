@@ -148,11 +148,11 @@ const RSSFeed = () => {
                       >
                         <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-subtle hover:shadow-elegant transition-all duration-300 overflow-hidden">
                           {item.image && (
-                            <div className="w-full h-64 overflow-hidden">
+                            <div className="flex justify-center p-4">
                               <img 
                                 src={item.image} 
                                 alt={item.title}
-                                className="w-full h-full object-cover"
+                                className="w-[180px] h-auto object-contain"
                               />
                             </div>
                           )}
