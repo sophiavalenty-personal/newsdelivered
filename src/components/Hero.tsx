@@ -22,7 +22,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Expert Newsletter Management
+              Email Marketing Experts
             </motion.h1>
             
             <motion.h2 
@@ -31,7 +31,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              That Drives Revenue Growth
+              Driving Revenue Growth
             </motion.h2>
 
             <motion.p 
@@ -40,7 +40,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Stop wasting time on newsletters nobody reads. We create engaging email campaigns that your audience actually looks forward to — turning subscribers into customers.
+              Email drives results, but only if you know what to deliver and how. NewsDelivered has the key.
             </motion.p>
             
             <motion.div
