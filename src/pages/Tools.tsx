@@ -96,7 +96,7 @@ const Tools = () => {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="text-xl text-muted-foreground max-w-2xl mx-auto"
                   >
-                    Complete suite of professional tools that allow you to easily create, send, optimize and measure your email campaigns.
+                    Complete suite of professional tools that allow you to easily create, send, measure and improve your email campaigns - making it easier to grow and increase revenue
                   </motion.p>
                 </div>
               </ScrollReveal>
