@@ -31,7 +31,7 @@ const Tools = () => {
     },
     {
       title: "Delivery Report Analytics",
-      description: "Comprehensive analytics and reporting to track your email performance",
+      description: "Comprehensive, easy-to-use reporting and analytics to track and improve your email performance",
       icon: BarChart3,
       color: "from-cyan-200 to-cyan-300",
       iconColor: "text-cyan-700"
