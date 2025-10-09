@@ -11,58 +11,42 @@ const Tools = () => {
     {
       title: "Email Content Creation",
       description: "Professional content creation tools to craft compelling emails that engage and convert",
-      icon: PenTool,
-      color: "from-blue-200 to-blue-300",
-      iconColor: "text-foreground"
+      icon: PenTool
     },
     {
       title: "Send Your Email - Earnware",
       description: "Powerful email sending platform with advanced delivery optimization",
-      icon: Mail,
-      color: "from-purple-200 to-purple-300",
-      iconColor: "text-foreground"
+      icon: Mail
     },
     {
       title: "Email Delivery",
       description: "Ensure your emails reach the inbox with our reliable delivery infrastructure",
-      icon: Truck,
-      color: "from-emerald-200 to-emerald-300",
-      iconColor: "text-foreground"
+      icon: Truck
     },
     {
       title: "Delivery Report Analytics",
       description: "Comprehensive, easy-to-use reporting and analytics to track and improve your email performance",
-      icon: BarChart3,
-      color: "from-cyan-200 to-cyan-300",
-      iconColor: "text-foreground"
+      icon: BarChart3
     },
     {
       title: "SPF Checker",
       description: "Verify your SPF records to improve email deliverability and authentication",
-      icon: Search,
-      color: "from-amber-200 to-amber-300",
-      iconColor: "text-foreground"
+      icon: Search
     },
     {
       title: "Email Authentication",
       description: "Secure your emails with DKIM, SPF, and DMARC authentication protocols",
-      icon: ShieldCheck,
-      color: "from-slate-200 to-slate-300",
-      iconColor: "text-foreground"
+      icon: ShieldCheck
     },
     {
       title: "Automatic List Hygiene",
       description: "Keep your email lists clean, current and engaged with automated list maintenance",
-      icon: Sparkles,
-      color: "from-pink-200 to-pink-300",
-      iconColor: "text-foreground"
+      icon: Sparkles
     },
     {
       title: "Custom Template Builder",
       description: "Design beautiful, responsive email templates with our drag-and-drop builder",
-      icon: Layout,
-      color: "from-orange-200 to-orange-300",
-      iconColor: "text-foreground"
+      icon: Layout
     }
   ];
 
@@ -117,13 +101,13 @@ const Tools = () => {
                       >
                         <Card className="group h-full bg-white/80 backdrop-blur-sm border-0 shadow-subtle hover:shadow-elegant transition-all duration-500 overflow-hidden">
                           <CardHeader className="text-center pb-4">
-                            <motion.div
-                              whileHover={{ scale: 1.1, rotate: 5 }}
-                              transition={{ duration: 0.4 }}
-                              className={`w-16 h-16 bg-gradient-to-br ${tool.color} rounded-xl flex items-center justify-center mx-auto mb-4 shadow-subtle group-hover:shadow-md transition-shadow duration-300`}
-                            >
-                              <IconComponent className={`w-8 h-8 ${tool.iconColor}`} />
-                            </motion.div>
+                          <motion.div
+                            whileHover={{ scale: 1.1, rotate: 5 }}
+                            transition={{ duration: 0.4 }}
+                            className="w-16 h-16 bg-muted rounded-xl flex items-center justify-center mx-auto mb-4 shadow-subtle group-hover:shadow-md transition-shadow duration-300"
+                          >
+                            <IconComponent className="w-8 h-8 text-foreground" />
+                          </motion.div>
                             <CardTitle className="text-xl font-semibold text-foreground">
                               {tool.title}
                             </CardTitle>
