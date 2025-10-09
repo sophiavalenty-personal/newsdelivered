@@ -13,56 +13,56 @@ const Tools = () => {
       description: "Professional content creation tools to craft compelling emails that engage and convert",
       icon: PenTool,
       color: "from-blue-200 to-blue-300",
-      iconColor: "text-blue-700"
+      iconColor: "text-foreground"
     },
     {
       title: "Send Your Email - Earnware",
       description: "Powerful email sending platform with advanced delivery optimization",
       icon: Mail,
       color: "from-purple-200 to-purple-300",
-      iconColor: "text-purple-700"
+      iconColor: "text-foreground"
     },
     {
       title: "Email Delivery",
       description: "Ensure your emails reach the inbox with our reliable delivery infrastructure",
       icon: Truck,
       color: "from-emerald-200 to-emerald-300",
-      iconColor: "text-emerald-700"
+      iconColor: "text-foreground"
     },
     {
       title: "Delivery Report Analytics",
       description: "Comprehensive, easy-to-use reporting and analytics to track and improve your email performance",
       icon: BarChart3,
       color: "from-cyan-200 to-cyan-300",
-      iconColor: "text-cyan-700"
+      iconColor: "text-foreground"
     },
     {
       title: "SPF Checker",
       description: "Verify your SPF records to improve email deliverability and authentication",
       icon: Search,
       color: "from-amber-200 to-amber-300",
-      iconColor: "text-amber-700"
+      iconColor: "text-foreground"
     },
     {
       title: "Email Authentication",
       description: "Secure your emails with DKIM, SPF, and DMARC authentication protocols",
       icon: ShieldCheck,
       color: "from-slate-200 to-slate-300",
-      iconColor: "text-slate-700"
+      iconColor: "text-foreground"
     },
     {
       title: "Automatic List Hygiene",
       description: "Keep your email lists clean, current and engaged with automated list maintenance",
       icon: Sparkles,
       color: "from-pink-200 to-pink-300",
-      iconColor: "text-pink-700"
+      iconColor: "text-foreground"
     },
     {
       title: "Custom Template Builder",
       description: "Design beautiful, responsive email templates with our drag-and-drop builder",
       icon: Layout,
       color: "from-orange-200 to-orange-300",
-      iconColor: "text-orange-700"
+      iconColor: "text-foreground"
     }
   ];
 
