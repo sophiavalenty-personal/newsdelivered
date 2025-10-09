@@ -31,7 +31,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              NewsDelivered boosts revenue for businesses by arming them with weapons-grade email channels.
+              We Turn Your Email Newsletters Into Profit Engines
             </motion.p>
             
             <motion.div
