@@ -35,7 +35,7 @@ const Tools = () => {
     },
     {
       title: "Email Authentication",
-      description: "Secure your emails with DKIM, SPF, and DMARC authentication protocols",
+      description: "Greatly increase deliverability by securing your emails with DKIM, SPF, and DMARC authentication protocols",
       icon: ShieldCheck
     },
     {
