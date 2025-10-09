@@ -165,14 +165,11 @@ const ChannelSources = () => {
                                             {item.title}
                                           </h3>
                                           {item.pubDate && (
-                                            <div className="flex items-center text-xs text-muted-foreground mb-2">
+                                            <div className="flex items-center text-xs text-muted-foreground">
                                               <Calendar className="w-3 h-3 mr-1" />
                                               {new Date(item.pubDate).toLocaleDateString()}
                                             </div>
                                           )}
-                                          <p className="text-sm text-muted-foreground line-clamp-2">
-                                            {item.description?.replace(/<[^>]*>/g, '')}
-                                          </p>
                                         </div>
                                       </div>
                                     </CardContent>
