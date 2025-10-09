@@ -31,7 +31,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              We Turn Your Email Newsletters Into Profit Engines
+              Turning Newsletters Into Profit Engines
             </motion.p>
             
             <motion.div
