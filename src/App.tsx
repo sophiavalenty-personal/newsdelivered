@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 import Channels from "./pages/Channels";
+import ChannelSources from "./pages/ChannelSources";
+import RSSFeed from "./pages/RSSFeed";
 import Tools from "./pages/Tools";
 import NotFound from "./pages/NotFound";
 
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
           <Route path="/channels" element={<Channels />} />
+          <Route path="/channels/:channelId" element={<ChannelSources />} />
+          <Route path="/channels/:channelId/sources/:sourceId" element={<RSSFeed />} />
           <Route path="/tools" element={<Tools />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

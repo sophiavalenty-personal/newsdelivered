@@ -5,50 +5,62 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Newspaper, Heart, Shield, DollarSign, Lightbulb, TrendingUp, Star, Plane, UtensilsCrossed } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Channels = () => {
+  const navigate = useNavigate();
+  
   const channels = [
     {
+      id: "daily-news",
       title: "Daily News",
       description: "Stay informed with curated daily news and current events from reliable sources",
       icon: Newspaper,
     },
     {
+      id: "health-wellness",
       title: "Health & Wellness",
       description: "Expert tips on fitness, nutrition, mental health, and living your best life",
       icon: Heart,
     },
     {
+      id: "survival-tactical",
       title: "Survival & Tactical",
       description: "Practical survival skills, tactical knowledge, and preparedness strategies",
       icon: Shield,
     },
     {
+      id: "money-finance",
       title: "Money & Finance",
       description: "Smart money management, investment insights, and financial success strategies",
       icon: DollarSign,
     },
     {
+      id: "interesting-trivia",
       title: "Interesting Trivia",
       description: "Fascinating facts, brain teasers, and surprising discoveries to expand your mind",
       icon: Lightbulb,
     },
     {
+      id: "opportunities",
       title: "Opportunities",
       description: "Exclusive deals, business opportunities, and ways to grow your income",
       icon: TrendingUp,
     },
     {
+      id: "product-reviews",
       title: "Product Reviews",
       description: "In-depth reviews and comparisons to help make informed purchasing decisions",
       icon: Star,
     },
     {
+      id: "travel-lifestyle",
       title: "Travel & Lifestyle",
       description: "Discover destinations, travel tips, and lifestyle inspiration for your next adventure",
       icon: Plane,
     },
     {
+      id: "food-drink",
       title: "Food & Drink",
       description: "Recipes, restaurant reviews, culinary trends, and food culture",
       icon: UtensilsCrossed,
@@ -104,7 +116,10 @@ const Channels = () => {
                         whileHover={{ y: -8, scale: 1.02 }}
                         transition={{ duration: 0.4, ease: "easeOut" }}
                       >
-                        <Card className="group h-full bg-white/80 backdrop-blur-sm border-0 shadow-subtle hover:shadow-elegant transition-all duration-500 overflow-hidden">
+                        <Card 
+                          className="group h-full bg-white/80 backdrop-blur-sm border-0 shadow-subtle hover:shadow-elegant transition-all duration-500 overflow-hidden cursor-pointer"
+                          onClick={() => navigate(`/channels/${channel.id}`)}
+                        >
                           <CardHeader className="text-center pb-4">
                             <motion.div
                               whileHover={{ scale: 1.1, rotate: 5 }}
