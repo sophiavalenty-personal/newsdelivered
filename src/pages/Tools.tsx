@@ -30,7 +30,7 @@ const Tools = () => {
     },
     {
       title: "SPF Checker",
-      description: "Verify your SPF records to improve email deliverability and authentication",
+      description: "Ensure your emails land in the inbox with our fast, reliable SPF validation tool",
       icon: Search
     },
     {
