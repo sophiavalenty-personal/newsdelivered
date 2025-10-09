@@ -17,8 +17,8 @@ const Index = () => {
         <Hero />
         <ContentStrategy />
         <ProvenFormula />
-        <SocialProof />
         <HowItWorks />
+        <SocialProof />
         <EndToEndSolution />
         <HomeFAQ />
         <FinalCTA />
