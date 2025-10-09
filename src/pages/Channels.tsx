@@ -83,7 +83,7 @@ const Channels = () => {
                     transition={{ duration: 0.6 }}
                     className="text-4xl md:text-5xl font-light text-foreground mb-4"
                   >
-                    Example Channels
+                    Featured Channels
                   </motion.h1>
                   <motion.div
                     initial={{ width: 0 }}
