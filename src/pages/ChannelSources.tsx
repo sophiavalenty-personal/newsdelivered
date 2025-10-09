@@ -8,8 +8,8 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 import { ArrowLeft, ExternalLink, Calendar } from "lucide-react";
 import { channelSources } from "@/data/channelSources";
 import { fetchAndParseRSS, RSSItem } from "@/utils/rssParser";
-import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useQuery } from "@tanstack/react-query";
 
 const ChannelSources = () => {
   const { channelId } = useParams<{ channelId: string }>();
@@ -17,40 +17,36 @@ const ChannelSources = () => {
   const { toast } = useToast();
   
   const channelData = channelId ? channelSources[channelId] : null;
-  const [sourceFeeds, setSourceFeeds] = useState<Record<string, RSSItem[]>>({});
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const loadFeeds = async () => {
+  // Fetch all feeds with React Query for caching
+  const { data: sourceFeeds = {}, isLoading: loading } = useQuery({
+    queryKey: ['channel-feeds', channelId],
+    queryFn: async () => {
       if (!channelData?.sources.length) {
-        setLoading(false);
-        return;
+        return {};
       }
 
-      setLoading(true);
       const feeds: Record<string, RSSItem[]> = {};
 
-      for (const source of channelData.sources) {
-        try {
-          const feed = await fetchAndParseRSS(source.url);
-          feeds[source.id] = feed.items.slice(0, 3); // Get latest 3 items per source
-        } catch (error) {
-          console.error(`Failed to load feed for ${source.name}:`, error);
-          toast({
-            title: "Feed Load Error",
-            description: `Could not load articles from ${source.name}`,
-            variant: "destructive",
-          });
-          feeds[source.id] = [];
-        }
-      }
+      await Promise.all(
+        channelData.sources.map(async (source) => {
+          try {
+            const feed = await fetchAndParseRSS(source.url);
+            feeds[source.id] = feed.items.slice(0, 3);
+          } catch (error) {
+            console.error(`Failed to load feed for ${source.name}:`, error);
+            feeds[source.id] = [];
+          }
+        })
+      );
 
-      setSourceFeeds(feeds);
-      setLoading(false);
-    };
-
-    loadFeeds();
-  }, [channelData, toast]);
+      return feeds;
+    },
+    enabled: !!channelData?.sources.length,
+    staleTime: 5 * 60 * 1000, // Cache for 5 minutes
+    gcTime: 30 * 60 * 1000, // Keep in cache for 30 minutes
+    retry: 1,
+  });
 
   if (!channelData) {
     return (
