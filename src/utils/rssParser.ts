@@ -15,7 +15,9 @@ export interface RSSFeed {
 
 export async function fetchAndParseRSS(url: string): Promise<RSSFeed> {
   try {
-    const response = await fetch(url);
+    // Use CORS proxy to fetch RSS feeds
+    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+    const response = await fetch(proxyUrl);
     const text = await response.text();
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(text, "text/xml");
