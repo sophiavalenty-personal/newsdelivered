@@ -12,64 +12,46 @@ const Channels = () => {
       title: "Daily News",
       description: "Stay informed with curated daily news and current events from reliable sources",
       icon: Newspaper,
-      color: "from-blue-200 to-blue-300",
-      iconColor: "text-blue-700"
     },
     {
       title: "Health & Wellness",
       description: "Expert tips on fitness, nutrition, mental health, and living your best life",
       icon: Heart,
-      color: "from-pink-200 to-pink-300",
-      iconColor: "text-pink-700"
     },
     {
       title: "Survival & Tactical",
       description: "Practical survival skills, tactical knowledge, and preparedness strategies",
       icon: Shield,
-      color: "from-slate-200 to-slate-300",
-      iconColor: "text-slate-700"
     },
     {
       title: "Money & Finance",
       description: "Smart money management, investment insights, and financial success strategies",
       icon: DollarSign,
-      color: "from-emerald-200 to-emerald-300",
-      iconColor: "text-emerald-700"
     },
     {
       title: "Interesting Trivia",
       description: "Fascinating facts, brain teasers, and surprising discoveries to expand your mind",
       icon: Lightbulb,
-      color: "from-amber-200 to-amber-300",
-      iconColor: "text-amber-700"
     },
     {
       title: "Opportunities",
       description: "Exclusive deals, business opportunities, and ways to grow your income",
       icon: TrendingUp,
-      color: "from-purple-200 to-purple-300",
-      iconColor: "text-purple-700"
     },
     {
       title: "Product Reviews",
       description: "In-depth reviews and comparisons to help make informed purchasing decisions",
       icon: Star,
-      color: "from-yellow-200 to-yellow-300",
-      iconColor: "text-yellow-700"
     },
     {
       title: "Travel & Lifestyle",
       description: "Discover destinations, travel tips, and lifestyle inspiration for your next adventure",
       icon: Plane,
-      color: "from-cyan-200 to-cyan-300",
-      iconColor: "text-cyan-700"
     },
     {
       title: "Food & Drink",
       description: "Recipes, restaurant reviews, culinary trends, and food culture",
       icon: UtensilsCrossed,
-      color: "from-orange-200 to-orange-300",
-      iconColor: "text-orange-700"
     }
   ];
 
@@ -127,9 +109,9 @@ const Channels = () => {
                             <motion.div
                               whileHover={{ scale: 1.1, rotate: 5 }}
                               transition={{ duration: 0.4 }}
-                              className={`w-16 h-16 bg-gradient-to-br ${channel.color} rounded-xl flex items-center justify-center mx-auto mb-4 shadow-subtle group-hover:shadow-md transition-shadow duration-300`}
+                              className="w-16 h-16 bg-muted rounded-xl flex items-center justify-center mx-auto mb-4 shadow-subtle group-hover:shadow-md transition-shadow duration-300"
                             >
-                              <IconComponent className={`w-8 h-8 ${channel.iconColor}`} />
+                              <IconComponent className="w-8 h-8 text-muted-foreground" />
                             </motion.div>
                             <CardTitle className="text-xl font-semibold text-foreground">
                               {channel.title}
