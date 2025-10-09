@@ -13,6 +13,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 import { Mail, Phone } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -58,8 +60,10 @@ const Contact = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted">
-      <div className="container mx-auto px-4 py-32">
+    <div className="min-h-screen">
+      <Header />
+      <div className="bg-gradient-to-br from-background to-muted py-32">
+        <div className="container mx-auto px-4">
         <ScrollReveal>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -286,6 +290,8 @@ const Contact = () => {
           </ScrollReveal>
         </div>
       </div>
+      </div>
+      <Footer />
     </div>
   );
 };
