@@ -52,7 +52,7 @@ const Tools = () => {
     },
     {
       title: "Automatic List Hygiene",
-      description: "Keep your email lists clean and engaged with automated list maintenance",
+      description: "Keep your email lists clean, current and engaged with automated list maintenance",
       icon: Sparkles,
       color: "from-pink-200 to-pink-300",
       iconColor: "text-pink-700"
