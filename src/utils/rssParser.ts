@@ -47,6 +47,11 @@ export async function fetchAndParseRSS(url: string): Promise<RSSFeed> {
       const link = item.querySelector("link")?.textContent || "";
       const pubDate = item.querySelector("pubDate")?.textContent || "";
 
+      // Get content:encoded if available
+      const contentEncoded =
+        item.querySelector("content\\:encoded")?.textContent || "";
+      const content = contentEncoded || description;
+
       // Try different image formats (including namespaced media tags)
       let image =
         item.querySelector("enclosure[type^='image']")?.getAttribute("url") || "";
@@ -66,10 +71,14 @@ export async function fetchAndParseRSS(url: string): Promise<RSSFeed> {
           "";
       }
 
-      // Get content:encoded if available
-      const contentEncoded =
-        item.querySelector("content\\:encoded")?.textContent || "";
-      const content = contentEncoded || description;
+      // Extract image from description or content HTML
+      if (!image) {
+        const htmlContent = contentEncoded || description;
+        const imgMatch = htmlContent.match(/<img[^>]+src=["']([^"']+)["']/i);
+        if (imgMatch) {
+          image = imgMatch[1];
+        }
+      }
 
       return {
         title,
@@ -129,14 +138,27 @@ export async function fetchAndParseRSS(url: string): Promise<RSSFeed> {
     if (!res.ok) throw new Error(`rss2json HTTP ${res.status}`);
     const data = await res.json();
 
-    const items: RSSItem[] = (data.items ?? []).map((it: any) => ({
-      title: it.title ?? "",
-      description: it.description ?? "",
-      link: it.link ?? "",
-      pubDate: it.pubDate ?? "",
-      image: it.enclosure?.link || it.thumbnail || "",
-      content: it.content || it.description || "",
-    }));
+    const items: RSSItem[] = (data.items ?? []).map((it: any) => {
+      let image = it.enclosure?.link || it.thumbnail || "";
+      
+      // Extract image from description or content HTML if not found
+      if (!image) {
+        const htmlContent = it.content || it.description || "";
+        const imgMatch = htmlContent.match(/<img[^>]+src=["']([^"']+)["']/i);
+        if (imgMatch) {
+          image = imgMatch[1];
+        }
+      }
+
+      return {
+        title: it.title ?? "",
+        description: it.description ?? "",
+        link: it.link ?? "",
+        pubDate: it.pubDate ?? "",
+        image,
+        content: it.content || it.description || "",
+      };
+    });
 
     return {
       title: data.feed?.title ?? "RSS Feed",
