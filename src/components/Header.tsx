@@ -19,9 +19,9 @@ const Header = () => {
           <Link to="/channels" className="text-foreground hover:text-primary transition-colors">
             Channels
           </Link>
-          <a href="#tools" className="text-foreground hover:text-primary transition-colors">
+          <Link to="/tools" className="text-foreground hover:text-primary transition-colors">
             Tools
-          </a>
+          </Link>
           <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
             Contact
           </Link>
