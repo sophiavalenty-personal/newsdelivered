@@ -147,49 +147,53 @@ const RSSFeed = () => {
                         transition={{ duration: 0.3 }}
                       >
                         <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-subtle hover:shadow-elegant transition-all duration-300 overflow-hidden">
-                          {item.image && (
-                            <div className="flex justify-center p-4">
-                              <img 
-                                src={item.image} 
-                                alt={item.title}
-                                className="w-[180px] h-auto object-contain"
-                              />
-                            </div>
-                          )}
-                          <CardHeader>
-                            <CardTitle className="text-2xl font-semibold text-foreground hover:text-primary transition-colors">
-                              <a 
-                                href={item.link} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="flex items-start justify-between gap-2"
-                              >
-                                <span>{item.title}</span>
-                                <ExternalLink className="w-5 h-5 flex-shrink-0 mt-1" />
-                              </a>
-                            </CardTitle>
-                            {item.pubDate && (
-                              <CardDescription className="flex items-center gap-2">
-                                <Calendar className="w-4 h-4" />
-                                {formatDate(item.pubDate)}
-                              </CardDescription>
+                          <div className="flex gap-4 p-4">
+                            {item.image && (
+                              <div className="flex-shrink-0">
+                                <img 
+                                  src={item.image} 
+                                  alt={item.title}
+                                  className="w-[180px] h-auto object-contain rounded"
+                                />
+                              </div>
                             )}
-                          </CardHeader>
-                          <CardContent>
-                            <div 
-                              className="text-muted-foreground leading-relaxed prose prose-sm max-w-none"
-                              dangerouslySetInnerHTML={{ 
-                                __html: item.description.substring(0, 400) + (item.description.length > 400 ? '...' : '')
-                              }}
-                            />
-                            <Button 
-                              variant="link" 
-                              className="mt-4 p-0"
-                              onClick={() => window.open(item.link, '_blank')}
-                            >
-                              Read more <ExternalLink className="w-4 h-4 ml-2" />
-                            </Button>
-                          </CardContent>
+                            <div className="flex-1 min-w-0">
+                              <CardHeader className="p-0 mb-4">
+                                <CardTitle className="text-2xl font-semibold text-foreground hover:text-primary transition-colors">
+                                  <a 
+                                    href={item.link} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="flex items-start justify-between gap-2"
+                                  >
+                                    <span>{item.title}</span>
+                                    <ExternalLink className="w-5 h-5 flex-shrink-0 mt-1" />
+                                  </a>
+                                </CardTitle>
+                                {item.pubDate && (
+                                  <CardDescription className="flex items-center gap-2 mt-2">
+                                    <Calendar className="w-4 h-4" />
+                                    {formatDate(item.pubDate)}
+                                  </CardDescription>
+                                )}
+                              </CardHeader>
+                              <CardContent className="p-0">
+                                <div 
+                                  className="text-muted-foreground leading-relaxed prose prose-sm max-w-none"
+                                  dangerouslySetInnerHTML={{ 
+                                    __html: item.description.substring(0, 400) + (item.description.length > 400 ? '...' : '')
+                                  }}
+                                />
+                                <Button 
+                                  variant="link" 
+                                  className="mt-4 p-0"
+                                  onClick={() => window.open(item.link, '_blank')}
+                                >
+                                  Read more <ExternalLink className="w-4 h-4 ml-2" />
+                                </Button>
+                              </CardContent>
+                            </div>
+                          </div>
                         </Card>
                       </motion.div>
                     </ScrollReveal>
