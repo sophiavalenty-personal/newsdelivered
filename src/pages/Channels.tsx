@@ -115,23 +115,9 @@ const Channels = () => {
                             </CardTitle>
                           </CardHeader>
                           <CardContent className="flex flex-col justify-between flex-1 p-6 pt-0">
-                            <CardDescription className="text-sm text-muted-foreground mb-6 text-center leading-relaxed">
+                            <CardDescription className="text-sm text-muted-foreground text-center leading-relaxed">
                               {channel.description}
                             </CardDescription>
-                            <motion.div
-                              whileHover={{ scale: 1.02 }}
-                              whileTap={{ scale: 0.98 }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              <Button 
-                                variant="hero" 
-                                size="sm" 
-                                className="w-full font-medium shadow-subtle hover:shadow-elegant transition-all duration-400"
-                                onClick={() => window.location.href = '/contact'}
-                              >
-                                Get Started
-                              </Button>
-                            </motion.div>
                           </CardContent>
                         </Card>
                       </motion.div>
