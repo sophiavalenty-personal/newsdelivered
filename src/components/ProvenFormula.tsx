@@ -35,7 +35,7 @@ const ProvenFormula = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                The Formula to Maximize Brand Engagement
+                The Formula to Maximize Engagement and Revenue
               </motion.h2>
               
               <motion.p 
@@ -113,20 +113,14 @@ const ProvenFormula = () => {
           </div>
 
           <ScrollReveal direction="up">
-            <div className="text-center">
+            <div className="text-center max-w-4xl mx-auto">
               <motion.p 
-                className="text-2xl md:text-3xl font-bold text-foreground relative inline-block"
+                className="text-lg md:text-xl text-foreground leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Engagement builds trust and drives results
-                <motion.div 
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 1, delay: 0.8 }}
-                />
+                Engaging, informative content builds brand trust from your consumers and their inbox providers. Use NewsDelivered to pave the way for your promos and build a stronger customer relationship and bigger customer lifetime value.
               </motion.p>
             </div>
           </ScrollReveal>

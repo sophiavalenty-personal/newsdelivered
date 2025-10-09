@@ -29,7 +29,7 @@ const Header = () => {
         
         <div className="flex items-center space-x-4">
           <Button variant="hero" onClick={() => window.location.href = '/contact'}>
-            Get Started
+            Schedule Free Consultation
           </Button>
         </div>
       </div>

@@ -31,7 +31,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              News Delivered boosts revenue for businesses using hyper-engaging newsletters.
+              NewsDelivered boosts revenue for businesses by arming them with weapons-grade email channels.
             </motion.p>
             
             <motion.div
@@ -50,7 +50,7 @@ const Hero = () => {
                   className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300 font-semibold"
                   onClick={() => window.location.href = '/contact'}
                 >
-                  Access Experts Now
+                  Talk to an expert
                 </Button>
               </motion.div>
 
@@ -64,7 +64,7 @@ const Hero = () => {
                   className="text-lg px-8 py-6 transition-all duration-300 font-semibold"
                   onClick={() => window.location.href = '/services'}
                 >
-                  See Our System
+                  Ways to Work With Us
                 </Button>
               </motion.div>
             </motion.div>

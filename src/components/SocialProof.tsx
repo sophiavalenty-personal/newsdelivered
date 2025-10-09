@@ -57,7 +57,7 @@ const SocialProof = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                Don't Just Take Our Word For It
+                NewsDelivered Has Happy Customers...
               </motion.h2>
               <motion.p 
                 className="text-lg text-muted-foreground max-w-2xl mx-auto"
@@ -65,7 +65,7 @@ const SocialProof = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Join hundreds of businesses that have transformed their newsletter strategy
+                Level Up Your Email Today with NewsDelivered
               </motion.p>
             </div>
           </ScrollReveal>

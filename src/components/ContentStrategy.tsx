@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import { Target, TrendingUp, DollarSign, CheckCircle } from "lucide-react";
+import { Target, TrendingUp, DollarSign, CheckCircle, ArrowDown } from "lucide-react";
 
 const ContentStrategy = () => {
   const strategies = [
@@ -72,7 +72,7 @@ const ContentStrategy = () => {
             <div className="text-center">
               {/* Problem/Reality Check Section */}
               <motion.div 
-                className="mb-12"
+                className="mb-20"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -81,9 +81,9 @@ const ContentStrategy = () => {
                   But here's where most people are:
                 </p>
                 
-                <div className="p-8 bg-gradient-to-br from-destructive/5 to-destructive/10 border border-destructive/20 rounded-2xl max-w-4xl mx-auto">
+                <div className="p-10 bg-gradient-to-br from-orange-50/80 to-red-50/60 border-2 border-orange-200/50 rounded-2xl max-w-4xl mx-auto shadow-lg">
                   <motion.p 
-                    className="text-4xl font-bold mb-6 text-destructive leading-tight"
+                    className="text-4xl font-bold mb-6 text-orange-700/90 leading-tight"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 1.0 }}
@@ -92,7 +92,7 @@ const ContentStrategy = () => {
                   </motion.p>
                   
                   <motion.p 
-                    className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8"
+                    className="text-lg md:text-xl text-muted-foreground leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
@@ -100,19 +100,39 @@ const ContentStrategy = () => {
                     Most company newsletters read like ads. Open rates sink below 25%, click-throughs drop even lower. 
                     Your audience tunes out — and you lose one of your best chances to stay top-of-mind.
                   </motion.p>
-                  
-                  {/* Transition to Solution */}
-                  <motion.div
-                    className="pt-6 border-t border-primary/20"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.4 }}
-                  >
-                    <p className="text-xl md:text-2xl font-semibold text-primary">
-                      The Newsletter Strategy that Works
-                    </p>
-                  </motion.div>
                 </div>
+
+                {/* Arrow pointing down */}
+                <motion.div 
+                  className="flex justify-center my-8"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: 1.6,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    repeatDelay: 0.5
+                  }}
+                >
+                  <ArrowDown className="w-12 h-12 text-primary" strokeWidth={2.5} />
+                </motion.div>
+                  
+                {/* Transition to Solution */}
+                <motion.div
+                  className="p-10 bg-gradient-to-br from-primary/5 to-primary/10 border-2 border-primary/30 rounded-2xl max-w-4xl mx-auto shadow-glow"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.8 }}
+                >
+                  <p className="text-2xl md:text-3xl font-bold text-primary mb-3">
+                    The Newsletter Strategy that Works
+                  </p>
+                  <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-4"></div>
+                  <p className="text-sm uppercase tracking-widest text-primary/70 font-semibold">
+                    ↓
+                  </p>
+                </motion.div>
               </motion.div>
             </div>
           </ScrollReveal>
