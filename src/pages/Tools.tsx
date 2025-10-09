@@ -45,7 +45,7 @@ const Tools = () => {
     },
     {
       title: "Custom Template Builder",
-      description: "Design beautiful, responsive email templates with our drag-and-drop builder",
+      description: "Design beautiful, mobile-responsive email templates with our drag-and-drop builder",
       icon: Layout
     }
   ];
