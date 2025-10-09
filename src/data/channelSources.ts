@@ -36,7 +36,20 @@ export const channelSources: Record<string, ChannelData> = {
     id: "health-wellness",
     title: "Health & Wellness",
     description: "Expert tips on fitness, nutrition, mental health, and living your best life",
-    sources: []
+    sources: [
+      {
+        id: "wellnesspursuits",
+        name: "Wellness Pursuits",
+        url: "https://www.wellnesspursuits.com/feed/",
+        description: "Health and wellness tips"
+      },
+      {
+        id: "soulvibe",
+        name: "Soul Vibe",
+        url: "https://www.soulvibe.com/feed/",
+        description: "Mental health and wellness insights"
+      }
+    ]
   },
   "survival-tactical": {
     id: "survival-tactical",
@@ -48,13 +61,27 @@ export const channelSources: Record<string, ChannelData> = {
     id: "money-finance",
     title: "Money & Finance",
     description: "Smart money management, investment insights, and financial success strategies",
-    sources: []
+    sources: [
+      {
+        id: "marketwatch",
+        name: "MarketWatch",
+        url: "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+        description: "Top financial news and market insights"
+      }
+    ]
   },
   "interesting-trivia": {
     id: "interesting-trivia",
     title: "Interesting Trivia",
     description: "Fascinating facts, brain teasers, and surprising discoveries to expand your mind",
-    sources: []
+    sources: [
+      {
+        id: "dailytreasure",
+        name: "Daily Treasure",
+        url: "https://www.dailytreasure.com/category/trivia/feed",
+        description: "Daily trivia and fascinating facts"
+      }
+    ]
   },
   "opportunities": {
     id: "opportunities",
@@ -66,7 +93,14 @@ export const channelSources: Record<string, ChannelData> = {
     id: "product-reviews",
     title: "Product Reviews",
     description: "In-depth reviews and comparisons to help make informed purchasing decisions",
-    sources: []
+    sources: [
+      {
+        id: "theverge",
+        name: "The Verge Reviews",
+        url: "https://www.theverge.com/rss/reviews/index.xml",
+        description: "Tech product reviews and analysis"
+      }
+    ]
   },
   "travel-lifestyle": {
     id: "travel-lifestyle",
