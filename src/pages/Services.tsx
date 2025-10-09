@@ -126,7 +126,7 @@ const Services = () => {
           </ScrollReveal>
           
           <ScrollReveal delay={0.2}>
-            <p className="text-xl md:text-2xl text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
               We're a whole extension of your marketing department, at a fraction of the cost, while we multiply your results.
             </p>
           </ScrollReveal>
@@ -142,7 +142,7 @@ const Services = () => {
           </ScrollReveal>
 
           {/* Steps Process */}
-          <div className="max-w-4xl mx-auto space-y-8 mb-16">
+          <div className="max-w-4xl mx-auto space-y-8 mb-16 mt-20">
             {steps.map((step, index) => (
               <ScrollReveal key={index} delay={index * 0.15}>
                 <div className="relative">
