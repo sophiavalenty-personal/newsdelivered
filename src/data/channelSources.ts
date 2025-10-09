@@ -23,6 +23,12 @@ export const channelSources: Record<string, ChannelData> = {
         name: "United Voice",
         url: "https://www.unitedvoice.com/feed/",
         description: "Independent news and analysis"
+      },
+      {
+        id: "newsready",
+        name: "News Ready",
+        url: "https://www.newsready.com/feed/",
+        description: "Breaking news and current events"
       }
     ]
   },

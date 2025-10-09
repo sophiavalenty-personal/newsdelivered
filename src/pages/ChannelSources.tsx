@@ -33,7 +33,7 @@ const ChannelSources = () => {
       for (const source of channelData.sources) {
         try {
           const feed = await fetchAndParseRSS(source.url);
-          feeds[source.id] = feed.items.slice(0, 10); // Get latest 10 items per source
+          feeds[source.id] = feed.items.slice(0, 3); // Get latest 3 items per source
         } catch (error) {
           console.error(`Failed to load feed for ${source.name}:`, error);
           toast({
