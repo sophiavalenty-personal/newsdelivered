@@ -50,7 +50,7 @@ const Hero = () => {
                   className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300 font-semibold"
                   onClick={() => window.location.href = '/contact'}
                 >
-                  → Get Your Free Audit
+                  Access Experts Now
                 </Button>
               </motion.div>
 
@@ -64,7 +64,7 @@ const Hero = () => {
                   className="text-lg px-8 py-6 transition-all duration-300 font-semibold"
                   onClick={() => window.location.href = '/services'}
                 >
-                  See How It Works
+                  See Our System
                 </Button>
               </motion.div>
             </motion.div>
@@ -75,7 +75,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1 }}
             >
-              ✓ No long-term contracts  ✓ 47% average open rate  ✓ Results in 90 days
+              Start with a free consultation to see what we can do for you.
             </motion.p>
           </ScrollReveal>
         </div>
