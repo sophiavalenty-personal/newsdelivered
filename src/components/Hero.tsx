@@ -22,25 +22,16 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Email Marketing Experts
+              The Email Marketing Experts
             </motion.h1>
-            
-            <motion.h2 
-              className="text-4xl font-bold text-foreground mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              Driving Revenue Growth
-            </motion.h2>
 
             <motion.p 
               className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
             >
-              Email drives results, but only if you know what to deliver and how. NewsDelivered has the key.
+              News Delivered boosts revenue for businesses using hyper-engaging newsletters.
             </motion.p>
             
             <motion.div
