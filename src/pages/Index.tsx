@@ -18,7 +18,6 @@ const Index = () => {
       <main>
         <Hero />
         <PainSolution />
-        <SocialProof />
         <HowItWorks />
         <ServicesOverview />
         <Proof />

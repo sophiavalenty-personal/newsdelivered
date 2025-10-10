@@ -4,6 +4,7 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Target, TrendingUp, DollarSign, ArrowDown, Handshake, Heart, BarChart3, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import newsletterProblemImg from "@/assets/newsletter-problem.jpg";
+import SocialProof from "@/components/SocialProof";
 const PainSolution = () => {
   const strategies = [{
     icon: Target,
@@ -251,7 +252,18 @@ Not Enough Time?</h3>
                   </CardContent>
                 </Card>
               </motion.div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </div>
 
+      {/* Testimonials Section */}
+      <SocialProof />
+
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal direction="up">
+            <div className="text-center mb-16">
               {/* Your Newsletter Should - Heading */}
               <motion.h2 className="text-3xl font-bold mb-12 text-center" initial={{
               opacity: 0,
@@ -261,7 +273,7 @@ Not Enough Time?</h3>
               y: 0
             }} transition={{
               duration: 0.8,
-              delay: 1.8
+              delay: 0.2
             }}>
                 Your Newsletter Should
               </motion.h2>
@@ -277,7 +289,7 @@ Not Enough Time?</h3>
               y: 0
             }} transition={{
               duration: 0.6,
-              delay: 2.2 + index * 0.2
+              delay: 0.4 + index * 0.2
             }}>
                   <Card className={`h-full text-center shadow-elegant border-primary/10 bg-gradient-to-br from-background to-background/50 hover:shadow-glow transition-all duration-300 ${strategy.highlighted ? 'ring-2 ring-primary/20 shadow-glow scale-105' : ''}`}>
                     <CardContent className="p-8">
