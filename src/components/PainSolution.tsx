@@ -88,6 +88,68 @@ Not Enough Time?</h3>
               </motion.div>
             </div>
 
+            {/* Entertainment-First Strategy Section - Mirrored Layout */}
+            <div className="mb-16">
+              <motion.div className="mb-12" initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.8,
+                delay: 0.6
+              }}>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center">
+                  Entertainment-First Strategy
+                </h2>
+                
+                <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+                  {/* Left side - Image */}
+                  <motion.div initial={{
+                    opacity: 0,
+                    x: -20
+                  }} animate={{
+                    opacity: 1,
+                    x: 0
+                  }} transition={{
+                    duration: 0.8,
+                    delay: 0.8
+                  }} className="relative">
+                    <div className="p-3 bg-primary/10 rounded-lg flex items-center justify-center aspect-square">
+                      <Heart className="w-32 h-32 text-primary" />
+                    </div>
+                  </motion.div>
+
+                  {/* Right side - Content */}
+                  <motion.div initial={{
+                    opacity: 0,
+                    x: 20
+                  }} animate={{
+                    opacity: 1,
+                    x: 0
+                  }} transition={{
+                    duration: 0.8,
+                    delay: 1.0
+                  }} className="space-y-6">
+                    <h3 className="text-2xl md:text-3xl font-bold">The 80/20 Rule for Engagement</h3>
+                    
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      We follow the proven 80/20 rule: 80% of your newsletter delivers entertaining, informative, 
+                      and valuable content that builds trust and keeps readers engaged.
+                    </p>
+                    
+                    <div className="bg-muted/50 p-6 rounded-lg border border-border">
+                      <p className="text-base text-muted-foreground">
+                        The remaining <span className="bg-primary/20 text-primary font-semibold px-2 py-1 rounded">20% features strategic brand promotion</span> that feels natural and drives conversions 
+                        without overwhelming your audience.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </div>
+
             {/* Arrow pointing down */}
             <div className="text-center mb-16">
               <motion.div className="flex justify-center my-10" initial={{
@@ -197,8 +259,8 @@ Not Enough Time?</h3>
                 How We Do It
               </motion.h3>
 
-              {/* Two Information Cards */}
-              <motion.div className="grid md:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto" initial={{
+              {/* Results-Driven Expertise Card - Full Width */}
+              <motion.div className="mb-16 max-w-4xl mx-auto" initial={{
               opacity: 0,
               y: 20
             }} animate={{
@@ -208,29 +270,6 @@ Not Enough Time?</h3>
               duration: 0.8,
               delay: 1.6
             }}>
-                {/* Entertainment-First Strategy Card */}
-                <Card className="shadow-elegant border-border/50 hover:shadow-lg transition-all duration-300">
-                  <CardContent className="p-8">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
-                        <Heart className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-bold mb-3">Entertainment-First Strategy</h4>
-                        <p className="text-muted-foreground leading-relaxed mb-4">
-                          We follow the proven 80/20 rule: 80% of your newsletter delivers entertaining, informative, 
-                          and valuable content that builds trust and keeps readers engaged.
-                        </p>
-                        <p className="text-muted-foreground leading-relaxed">
-                          The remaining 20% features strategic brand promotion that feels natural and drives conversions 
-                          without overwhelming your audience.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Results-Driven Expertise Card */}
                 <Card className="shadow-elegant border-border/50 hover:shadow-lg transition-all duration-300">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4 mb-4">
