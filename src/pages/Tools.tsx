@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import { PenTool, Mail, Truck, BarChart3, Search, ShieldCheck, Sparkles, Layout } from "lucide-react";
+import { PenTool, Mail, Truck, BarChart3, Search, ShieldCheck, Sparkles, Layout, Scale } from "lucide-react";
 
 const Tools = () => {
   const tools = [
@@ -47,6 +47,11 @@ const Tools = () => {
       title: "Custom Template Builder",
       description: "Design beautiful, mobile-responsive email templates with our drag-and-drop builder",
       icon: Layout
+    },
+    {
+      title: "Automated CCPA Compliance",
+      description: "Stay compliant with California Consumer Privacy Act regulations through automated list management and opt-out handling",
+      icon: Scale
     }
   ];
 
