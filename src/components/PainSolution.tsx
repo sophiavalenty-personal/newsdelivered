@@ -4,7 +4,7 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Target, TrendingUp, DollarSign, ArrowDown, Handshake, Heart, BarChart3, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import newsletterProblemImg from "@/assets/newsletter-problem.jpg";
-import entertainmentFirstImg from "@/assets/entertainment-first.jpg";
+import entertainmentFirstImg from "@/assets/entertainment-first-illustration.jpg";
 import SocialProof from "@/components/SocialProof";
 const PainSolution = () => {
   const strategies = [{
