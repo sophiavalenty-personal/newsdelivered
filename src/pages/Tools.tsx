@@ -50,7 +50,7 @@ const Tools = () => {
     },
     {
       title: "Automated CCPA Compliance",
-      description: "Stay compliant with California Consumer Privacy Act regulations through automated list management and opt-out handling",
+      description: "It's a privacy-first world, our automated CCPA tool will honor consumer rights and help you avoid costly penalties - say goodbye to compliance headaches",
       icon: Scale
     }
   ];
