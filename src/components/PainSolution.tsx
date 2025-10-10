@@ -132,20 +132,35 @@ Not Enough Time?</h3>
               delay: 1.2
             }}>
                 <Card className="p-8 md:p-10 shadow-elegant max-w-4xl mx-auto border-primary/20 bg-gradient-to-br from-background to-primary/5">
-                  <CardContent className="p-0 text-center">
+                  <CardContent className="p-0">
                     <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mx-auto mb-6">
                       <Handshake className="w-8 h-8 text-primary-foreground" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                      Full-Service Partnership
+                    <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+                      Collaborative Full-Service Partnership
                     </h3>
-                    <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                      We handle newsletter strategy, content creation, and management from start to finish. 
-                      You focus on your business while we deliver engaging newsletters that your audience loves and that drive real results.
+                    <ul className="text-left space-y-3 mb-6 max-w-3xl mx-auto">
+                      <li className="text-lg text-foreground leading-relaxed flex items-start gap-3">
+                        <span className="text-primary mt-1.5">•</span>
+                        <span>Revenue-driven, custom email strategy — built <em>with</em> you</span>
+                      </li>
+                      <li className="text-lg text-foreground leading-relaxed flex items-start gap-3">
+                        <span className="text-primary mt-1.5">•</span>
+                        <span>Engaging, on-brand content your audience looks forward to</span>
+                      </li>
+                      <li className="text-lg text-foreground leading-relaxed flex items-start gap-3">
+                        <span className="text-primary mt-1.5">•</span>
+                        <span>Expert campaign setup, sending, and reporting</span>
+                      </li>
+                    </ul>
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-4 italic max-w-3xl mx-auto">
+                      We become your email team — designing, writing, and managing every campaign while keeping you fully in the loop. You guide the direction; we handle the heavy lifting.
                     </p>
-                    <Link to="/services" className="text-primary font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all hover:underline">
-                      Learn More <ArrowDown className="w-4 h-4 rotate-[-90deg]" />
-                    </Link>
+                    <div className="text-center">
+                      <Link to="/services" className="text-primary font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all hover:underline">
+                        Learn More <ArrowDown className="w-4 h-4 rotate-[-90deg]" />
+                      </Link>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
