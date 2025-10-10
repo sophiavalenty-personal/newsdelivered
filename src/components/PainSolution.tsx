@@ -4,6 +4,7 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Target, TrendingUp, DollarSign, ArrowDown, Handshake, Heart, BarChart3, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import newsletterProblemImg from "@/assets/newsletter-problem.jpg";
+import entertainmentFirstImg from "@/assets/entertainment-first.jpg";
 import SocialProof from "@/components/SocialProof";
 const PainSolution = () => {
   const strategies = [{
@@ -88,7 +89,7 @@ Not Enough Time?</h3>
               </motion.div>
             </div>
 
-            {/* Entertainment-First Strategy Section - Mirrored Layout */}
+            {/* Entertainment-First Strategy Section - Staggered Layout */}
             <div className="mb-16">
               <div className="mb-12">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center">
@@ -96,14 +97,7 @@ Not Enough Time?</h3>
                 </h2>
                 
                 <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-                  {/* Left side - Image */}
-                  <div className="relative">
-                    <div className="p-3 bg-primary/10 rounded-lg flex items-center justify-center aspect-square">
-                      <Heart className="w-32 h-32 text-primary" />
-                    </div>
-                  </div>
-
-                  {/* Right side - Content */}
+                  {/* Left side - Content */}
                   <div className="space-y-6">
                     <h3 className="text-2xl md:text-3xl font-bold">The 80/20 Rule for Engagement</h3>
                     
@@ -118,6 +112,11 @@ Not Enough Time?</h3>
                         without overwhelming your audience.
                       </p>
                     </div>
+                  </div>
+
+                  {/* Right side - Image */}
+                  <div className="relative">
+                    <img src={entertainmentFirstImg} alt="Person enjoying entertaining newsletter content" className="rounded-lg shadow-lg w-full" />
                   </div>
                 </div>
               </div>
