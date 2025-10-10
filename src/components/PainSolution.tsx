@@ -120,7 +120,7 @@ Not Enough Time?</h3>
                 <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
               </motion.div>
 
-              {/* Full Service Partnership - Clickable Card */}
+              {/* Full Service Partnership */}
               <motion.div className="mb-12" initial={{
               opacity: 0,
               y: 20
@@ -131,25 +131,23 @@ Not Enough Time?</h3>
               duration: 0.8,
               delay: 1.2
             }}>
-                <Link to="/services" className="block max-w-4xl mx-auto group">
-                  <Card className="p-8 md:p-10 shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-[1.02] border-primary/20 hover:border-primary/40 bg-gradient-to-br from-background to-primary/5">
-                    <CardContent className="p-0 text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Handshake className="w-8 h-8 text-primary-foreground" />
-                      </div>
-                      <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
-                        Full-Service Partnership
-                      </h3>
-                      <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                        We handle newsletter strategy, content creation, and management from start to finish. 
-                        You focus on your business while we deliver engaging newsletters that your audience loves and that drive real results.
-                      </p>
-                      <span className="text-primary font-semibold inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                        Learn More <ArrowDown className="w-4 h-4 rotate-[-90deg]" />
-                      </span>
-                    </CardContent>
-                  </Card>
-                </Link>
+                <Card className="p-8 md:p-10 shadow-elegant max-w-4xl mx-auto border-primary/20 bg-gradient-to-br from-background to-primary/5">
+                  <CardContent className="p-0 text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Handshake className="w-8 h-8 text-primary-foreground" />
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                      Full-Service Partnership
+                    </h3>
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                      We handle newsletter strategy, content creation, and management from start to finish. 
+                      You focus on your business while we deliver engaging newsletters that your audience loves and that drive real results.
+                    </p>
+                    <Link to="/services" className="text-primary font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all hover:underline">
+                      Learn More <ArrowDown className="w-4 h-4 rotate-[-90deg]" />
+                    </Link>
+                  </CardContent>
+                </Card>
               </motion.div>
 
               {/* How We Do It - Title */}
