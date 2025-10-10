@@ -90,48 +90,21 @@ Not Enough Time?</h3>
 
             {/* Entertainment-First Strategy Section - Mirrored Layout */}
             <div className="mb-16">
-              <motion.div className="mb-12" initial={{
-                opacity: 0,
-                y: 20
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                duration: 0.8,
-                delay: 0.6
-              }}>
+              <div className="mb-12">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center">
                   Entertainment-First Strategy
                 </h2>
                 
                 <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
                   {/* Left side - Image */}
-                  <motion.div initial={{
-                    opacity: 0,
-                    x: -20
-                  }} animate={{
-                    opacity: 1,
-                    x: 0
-                  }} transition={{
-                    duration: 0.8,
-                    delay: 0.8
-                  }} className="relative">
+                  <div className="relative">
                     <div className="p-3 bg-primary/10 rounded-lg flex items-center justify-center aspect-square">
                       <Heart className="w-32 h-32 text-primary" />
                     </div>
-                  </motion.div>
+                  </div>
 
                   {/* Right side - Content */}
-                  <motion.div initial={{
-                    opacity: 0,
-                    x: 20
-                  }} animate={{
-                    opacity: 1,
-                    x: 0
-                  }} transition={{
-                    duration: 0.8,
-                    delay: 1.0
-                  }} className="space-y-6">
+                  <div className="space-y-6">
                     <h3 className="text-2xl md:text-3xl font-bold">The 80/20 Rule for Engagement</h3>
                     
                     <p className="text-lg text-muted-foreground leading-relaxed">
@@ -145,9 +118,9 @@ Not Enough Time?</h3>
                         without overwhelming your audience.
                       </p>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Arrow pointing down */}
