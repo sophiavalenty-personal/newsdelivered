@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Target, TrendingUp, DollarSign, ArrowDown } from "lucide-react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
+import newsletterProblemImg from "@/assets/newsletter-problem.jpg";
 
 const PainSolution = () => {
   const strategies = [
@@ -51,62 +52,87 @@ const PainSolution = () => {
         <div className="max-w-6xl mx-auto">
           <ScrollReveal direction="up">
             {/* PAIN Section - At the Top */}
-            <div className="text-center mb-16">
+            <div className="mb-16">
               <motion.div 
                 className="mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="p-10 bg-gradient-to-br from-orange-50/80 to-red-50/60 border-2 border-orange-200/50 rounded-2xl max-w-4xl mx-auto shadow-lg">
-                  <motion.p 
-                    className="text-4xl font-bold mb-6 text-orange-700/90 leading-tight"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center">
+                  The Newsletter Problem Most Brands Face
+                </h2>
+                
+                <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+                  {/* Left side - Image */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="relative"
                   >
-                    80% of newsletters are ignored
-                  </motion.p>
-                  
-                  <motion.p 
-                    className="text-lg md:text-xl text-muted-foreground leading-relaxed"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.5 }}
-                  >
-                    Most company newsletters read like ads. Open rates sink below 25%, click-throughs drop even lower. 
-                    Your audience tunes out — and you lose one of your best chances to stay top-of-mind.
-                  </motion.p>
-                </div>
+                    <img 
+                      src={newsletterProblemImg} 
+                      alt="Newsletter engagement challenges" 
+                      className="rounded-lg shadow-lg w-full"
+                    />
+                  </motion.div>
 
-                {/* Arrow pointing down */}
-                <motion.div 
-                  className="flex justify-center my-10"
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.8, 
-                    delay: 0.8,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    repeatDelay: 0.5
-                  }}
-                >
-                  <ArrowDown className="w-12 h-12 text-primary" strokeWidth={2.5} />
-                </motion.div>
-                  
-                {/* SOLUTION Header */}
-                <motion.div
-                  className="p-10 bg-gradient-to-br from-primary/5 to-primary/10 border-2 border-primary/30 rounded-2xl max-w-4xl mx-auto shadow-glow mb-16"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.0 }}
-                >
-                  <p className="text-3xl md:text-4xl font-bold text-primary mb-3">
-                    The Newsletter Strategy that Works
-                  </p>
-                  <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-                </motion.div>
+                  {/* Right side - Content */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="space-y-6"
+                  >
+                    <h3 className="text-2xl md:text-3xl font-bold">
+                      Big Vision? Small Team? Not Enough Time?
+                    </h3>
+                    
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      You have the subscribers but click rates are well under 5%. Your emails feel too salesy, 
+                      and you're stuck in the spam folder. Meanwhile, your team lacks bandwidth to create the 
+                      engaging, informative content that builds loyalty.
+                    </p>
+                    
+                    <div className="bg-muted/50 p-6 rounded-lg border border-border">
+                      <p className="text-base text-muted-foreground">
+                        Sound familiar? <span className="bg-primary/20 text-primary font-semibold px-2 py-1 rounded">80% of marketers see email as a top engagement channel</span>, yet most struggle with non-promotional content that entertains and informs their audience, keeping them coming back for more.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Arrow pointing down */}
+            <div className="text-center mb-16">
+              <motion.div 
+                className="flex justify-center my-10"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: 0.8,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  repeatDelay: 0.5
+                }}
+              >
+                <ArrowDown className="w-12 h-12 text-primary" strokeWidth={2.5} />
+              </motion.div>
+                
+              {/* SOLUTION Header */}
+              <motion.div
+                className="p-10 bg-gradient-to-br from-primary/5 to-primary/10 border-2 border-primary/30 rounded-2xl max-w-4xl mx-auto shadow-glow mb-16"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.0 }}
+              >
+                <p className="text-3xl md:text-4xl font-bold text-primary mb-3">
+                  The Newsletter Strategy that Works
+                </p>
+                <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
               </motion.div>
 
               {/* 80/20 Pie Chart Section */}
