@@ -17,14 +17,22 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto text-center">
           <ScrollReveal direction="up">
             <motion.h1
-              className="text-[3.6rem] font-normal leading-tight mb-4 bg-gradient-hero bg-clip-text text-transparent"
+              className="text-[3.6rem] font-normal leading-tight mb-2 bg-gradient-hero bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               Email Marketing Experts
-              That Drive Revenue Growth
             </motion.h1>
+
+            <motion.h2
+              className="text-[2.8rem] font-normal leading-tight mb-8 bg-gradient-hero bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              That Drive Revenue Growth
+            </motion.h2>
 
             
             <motion.div
