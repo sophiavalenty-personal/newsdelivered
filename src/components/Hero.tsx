@@ -35,7 +35,7 @@ const Hero = () => {
             </motion.p>
             
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 mb-8 max-w-2xl mx-auto justify-center"
+              className="flex justify-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
@@ -53,30 +53,7 @@ const Hero = () => {
                   Talk to an expert
                 </Button>
               </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button 
-                  variant="hero-outline" 
-                  size="lg" 
-                  className="text-lg px-8 py-6 transition-all duration-300 font-semibold"
-                  onClick={() => window.location.href = '/services'}
-                >
-                  Ways to Work With Us
-                </Button>
-              </motion.div>
             </motion.div>
-
-            <motion.p 
-              className="text-sm text-muted-foreground"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1 }}
-            >
-              Start with a free consultation to see what we can do for you.
-            </motion.p>
           </ScrollReveal>
         </div>
       </div>
