@@ -137,7 +137,7 @@ Not Enough Time?</h3>
                       <Handshake className="w-8 h-8 text-primary-foreground" />
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">
-                      Full-Service Partnership Offering...
+                      Full-Service Partnership Offering
                     </h3>
                     <div className="mb-6 max-w-2xl mx-auto space-y-4">
                       {/* Item 1 */}
