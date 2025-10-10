@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import { Target, TrendingUp, DollarSign, ArrowDown, Handshake, Heart, BarChart3 } from "lucide-react";
+import { Target, TrendingUp, DollarSign, ArrowDown, Handshake, Heart, BarChart3, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import newsletterProblemImg from "@/assets/newsletter-problem.jpg";
 const PainSolution = () => {
@@ -139,26 +139,35 @@ Not Enough Time?</h3>
                     <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">
                       Full-Service Partnership Offering...
                     </h3>
-                    <div className="mb-6 max-w-3xl mx-auto">
-                      {/* Top of pyramid - Strategy */}
-                      <div className="text-center mb-6">
-                        <p className="text-xl md:text-2xl font-semibold text-foreground">
+                    <div className="mb-6 max-w-2xl mx-auto space-y-4">
+                      {/* Item 1 */}
+                      <div className="flex items-center justify-center gap-4">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+                          <Check className="w-4 h-4 text-primary" strokeWidth={3} />
+                        </div>
+                        <p className="text-lg md:text-xl font-medium text-foreground">
                           Custom revenue-boosting email strategy
                         </p>
                       </div>
                       
-                      {/* Bottom of pyramid - Two execution items side by side */}
-                      <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                        <div className="text-center">
-                          <p className="text-lg md:text-xl font-medium text-foreground">
-                            Hyper engaging content creation
-                          </p>
+                      {/* Item 2 */}
+                      <div className="flex items-center justify-center gap-4">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+                          <Check className="w-4 h-4 text-primary" strokeWidth={3} />
                         </div>
-                        <div className="text-center">
-                          <p className="text-lg md:text-xl font-medium text-foreground">
-                            Expert campaign deployment
-                          </p>
+                        <p className="text-lg md:text-xl font-medium text-foreground">
+                          Hyper engaging content creation
+                        </p>
+                      </div>
+                      
+                      {/* Item 3 */}
+                      <div className="flex items-center justify-center gap-4">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+                          <Check className="w-4 h-4 text-primary" strokeWidth={3} />
                         </div>
+                        <p className="text-lg md:text-xl font-medium text-foreground">
+                          Expert campaign deployment
+                        </p>
                       </div>
                     </div>
                     <p className="text-lg text-muted-foreground leading-relaxed mb-4 italic max-w-3xl mx-auto">
