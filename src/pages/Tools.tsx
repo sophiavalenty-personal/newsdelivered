@@ -118,9 +118,16 @@ const Tools = () => {
                             </CardTitle>
                           </CardHeader>
                           <CardContent className="flex flex-col justify-between flex-1 p-6 pt-0">
-                            <CardDescription className="text-sm text-muted-foreground text-center leading-relaxed">
-                              {tool.description}
-                            </CardDescription>
+                            {tool.title === "Automated CCPA Compliance" ? (
+                              <CardDescription className="text-sm text-muted-foreground leading-relaxed">
+                                <div className="text-left">Say goodbye to compliance headaches - in a privacy-first world our CCPA tool honors consumer rights and</div>
+                                <div className="text-center">protects you from costly fines</div>
+                              </CardDescription>
+                            ) : (
+                              <CardDescription className="text-sm text-muted-foreground text-center leading-relaxed">
+                                {tool.description}
+                              </CardDescription>
+                            )}
                           </CardContent>
                         </Card>
                       </motion.div>
