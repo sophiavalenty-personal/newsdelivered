@@ -50,7 +50,7 @@ const Tools = () => {
     },
     {
       title: "Automated CCPA Compliance",
-      description: "It's a privacy-first world, our automated CCPA tool will honor consumer rights and help you avoid costly penalties - say goodbye to compliance headaches",
+      description: "It's a privacy-first world, say goodbye to compliance headaches - our CCPA tool will honor consumer rights and help you avoid costly penalties",
       icon: Scale
     }
   ];
