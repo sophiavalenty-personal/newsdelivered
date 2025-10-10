@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import { Target, TrendingUp, DollarSign, ArrowDown } from "lucide-react";
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
+import { Target, TrendingUp, DollarSign, ArrowDown, Handshake, Heart, BarChart3 } from "lucide-react";
+import { Link } from "react-router-dom";
 import newsletterProblemImg from "@/assets/newsletter-problem.jpg";
 const PainSolution = () => {
   const strategies = [{
@@ -21,27 +21,6 @@ const PainSolution = () => {
     description: "Establish yourself as the trusted expert in your field",
     highlighted: false
   }];
-  const pieData = [{
-    name: "Entertaining + Informative Content",
-    value: 80,
-    color: "hsl(var(--primary))"
-  }, {
-    name: "Brand Promotion",
-    value: 20,
-    color: "hsl(var(--secondary))"
-  }];
-  const CustomTooltip = ({
-    active,
-    payload
-  }: any) => {
-    if (active && payload && payload.length) {
-      return <div className="bg-background border border-border p-3 rounded-lg shadow-lg">
-          <p className="font-semibold">{payload[0].name}</p>
-          <p className="text-primary">{payload[0].value}%</p>
-        </div>;
-    }
-    return null;
-  };
   return <section className="py-24 bg-muted/30 relative">
       {/* Geometric separator from previous section */}
       <div className="absolute top-0 left-0 right-0 h-16 bg-white transform -skew-y-1 origin-top-left"></div>
@@ -137,13 +116,12 @@ Not Enough Time?</h3>
               duration: 0.8,
               delay: 1.0
             }}>
-                <p className="text-3xl md:text-4xl font-bold text-primary mb-3">The Email Marketing Strategy that 
-Always Wins...</p>
+                <p className="text-3xl md:text-4xl font-bold text-primary mb-3">Our Solution</p>
                 <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
               </motion.div>
 
-              {/* 80/20 Pie Chart Section */}
-              <motion.div className="mb-16" initial={{
+              {/* Full Service Partnership - Clickable Card */}
+              <motion.div className="mb-12" initial={{
               opacity: 0,
               y: 20
             }} animate={{
@@ -153,87 +131,29 @@ Always Wins...</p>
               duration: 0.8,
               delay: 1.2
             }}>
-                <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-                  {/* Left side - Text content */}
-                  <div className="space-y-6 text-left">
-                    <motion.div initial={{
-                    opacity: 0,
-                    x: -20
-                  }} animate={{
-                    opacity: 1,
-                    x: 0
-                  }} transition={{
-                    duration: 0.6,
-                    delay: 1.4
-                  }}>
-                      <div className="flex items-start gap-3 mb-4">
-                        <div className="w-4 h-4 rounded-full bg-primary mt-1.5"></div>
-                        <div>
-                          <h3 className="text-xl font-bold mb-2">80% Entertaining + Informative Content</h3>
-                          <p className="text-muted-foreground">
-                            Build trust and engagement with valuable content that your audience actually wants to read.
-                          </p>
-                        </div>
+                <Link to="/services" className="block max-w-4xl mx-auto group">
+                  <Card className="p-8 md:p-10 shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-[1.02] border-primary/20 hover:border-primary/40 bg-gradient-to-br from-background to-primary/5">
+                    <CardContent className="p-0 text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <Handshake className="w-8 h-8 text-primary-foreground" />
                       </div>
-                    </motion.div>
-
-                    <motion.div initial={{
-                    opacity: 0,
-                    x: -20
-                  }} animate={{
-                    opacity: 1,
-                    x: 0
-                  }} transition={{
-                    duration: 0.6,
-                    delay: 1.6
-                  }}>
-                      <div className="flex items-start gap-3">
-                        <div className="w-4 h-4 rounded-full bg-secondary mt-1.5"></div>
-                        <div>
-                          <h3 className="text-xl font-bold mb-2">20% Brand Promotion</h3>
-                          <p className="text-muted-foreground">
-                            Strategic, well-placed promotions that feel natural and drive conversions.
-                          </p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </div>
-
-                  {/* Right side - Pie Chart */}
-                  <motion.div initial={{
-                  opacity: 0,
-                  scale: 0.8
-                }} animate={{
-                  opacity: 1,
-                  scale: 1
-                }} transition={{
-                  duration: 0.8,
-                  delay: 1.8
-                }}>
-                    <Card className="p-6 shadow-elegant">
-                      <CardContent className="p-0">
-                        <ResponsiveContainer width="100%" height={300}>
-                          <PieChart>
-                            <Pie data={pieData} cx="50%" cy="50%" labelLine={false} label={({
-                            name,
-                            value
-                          }) => `${value}%`} outerRadius={100} fill="#8884d8" dataKey="value">
-                              {pieData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
-                            </Pie>
-                            <Tooltip content={<CustomTooltip />} />
-                          </PieChart>
-                        </ResponsiveContainer>
-                        <p className="text-center font-semibold text-lg text-primary mt-4">
-                          The 80/20 Rule Maximizes Engagement and Revenue
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                </div>
+                      <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
+                        Full-Service Partnership
+                      </h3>
+                      <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                        We handle newsletter strategy, content creation, and management from start to finish. 
+                        You focus on your business while we deliver engaging newsletters that your audience loves and that drive real results.
+                      </p>
+                      <span className="text-primary font-semibold inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Learn More <ArrowDown className="w-4 h-4 rotate-[-90deg]" />
+                      </span>
+                    </CardContent>
+                  </Card>
+                </Link>
               </motion.div>
 
-              {/* Your Newsletter Should - Heading */}
-              <motion.h2 className="text-3xl font-bold mb-12" initial={{
+              {/* How We Do It - Title */}
+              <motion.h3 className="text-2xl md:text-3xl font-bold mb-8 text-center" initial={{
               opacity: 0,
               y: 20
             }} animate={{
@@ -241,7 +161,77 @@ Always Wins...</p>
               y: 0
             }} transition={{
               duration: 0.8,
-              delay: 2.0
+              delay: 1.4
+            }}>
+                How We Do It
+              </motion.h3>
+
+              {/* Two Information Cards */}
+              <motion.div className="grid md:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto" initial={{
+              opacity: 0,
+              y: 20
+            }} animate={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.8,
+              delay: 1.6
+            }}>
+                {/* Entertainment-First Strategy Card */}
+                <Card className="shadow-elegant border-border/50 hover:shadow-lg transition-all duration-300">
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                        <Heart className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold mb-3">Entertainment-First Strategy</h4>
+                        <p className="text-muted-foreground leading-relaxed mb-4">
+                          We follow the proven 80/20 rule: 80% of your newsletter delivers entertaining, informative, 
+                          and valuable content that builds trust and keeps readers engaged.
+                        </p>
+                        <p className="text-muted-foreground leading-relaxed">
+                          The remaining 20% features strategic brand promotion that feels natural and drives conversions 
+                          without overwhelming your audience.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Results-Driven Expertise Card */}
+                <Card className="shadow-elegant border-border/50 hover:shadow-lg transition-all duration-300">
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                        <BarChart3 className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold mb-3">Results-Driven Expertise</h4>
+                        <p className="text-muted-foreground leading-relaxed mb-4">
+                          Our approach is backed by data and proven strategies. We constantly monitor engagement metrics, 
+                          click-through rates, and conversion performance.
+                        </p>
+                        <p className="text-muted-foreground leading-relaxed">
+                          Every newsletter is optimized to deliver measurable results: higher open rates, increased engagement, 
+                          and more revenue for your business.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Your Newsletter Should - Heading */}
+              <motion.h2 className="text-3xl font-bold mb-12 text-center" initial={{
+              opacity: 0,
+              y: 20
+            }} animate={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.8,
+              delay: 1.8
             }}>
                 Your Newsletter Should
               </motion.h2>
