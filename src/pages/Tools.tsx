@@ -19,11 +19,6 @@ const Tools = () => {
       icon: Truck
     },
     {
-      title: "Delivery Report Analytics",
-      description: "Comprehensive, easy-to-use reporting and analytics to track and improve your email performance",
-      icon: BarChart3
-    },
-    {
       title: "SPF Checker",
       description: "Ensure your emails land in the inbox with our fast, reliable SPF validation tool",
       icon: Search
