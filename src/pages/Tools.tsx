@@ -19,11 +19,6 @@ const Tools = () => {
       icon: Truck
     },
     {
-      title: "SPF Checker",
-      description: "Ensure your emails land in the inbox with our fast, reliable SPF validation tool",
-      icon: Search
-    },
-    {
       title: "Email Authentication",
       description: "Greatly increase deliverability by securing your emails with DKIM, SPF, and DMARC authentication protocols",
       icon: ShieldCheck
