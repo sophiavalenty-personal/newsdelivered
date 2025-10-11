@@ -14,11 +14,6 @@ const Tools = () => {
       icon: PenTool
     },
     {
-      title: "Send Your Email - Earnware",
-      description: "Powerful email sending platform with advanced delivery optimization",
-      icon: Mail
-    },
-    {
       title: "Email Delivery",
       description: "Ensure your emails reach the inbox with our reliable delivery infrastructure",
       icon: Truck
@@ -48,11 +43,6 @@ const Tools = () => {
       description: "Design beautiful, mobile-responsive email templates with our drag-and-drop builder",
       icon: Layout
     },
-    {
-      title: "Automated CCPA Compliance",
-      description: "Say goodbye to compliance headaches - in a privacy-first world our CCPA tool honors consumer rights and protects you from costly fines",
-      icon: Scale
-    }
   ];
 
   return (
