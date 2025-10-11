@@ -41,7 +41,7 @@ const PainSolution = () => {
               duration: 0.8
             }}>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center">
-                  The Newsletter Problem Most Brands Face
+                  The Newsletter Problems Most Brands Face
                 </h2>
                 
                 <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
@@ -70,20 +70,32 @@ const PainSolution = () => {
                   duration: 0.8,
                   delay: 0.4
                 }} className="space-y-6">
-                    <h3 className="text-2xl md:text-3xl font-bold">Big Vision? Small Team? 
-Not Enough Time?</h3>
+                    <div className="space-y-4 text-xl md:text-2xl">
+                      <div className="flex items-center gap-3">
+                        <span className="text-foreground">→</span>
+                        <span className="text-foreground">Low Open & Click Rates</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="text-foreground">→</span>
+                        <span className="text-foreground">Mail That Won't Inbox</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="text-foreground">→</span>
+                        <span className="text-foreground">High Spam Rates</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="text-foreground">→</span>
+                        <span className="font-bold text-foreground">Audience Tunes Out</span>
+                      </div>
+                    </div>
                     
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                      You have the subscribers but click rates are well under 5%. Your emails feel too salesy, 
-                      and you're stuck in the spam folder. Meanwhile, your team lacks bandwidth to create the 
-                      engaging, informative content that builds loyalty.
+                    <p className="text-lg text-muted-foreground leading-relaxed pt-4">
+                      <span className="bg-[#c4d82e] text-foreground font-semibold px-2 py-1">80% of newsletters</span> <span className="font-bold text-foreground">struggle</span> to get their audience to come back for more.
                     </p>
                     
-                    <div className="bg-muted/50 p-6 rounded-lg border border-border">
-                      <p className="text-base text-muted-foreground">
-                        Sound familiar? <span className="bg-primary/20 text-primary font-semibold px-2 py-1 rounded">80% of marketers see email as a top engagement channel</span>, yet most struggle with non-promotional content that entertains and informs their audience, keeping them coming back for more.
-                      </p>
-                    </div>
+                    <p className="text-lg md:text-xl font-semibold text-foreground pt-2">
+                      NewsDelivered solves those problems. Here's how:
+                    </p>
                   </motion.div>
                 </div>
               </motion.div>
