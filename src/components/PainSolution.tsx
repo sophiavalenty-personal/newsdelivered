@@ -105,24 +105,46 @@ const PainSolution = () => {
             <div className="mb-16">
               <div className="mb-12">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center">
-                  Entertainment-First Strategy
+                  The Formula That Maximizes Engagement and Revenue:
                 </h2>
                 
                 <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
                   {/* Left side - Content */}
-                  <div className="space-y-6">
-                    <h3 className="text-2xl md:text-3xl font-bold">The 80/20 Rule for Engagement</h3>
-                    
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                      We follow the proven 80/20 rule: 80% of your newsletter delivers entertaining, informative, 
-                      and valuable content that builds trust and keeps readers engaged.
-                    </p>
-                    
-                    <div className="bg-muted/50 p-6 rounded-lg border border-border">
-                      <p className="text-base text-muted-foreground">
-                        The remaining <span className="bg-primary/20 text-primary font-semibold px-2 py-1 rounded">20% features strategic brand promotion</span> that feels natural and drives conversions 
-                        without overwhelming your audience.
-                      </p>
+                  <div className="space-y-8">
+                    {/* 80% Section */}
+                    <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-6 rounded-lg border-2 border-primary/20">
+                      <div className="flex items-baseline gap-3 mb-4">
+                        <span className="text-5xl font-bold text-primary">80%</span>
+                        <span className="text-xl font-bold text-foreground">Entertaining + Informative Content</span>
+                      </div>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span>Keeps readers eager to come back for more</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span>Builds brand loyalty</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* 20% Section */}
+                    <div className="bg-muted/30 p-6 rounded-lg border-2 border-border">
+                      <div className="flex items-baseline gap-3 mb-4">
+                        <span className="text-5xl font-bold text-foreground">20%</span>
+                        <span className="text-xl font-bold text-foreground">Strategic Brand Promotion</span>
+                      </div>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span>Drives revenue without overwhelming your audience</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span>Feels natural and more compelling</span>
+                        </li>
+                      </ul>
                     </div>
                   </div>
 
