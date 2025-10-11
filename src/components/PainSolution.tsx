@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Target, TrendingUp, DollarSign, ArrowDown, Handshake, Heart, BarChart3, Check } from "lucide-react";
 import { Link } from "react-router-dom";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import newsletterProblemImg from "@/assets/newsletter-problem.jpg";
-import horizontalBarImg from "@/assets/80-20-horizontal-bar.jpg";
 import SocialProof from "@/components/SocialProof";
 const PainSolution = () => {
   const strategies = [{
@@ -101,15 +101,45 @@ const PainSolution = () => {
               </motion.div>
             </div>
 
-            {/* Entertainment-First Strategy Section - Staggered Layout */}
+            {/* Entertainment-First Strategy Section - Donut Chart */}
             <div className="mb-16">
               <div className="mb-12">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center">
                   The Formula That Maximizes Engagement and Revenue:
                 </h2>
                 
-                <div className="max-w-4xl mx-auto">
-                  {/* Content */}
+                <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                  {/* Left side - Donut Chart */}
+                  <div className="relative flex items-center justify-center">
+                    <ResponsiveContainer width="100%" height={400}>
+                      <PieChart>
+                        <Pie
+                          data={[
+                            { name: "Content", value: 80 },
+                            { name: "Promotion", value: 20 }
+                          ]}
+                          cx="50%"
+                          cy="50%"
+                          innerRadius={100}
+                          outerRadius={160}
+                          paddingAngle={2}
+                          dataKey="value"
+                        >
+                          <Cell fill="hsl(var(--primary))" />
+                          <Cell fill="hsl(var(--muted-foreground))" />
+                        </Pie>
+                      </PieChart>
+                    </ResponsiveContainer>
+                    {/* Center text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="text-5xl font-bold text-primary">80/20</div>
+                        <div className="text-sm text-muted-foreground mt-1">Formula</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right side - Content Details */}
                   <div className="space-y-8">
                     {/* 80% Section */}
                     <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-6 rounded-lg border-2 border-primary/20">
