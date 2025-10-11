@@ -109,37 +109,7 @@ const PainSolution = () => {
                 </h2>
                 
                 <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-                  {/* Left side - Donut Chart */}
-                  <div className="relative flex items-center justify-center">
-                    <ResponsiveContainer width="100%" height={400}>
-                      <PieChart>
-                        <Pie
-                          data={[
-                            { name: "Content", value: 80 },
-                            { name: "Promotion", value: 20 }
-                          ]}
-                          cx="50%"
-                          cy="50%"
-                          innerRadius={100}
-                          outerRadius={160}
-                          paddingAngle={2}
-                          dataKey="value"
-                        >
-                          <Cell fill="hsl(var(--primary))" />
-                          <Cell fill="hsl(var(--muted-foreground))" />
-                        </Pie>
-                      </PieChart>
-                    </ResponsiveContainer>
-                    {/* Center text */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-5xl font-bold text-primary">80/20</div>
-                        <div className="text-sm text-muted-foreground mt-1">Formula</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right side - Content Details */}
+                  {/* Left side - Content Details */}
                   <div className="space-y-8">
                     {/* 80% Section */}
                     <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-6 rounded-lg border-2 border-primary/20">
@@ -175,6 +145,36 @@ const PainSolution = () => {
                           <span>Feels natural and more compelling</span>
                         </li>
                       </ul>
+                    </div>
+                  </div>
+
+                  {/* Right side - Donut Chart */}
+                  <div className="relative flex items-center justify-center">
+                    <ResponsiveContainer width="100%" height={400}>
+                      <PieChart>
+                        <Pie
+                          data={[
+                            { name: "Content", value: 80 },
+                            { name: "Promotion", value: 20 }
+                          ]}
+                          cx="50%"
+                          cy="50%"
+                          innerRadius={100}
+                          outerRadius={160}
+                          paddingAngle={2}
+                          dataKey="value"
+                        >
+                          <Cell fill="hsl(var(--primary))" />
+                          <Cell fill="hsl(var(--muted-foreground))" />
+                        </Pie>
+                      </PieChart>
+                    </ResponsiveContainer>
+                    {/* Center text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="text-5xl font-bold text-primary">80/20</div>
+                        <div className="text-sm text-muted-foreground mt-1">Formula</div>
+                      </div>
                     </div>
                   </div>
                 </div>
