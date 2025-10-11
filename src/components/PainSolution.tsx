@@ -108,8 +108,8 @@ const PainSolution = () => {
                   The Formula That Maximizes Engagement and Revenue:
                 </h2>
                 
-                <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-                  {/* Left side - Content */}
+                <div className="max-w-4xl mx-auto">
+                  {/* Content */}
                   <div className="space-y-8">
                     {/* 80% Section */}
                     <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-6 rounded-lg border-2 border-primary/20">
@@ -146,11 +146,6 @@ const PainSolution = () => {
                         </li>
                       </ul>
                     </div>
-                  </div>
-
-                  {/* Right side - Horizontal Bar Chart */}
-                  <div className="relative flex items-center justify-center">
-                    <img src={horizontalBarImg} alt="80/20 engagement and revenue formula" className="w-full max-w-2xl mx-auto" />
                   </div>
                 </div>
               </div>
