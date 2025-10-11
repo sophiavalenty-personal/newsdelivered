@@ -4,7 +4,7 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Target, TrendingUp, DollarSign, ArrowDown, Handshake, Heart, BarChart3, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import newsletterProblemImg from "@/assets/newsletter-problem.jpg";
-import entertainmentFirstImg from "@/assets/entertainment-first-illustration.jpg";
+import pieChartImg from "@/assets/80-20-pie-chart.jpg";
 import SocialProof from "@/components/SocialProof";
 const PainSolution = () => {
   const strategies = [{
@@ -148,9 +148,9 @@ const PainSolution = () => {
                     </div>
                   </div>
 
-                  {/* Right side - Image */}
-                  <div className="relative">
-                    <img src={entertainmentFirstImg} alt="Person enjoying entertaining newsletter content" className="rounded-lg shadow-lg w-full" />
+                  {/* Right side - Pie Chart */}
+                  <div className="relative flex items-center justify-center">
+                    <img src={pieChartImg} alt="80/20 engagement and revenue formula pie chart" className="w-full max-w-md mx-auto" />
                   </div>
                 </div>
               </div>
