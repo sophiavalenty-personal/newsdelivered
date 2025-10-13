@@ -4,7 +4,6 @@ import PainSolution from "@/components/PainSolution";
 import SocialProof from "@/components/SocialProof";
 import HowItWorks from "@/components/HowItWorks";
 import ServicesOverview from "@/components/ServicesOverview";
-import Proof from "@/components/Proof";
 import Pricing from "@/components/Pricing";
 import EndToEndSolution from "@/components/EndToEndSolution";
 import HomeFAQ from "@/components/HomeFAQ";
@@ -20,7 +19,6 @@ const Index = () => {
         <PainSolution />
         <HowItWorks />
         <ServicesOverview />
-        <Proof />
         <Pricing />
         <EndToEndSolution />
         <HomeFAQ />
