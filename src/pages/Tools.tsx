@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import { PenTool, Mail, Truck, BarChart3, Search, ShieldCheck, Sparkles, Layout, Scale } from "lucide-react";
+import { PenTool, Mail, Truck, BarChart3, Search, ShieldCheck, Sparkles, Layout, Scale, Plug } from "lucide-react";
 
 const Tools = () => {
   const tools = [
@@ -32,6 +32,11 @@ const Tools = () => {
       title: "Custom Template Builder",
       description: "Design beautiful, mobile-responsive email templates with our drag-and-drop builder",
       icon: Layout
+    },
+    {
+      title: "Flexible ESP Integration",
+      description: "Seamlessly integrate with your existing email service provider or use our built-in solution",
+      icon: Plug
     },
   ];
 
