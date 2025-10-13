@@ -131,7 +131,7 @@ const PainSolution = () => {
               duration: 0.8,
               delay: 1.0
             }}>
-                <p className="text-3xl md:text-4xl font-bold text-primary mb-3">Human Experts + AI Automation  
+                <p className="text-3xl font-bold text-primary mb-3 md:text-4xl">Human Experts + AI Automation   
 Done-For-You</p>
                 <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
               </motion.div>
