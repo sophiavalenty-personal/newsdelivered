@@ -75,33 +75,6 @@ const Tools = () => {
                 </div>
               </ScrollReveal>
 
-              {/* Featured Strategy Card */}
-              <ScrollReveal direction="up" delay={0.2}>
-                <Card className="mb-12 bg-gradient-to-br from-elegant-sage/10 to-elegant-cream/20 backdrop-blur-sm border-elegant-sage/20 shadow-elegant">
-                  <CardHeader className="text-center pb-2">
-                    <CardTitle className="text-2xl font-semibold text-foreground mb-2">
-                      80% Entertaining + Informative Content
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <ul className="space-y-2 max-w-2xl mx-auto">
-                      <li className="flex items-start gap-3 text-muted-foreground">
-                        <span className="text-elegant-sage mt-1">•</span>
-                        <span>Keeps readers engaging with the brand</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-muted-foreground">
-                        <span className="text-elegant-sage mt-1">•</span>
-                        <span>Supercharges email delivery reputation</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-muted-foreground">
-                        <span className="text-elegant-sage mt-1">•</span>
-                        <span>Creates more advertising opportunities</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </ScrollReveal>
-
               {/* Tool Cards */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 {tools.map((tool, index) => {
