@@ -33,7 +33,7 @@ const Hero = () => {
           }} transition={{
             duration: 0.8,
             delay: 0.4
-          }}>Drive Revenue Growth</motion.h2>
+          }}>Driving Revenue Growth</motion.h2>
 
             
             <motion.div className="flex justify-center" initial={{
