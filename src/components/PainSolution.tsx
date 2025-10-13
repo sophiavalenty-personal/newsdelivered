@@ -46,11 +46,13 @@ const PainSolution = () => {
                       <ul className="space-y-2 text-muted-foreground">
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span>Keeps readers eager to come back for more</span>
+                          <span>Keeps readers engaging with the brand</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span>Builds brand loyalty</span>
+                          <span>C
+reates more advertising opportunities
+                        </span>
                         </li>
                       </ul>
                     </div>
