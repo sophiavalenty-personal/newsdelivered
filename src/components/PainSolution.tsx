@@ -50,9 +50,7 @@ const PainSolution = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span>C
-reates more advertising opportunities
-                        </span>
+                          <span>Creates more advertising opportunities</span>
                         </li>
                       </ul>
                     </div>
