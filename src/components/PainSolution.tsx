@@ -32,9 +32,9 @@ const PainSolution = () => {
             {/* Entertainment-First Strategy Section - Donut Chart */}
             <div className="mb-16">
               <div className="mb-12">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center">
-                  The Formula That Maximizes Engagement and Revenue:
-                </h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl mb-12 text-center">
+            The Formula That Maximizes Engagement and Revenue:
+          </h2>
                 
                 <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                   {/* Left side - Content Details */}
