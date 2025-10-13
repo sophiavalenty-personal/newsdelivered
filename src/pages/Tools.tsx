@@ -35,7 +35,7 @@ const Tools = () => {
     },
     {
       title: "Flexible ESP Integration",
-      description: "Seamlessly integrate with your existing email service provider or use our built-in solution",
+      description: "Enjoy top-tier email delivery with seamless integration across multiple leading ESPs so you can reach your audience effectively",
       icon: Plug
     },
   ];
