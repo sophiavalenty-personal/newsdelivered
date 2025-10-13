@@ -32,9 +32,7 @@ const PainSolution = () => {
             {/* Entertainment-First Strategy Section - Donut Chart */}
             <div className="mb-16">
               <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl mb-12 text-center">
-            Adding Entertaining and Informative Content, Drastically Increases Promotional Opportunities.
-          </h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl mb-12 text-center">Add Engaging Content, Increase Revenue.</h2>
                 
                 <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                   {/* Left side - Content Details */}
@@ -80,18 +78,13 @@ const PainSolution = () => {
                   <div className="relative flex items-center justify-center">
                     <ResponsiveContainer width="100%" height={400}>
                       <PieChart>
-                        <Pie
-                          data={[
-                            { name: "Content", value: 80 },
-                            { name: "Promotion", value: 20 }
-                          ]}
-                          cx="50%"
-                          cy="50%"
-                          innerRadius={100}
-                          outerRadius={160}
-                          paddingAngle={2}
-                          dataKey="value"
-                        >
+                        <Pie data={[{
+                        name: "Content",
+                        value: 80
+                      }, {
+                        name: "Promotion",
+                        value: 20
+                      }]} cx="50%" cy="50%" innerRadius={100} outerRadius={160} paddingAngle={2} dataKey="value">
                           <Cell fill="hsl(var(--primary))" />
                           <Cell fill="hsl(var(--muted-foreground))" />
                         </Pie>
