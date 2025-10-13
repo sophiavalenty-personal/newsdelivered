@@ -33,7 +33,7 @@ const PainSolution = () => {
             <div className="mb-16">
               <div className="mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl mb-12 text-center">
-            The Formula That Maximizes Engagement and Revenue:
+            Adding Entertaining and Informative Content, Drastically Increases Promotional Opportunities.
           </h2>
                 
                 <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
