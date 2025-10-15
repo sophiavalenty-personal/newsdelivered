@@ -122,31 +122,34 @@ const Tools = () => {
                   </h2>
                   <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-8">
                     {[
-                      "Klaviyo",
-                      "Omnisend",
-                      "Salesforce",
-                      "Active Campaign",
-                      "Hubspot",
-                      "Keap",
-                      "Mailchimp",
-                      "Brevo",
-                      "Marketo",
-                      "Get Response",
-                      "Cordial",
-                      "Dotdigital",
-                      "Iterable",
-                      "Campaign Monitor",
-                      "Braze",
-                      "Aweber"
+                      { name: "Klaviyo", url: "https://www.klaviyo.com" },
+                      { name: "Omnisend", url: "https://www.omnisend.com" },
+                      { name: "Salesforce", url: "https://www.salesforce.com/products/marketing-cloud/" },
+                      { name: "Active Campaign", url: "https://www.activecampaign.com" },
+                      { name: "Hubspot", url: "https://www.hubspot.com" },
+                      { name: "Keap", url: "https://keap.com" },
+                      { name: "Mailchimp", url: "https://mailchimp.com" },
+                      { name: "Brevo", url: "https://www.brevo.com" },
+                      { name: "Marketo", url: "https://www.marketo.com" },
+                      { name: "Get Response", url: "https://www.getresponse.com" },
+                      { name: "Dotdigital", url: "https://dotdigital.com" },
+                      { name: "Iterable", url: "https://iterable.com" },
+                      { name: "Campaign Monitor", url: "https://www.campaignmonitor.com" },
+                      { name: "Aweber", url: "https://www.aweber.com" },
+                      { name: "Earnware", url: "https://www.earnware.com" }
                     ].map((provider) => (
-                      <div
-                        key={provider}
-                        className="bg-white rounded-lg p-4 flex items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-300 border border-border/50"
+                      <motion.a
+                        key={provider.name}
+                        href={provider.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        className="bg-white rounded-lg p-4 flex items-center justify-center text-center shadow-sm hover:shadow-md transition-all duration-300 border border-border/50 group"
                       >
-                        <span className="text-foreground font-medium text-sm">
-                          {provider}
+                        <span className="text-foreground font-medium text-sm group-hover:text-primary transition-colors duration-300">
+                          {provider.name}
                         </span>
-                      </div>
+                      </motion.a>
                     ))}
                   </div>
                 </div>
