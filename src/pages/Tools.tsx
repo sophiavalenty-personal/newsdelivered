@@ -114,6 +114,44 @@ const Tools = () => {
                 })}
               </div>
 
+              {/* Email Service Providers Section */}
+              <ScrollReveal direction="up" delay={0.5}>
+                <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-12 shadow-subtle mb-16">
+                  <h2 className="text-3xl font-semibold text-foreground mb-3 text-center">
+                    We support clients across 40+ email service providers, including
+                  </h2>
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-8">
+                    {[
+                      "Klaviyo",
+                      "Omnisend",
+                      "Salesforce",
+                      "Active Campaign",
+                      "Hubspot",
+                      "Keap",
+                      "Mailchimp",
+                      "Brevo",
+                      "Marketo",
+                      "Get Response",
+                      "Cordial",
+                      "Dotdigital",
+                      "Iterable",
+                      "Campaign Monitor",
+                      "Braze",
+                      "Aweber"
+                    ].map((provider) => (
+                      <div
+                        key={provider}
+                        className="bg-white rounded-lg p-4 flex items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-300 border border-border/50"
+                      >
+                        <span className="text-foreground font-medium text-sm">
+                          {provider}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
+
               {/* CTA Section */}
               <ScrollReveal direction="up" delay={0.6}>
                 <div className="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-12 shadow-subtle">
