@@ -35,7 +35,7 @@ const Tools = () => {
     },
     {
       title: "Flexible ESP Integration",
-      description: "Expert email delivery across all leading email service providers.",
+      description: "Expert email delivery and integration across all leading email service providers.",
       icon: Plug
     },
   ];
