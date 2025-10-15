@@ -118,7 +118,7 @@ const Tools = () => {
               <ScrollReveal direction="up" delay={0.5}>
                 <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-12 shadow-subtle mb-16">
                   <h2 className="text-3xl font-semibold text-foreground mb-3 text-center">
-                    We support clients across 40+ email service providers, including
+                    All popular email service providers supported, including:
                   </h2>
                   <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-8">
                     {[
