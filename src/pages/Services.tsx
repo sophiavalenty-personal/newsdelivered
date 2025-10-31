@@ -102,9 +102,9 @@ const Services = () => {
                               </h3>
                             </div>
                             {step.number === 1 && (
-                              <Link to="/contact" className="flex items-center gap-1 text-sm text-primary hover:text-primary-glow transition-colors">
+                              <Link to="/contact" className="flex items-center gap-1 text-base text-primary hover:text-primary-glow transition-colors">
                                 Contact
-                                <ArrowRight className="w-4 h-4" />
+                                <ArrowRight className="w-5 h-5" />
                               </Link>
                             )}
                           </div>
