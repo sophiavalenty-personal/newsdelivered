@@ -30,8 +30,8 @@ const Services = () => {
   }, {
     number: 4,
     icon: BarChart,
-    title: "We'll make sure it's working and keep you posted",
-    description: "We monitor performance and communicate regularly with detailed reports to keep you informed about how your strategy is improving and providing value to your business."
+    title: "Transparent Reporting and Iteration",
+    description: "We'll track email performance with you and make sure it's producing the results you need and make improvements as we go."
   }];
   const industries = ["Ecommerce", "B2B", "Service Providers", "Health and Wellness", "Publishing", "And More"];
   const testimonials = [{
