@@ -20,8 +20,8 @@ const Services = () => {
   }, {
     number: 2,
     icon: Target,
-    title: "Develop Ideal Marketing Strategy",
-    description: "We'll build out your content calendar and create a comprehensive email strategy tailored to your business goals."
+    title: "Strategy & Planning",
+    description: "We'll discuss your goals, pain points and current marketing approach, then create an ideal email strategy designed to increase your bottom line."
   }, {
     number: 3,
     icon: Wrench,
