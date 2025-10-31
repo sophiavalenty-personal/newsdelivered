@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,6 +10,9 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Link } from "react-router-dom";
 
 const Services = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const steps = [
     {
       number: 1,
