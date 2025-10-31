@@ -25,7 +25,7 @@ const Services = () => {
   }, {
     number: 3,
     icon: Wrench,
-    title: "We'll put it all together",
+    title: "We'll Put It All Together For You",
     description: "Once you approve the plan we'll handle all the technical details so you can sit back, relax, and focus on the parts of your business you do best."
   }, {
     number: 4,
