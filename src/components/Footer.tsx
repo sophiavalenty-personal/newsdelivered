@@ -1,14 +1,10 @@
 const Footer = () => {
-  return (
-    <footer className="bg-foreground text-background py-12">
+  return <footer className="bg-foreground text-background py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4 text-primary-glow">NewsDelivered.com</h3>
-            <p className="text-background/70 leading-relaxed">
-              The world's most trusted news delivery platform, 
-              helping publishers reach their audience effectively.
-            </p>
+            <p className="text-background/70 leading-relaxed">We help business increase  their revenue with highly engaging email newsletters. </p>
           </div>
           
           <div>
@@ -48,8 +44,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
