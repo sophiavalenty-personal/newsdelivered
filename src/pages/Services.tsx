@@ -102,9 +102,14 @@ const Services = () => {
                           </div>
                           
                           {/* Description */}
-                          {step.description && <p className="text-lg text-muted-foreground">
+                          {step.description && <p className="text-lg text-muted-foreground mb-4">
                               {step.description}
                             </p>}
+                          
+                          {/* Contact button for step 1 */}
+                          {step.number === 1 && <Link to="/contact">
+                              <Button className="mt-2">Contact Us</Button>
+                            </Link>}
                         </div>
                         
                         {/* Arrow indicator */}
