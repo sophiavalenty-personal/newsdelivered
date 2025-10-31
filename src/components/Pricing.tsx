@@ -14,7 +14,7 @@ const Pricing = () => {
           </ScrollReveal>
           
           <ScrollReveal delay={0.2}>
-            <Card className="border-l-4 border-primary/30 shadow-sm">
+            <Card className="shadow-sm">
               <CardContent className="py-12 px-8">
                 <p className="text-lg text-muted-foreground leading-relaxed text-center">
                   NewsDelivered offers premium solutions with transparent, cost-effective pricing. 
