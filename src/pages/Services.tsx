@@ -94,11 +94,19 @@ const Services = () => {
                         
                         <div className="flex-1">
                           {/* Icon and Title */}
-                          <div className="flex items-center gap-3 mb-3">
-                            <step.icon className="w-6 h-6 text-primary" />
-                            <h3 className="text-2xl font-bold text-foreground">
-                              {step.title}
-                            </h3>
+                          <div className="flex items-center justify-between gap-3 mb-3">
+                            <div className="flex items-center gap-3">
+                              <step.icon className="w-6 h-6 text-primary" />
+                              <h3 className="text-2xl font-bold text-foreground">
+                                {step.title}
+                              </h3>
+                            </div>
+                            {step.number === 1 && (
+                              <Link to="/contact" className="flex items-center gap-1 text-sm text-primary hover:text-primary-glow transition-colors">
+                                Contact
+                                <ArrowRight className="w-4 h-4" />
+                              </Link>
+                            )}
                           </div>
                           
                           {/* Description */}
