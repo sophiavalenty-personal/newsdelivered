@@ -8,117 +8,83 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Search, Target, Wrench, BarChart, Code, Send, Shield, TrendingUp, ArrowRight, Quote, CheckCircle2 } from "lucide-react";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Link } from "react-router-dom";
-
 const Services = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const steps = [
-    {
-      number: 1,
-      icon: Search,
-      title: "Current Strategy Audit",
-      description: "Our team will assess your overall marketing strategy and determine how email can increase your bottom line."
-    },
-    {
-      number: 2,
-      icon: Target,
-      title: "Develop Ideal Marketing Strategy",
-      description: "We'll build out your content calendar and create a comprehensive email strategy tailored to your business goals."
-    },
-    {
-      number: 3,
-      icon: Wrench,
-      title: "We'll put it all together",
-      description: "Done for you:",
-      subItems: [
-        {
-          icon: Code,
-          title: "Templates",
-          description: "We're HTML experts so you don't have to be. Beautiful, responsive email templates that work across all devices."
-        },
-        {
-          icon: Send,
-          title: "Sending",
-          description: "We'll send the email from your ESP / social platforms. Sit back while we handle the technical details."
-        }
-      ]
-    },
-    {
-      number: 4,
-      icon: BarChart,
-      title: "We'll make sure it's working and keep you posted",
-      description: null,
-      subItems: [
-        {
-          icon: Shield,
-          title: "Delivery - Email Authentication",
-          description: "Make sure you're playing by all the Email Authentication Rules. We handle SPF, DKIM, DMARC, and more."
-        },
-        {
-          icon: TrendingUp,
-          title: "Performance",
-          description: "Make sure your email is working for you. We'll communicate often and provide detailed reports to keep you in the know about how your strategy is improving and providing value to your business."
-        }
-      ]
-    }
-  ];
-
-  const industries = [
-    "Ecommerce",
-    "B2B",
-    "Service Providers",
-    "Health and Wellness",
-    "Publishing",
-    "And More"
-  ];
-
-  const testimonials = [
-    {
-      quote: "Working with News Delivered transformed our email strategy. Our open rates increased by 180% and we're seeing consistent engagement from our audience.",
-      author: "Sarah Johnson",
-      company: "TechStart Inc.",
-      result: "+180% Open Rates"
-    },
-    {
-      quote: "Finally, an email partner that understands the balance between promotion and value. Our customers actually look forward to our emails now.",
-      author: "Michael Chen",
-      company: "Wellness Co.",
-      result: "+250% Click-Through Rate"
-    },
-    {
-      quote: "The ROI has been incredible. We've seen a 3x increase in revenue directly attributed to our improved email strategy.",
-      author: "Emily Rodriguez",
-      company: "E-commerce Brand",
-      result: "3x Revenue Growth"
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "How long until we see results?",
-      answer: "Most clients start seeing improved engagement within 2-3 weeks of launching their new strategy. Significant revenue impact typically becomes evident within 60-90 days as we optimize and refine your approach."
-    },
-    {
-      question: "What if we already have an email strategy?",
-      answer: "Perfect! We'll conduct a comprehensive audit of your current strategy and identify opportunities for improvement. We can either enhance what you have or help you transition to a more effective approach."
-    },
-    {
-      question: "What ESPs do you work with?",
-      answer: "We work with all major email service providers including Mailchimp, Klaviyo, SendGrid, ConvertKit, ActiveCampaign, and more. If you have a specific platform, we can work with it."
-    },
-    {
-      question: "How much time commitment is required from us?",
-      answer: "Minimal! That's the beauty of our done-for-you service. We typically need 1-2 hours per month for strategy alignment calls. We handle all the heavy lifting - content creation, design, sending, and reporting."
-    },
-    {
-      question: "Do you offer custom pricing?",
-      answer: "Yes! Every business has unique needs. We'll create a custom package based on your email list size, sending frequency, and specific requirements. Contact us for a personalized quote."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const steps = [{
+    number: 1,
+    icon: Search,
+    title: "Current Strategy Audit",
+    description: "Our team will assess your overall marketing strategy and determine how email can increase your bottom line."
+  }, {
+    number: 2,
+    icon: Target,
+    title: "Develop Ideal Marketing Strategy",
+    description: "We'll build out your content calendar and create a comprehensive email strategy tailored to your business goals."
+  }, {
+    number: 3,
+    icon: Wrench,
+    title: "We'll put it all together",
+    description: "Done for you:",
+    subItems: [{
+      icon: Code,
+      title: "Templates",
+      description: "We're HTML experts so you don't have to be. Beautiful, responsive email templates that work across all devices."
+    }, {
+      icon: Send,
+      title: "Sending",
+      description: "We'll send the email from your ESP / social platforms. Sit back while we handle the technical details."
+    }]
+  }, {
+    number: 4,
+    icon: BarChart,
+    title: "We'll make sure it's working and keep you posted",
+    description: null,
+    subItems: [{
+      icon: Shield,
+      title: "Delivery - Email Authentication",
+      description: "Make sure you're playing by all the Email Authentication Rules. We handle SPF, DKIM, DMARC, and more."
+    }, {
+      icon: TrendingUp,
+      title: "Performance",
+      description: "Make sure your email is working for you. We'll communicate often and provide detailed reports to keep you in the know about how your strategy is improving and providing value to your business."
+    }]
+  }];
+  const industries = ["Ecommerce", "B2B", "Service Providers", "Health and Wellness", "Publishing", "And More"];
+  const testimonials = [{
+    quote: "Working with News Delivered transformed our email strategy. Our open rates increased by 180% and we're seeing consistent engagement from our audience.",
+    author: "Sarah Johnson",
+    company: "TechStart Inc.",
+    result: "+180% Open Rates"
+  }, {
+    quote: "Finally, an email partner that understands the balance between promotion and value. Our customers actually look forward to our emails now.",
+    author: "Michael Chen",
+    company: "Wellness Co.",
+    result: "+250% Click-Through Rate"
+  }, {
+    quote: "The ROI has been incredible. We've seen a 3x increase in revenue directly attributed to our improved email strategy.",
+    author: "Emily Rodriguez",
+    company: "E-commerce Brand",
+    result: "3x Revenue Growth"
+  }];
+  const faqs = [{
+    question: "How long until we see results?",
+    answer: "Most clients start seeing improved engagement within 2-3 weeks of launching their new strategy. Significant revenue impact typically becomes evident within 60-90 days as we optimize and refine your approach."
+  }, {
+    question: "What if we already have an email strategy?",
+    answer: "Perfect! We'll conduct a comprehensive audit of your current strategy and identify opportunities for improvement. We can either enhance what you have or help you transition to a more effective approach."
+  }, {
+    question: "What ESPs do you work with?",
+    answer: "We work with all major email service providers including Mailchimp, Klaviyo, SendGrid, ConvertKit, ActiveCampaign, and more. If you have a specific platform, we can work with it."
+  }, {
+    question: "How much time commitment is required from us?",
+    answer: "Minimal! That's the beauty of our done-for-you service. We typically need 1-2 hours per month for strategy alignment calls. We handle all the heavy lifting - content creation, design, sending, and reporting."
+  }, {
+    question: "Do you offer custom pricing?",
+    answer: "Yes! Every business has unique needs. We'll create a custom package based on your email list size, sending frequency, and specific requirements. Contact us for a personalized quote."
+  }];
+  return <div className="min-h-screen">
       <Header />
       <main className="pt-24 pb-16">
         {/* Hero Section */}
@@ -130,30 +96,19 @@ const Services = () => {
           </ScrollReveal>
           
           <ScrollReveal delay={0.2}>
-            <p className="text-xl md:text-2xl text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-              We're a whole extension of your marketing department, at a fraction of the cost, while we multiply your results.
-            </p>
+            
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
-            <div className="flex justify-center gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="text-lg px-8">
-                  Schedule Free Audit
-                </Button>
-              </Link>
-            </div>
+            
           </ScrollReveal>
 
           {/* Steps Process */}
           <div className="max-w-4xl mx-auto space-y-8 mb-16 mt-20">
-            {steps.map((step, index) => (
-              <ScrollReveal key={index} delay={index * 0.15}>
+            {steps.map((step, index) => <ScrollReveal key={index} delay={index * 0.15}>
                 <div className="relative">
                   {/* Connector Line */}
-                  {index < steps.length - 1 && (
-                    <div className="absolute left-6 top-20 w-0.5 h-12 bg-gradient-to-b from-primary/40 to-transparent hidden md:block" />
-                  )}
+                  {index < steps.length - 1 && <div className="absolute left-6 top-20 w-0.5 h-12 bg-gradient-to-b from-primary/40 to-transparent hidden md:block" />}
                   
                   <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 overflow-hidden">
                     <CardContent className="p-6">
@@ -173,24 +128,18 @@ const Services = () => {
                           </div>
                           
                           {/* Description (for steps 1 & 2) */}
-                          {step.description && !step.subItems && (
-                            <p className="text-lg text-muted-foreground">
+                          {step.description && !step.subItems && <p className="text-lg text-muted-foreground">
                               {step.description}
-                            </p>
-                          )}
+                            </p>}
                           
                           {/* Description with sub-items label (for step 3) */}
-                          {step.description && step.subItems && (
-                            <p className="text-lg font-medium text-foreground mb-4">
+                          {step.description && step.subItems && <p className="text-lg font-medium text-foreground mb-4">
                               {step.description}
-                            </p>
-                          )}
+                            </p>}
                           
                           {/* Sub-items (for steps 3 & 4) */}
-                          {step.subItems && (
-                            <div className="mt-4 space-y-4 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-6 border border-primary/10">
-                              {step.subItems.map((item, subIndex) => (
-                                <div key={subIndex} className="flex items-start gap-4">
+                          {step.subItems && <div className="mt-4 space-y-4 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-6 border border-primary/10">
+                              {step.subItems.map((item, subIndex) => <div key={subIndex} className="flex items-start gap-4">
                                   <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                                     <item.icon className="w-5 h-5 text-primary" />
                                   </div>
@@ -202,24 +151,19 @@ const Services = () => {
                                       {item.description}
                                     </p>
                                   </div>
-                                </div>
-                              ))}
-                            </div>
-                          )}
+                                </div>)}
+                            </div>}
                         </div>
                         
                         {/* Arrow indicator */}
-                        {index < steps.length - 1 && (
-                          <div className="hidden md:flex flex-shrink-0 items-center justify-center w-8 h-8 rounded-full bg-primary/10">
+                        {index < steps.length - 1 && <div className="hidden md:flex flex-shrink-0 items-center justify-center w-8 h-8 rounded-full bg-primary/10">
                             <ArrowRight className="w-4 h-4 text-primary" />
-                          </div>
-                        )}
+                          </div>}
                       </div>
                     </CardContent>
                   </Card>
                 </div>
-              </ScrollReveal>
-            ))}
+              </ScrollReveal>)}
           </div>
         </section>
 
@@ -255,16 +199,11 @@ const Services = () => {
             </ScrollReveal>
             
             <div className="flex flex-wrap justify-center gap-3">
-              {industries.map((industry, index) => (
-                <ScrollReveal key={index} delay={index * 0.05}>
-                  <Badge 
-                    variant="outline" 
-                    className="px-6 py-2 text-base font-medium border-primary/30 text-foreground"
-                  >
+              {industries.map((industry, index) => <ScrollReveal key={index} delay={index * 0.05}>
+                  <Badge variant="outline" className="px-6 py-2 text-base font-medium border-primary/30 text-foreground">
                     {industry}
                   </Badge>
-                </ScrollReveal>
-              ))}
+                </ScrollReveal>)}
             </div>
           </div>
         </section>
@@ -285,8 +224,7 @@ const Services = () => {
             </ScrollReveal>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {testimonials.map((testimonial, index) => (
-                <ScrollReveal key={index} delay={index * 0.15}>
+              {testimonials.map((testimonial, index) => <ScrollReveal key={index} delay={index * 0.15}>
                   <Card className="h-full border-primary/20 hover:border-primary/40 transition-all">
                     <CardContent className="p-6">
                       <Quote className="w-8 h-8 text-primary/40 mb-4" />
@@ -302,8 +240,7 @@ const Services = () => {
                       </div>
                     </CardContent>
                   </Card>
-                </ScrollReveal>
-              ))}
+                </ScrollReveal>)}
             </div>
 
             {/* Trust Signals */}
@@ -346,16 +283,14 @@ const Services = () => {
 
             <ScrollReveal delay={0.2}>
               <Accordion type="single" collapsible className="w-full">
-                {faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`}>
+                {faqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`}>
                     <AccordionTrigger className="text-left text-lg font-semibold">
                       {faq.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-muted-foreground">
                       {faq.answer}
                     </AccordionContent>
-                  </AccordionItem>
-                ))}
+                  </AccordionItem>)}
               </Accordion>
             </ScrollReveal>
           </div>
@@ -398,8 +333,6 @@ const Services = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Services;
