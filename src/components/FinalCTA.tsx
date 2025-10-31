@@ -41,8 +41,7 @@ const FinalCTA = () => {
                 </h2>
 
                 <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-                  Join the hundreds of businesses getting newsletters their customers actually read. 
-                  <span className="font-semibold text-foreground"> Let's turn your emails into revenue.</span>
+                  <span className="font-semibold text-foreground">Let's turn your emails into revenue.</span>
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
