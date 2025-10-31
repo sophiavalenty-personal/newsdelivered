@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { FileText, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
+import { Link } from "react-router-dom";
 
 const Pricing = () => {
   const options = [
@@ -101,8 +102,8 @@ const Pricing = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Button variant="hero" size="lg" className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300">
-                      Book a Strategy Call
+                    <Button asChild variant="hero" size="lg" className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300">
+                      <Link to="/contact">Book a Strategy Call</Link>
                     </Button>
                   </motion.div>
                 </CardContent>
