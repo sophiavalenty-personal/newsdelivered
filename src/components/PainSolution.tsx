@@ -1,28 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import { Target, TrendingUp, DollarSign, ArrowDown, Handshake, Heart, BarChart3, Check } from "lucide-react";
+import { ArrowDown, Handshake, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import newsletterProblemImg from "@/assets/newsletter-problem.jpg";
-import SocialProof from "@/components/SocialProof";
+
 const PainSolution = () => {
-  const strategies = [{
-    icon: Target,
-    title: "Entertain, Inform, Empower",
-    description: "Create content that resonates and provides real value",
-    highlighted: false
-  }, {
-    icon: DollarSign,
-    title: "Drive Sales and Revenue",
-    description: "Convert your audience into loyal customers",
-    highlighted: true
-  }, {
-    icon: TrendingUp,
-    title: "Build Brand Authority",
-    description: "Establish yourself as the trusted expert in your field",
-    highlighted: false
-  }];
   return <section className="py-24 bg-muted/30 relative">
       {/* Geometric separator from previous section */}
       <div className="absolute top-0 left-0 right-0 h-16 bg-white transform -skew-y-1 origin-top-left"></div>
@@ -207,106 +190,6 @@ const PainSolution = () => {
                   </CardContent>
                 </Card>
               </motion.div>
-
-              {/* How We Do It - Title */}
-              <motion.h3 className="text-2xl md:text-3xl font-bold mb-8 text-center" initial={{
-              opacity: 0,
-              y: 20
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.8,
-              delay: 1.4
-            }}>
-                How We Do It
-              </motion.h3>
-
-              {/* Results-Driven Expertise Card - Full Width */}
-              <motion.div className="mb-16 max-w-4xl mx-auto" initial={{
-              opacity: 0,
-              y: 20
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.8,
-              delay: 1.6
-            }}>
-                <Card className="shadow-elegant border-border/50 hover:shadow-lg transition-all duration-300">
-                  <CardContent className="p-8">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
-                        <BarChart3 className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-bold mb-3">Results-Driven Expertise</h4>
-                        <p className="text-muted-foreground leading-relaxed mb-4">
-                          Our approach is backed by data and proven strategies. We constantly monitor engagement metrics, 
-                          click-through rates, and conversion performance.
-                        </p>
-                        <p className="text-muted-foreground leading-relaxed">
-                          Every newsletter is optimized to deliver measurable results: higher open rates, increased engagement, 
-                          and more revenue for your business.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </div>
-
-      {/* Testimonials Section */}
-      <SocialProof />
-
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <ScrollReveal direction="up">
-            <div className="text-center mb-16">
-              {/* Your Newsletter Should - Heading */}
-              <motion.h2 className="text-3xl font-bold mb-12 text-center" initial={{
-              opacity: 0,
-              y: 20
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.8,
-              delay: 0.2
-            }}>
-                Your Newsletter Should
-              </motion.h2>
-            </div>
-            
-            {/* The 3 Strategy Cards */}
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              {strategies.map((strategy, index) => <motion.div key={index} initial={{
-              opacity: 0,
-              y: 30
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.6,
-              delay: 0.4 + index * 0.2
-            }}>
-                  <Card className={`h-full text-center shadow-elegant border-primary/10 bg-gradient-to-br from-background to-background/50 hover:shadow-glow transition-all duration-300 ${strategy.highlighted ? 'ring-2 ring-primary/20 shadow-glow scale-105' : ''}`}>
-                    <CardContent className="p-8">
-                      <div className={`w-16 h-16 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto mb-6 ${strategy.highlighted ? 'from-primary to-primary/90 shadow-lg' : 'from-primary to-primary/80'}`}>
-                        <strategy.icon className="w-8 h-8 text-primary-foreground" />
-                      </div>
-                      <h3 className={`text-xl font-bold mb-4 leading-tight ${strategy.highlighted ? 'text-primary' : 'text-foreground'}`}>
-                        {strategy.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {strategy.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>)}
             </div>
           </ScrollReveal>
         </div>
@@ -316,4 +199,5 @@ const PainSolution = () => {
       <div className="absolute bottom-0 left-0 right-0 h-16 bg-white transform skew-y-1 origin-bottom-left"></div>
     </section>;
 };
+
 export default PainSolution;
