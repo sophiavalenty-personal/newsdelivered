@@ -35,10 +35,7 @@ const HowItWorks = () => {
         <div className="max-w-6xl mx-auto">
           <ScrollReveal direction="up">
             <div className="text-center mb-16">
-              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-                Simple Process
-              </Badge>
-              <motion.h2 
+              <motion.h2
                 className="text-3xl md:text-4xl font-bold mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
