@@ -151,7 +151,7 @@ const Channels = () => {
                     Ready to engage your audience?
                   </h2>
                   <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                    Let our experts create and manage content that drives results. Get your free audit and discover how our channel expertise can transform your email marketing.
+                    Let our experts create and manage content that drives results. Discover how our channel expertise can transform your email marketing.
                   </p>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
