@@ -107,9 +107,11 @@ const Services = () => {
                             </p>}
                           
                           {/* Contact button for step 1 */}
-                          {step.number === 1 && <Link to="/contact">
-                              <Button className="mt-2">Contact Us</Button>
-                            </Link>}
+                          {step.number === 1 && <div className="flex justify-center">
+                              <Link to="/contact">
+                                <Button className="mt-2">Contact Us</Button>
+                              </Link>
+                            </div>}
                         </div>
                         
                         {/* Arrow indicator */}
