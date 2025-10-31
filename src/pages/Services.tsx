@@ -114,11 +114,6 @@ const Services = () => {
                               {step.description}
                             </p>}
                         </div>
-                        
-                        {/* Arrow indicator */}
-                        {index < steps.length - 1 && <div className="hidden md:flex flex-shrink-0 items-center justify-center w-8 h-8 rounded-full bg-primary/10">
-                            <ArrowRight className="w-4 h-4 text-primary" />
-                          </div>}
                       </div>
                     </CardContent>
                   </Card>
