@@ -31,7 +31,7 @@ const Services = () => {
     number: 4,
     icon: BarChart,
     title: "Transparent Reporting and Iteration",
-    description: "We'll track email performance with you and make sure it's producing the results you need and make improvements as we go."
+    description: "We monitor performance, make adjustments as needed, and communicate regularly with detailed reports to keep you informed about how your strategy is improving and providing value to your business."
   }];
   const industries = ["Ecommerce", "B2B", "Service Providers", "Health and Wellness", "Publishing", "And More"];
   const testimonials = [{
