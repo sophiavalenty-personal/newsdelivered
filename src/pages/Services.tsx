@@ -26,30 +26,12 @@ const Services = () => {
     number: 3,
     icon: Wrench,
     title: "We'll put it all together",
-    description: "Done for you:",
-    subItems: [{
-      icon: Code,
-      title: "Templates",
-      description: "We're HTML experts so you don't have to be. Beautiful, responsive email templates that work across all devices."
-    }, {
-      icon: Send,
-      title: "Sending",
-      description: "We'll send the email from your ESP / social platforms. Sit back while we handle the technical details."
-    }]
+    description: "We handle all the technical details - from building beautiful email templates to sending them through your ESP or social platforms."
   }, {
     number: 4,
     icon: BarChart,
     title: "We'll make sure it's working and keep you posted",
-    description: null,
-    subItems: [{
-      icon: Shield,
-      title: "Delivery - Email Authentication",
-      description: "Make sure you're playing by all the Email Authentication Rules. We handle SPF, DKIM, DMARC, and more."
-    }, {
-      icon: TrendingUp,
-      title: "Performance",
-      description: "Make sure your email is working for you. We'll communicate often and provide detailed reports to keep you in the know about how your strategy is improving and providing value to your business."
-    }]
+    description: "We monitor performance and communicate regularly with detailed reports to keep you informed about how your strategy is improving and providing value to your business."
   }];
   const industries = ["Ecommerce", "B2B", "Service Providers", "Health and Wellness", "Publishing", "And More"];
   const testimonials = [{
@@ -119,32 +101,10 @@ const Services = () => {
                             </h3>
                           </div>
                           
-                          {/* Description (for steps 1 & 2) */}
-                          {step.description && !step.subItems && <p className="text-lg text-muted-foreground">
+                          {/* Description */}
+                          {step.description && <p className="text-lg text-muted-foreground">
                               {step.description}
                             </p>}
-                          
-                          {/* Description with sub-items label (for step 3) */}
-                          {step.description && step.subItems && <p className="text-lg font-medium text-foreground mb-4">
-                              {step.description}
-                            </p>}
-                          
-                          {/* Sub-items (for steps 3 & 4) */}
-                          {step.subItems && <div className="mt-4 space-y-4 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-6 border border-primary/10">
-                              {step.subItems.map((item, subIndex) => <div key={subIndex} className="flex items-start gap-4">
-                                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                                    <item.icon className="w-5 h-5 text-primary" />
-                                  </div>
-                                  <div className="flex-1">
-                                    <h4 className="text-lg font-semibold mb-1 text-foreground">
-                                      {item.title}
-                                    </h4>
-                                    <p className="text-muted-foreground">
-                                      {item.description}
-                                    </p>
-                                  </div>
-                                </div>)}
-                            </div>}
                         </div>
                         
                         {/* Arrow indicator */}
