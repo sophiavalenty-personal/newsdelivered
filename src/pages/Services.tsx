@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Search, Target, Wrench, BarChart, Code, Send, Shield, TrendingUp, ArrowRight, Quote, CheckCircle2 } from "lucide-react";
+import { Phone, Target, Wrench, BarChart, Code, Send, Shield, TrendingUp, ArrowRight, Quote, CheckCircle2 } from "lucide-react";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Link } from "react-router-dom";
 const Services = () => {
@@ -14,7 +14,7 @@ const Services = () => {
   }, []);
   const steps = [{
     number: 1,
-    icon: Search,
+    icon: Phone,
     title: "Book a Free Strategy Consultation",
     description: ""
   }, {
