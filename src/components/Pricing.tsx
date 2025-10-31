@@ -29,23 +29,7 @@ const Pricing = () => {
           }} transition={{
             duration: 0.3
           }}>
-              <Card className="bg-gradient-to-br from-primary/5 to-primary-glow/10 border-primary/20 hover:shadow-glow transition-all duration-500">
-                <CardContent className="p-8 text-center">
-                  
-                  <p className="text-muted-foreground mb-6">
-                    Let's discuss your specific needs and find the perfect solution that reduces friction and maximizes your ROI.
-                  </p>
-                  <motion.div whileHover={{
-                  scale: 1.05
-                }} whileTap={{
-                  scale: 0.95
-                }}>
-                    <Button asChild variant="hero" size="lg" className="text-lg px-8 py-6 hover:shadow-glow transition-all duration-300">
-                      <Link to="/contact">Talk to an Expert</Link>
-                    </Button>
-                  </motion.div>
-                </CardContent>
-              </Card>
+              
             </motion.div>
           </ScrollReveal>
         </div>
