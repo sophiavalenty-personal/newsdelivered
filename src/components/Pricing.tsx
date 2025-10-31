@@ -9,7 +9,9 @@ const Pricing = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
-            
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+              Pricing
+            </h2>
           </ScrollReveal>
           
           <ScrollReveal delay={0.2}>
