@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
@@ -13,18 +13,54 @@ const Header = () => {
         </div>
         
         <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/services" className="text-foreground hover:text-primary transition-colors">
+          <NavLink 
+            to="/services" 
+            className={({ isActive }) => 
+              `pb-1 transition-colors ${
+                isActive 
+                  ? "text-primary font-semibold border-b-2 border-primary" 
+                  : "text-foreground hover:text-primary"
+              }`
+            }
+          >
             Services
-          </Link>
-          <Link to="/channels" className="text-foreground hover:text-primary transition-colors">
+          </NavLink>
+          <NavLink 
+            to="/channels" 
+            className={({ isActive }) => 
+              `pb-1 transition-colors ${
+                isActive 
+                  ? "text-primary font-semibold border-b-2 border-primary" 
+                  : "text-foreground hover:text-primary"
+              }`
+            }
+          >
             Channels
-          </Link>
-          <Link to="/tools" className="text-foreground hover:text-primary transition-colors">
+          </NavLink>
+          <NavLink 
+            to="/tools" 
+            className={({ isActive }) => 
+              `pb-1 transition-colors ${
+                isActive 
+                  ? "text-primary font-semibold border-b-2 border-primary" 
+                  : "text-foreground hover:text-primary"
+              }`
+            }
+          >
             Tools
-          </Link>
-          <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
+          </NavLink>
+          <NavLink 
+            to="/contact" 
+            className={({ isActive }) => 
+              `pb-1 transition-colors ${
+                isActive 
+                  ? "text-primary font-semibold border-b-2 border-primary" 
+                  : "text-foreground hover:text-primary"
+              }`
+            }
+          >
             Contact
-          </Link>
+          </NavLink>
         </nav>
         
         <div className="flex items-center space-x-4">
