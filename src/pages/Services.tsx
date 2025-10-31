@@ -15,7 +15,7 @@ const Services = () => {
   const steps = [{
     number: 1,
     icon: Search,
-    title: "Current Strategy Audit",
+    title: "Book a Free Strategy Consultation",
     description: "Our team will assess your overall marketing strategy and determine how email can increase your bottom line."
   }, {
     number: 2,
@@ -93,14 +93,6 @@ const Services = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent">
               End to End Newsletter Management
             </h1>
-          </ScrollReveal>
-          
-          <ScrollReveal delay={0.2}>
-            
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.3}>
-            
           </ScrollReveal>
 
           {/* Steps Process */}
