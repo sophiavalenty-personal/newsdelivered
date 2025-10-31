@@ -175,7 +175,7 @@ const Tools = () => {
                       className="text-lg px-8 py-6 shadow-subtle hover:shadow-elegant transition-all duration-400"
                       onClick={() => window.location.href = '/contact'}
                     >
-                      Get Started Today
+                      Talk to an Expert
                     </Button>
                   </motion.div>
                 </div>
