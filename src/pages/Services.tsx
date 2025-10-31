@@ -72,7 +72,7 @@ const Services = () => {
         {/* Hero Section */}
         <section className="container mx-auto px-4 mb-20">
           <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 pb-2 leading-tight bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent">
               End to End Newsletter Management
             </h1>
           </ScrollReveal>
