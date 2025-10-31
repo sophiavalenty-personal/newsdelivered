@@ -15,7 +15,7 @@ const Services = () => {
   const steps = [{
     number: 1,
     icon: Search,
-    title: "Current Strategy Audit",
+    title: "Book a Free Strategy Consultation",
     description: "Our team will assess your overall marketing strategy and determine how email can increase your bottom line."
   }, {
     number: 2,
@@ -86,7 +86,244 @@ const Services = () => {
   }];
   return <div className="min-h-screen">
       <Header />
-      
+      <main className="pt-24 pb-16">
+        {/* Hero Section */}
+        <section className="container mx-auto px-4 mb-20">
+          <ScrollReveal>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent">
+              End to End Newsletter Management
+            </h1>
+          </ScrollReveal>
+
+          {/* Steps Process */}
+          <div className="max-w-4xl mx-auto space-y-8 mb-16 mt-20">
+            {steps.map((step, index) => <ScrollReveal key={index} delay={index * 0.15}>
+                <div className="relative">
+                  {/* Connector Line */}
+                  {index < steps.length - 1 && <div className="absolute left-6 top-20 w-0.5 h-12 bg-gradient-to-b from-primary/40 to-transparent hidden md:block" />}
+                  
+                  <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 overflow-hidden">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-6">
+                        {/* Step Number Circle */}
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center">
+                          <span className="text-xl font-bold text-primary-foreground">{step.number}</span>
+                        </div>
+                        
+                        <div className="flex-1">
+                          {/* Icon and Title */}
+                          <div className="flex items-center gap-3 mb-3">
+                            <step.icon className="w-6 h-6 text-primary" />
+                            <h3 className="text-2xl font-bold text-foreground">
+                              {step.title}
+                            </h3>
+                          </div>
+                          
+                          {/* Description (for steps 1 & 2) */}
+                          {step.description && !step.subItems && <p className="text-lg text-muted-foreground">
+                              {step.description}
+                            </p>}
+                          
+                          {/* Description with sub-items label (for step 3) */}
+                          {step.description && step.subItems && <p className="text-lg font-medium text-foreground mb-4">
+                              {step.description}
+                            </p>}
+                          
+                          {/* Sub-items (for steps 3 & 4) */}
+                          {step.subItems && <div className="mt-4 space-y-4 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-6 border border-primary/10">
+                              {step.subItems.map((item, subIndex) => <div key={subIndex} className="flex items-start gap-4">
+                                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                                    <item.icon className="w-5 h-5 text-primary" />
+                                  </div>
+                                  <div className="flex-1">
+                                    <h4 className="text-lg font-semibold mb-1 text-foreground">
+                                      {item.title}
+                                    </h4>
+                                    <p className="text-muted-foreground">
+                                      {item.description}
+                                    </p>
+                                  </div>
+                                </div>)}
+                            </div>}
+                        </div>
+                        
+                        {/* Arrow indicator */}
+                        {index < steps.length - 1 && <div className="hidden md:flex flex-shrink-0 items-center justify-center w-8 h-8 rounded-full bg-primary/10">
+                            <ArrowRight className="w-4 h-4 text-primary" />
+                          </div>}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </ScrollReveal>)}
+          </div>
+        </section>
+
+        {/* Engagement Section - Moved Up */}
+        <section className="container mx-auto px-4 mb-20">
+          <ScrollReveal>
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 md:p-12 border border-primary/20">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-foreground">
+                The Key: Engaging with Non Promotional Content
+              </h2>
+              <div className="space-y-4 text-lg text-muted-foreground">
+                <p>
+                  Engagement secures your golden ticket to the inbox. Non promotional content (aka trustworthy and valuable content) paves the way for promotions and is a KEY element to getting in the inbox when it matters most.
+                </p>
+                <p className="font-medium text-foreground">
+                  News Delivered will deliver emails your customers and readers get excited to read and interact with and keep you top of mind and end of wallet... ;)
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </section>
+
+        {/* Industries Section - Streamlined */}
+        <section className="container mx-auto px-4 mb-20">
+          <div className="max-w-4xl mx-auto text-center">
+            <ScrollReveal>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
+                We Work With Businesses Across Industries
+              </h2>
+              <p className="text-lg mb-6 text-muted-foreground">
+                Email should be a key sales driver, no matter your industry
+              </p>
+            </ScrollReveal>
+            
+            <div className="flex flex-wrap justify-center gap-3">
+              {industries.map((industry, index) => <ScrollReveal key={index} delay={index * 0.05}>
+                  <Badge variant="outline" className="px-6 py-2 text-base font-medium border-primary/30 text-foreground">
+                    {industry}
+                  </Badge>
+                </ScrollReveal>)}
+            </div>
+          </div>
+        </section>
+
+        {/* Social Proof Section */}
+        <section className="container mx-auto px-4 mb-20">
+          <div className="max-w-6xl mx-auto">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <Badge className="mb-4">Proven Results</Badge>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                  Don't Just Take Our Word For It
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  See what our clients have achieved with their newsletter strategy
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {testimonials.map((testimonial, index) => <ScrollReveal key={index} delay={index * 0.15}>
+                  <Card className="h-full border-primary/20 hover:border-primary/40 transition-all">
+                    <CardContent className="p-6">
+                      <Quote className="w-8 h-8 text-primary/40 mb-4" />
+                      <p className="text-muted-foreground mb-6 italic">
+                        "{testimonial.quote}"
+                      </p>
+                      <div className="border-t border-border pt-4">
+                        <p className="font-semibold text-foreground">{testimonial.author}</p>
+                        <p className="text-sm text-muted-foreground mb-3">{testimonial.company}</p>
+                        <Badge variant="secondary" className="bg-primary/10 text-primary">
+                          {testimonial.result}
+                        </Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </ScrollReveal>)}
+            </div>
+
+            {/* Trust Signals */}
+            <ScrollReveal delay={0.4}>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 p-8 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl border border-primary/10">
+                <div className="text-center">
+                  <p className="text-3xl md:text-4xl font-bold text-primary mb-2">5+</p>
+                  <p className="text-sm text-muted-foreground">Years in Business</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-3xl md:text-4xl font-bold text-primary mb-2">100+</p>
+                  <p className="text-sm text-muted-foreground">Newsletters Managed</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-3xl md:text-4xl font-bold text-primary mb-2">5M+</p>
+                  <p className="text-sm text-muted-foreground">Subscribers Reached</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-3xl md:text-4xl font-bold text-primary mb-2">98%</p>
+                  <p className="text-sm text-muted-foreground">Client Satisfaction</p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="container mx-auto px-4 mb-20">
+          <div className="max-w-3xl mx-auto">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                  Frequently Asked Questions
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Everything you need to know about our services
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`}>
+                    <AccordionTrigger className="text-left text-lg font-semibold">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>)}
+              </Accordion>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-primary via-primary-glow to-secondary rounded-2xl p-8 md:p-12 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Transform Your Email Strategy?
+              </h2>
+              <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+                Let's discuss how we can help you build a newsletter your audience loves and drive real business results.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/contact">
+                  <Button size="lg" variant="secondary" className="text-lg px-8">
+                    Schedule Your Free Audit
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button size="lg" variant="outline" className="text-lg px-8 bg-white/10 text-white border-white/30 hover:bg-white/20">
+                    Talk to an Expert
+                  </Button>
+                </Link>
+              </div>
+              <div className="mt-8 flex items-center justify-center gap-6 text-white/80 text-sm">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5" />
+                  <span>No commitment required</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5" />
+                  <span>Custom pricing</span>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </section>
+      </main>
       <Footer />
     </div>;
 };
