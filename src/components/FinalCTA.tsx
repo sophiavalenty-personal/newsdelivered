@@ -52,21 +52,7 @@ const FinalCTA = () => {
                       className="text-xl px-12 py-6 hover:shadow-glow transition-all duration-300 font-semibold"
                       onClick={() => window.location.href = '/contact'}
                     >
-                      → Get Your Free Audit
-                    </Button>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Button 
-                      variant="hero-outline" 
-                      size="lg" 
-                      className="text-xl px-12 py-6 transition-all duration-300 font-semibold"
-                      onClick={() => window.location.href = '/contact'}
-                    >
-                      Talk to an Expert
+                      Talk to an expert
                     </Button>
                   </motion.div>
                 </div>
