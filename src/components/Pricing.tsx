@@ -18,6 +18,7 @@ const Pricing = () => {
               
               <p className="text-lg text-muted-foreground leading-relaxed text-center px-4">
                 NewsDelivered offers premium solutions with transparent, cost-effective pricing. 
+                <br /><br />
                 Tell us where you're at, where you want to go and we'll customize a plan to help you get there.
               </p>
               
