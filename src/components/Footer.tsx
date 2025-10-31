@@ -4,7 +4,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4 text-primary-glow">NewsDelivered.com</h3>
-            <p className="text-background/70 leading-relaxed">We help business increase  their revenue with highly engaging email newsletters. </p>
+            <p className="text-background/70 leading-relaxed">Contact us to increase your revenue through highly engaging email newsletters.</p>
           </div>
           
           <div>
