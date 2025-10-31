@@ -16,7 +16,7 @@ const Services = () => {
     number: 1,
     icon: Search,
     title: "Book a Free Strategy Consultation",
-    description: "Our team will assess your overall marketing strategy and determine how email can increase your bottom line."
+    description: ""
   }, {
     number: 2,
     icon: Target,
