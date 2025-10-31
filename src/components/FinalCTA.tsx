@@ -37,7 +37,7 @@ const FinalCTA = () => {
                 </motion.div>
 
                 <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
-                  Let's Turn Your Emails Into <span className="bg-gradient-hero bg-clip-text text-transparent">Newsletter Strategy?</span>
+                  Let's Turn Your Emails Into <span className="bg-gradient-hero bg-clip-text text-transparent">Revenue</span>
                 </h2>
 
                 <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
