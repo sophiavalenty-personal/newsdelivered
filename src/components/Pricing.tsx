@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Link } from "react-router-dom";
 
@@ -7,9 +8,14 @@ const Pricing = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Pricing
-            </h2>
+            <div className="flex flex-col items-center mb-12">
+              <Badge variant="outline" className="mb-4">
+                Custom Pricing
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-center">
+                Pricing
+              </h2>
+            </div>
           </ScrollReveal>
           
           <ScrollReveal delay={0.2}>
