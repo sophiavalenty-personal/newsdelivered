@@ -25,7 +25,7 @@ const Footer = () => {
         
         <div className="border-t border-background/20 pt-8 text-center">
           <p className="text-background/70">
-            © 2024 NewsDelivered.com. All rights reserved.
+            © 2025 NewsDelivered.com. All rights reserved.
           </p>
         </div>
       </div>
