@@ -88,10 +88,10 @@ const Contact = () => {
                 <Phone className="w-16 h-16 text-primary mx-auto mb-6" />
                 <h3 className="text-2xl font-semibold mb-4">Call or Text Sales & Support:</h3>
                 <a 
-                  href="tel:+15551234567"
+                  href="tel:+17607076620"
                   className="text-primary hover:text-primary/80 font-medium transition-colors text-2xl block mb-3"
                 >
-                  +1 (555) 123-4567
+                  760-707-6620
                 </a>
                 <p className="text-muted-foreground text-lg">Ask for your Free Consultation!</p>
               </CardContent>
