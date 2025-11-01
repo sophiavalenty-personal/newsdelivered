@@ -84,28 +84,15 @@ const Contact = () => {
             </p>
             
             <Card className="shadow-elegant">
-              <CardContent className="p-8 text-center space-y-6">
-                <div>
-                  <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Email us directly</h3>
-                  <a 
-                    href="mailto:experts@newsdelivered.com"
-                    className="text-primary hover:text-primary/80 font-medium transition-colors text-lg"
-                  >
-                    experts@newsdelivered.com
-                  </a>
-                </div>
-                
-                <div>
-                  <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Or call us</h3>
-                  <a 
-                    href="tel:+15551234567"
-                    className="text-primary hover:text-primary/80 font-medium transition-colors text-lg"
-                  >
-                    +1 (555) 123-4567
-                  </a>
-                </div>
+              <CardContent className="p-8 text-center">
+                <Phone className="w-16 h-16 text-primary mx-auto mb-6" />
+                <h3 className="text-2xl font-semibold mb-4">Call or Text Sales & Support:</h3>
+                <a 
+                  href="tel:+15551234567"
+                  className="text-primary hover:text-primary/80 font-medium transition-colors text-2xl"
+                >
+                  +1 (555) 123-4567
+                </a>
               </CardContent>
             </Card>
           </motion.div>
