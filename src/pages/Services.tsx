@@ -155,7 +155,7 @@ const Services = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact">
                   <Button size="lg" variant="secondary" className="text-lg px-8">
-                    Schedule Your Free Audit
+                    Talk to an Expert
                   </Button>
                 </Link>
                 <Link to="/contact">
