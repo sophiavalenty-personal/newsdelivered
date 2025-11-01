@@ -122,25 +122,6 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Engagement Section - Moved Up */}
-        <section className="container mx-auto px-4 mb-20">
-          <ScrollReveal>
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 md:p-12 border border-primary/20">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-foreground">
-                The Key: Engaging with Non Promotional Content
-              </h2>
-              <div className="space-y-4 text-lg text-muted-foreground">
-                <p>
-                  Engagement secures your golden ticket to the inbox. Non promotional content (aka trustworthy and valuable content) paves the way for promotions and is a KEY element to getting in the inbox when it matters most.
-                </p>
-                <p className="font-medium text-foreground">
-                  News Delivered will deliver emails your customers and readers get excited to read and interact with and keep you top of mind and end of wallet... ;)
-                </p>
-              </div>
-            </div>
-          </ScrollReveal>
-        </section>
-
         {/* Industries Section - Streamlined */}
         <section className="container mx-auto px-4 mb-20">
           <div className="max-w-4xl mx-auto text-center">
