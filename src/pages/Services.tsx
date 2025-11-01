@@ -101,12 +101,10 @@ const Services = () => {
                                 {step.title}
                               </h3>
                             </div>
-                            {step.number === 1 && (
-                              <Link to="/contact" className="flex items-center gap-1 text-base text-primary hover:text-primary-glow transition-colors">
+                            {step.number === 1 && <Link to="/contact" className="flex items-center gap-1 text-base text-primary hover:text-primary-glow transition-colors">
                                 Contact
                                 <ArrowRight className="w-5 h-5" />
-                              </Link>
-                            )}
+                              </Link>}
                           </div>
                           
                           {/* Description */}
@@ -161,9 +159,7 @@ const Services = () => {
                   </Button>
                 </Link>
                 <Link to="/contact">
-                  <Button size="lg" variant="outline" className="text-lg px-8 bg-white/10 text-white border-white/30 hover:bg-white/20">
-                    Talk to an Expert
-                  </Button>
+                  
                 </Link>
               </div>
               <div className="mt-8 flex items-center justify-center gap-6 text-white/80 text-sm">
