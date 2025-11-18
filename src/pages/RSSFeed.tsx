@@ -10,10 +10,12 @@ import { ArrowLeft, ExternalLink, Calendar } from "lucide-react";
 import { channelSources } from "@/data/channelSources";
 import { fetchAndParseRSS, RSSFeed as RSSFeedType } from "@/utils/rssParser";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useToast } from "@/hooks/use-toast";
 
 const RSSFeed = () => {
   const { channelId, sourceId } = useParams<{ channelId: string; sourceId: string }>();
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [feed, setFeed] = useState<RSSFeedType | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -201,10 +203,69 @@ const RSSFeed = () => {
               </div>
             )}
 
+            {/* Email Opt-in Card */}
+            {!loading && !error && feed && (
+              <ScrollReveal direction="up" delay={0.2}>
+                <div className="mt-16">
+                  <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20 shadow-elegant">
+                    <CardContent className="p-8 md:p-12">
+                      <div className="max-w-2xl mx-auto text-center">
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6 }}
+                        >
+                          <h3 className="text-3xl font-semibold text-foreground mb-4">
+                            Stay Updated with {channelData.title}
+                          </h3>
+                          <p className="text-muted-foreground text-lg mb-8">
+                            Get the latest articles and updates delivered straight to your inbox
+                          </p>
+                          <form 
+                            className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+                            onSubmit={(e) => {
+                              e.preventDefault();
+                              const formData = new FormData(e.currentTarget);
+                              const email = formData.get('email') as string;
+                              
+                              if (email && email.includes('@')) {
+                                toast({
+                                  title: "Thank you for subscribing!",
+                                  description: `We'll send updates from ${channelData.title} to ${email}`,
+                                });
+                                e.currentTarget.reset();
+                              } else {
+                                toast({
+                                  title: "Invalid email",
+                                  description: "Please enter a valid email address",
+                                  variant: "destructive",
+                                });
+                              }
+                            }}
+                          >
+                            <input
+                              type="email"
+                              name="email"
+                              placeholder="Enter your email"
+                              required
+                              className="flex-1 px-4 py-3 rounded-md border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                            />
+                            <Button type="submit" size="lg" className="whitespace-nowrap">
+                              Subscribe Now
+                            </Button>
+                          </form>
+                        </motion.div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </ScrollReveal>
+            )}
+
             {/* Channel Navigation */}
             {!loading && !error && feed && (
               <ScrollReveal direction="up" delay={0.2}>
-                <div className="mt-20 pt-12 border-t border-border/50">
+                <div className="mt-12 pt-12 border-t border-border/50">
                   <h2 className="text-3xl font-light text-foreground mb-8 text-center">
                     Explore Other Channels
                   </h2>
