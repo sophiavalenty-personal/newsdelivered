@@ -43,8 +43,8 @@ const ChannelSources = () => {
       return feeds;
     },
     enabled: !!channelData?.sources.length,
-    staleTime: 5 * 60 * 1000, // Cache for 5 minutes
-    gcTime: 30 * 60 * 1000, // Keep in cache for 30 minutes
+    staleTime: 60 * 60 * 1000, // Cache for 60 minutes
+    gcTime: 60 * 60 * 1000, // Keep in cache for 60 minutes
     retry: 1,
   });
 
