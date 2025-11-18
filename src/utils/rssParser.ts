@@ -13,8 +13,22 @@ export interface RSSFeed {
   items: RSSItem[];
 }
 
+interface CachedFeed {
+  data: RSSFeed;
+  timestamp: number;
+}
+
+const feedCache = new Map<string, CachedFeed>();
+const CACHE_DURATION = 60 * 60 * 1000; // 60 minutes in milliseconds
+
 export async function fetchAndParseRSS(url: string): Promise<RSSFeed> {
   const cleanUrl = url.trim();
+  
+  // Check cache first
+  const cached = feedCache.get(cleanUrl);
+  if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
+    return cached.data;
+  }
 
   // Try multiple proxies and direct fetch to improve reliability across CORS/CDN protections
   const proxyCandidates = [
@@ -121,7 +135,15 @@ export async function fetchAndParseRSS(url: string): Promise<RSSFeed> {
       }
 
       // Parse as XML; if invalid, let it fall through to next candidate
-      return parseXmlToFeed(text);
+      const feedData = parseXmlToFeed(text);
+      
+      // Cache the successful result
+      feedCache.set(cleanUrl, {
+        data: feedData,
+        timestamp: Date.now(),
+      });
+      
+      return feedData;
     } catch (err) {
       lastError = err;
       // Try next candidate
