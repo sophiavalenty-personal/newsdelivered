@@ -197,12 +197,48 @@ const RSSFeed = () => {
                         </Card>
                       </motion.div>
                     </ScrollReveal>
-                  ))}
+                ))}
+              </div>
+            )}
+
+            {/* Channel Navigation */}
+            {!loading && !error && feed && (
+              <ScrollReveal direction="up" delay={0.2}>
+                <div className="mt-20 pt-12 border-t border-border/50">
+                  <h2 className="text-3xl font-light text-foreground mb-8 text-center">
+                    Explore Other Channels
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {Object.values(channelSources).map((channel, index) => (
+                      <motion.div
+                        key={channel.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: index * 0.05 }}
+                        whileHover={{ y: -4 }}
+                      >
+                        <Card 
+                          className="bg-white/80 backdrop-blur-sm border-0 shadow-subtle hover:shadow-elegant transition-all duration-300 cursor-pointer h-full"
+                          onClick={() => navigate(`/channels/${channel.id}`)}
+                        >
+                          <CardHeader>
+                            <CardTitle className="text-xl font-semibold text-foreground hover:text-primary transition-colors">
+                              {channel.title}
+                            </CardTitle>
+                            <CardDescription className="line-clamp-2">
+                              {channel.description}
+                            </CardDescription>
+                          </CardHeader>
+                        </Card>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
-              )}
-            </div>
+              </ScrollReveal>
+            )}
           </div>
-        </section>
+        </div>
+      </section>
       </main>
       <Footer />
     </div>
