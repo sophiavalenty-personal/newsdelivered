@@ -448,6 +448,7 @@ const Demo = () => {
                     style={{ height: `${iframeHeight}px` }}
                     title={currentNewsletter.title}
                     onLoad={handleIframeLoad}
+                    sandbox="allow-same-origin"
                   />
                 </div>
               </div>
