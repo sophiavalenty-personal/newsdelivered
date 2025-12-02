@@ -385,22 +385,16 @@ const Demo = () => {
             <div className="flex justify-center">
               <div
                 className={cn(
-                  "bg-muted/30 rounded-xl border border-border overflow-hidden transition-all duration-300",
-                  viewMode === "desktop" ? "w-full max-w-4xl" : "w-[400px]"
+                  "rounded-lg overflow-hidden shadow-sm transition-all duration-300",
+                  viewMode === "desktop" ? "w-full max-w-3xl" : "w-[375px]"
                 )}
+                style={{ height: viewMode === "desktop" ? "650px" : "700px" }}
               >
-                <div
-                  className={cn(
-                    "overflow-auto bg-background",
-                    viewMode === "desktop" ? "h-[650px]" : "h-[700px]"
-                  )}
-                >
-                  <iframe
-                    srcDoc={currentNewsletter.htmlContent}
-                    className="w-full h-full"
-                    title={currentNewsletter.title}
-                  />
-                </div>
+                <iframe
+                  srcDoc={currentNewsletter.htmlContent}
+                  className="w-full h-full"
+                  title={currentNewsletter.title}
+                />
               </div>
             </div>
           </div>
