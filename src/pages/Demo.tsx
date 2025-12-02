@@ -281,6 +281,18 @@ const Demo = () => {
                       title={newsletter.title}
                     />
                   </div>
+                  <div className="p-4 border-t border-border">
+                    <Button 
+                      className="w-full"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedIndex(index);
+                        setShowGallery(false);
+                      }}
+                    >
+                      View Full Template
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
