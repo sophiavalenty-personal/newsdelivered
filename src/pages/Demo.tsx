@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { Monitor, Smartphone, Expand, Grid, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -191,6 +191,21 @@ const Demo = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
   const [showGallery, setShowGallery] = useState(false);
+  const [iframeHeight, setIframeHeight] = useState(1600);
+
+  const handleIframeLoad = useCallback((e: React.SyntheticEvent<HTMLIFrameElement>) => {
+    const iframe = e.currentTarget;
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow?.document;
+      if (doc?.body) {
+        const height = doc.body.scrollHeight;
+        setIframeHeight(height + 50); // Add small buffer
+      }
+    } catch (error) {
+      // Fallback if content access fails
+      setIframeHeight(1600);
+    }
+  }, []);
 
   const clientData = clientId ? clientDemos[clientId.toLowerCase()] : null;
 
@@ -402,8 +417,9 @@ const Demo = () => {
                 <iframe
                   srcDoc={currentNewsletter.htmlContent}
                   className="w-full border-0"
-                  style={{ height: "1600px" }}
+                  style={{ height: `${iframeHeight}px` }}
                   title={currentNewsletter.title}
+                  onLoad={handleIframeLoad}
                 />
               </div>
             </div>
