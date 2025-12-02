@@ -249,19 +249,6 @@ const Demo = () => {
               <h1 className="text-xl font-bold text-foreground">{clientData.clientName}</h1>
               <p className="text-sm text-muted-foreground">Newsletter Gallery</p>
             </div>
-            <div className="flex items-center gap-2">
-              {/* Gallery Toggle - only show when not on gallery */}
-              {!showGallery && (
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setShowGallery(true)}
-                >
-                  <Grid className="h-4 w-4 mr-1" />
-                  Gallery
-                </Button>
-              )}
-            </div>
           </div>
         </div>
       </header>
