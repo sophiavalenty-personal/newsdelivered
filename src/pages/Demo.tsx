@@ -327,13 +327,15 @@ const Demo = () => {
                   <div className="bg-muted/50 px-4 py-2 border-b border-border flex items-center justify-between">
                     <span className="text-xs text-muted-foreground">{currentNewsletter.title}</span>
                     {/* View Mode Toggle */}
-                    <div className="flex items-center bg-background rounded-md p-0.5 shadow-sm">
+                    <div className="flex items-center bg-muted rounded-md p-0.5">
                       <Button
                         variant="ghost"
                         size="sm"
                         className={cn(
                           "h-7 px-2 text-xs",
-                          viewMode === "desktop" && "bg-muted"
+                          viewMode === "desktop" 
+                            ? "bg-primary text-primary-foreground hover:bg-primary/90" 
+                            : "hover:bg-background"
                         )}
                         onClick={() => setViewMode("desktop")}
                       >
@@ -345,7 +347,9 @@ const Demo = () => {
                         size="sm"
                         className={cn(
                           "h-7 px-2 text-xs",
-                          viewMode === "mobile" && "bg-muted"
+                          viewMode === "mobile" 
+                            ? "bg-primary text-primary-foreground hover:bg-primary/90" 
+                            : "hover:bg-background"
                         )}
                         onClick={() => setViewMode("mobile")}
                       >
