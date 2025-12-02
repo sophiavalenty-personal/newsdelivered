@@ -11,11 +11,15 @@ const ClearCardio = () => {
             ClearCardio Newsletter Gallery
           </h1>
           
-          <div className="w-full flex justify-center">
-            {/* Iframe placeholder - will be replaced with actual embed code */}
-            <div className="w-full max-w-4xl h-[600px] bg-muted rounded-lg flex items-center justify-center border border-border">
-              <p className="text-muted-foreground">Newsletter gallery iframe will be added here</p>
-            </div>
+          <div className="w-full">
+            <iframe 
+              src="https://newsdelivered-clearcardio.lovable.app/" 
+              width="100%" 
+              height="800px" 
+              frameBorder="0"
+              style={{ border: 'none' }}
+              title="ClearCardio Newsletter Gallery"
+            />
           </div>
         </div>
       </main>
