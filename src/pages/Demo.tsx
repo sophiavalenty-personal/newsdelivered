@@ -227,34 +227,6 @@ const Demo = () => {
               <p className="text-sm text-muted-foreground">Newsletter Gallery</p>
             </div>
             <div className="flex items-center gap-2">
-              {/* View Mode Toggle */}
-              <div className="flex items-center bg-muted rounded-lg p-1">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className={cn(
-                    "h-8 px-3",
-                    viewMode === "desktop" && "bg-background shadow-sm"
-                  )}
-                  onClick={() => setViewMode("desktop")}
-                >
-                  <Monitor className="h-4 w-4 mr-1" />
-                  Desktop
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className={cn(
-                    "h-8 px-3",
-                    viewMode === "mobile" && "bg-background shadow-sm"
-                  )}
-                  onClick={() => setViewMode("mobile")}
-                >
-                  <Smartphone className="h-4 w-4 mr-1" />
-                  Mobile
-                </Button>
-              </div>
-
               {/* Gallery Toggle */}
               <Button
                 variant="outline"
@@ -352,8 +324,35 @@ const Demo = () => {
                     viewMode === "desktop" ? "w-full max-w-3xl" : "w-[375px]"
                   )}
                 >
-                  <div className="bg-muted/50 px-4 py-2 border-b border-border">
+                  <div className="bg-muted/50 px-4 py-2 border-b border-border flex items-center justify-between">
                     <span className="text-xs text-muted-foreground">{currentNewsletter.title}</span>
+                    {/* View Mode Toggle */}
+                    <div className="flex items-center bg-background rounded-md p-0.5 shadow-sm">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className={cn(
+                          "h-7 px-2 text-xs",
+                          viewMode === "desktop" && "bg-muted"
+                        )}
+                        onClick={() => setViewMode("desktop")}
+                      >
+                        <Monitor className="h-3.5 w-3.5 mr-1" />
+                        Desktop
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className={cn(
+                          "h-7 px-2 text-xs",
+                          viewMode === "mobile" && "bg-muted"
+                        )}
+                        onClick={() => setViewMode("mobile")}
+                      >
+                        <Smartphone className="h-3.5 w-3.5 mr-1" />
+                        Mobile
+                      </Button>
+                    </div>
                   </div>
                   <div
                     className={cn(
