@@ -392,14 +392,15 @@ const Demo = () => {
             <div className="flex justify-center">
               <div
                 className={cn(
-                  "rounded-lg overflow-hidden shadow-sm transition-all duration-300",
+                  "rounded-lg overflow-auto shadow-sm transition-all duration-300",
                   viewMode === "desktop" ? "w-full max-w-3xl" : "w-[375px]"
                 )}
                 style={{ height: "calc(100vh - 280px)", minHeight: "400px" }}
               >
                 <iframe
                   srcDoc={currentNewsletter.htmlContent}
-                  className="w-full h-full"
+                  className="w-full border-0"
+                  style={{ height: "2000px", minHeight: "100%" }}
                   title={currentNewsletter.title}
                 />
               </div>
