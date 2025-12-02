@@ -10,6 +10,7 @@ import Channels from "./pages/Channels";
 import ChannelSources from "./pages/ChannelSources";
 import RSSFeed from "./pages/RSSFeed";
 import Tools from "./pages/Tools";
+import ClearCardio from "./pages/ClearCardio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/channels/:channelId" element={<ChannelSources />} />
           <Route path="/channels/:channelId/sources/:sourceId" element={<RSSFeed />} />
           <Route path="/tools" element={<Tools />} />
+          <Route path="/clearcardio" element={<ClearCardio />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
