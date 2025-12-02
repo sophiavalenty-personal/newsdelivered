@@ -250,16 +250,17 @@ const Demo = () => {
               <p className="text-sm text-muted-foreground">Newsletter Gallery</p>
             </div>
             <div className="flex items-center gap-2">
-              {/* Gallery Toggle */}
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setShowGallery(!showGallery)}
-                className={cn(showGallery && "bg-primary text-primary-foreground")}
-              >
-                <Grid className="h-4 w-4 mr-1" />
-                Gallery
-              </Button>
+              {/* Gallery Toggle - only show when not on gallery */}
+              {!showGallery && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setShowGallery(true)}
+                >
+                  <Grid className="h-4 w-4 mr-1" />
+                  Gallery
+                </Button>
+              )}
             </div>
           </div>
         </div>
