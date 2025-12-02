@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
+import Header from "@/components/Header";
 
 // Demo data structure - will be populated per client
 interface NewsletterSample {
@@ -241,17 +242,21 @@ const Demo = () => {
 
   return (
     <div className="min-h-screen bg-muted/30">
-      {/* Header */}
-      <header className="bg-background border-b border-border sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-xl font-bold text-foreground">{clientData.clientName}</h1>
-              <p className="text-sm text-muted-foreground">Newsletter Gallery</p>
+      <Header />
+      
+      {/* Client Info Bar */}
+      <div className="pt-16">
+        <div className="bg-background border-b border-border">
+          <div className="container mx-auto px-4 py-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className="text-xl font-bold text-foreground">{clientData.clientName}</h1>
+                <p className="text-sm text-muted-foreground">Newsletter Gallery</p>
+              </div>
             </div>
           </div>
         </div>
-      </header>
+      </div>
 
       <div className="container mx-auto px-4 py-6">
         {showGallery ? (
