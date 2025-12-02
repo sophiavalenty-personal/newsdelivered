@@ -326,17 +326,6 @@ const Demo = () => {
           <div className="w-full flex flex-col h-[calc(100vh-120px)]">
             {/* Sticky Controls */}
             <div className="sticky top-0 bg-background z-10 pb-4">
-              {/* All Samples Back Button */}
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setShowGallery(true)}
-                className="mb-3 -ml-2 text-muted-foreground hover:text-foreground"
-              >
-                <ChevronLeft className="h-4 w-4 mr-1" />
-                All Samples
-              </Button>
-
               {/* Header Row */}
               <div className="flex items-start justify-between mb-2">
                 <div>
@@ -365,8 +354,17 @@ const Demo = () => {
                 </div>
               </div>
 
-              {/* Sample Number Buttons */}
+              {/* Gallery + Sample Number Buttons */}
               <div className="flex flex-wrap gap-2 mb-3">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setShowGallery(true)}
+                  className="text-sm"
+                >
+                  <Grid className="h-4 w-4 mr-1" />
+                  Gallery
+                </Button>
                 {clientData.newsletters.map((_, index) => (
                   <Button
                     key={index}
