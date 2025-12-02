@@ -395,7 +395,7 @@ const Demo = () => {
                   "rounded-lg overflow-hidden shadow-sm transition-all duration-300",
                   viewMode === "desktop" ? "w-full max-w-3xl" : "w-[375px]"
                 )}
-                style={{ height: viewMode === "desktop" ? "650px" : "700px" }}
+                style={{ height: "calc(100vh - 280px)", minHeight: "400px" }}
               >
                 <iframe
                   srcDoc={currentNewsletter.htmlContent}
