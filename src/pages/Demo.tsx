@@ -315,12 +315,7 @@ const Demo = () => {
             <div className="sticky top-0 bg-background z-10 pb-4">
               {/* Header Row */}
               <div className="flex items-start justify-between mb-2">
-                <div>
-                  <h1 className="text-xl font-bold text-foreground">{clientData.clientName} Newsletter Samples</h1>
-                  <p className="text-sm text-muted-foreground">
-                    {currentNewsletter.title}
-                  </p>
-                </div>
+                <h1 className="text-xl font-bold text-foreground">{currentNewsletter.title}</h1>
                 <div className="flex items-center gap-2">
                   <Button
                     variant="outline"
