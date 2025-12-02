@@ -228,15 +228,8 @@ const Demo = () => {
                     viewMode === "desktop" ? "w-full max-w-3xl" : "w-[375px]"
                   )}
                 >
-                  <div className="bg-muted/50 px-4 py-2 border-b border-border flex items-center gap-2">
-                    <div className="flex gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-red-400" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                      <div className="w-3 h-3 rounded-full bg-green-400" />
-                    </div>
-                    <div className="flex-1 text-center">
-                      <span className="text-xs text-muted-foreground">{currentNewsletter.title}</span>
-                    </div>
+                  <div className="bg-muted/50 px-4 py-2 border-b border-border">
+                    <span className="text-xs text-muted-foreground">{currentNewsletter.title}</span>
                   </div>
                   <div
                     className={cn(
