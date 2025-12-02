@@ -301,7 +301,7 @@ const Demo = () => {
                         setShowGallery(false);
                       }}
                     >
-                      View Full Template
+                      View Sample {index + 1}
                     </Button>
                   </div>
                 </CardContent>
