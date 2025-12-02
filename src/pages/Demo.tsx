@@ -346,7 +346,7 @@ const Demo = () => {
                     className={cn(
                       "h-8 px-3 text-sm",
                       viewMode === "desktop" 
-                        ? "bg-background text-foreground shadow-sm" 
+                        ? "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90" 
                         : "hover:bg-background/50"
                     )}
                     onClick={() => setViewMode("desktop")}
@@ -360,7 +360,7 @@ const Demo = () => {
                     className={cn(
                       "h-8 px-3 text-sm",
                       viewMode === "mobile" 
-                        ? "bg-background text-foreground shadow-sm" 
+                        ? "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90" 
                         : "hover:bg-background/50"
                     )}
                     onClick={() => setViewMode("mobile")}
