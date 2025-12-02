@@ -213,12 +213,12 @@ const Demo = () => {
             {/* Preview Frame */}
             <div className="flex items-center gap-4">
               <Button
-                variant="outline"
+                variant="default"
                 size="icon"
                 onClick={goToPrevious}
-                className="shrink-0"
+                className="shrink-0 h-12 w-12 rounded-full shadow-lg"
               >
-                <ChevronLeft className="h-5 w-5" />
+                <ChevronLeft className="h-6 w-6" />
               </Button>
 
               <div className="flex-1 flex justify-center">
@@ -247,12 +247,12 @@ const Demo = () => {
               </div>
 
               <Button
-                variant="outline"
+                variant="default"
                 size="icon"
                 onClick={goToNext}
-                className="shrink-0"
+                className="shrink-0 h-12 w-12 rounded-full shadow-lg"
               >
-                <ChevronRight className="h-5 w-5" />
+                <ChevronRight className="h-6 w-6" />
               </Button>
             </div>
 
