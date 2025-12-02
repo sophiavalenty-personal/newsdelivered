@@ -336,32 +336,32 @@ const Demo = () => {
                 </div>
               </div>
 
-              {/* Gallery + Sample Number Buttons */}
-              <div className="flex flex-wrap gap-2 mb-3">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setShowGallery(true)}
-                  className="text-sm"
-                >
-                  <Grid className="h-4 w-4 mr-1" />
-                  Gallery
-                </Button>
-                {clientData.newsletters.map((_, index) => (
+              {/* Gallery + Sample Number Buttons + Desktop/Mobile Toggle */}
+              <div className="flex items-center justify-between gap-2 mb-3">
+                <div className="flex flex-wrap gap-2">
                   <Button
-                    key={index}
-                    variant={selectedIndex === index ? "default" : "outline"}
+                    variant="outline"
                     size="sm"
-                    onClick={() => setSelectedIndex(index)}
+                    onClick={() => setShowGallery(true)}
                     className="text-sm"
                   >
-                    Sample {index + 1}
+                    <Grid className="h-4 w-4 mr-1" />
+                    Gallery
                   </Button>
-                ))}
-              </div>
+                  {clientData.newsletters.map((_, index) => (
+                    <Button
+                      key={index}
+                      variant={selectedIndex === index ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => setSelectedIndex(index)}
+                      className="text-sm"
+                    >
+                      Sample {index + 1}
+                    </Button>
+                  ))}
+                </div>
 
-              {/* Desktop/Mobile Toggle */}
-              <div className="flex items-center gap-2">
+                {/* Desktop/Mobile Toggle */}
                 <div className="flex items-center bg-muted rounded-md p-0.5">
                   <Button
                     variant="ghost"
