@@ -248,12 +248,7 @@ const Demo = () => {
       <div className="pt-16">
         <div className="bg-background border-b border-border">
           <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-xl font-bold text-foreground">{clientData.clientName}</h1>
-                <p className="text-sm text-muted-foreground">Newsletter Gallery</p>
-              </div>
-            </div>
+            <h1 className="text-xl font-bold text-foreground">{clientData.clientName}</h1>
           </div>
         </div>
       </div>
