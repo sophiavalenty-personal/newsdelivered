@@ -299,108 +299,110 @@ const Demo = () => {
           </div>
         ) : (
           /* Single Preview View */
-          <div className="w-full">
-            {/* All Samples Back Button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setShowGallery(true)}
-              className="mb-3 -ml-2 text-muted-foreground hover:text-foreground"
-            >
-              <ChevronLeft className="h-4 w-4 mr-1" />
-              All Samples
-            </Button>
+          <div className="w-full flex flex-col h-[calc(100vh-120px)]">
+            {/* Sticky Controls */}
+            <div className="sticky top-0 bg-background z-10 pb-4">
+              {/* All Samples Back Button */}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setShowGallery(true)}
+                className="mb-3 -ml-2 text-muted-foreground hover:text-foreground"
+              >
+                <ChevronLeft className="h-4 w-4 mr-1" />
+                All Samples
+              </Button>
 
-            {/* Header Row */}
-            <div className="flex items-start justify-between mb-2">
-              <div>
-                <h1 className="text-xl font-bold text-foreground">{clientData.clientName} Newsletter Samples</h1>
-                <p className="text-sm text-muted-foreground">
-                  Sample {selectedIndex + 1} of {totalSamples}: {currentNewsletter.title}
-                </p>
+              {/* Header Row */}
+              <div className="flex items-start justify-between mb-2">
+                <div>
+                  <h1 className="text-xl font-bold text-foreground">{clientData.clientName} Newsletter Samples</h1>
+                  <p className="text-sm text-muted-foreground">
+                    Sample {selectedIndex + 1} of {totalSamples}: {currentNewsletter.title}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={goToPrevious}
+                    className="h-8 w-8"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={goToNext}
+                    className="h-8 w-8"
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
+                </div>
               </div>
+
+              {/* Sample Number Buttons */}
+              <div className="flex flex-wrap gap-2 mb-3">
+                {clientData.newsletters.map((_, index) => (
+                  <Button
+                    key={index}
+                    variant={selectedIndex === index ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedIndex(index)}
+                    className="text-sm"
+                  >
+                    Sample {index + 1}
+                  </Button>
+                ))}
+              </div>
+
+              {/* Desktop/Mobile Toggle */}
               <div className="flex items-center gap-2">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={goToPrevious}
-                  className="h-8 w-8"
-                >
-                  <ChevronLeft className="h-4 w-4" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={goToNext}
-                  className="h-8 w-8"
-                >
-                  <ChevronRight className="h-4 w-4" />
-                </Button>
+                <div className="flex items-center bg-muted rounded-md p-0.5">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className={cn(
+                      "h-8 px-3 text-sm",
+                      viewMode === "desktop" 
+                        ? "bg-background text-foreground shadow-sm" 
+                        : "hover:bg-background/50"
+                    )}
+                    onClick={() => setViewMode("desktop")}
+                  >
+                    <Monitor className="h-4 w-4 mr-1" />
+                    Desktop
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className={cn(
+                      "h-8 px-3 text-sm",
+                      viewMode === "mobile" 
+                        ? "bg-background text-foreground shadow-sm" 
+                        : "hover:bg-background/50"
+                    )}
+                    onClick={() => setViewMode("mobile")}
+                  >
+                    <Smartphone className="h-4 w-4 mr-1" />
+                    Mobile
+                  </Button>
+                </div>
               </div>
             </div>
 
-            {/* Sample Number Buttons */}
-            <div className="flex flex-wrap gap-2 mb-3">
-              {clientData.newsletters.map((_, index) => (
-                <Button
-                  key={index}
-                  variant={selectedIndex === index ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedIndex(index)}
-                  className="text-sm"
-                >
-                  Sample {index + 1}
-                </Button>
-              ))}
-            </div>
-
-            {/* Desktop/Mobile Toggle */}
-            <div className="flex items-center gap-2 mb-6">
-              <div className="flex items-center bg-muted rounded-md p-0.5">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className={cn(
-                    "h-8 px-3 text-sm",
-                    viewMode === "desktop" 
-                      ? "bg-background text-foreground shadow-sm" 
-                      : "hover:bg-background/50"
-                  )}
-                  onClick={() => setViewMode("desktop")}
-                >
-                  <Monitor className="h-4 w-4 mr-1" />
-                  Desktop
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className={cn(
-                    "h-8 px-3 text-sm",
-                    viewMode === "mobile" 
-                      ? "bg-background text-foreground shadow-sm" 
-                      : "hover:bg-background/50"
-                  )}
-                  onClick={() => setViewMode("mobile")}
-                >
-                  <Smartphone className="h-4 w-4 mr-1" />
-                  Mobile
-                </Button>
-              </div>
-            </div>
-
-            {/* Preview Frame */}
-            <div className="flex justify-center">
+            {/* Preview Frame - Scrollable */}
+            <div className="flex-1 overflow-auto flex justify-center">
               <div
                 className={cn(
-                  "rounded-lg overflow-auto shadow-sm transition-all duration-300",
+                  "rounded-lg shadow-sm transition-all duration-300",
                   viewMode === "desktop" ? "w-full max-w-3xl" : "w-[375px]"
                 )}
-                style={{ height: "calc(100vh - 280px)", minHeight: "400px" }}
               >
                 <iframe
                   srcDoc={currentNewsletter.htmlContent}
                   className="w-full border-0"
-                  style={{ height: "2000px", minHeight: "100%" }}
+                  style={{ height: "3000px" }}
                   title={currentNewsletter.title}
                 />
               </div>
