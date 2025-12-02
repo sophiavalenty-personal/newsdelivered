@@ -234,6 +234,16 @@ const Demo = () => {
     }
   }, [selectedIndex]);
 
+  // Inject CSS to disable all links in newsletter previews
+  const getDisabledLinksHtml = useCallback((html: string) => {
+    const disableLinksStyle = `<style>a, button { pointer-events: none !important; cursor: default !important; } a:hover, button:hover { text-decoration: none !important; }</style>`;
+    // Insert before closing </head> or at start of content
+    if (html.includes('</head>')) {
+      return html.replace('</head>', `${disableLinksStyle}</head>`);
+    }
+    return disableLinksStyle + html;
+  }, []);
+
   const handleIframeLoad = useCallback((e: React.SyntheticEvent<HTMLIFrameElement>) => {
     const iframe = e.currentTarget;
     try {
@@ -318,7 +328,7 @@ const Demo = () => {
                   </div>
                   <div className="h-[500px] bg-muted/30 overflow-hidden">
                     <iframe
-                      srcDoc={newsletter.htmlContent}
+                      srcDoc={getDisabledLinksHtml(newsletter.htmlContent)}
                       className="w-full pointer-events-none"
                       style={{ 
                         transform: "scale(0.4)", 
@@ -443,7 +453,7 @@ const Demo = () => {
                   )}
                 >
                   <iframe
-                    srcDoc={currentNewsletter.htmlContent}
+                    srcDoc={getDisabledLinksHtml(currentNewsletter.htmlContent)}
                     className="w-full border-0"
                     style={{ height: `${iframeHeight}px` }}
                     title={currentNewsletter.title}
