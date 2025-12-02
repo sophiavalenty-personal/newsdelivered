@@ -248,7 +248,12 @@ const Demo = () => {
       <div className="pt-16">
         <div className="bg-sky-50 border-b border-sky-100">
           <div className="container mx-auto px-4 py-4">
-            <h1 className="text-xl font-bold text-foreground">{clientData.clientName} Newsletter Samples</h1>
+            <h1 className="text-xl font-bold text-foreground">
+              {showGallery 
+                ? `${clientData.clientName} Newsletter Samples`
+                : `Sample ${selectedIndex + 1}: ${currentNewsletter.title}`
+              }
+            </h1>
           </div>
         </div>
       </div>
