@@ -1,11 +1,19 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Monitor, Smartphone, Expand, Grid, ChevronLeft, ChevronRight } from "lucide-react";
+import { Monitor, Smartphone, Expand, Grid, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import Header from "@/components/Header";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Demo data structure - will be populated per client
 interface NewsletterSample {
@@ -318,7 +326,7 @@ const Demo = () => {
           <div className="w-full flex flex-col h-[calc(100vh-120px)]">
             {/* Sticky Controls */}
             <div className="sticky top-0 bg-background z-10 pb-4">
-              {/* Gallery + Sample Number Buttons + Desktop/Mobile Toggle */}
+              {/* Gallery + Sample Selection + Desktop/Mobile Toggle */}
               <div className="flex items-center justify-between gap-2 mb-3">
                 <div className="flex flex-wrap items-center gap-2">
                   <Button
@@ -331,22 +339,43 @@ const Demo = () => {
                     Gallery
                   </Button>
                   
-                  {/* Sample buttons */}
-                  {clientData.newsletters.map((_, index) => (
-                    <Button
-                      key={index}
-                      variant={selectedIndex === index ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => setSelectedIndex(index)}
-                      className="text-sm"
+                  {/* Sample dropdown on mobile, buttons on desktop */}
+                  <div className="md:hidden">
+                    <Select
+                      value={selectedIndex.toString()}
+                      onValueChange={(value) => setSelectedIndex(parseInt(value))}
                     >
-                      Sample {index + 1}
-                    </Button>
-                  ))}
+                      <SelectTrigger className="w-[130px] h-9 text-sm bg-background">
+                        <SelectValue placeholder="Select sample" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-background border border-border shadow-lg z-50">
+                        {clientData.newsletters.map((_, index) => (
+                          <SelectItem key={index} value={index.toString()}>
+                            Sample {index + 1}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  {/* Sample buttons - desktop only */}
+                  <div className="hidden md:flex items-center gap-2">
+                    {clientData.newsletters.map((_, index) => (
+                      <Button
+                        key={index}
+                        variant={selectedIndex === index ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => setSelectedIndex(index)}
+                        className="text-sm"
+                      >
+                        Sample {index + 1}
+                      </Button>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Desktop/Mobile Toggle */}
-                <div className="flex items-center bg-muted rounded-md p-0.5">
+                {/* Desktop/Mobile Toggle - hidden on mobile devices */}
+                <div className="hidden md:flex items-center bg-muted rounded-md p-0.5">
                   <Button
                     variant="ghost"
                     size="sm"
@@ -385,7 +414,8 @@ const Demo = () => {
                 <div
                   className={cn(
                     "rounded-lg shadow-sm transition-all duration-300",
-                    viewMode === "desktop" ? "w-full max-w-3xl" : "w-[420px]"
+                    "w-full md:max-w-3xl",
+                    viewMode === "mobile" && "md:w-[420px]"
                   )}
                 >
                   <iframe
