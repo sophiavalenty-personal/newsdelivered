@@ -248,7 +248,7 @@ const Demo = () => {
       <div className="pt-16">
         <div className="bg-background border-b border-border">
           <div className="container mx-auto px-4 py-4">
-            <h1 className="text-xl font-bold text-foreground">{clientData.clientName}</h1>
+            <h1 className="text-xl font-bold text-foreground">{clientData.clientName} Newsletter Samples</h1>
           </div>
         </div>
       </div>
