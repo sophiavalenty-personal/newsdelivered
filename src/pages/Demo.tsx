@@ -1,6 +1,6 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Monitor, Smartphone, Expand, Grid, ChevronLeft, ChevronRight, LayoutGrid, List } from "lucide-react";
+import { Monitor, Smartphone, Expand, Grid, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
@@ -192,7 +192,6 @@ const Demo = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
   const [showGallery, setShowGallery] = useState(true);
-  const [showMiniPreviews, setShowMiniPreviews] = useState(false);
   const [iframeHeight, setIframeHeight] = useState(1600);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -332,40 +331,8 @@ const Demo = () => {
                     Gallery
                   </Button>
                   
-                  {/* Toggle between buttons and mini previews */}
-                  <div className="flex items-center bg-muted rounded-md p-0.5">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className={cn(
-                        "h-7 px-2 text-xs",
-                        !showMiniPreviews 
-                          ? "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90" 
-                          : "hover:bg-background/50"
-                      )}
-                      onClick={() => setShowMiniPreviews(false)}
-                      title="Sample buttons"
-                    >
-                      <List className="h-3.5 w-3.5" />
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className={cn(
-                        "h-7 px-2 text-xs",
-                        showMiniPreviews 
-                          ? "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90" 
-                          : "hover:bg-background/50"
-                      )}
-                      onClick={() => setShowMiniPreviews(true)}
-                      title="Mini previews"
-                    >
-                      <LayoutGrid className="h-3.5 w-3.5" />
-                    </Button>
-                  </div>
-
-                  {/* Sample buttons - only show when mini previews are off */}
-                  {!showMiniPreviews && clientData.newsletters.map((_, index) => (
+                  {/* Sample buttons */}
+                  {clientData.newsletters.map((_, index) => (
                     <Button
                       key={index}
                       variant={selectedIndex === index ? "default" : "outline"}
@@ -412,49 +379,9 @@ const Demo = () => {
               </div>
             </div>
 
-            {/* Preview Frame with Optional Mini Sidebar */}
-            <div className="flex-1 flex gap-4 overflow-hidden">
-              {/* Mini Preview Sidebar */}
-              {showMiniPreviews && (
-                <div className="w-48 flex-shrink-0 overflow-y-auto space-y-3 pr-2">
-                  {clientData.newsletters.map((newsletter, index) => (
-                    <button
-                      key={newsletter.id}
-                      onClick={() => setSelectedIndex(index)}
-                      className={cn(
-                        "w-full rounded-lg overflow-hidden border-2 transition-all hover:shadow-md text-left",
-                        selectedIndex === index 
-                          ? "border-primary shadow-md" 
-                          : "border-border hover:border-primary/50"
-                      )}
-                    >
-                      {/* Mini iframe preview */}
-                      <div className="relative bg-white h-32 overflow-hidden">
-                        <iframe
-                          srcDoc={newsletter.htmlContent}
-                          className="w-[600px] h-[800px] border-0 pointer-events-none"
-                          style={{ 
-                            transform: 'scale(0.2)', 
-                            transformOrigin: 'top left',
-                          }}
-                          title={`Preview ${newsletter.title}`}
-                        />
-                      </div>
-                      <div className="p-2 bg-muted/50">
-                        <p className={cn(
-                          "text-xs font-medium truncate",
-                          selectedIndex === index ? "text-primary" : "text-foreground"
-                        )}>
-                          Sample {index + 1}
-                        </p>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              )}
-
-              {/* Main Preview */}
-              <div ref={scrollContainerRef} className="flex-1 overflow-auto flex justify-center">
+            {/* Preview Frame */}
+            <div className="flex-1 overflow-hidden">
+              <div ref={scrollContainerRef} className="h-full overflow-auto flex justify-center">
                 <div
                   className={cn(
                     "rounded-lg shadow-sm transition-all duration-300",
