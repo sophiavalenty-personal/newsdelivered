@@ -323,7 +323,7 @@ const Demo = () => {
                 <div>
                   <h1 className="text-xl font-bold text-foreground">{clientData.clientName} Newsletter Samples</h1>
                   <p className="text-sm text-muted-foreground">
-                    Sample {selectedIndex + 1} of {totalSamples}: {currentNewsletter.title}
+                    {currentNewsletter.title}
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
