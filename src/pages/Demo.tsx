@@ -313,29 +313,6 @@ const Demo = () => {
           <div className="w-full flex flex-col h-[calc(100vh-120px)]">
             {/* Sticky Controls */}
             <div className="sticky top-0 bg-background z-10 pb-4">
-              {/* Header Row */}
-              <div className="flex items-start justify-between mb-2">
-                <h1 className="text-xl font-bold text-foreground">{currentNewsletter.title}</h1>
-                <div className="flex items-center gap-2">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={goToPrevious}
-                    className="h-8 w-8"
-                  >
-                    <ChevronLeft className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={goToNext}
-                    className="h-8 w-8"
-                  >
-                    <ChevronRight className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-
               {/* Gallery + Sample Number Buttons + Desktop/Mobile Toggle */}
               <div className="flex items-center justify-between gap-2 mb-3">
                 <div className="flex flex-wrap gap-2">
