@@ -191,7 +191,7 @@ const Demo = () => {
   const { clientId } = useParams<{ clientId: string }>();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
-  const [showGallery, setShowGallery] = useState(false);
+  const [showGallery, setShowGallery] = useState(true);
   const [iframeHeight, setIframeHeight] = useState(1600);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
