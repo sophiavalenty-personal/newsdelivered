@@ -250,7 +250,7 @@ const Demo = () => {
               <Card
                 key={newsletter.id}
                 className={cn(
-                  "cursor-pointer transition-all hover:shadow-lg",
+                  "cursor-pointer transition-all hover:shadow-lg flex flex-col",
                   selectedIndex === index && "ring-2 ring-primary"
                 )}
                 onClick={() => {
@@ -258,18 +258,28 @@ const Demo = () => {
                   setShowGallery(false);
                 }}
               >
-                <CardContent className="p-0">
-                  <div className="aspect-[4/3] bg-muted overflow-hidden rounded-t-lg">
+                <CardContent className="p-0 flex flex-col h-full">
+                  <div className="p-4 flex items-start justify-between">
+                    <div>
+                      <h3 className="font-semibold text-foreground">{newsletter.title}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">{newsletter.description}</p>
+                    </div>
+                    <span className="shrink-0 w-7 h-7 rounded-full bg-muted flex items-center justify-center text-sm font-medium text-muted-foreground">
+                      {index + 1}
+                    </span>
+                  </div>
+                  <div className="flex-1 bg-muted overflow-hidden mx-4 mb-4 rounded-lg border border-border">
                     <iframe
                       srcDoc={newsletter.htmlContent}
-                      className="w-full h-full pointer-events-none"
-                      style={{ transform: "scale(0.5)", transformOrigin: "top left", width: "200%", height: "200%" }}
+                      className="w-full pointer-events-none"
+                      style={{ 
+                        transform: "scale(0.35)", 
+                        transformOrigin: "top left", 
+                        width: "285.7%", 
+                        height: "2000px"
+                      }}
                       title={newsletter.title}
                     />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-foreground">{newsletter.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{newsletter.description}</p>
                   </div>
                 </CardContent>
               </Card>
