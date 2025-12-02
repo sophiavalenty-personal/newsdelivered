@@ -250,7 +250,7 @@ const Demo = () => {
               <Card
                 key={newsletter.id}
                 className={cn(
-                  "cursor-pointer transition-all hover:shadow-lg flex flex-col",
+                  "cursor-pointer transition-all hover:shadow-lg",
                   selectedIndex === index && "ring-2 ring-primary"
                 )}
                 onClick={() => {
@@ -258,8 +258,8 @@ const Demo = () => {
                   setShowGallery(false);
                 }}
               >
-                <CardContent className="p-0 flex flex-col h-full">
-                  <div className="p-4 flex items-start justify-between">
+                <CardContent className="p-0">
+                  <div className="p-4 flex items-start justify-between border-b border-border">
                     <div>
                       <h3 className="font-semibold text-foreground">{newsletter.title}</h3>
                       <p className="text-sm text-muted-foreground mt-1">{newsletter.description}</p>
@@ -268,15 +268,15 @@ const Demo = () => {
                       {index + 1}
                     </span>
                   </div>
-                  <div className="flex-1 bg-muted overflow-hidden mx-4 mb-4 rounded-lg border border-border">
+                  <div className="h-[500px] bg-muted/30 overflow-hidden">
                     <iframe
                       srcDoc={newsletter.htmlContent}
                       className="w-full pointer-events-none"
                       style={{ 
-                        transform: "scale(0.35)", 
+                        transform: "scale(0.4)", 
                         transformOrigin: "top left", 
-                        width: "285.7%", 
-                        height: "2000px"
+                        width: "250%", 
+                        height: "1250px"
                       }}
                       title={newsletter.title}
                     />
