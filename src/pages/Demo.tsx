@@ -419,7 +419,7 @@ const Demo = () => {
               <div
                 className={cn(
                   "rounded-lg shadow-sm transition-all duration-300",
-                  viewMode === "desktop" ? "w-full max-w-3xl" : "w-[375px]"
+                  viewMode === "desktop" ? "w-full max-w-3xl" : "w-[420px]"
                 )}
               >
                 <iframe
