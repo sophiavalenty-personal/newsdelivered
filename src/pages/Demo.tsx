@@ -402,7 +402,7 @@ const Demo = () => {
                 <iframe
                   srcDoc={currentNewsletter.htmlContent}
                   className="w-full border-0"
-                  style={{ height: "3000px" }}
+                  style={{ height: "1600px" }}
                   title={currentNewsletter.title}
                 />
               </div>
