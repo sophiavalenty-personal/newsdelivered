@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Monitor, Smartphone, Expand, Grid, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -192,6 +192,14 @@ const Demo = () => {
   const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
   const [showGallery, setShowGallery] = useState(false);
   const [iframeHeight, setIframeHeight] = useState(1600);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Scroll to top when switching samples
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0;
+    }
+  }, [selectedIndex]);
 
   const handleIframeLoad = useCallback((e: React.SyntheticEvent<HTMLIFrameElement>) => {
     const iframe = e.currentTarget;
@@ -407,7 +415,7 @@ const Demo = () => {
             </div>
 
             {/* Preview Frame - Scrollable */}
-            <div className="flex-1 overflow-auto flex justify-center">
+            <div ref={scrollContainerRef} className="flex-1 overflow-auto flex justify-center">
               <div
                 className={cn(
                   "rounded-lg shadow-sm transition-all duration-300",
