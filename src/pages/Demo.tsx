@@ -300,6 +300,17 @@ const Demo = () => {
         ) : (
           /* Single Preview View */
           <div className="w-full">
+            {/* All Samples Back Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setShowGallery(true)}
+              className="mb-3 -ml-2 text-muted-foreground hover:text-foreground"
+            >
+              <ChevronLeft className="h-4 w-4 mr-1" />
+              All Samples
+            </Button>
+
             {/* Header Row */}
             <div className="flex items-start justify-between mb-2">
               <div>
@@ -309,44 +320,6 @@ const Demo = () => {
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setShowGallery(true)}
-                >
-                  <Grid className="h-4 w-4 mr-1" />
-                  Directory
-                </Button>
-                <div className="flex items-center bg-muted rounded-md p-0.5">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className={cn(
-                      "h-8 px-3 text-sm",
-                      viewMode === "desktop" 
-                        ? "bg-background text-foreground shadow-sm" 
-                        : "hover:bg-background/50"
-                    )}
-                    onClick={() => setViewMode("desktop")}
-                  >
-                    <Monitor className="h-4 w-4 mr-1" />
-                    Desktop
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className={cn(
-                      "h-8 px-3 text-sm",
-                      viewMode === "mobile" 
-                        ? "bg-background text-foreground shadow-sm" 
-                        : "hover:bg-background/50"
-                    )}
-                    onClick={() => setViewMode("mobile")}
-                  >
-                    <Smartphone className="h-4 w-4 mr-1" />
-                    Mobile
-                  </Button>
-                </div>
                 <Button
                   variant="outline"
                   size="icon"
@@ -367,7 +340,7 @@ const Demo = () => {
             </div>
 
             {/* Sample Number Buttons */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-3">
               {clientData.newsletters.map((_, index) => (
                 <Button
                   key={index}
@@ -379,6 +352,40 @@ const Demo = () => {
                   Sample {index + 1}
                 </Button>
               ))}
+            </div>
+
+            {/* Desktop/Mobile Toggle */}
+            <div className="flex items-center gap-2 mb-6">
+              <div className="flex items-center bg-muted rounded-md p-0.5">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className={cn(
+                    "h-8 px-3 text-sm",
+                    viewMode === "desktop" 
+                      ? "bg-background text-foreground shadow-sm" 
+                      : "hover:bg-background/50"
+                  )}
+                  onClick={() => setViewMode("desktop")}
+                >
+                  <Monitor className="h-4 w-4 mr-1" />
+                  Desktop
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className={cn(
+                    "h-8 px-3 text-sm",
+                    viewMode === "mobile" 
+                      ? "bg-background text-foreground shadow-sm" 
+                      : "hover:bg-background/50"
+                  )}
+                  onClick={() => setViewMode("mobile")}
+                >
+                  <Smartphone className="h-4 w-4 mr-1" />
+                  Mobile
+                </Button>
+              </div>
             </div>
 
             {/* Preview Frame */}
