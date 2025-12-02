@@ -299,126 +299,109 @@ const Demo = () => {
           </div>
         ) : (
           /* Single Preview View */
-          <div className="max-w-5xl mx-auto">
-            {/* Template Info */}
-            <div className="flex items-center justify-between mb-4">
+          <div className="w-full">
+            {/* Header Row */}
+            <div className="flex items-start justify-between mb-2">
               <div>
-                <h2 className="text-lg font-semibold text-foreground">{currentNewsletter.title}</h2>
-                <p className="text-sm text-muted-foreground">{currentNewsletter.description}</p>
+                <h1 className="text-xl font-bold text-foreground">{clientData.clientName} Newsletter Samples</h1>
+                <p className="text-sm text-muted-foreground">
+                  Sample {selectedIndex + 1} of {totalSamples}: {currentNewsletter.title}
+                </p>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-sm text-muted-foreground">
-                  {selectedIndex + 1} of {totalSamples}
-                </span>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button variant="outline" size="sm">
-                      <Expand className="h-4 w-4 mr-1" />
-                      View Full
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-4xl h-[90vh] p-0">
-                    <iframe
-                      srcDoc={currentNewsletter.htmlContent}
-                      className="w-full h-full"
-                      title={currentNewsletter.title}
-                    />
-                  </DialogContent>
-                </Dialog>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setShowGallery(true)}
+                >
+                  <Grid className="h-4 w-4 mr-1" />
+                  Directory
+                </Button>
+                <div className="flex items-center bg-muted rounded-md p-0.5">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className={cn(
+                      "h-8 px-3 text-sm",
+                      viewMode === "desktop" 
+                        ? "bg-background text-foreground shadow-sm" 
+                        : "hover:bg-background/50"
+                    )}
+                    onClick={() => setViewMode("desktop")}
+                  >
+                    <Monitor className="h-4 w-4 mr-1" />
+                    Desktop
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className={cn(
+                      "h-8 px-3 text-sm",
+                      viewMode === "mobile" 
+                        ? "bg-background text-foreground shadow-sm" 
+                        : "hover:bg-background/50"
+                    )}
+                    onClick={() => setViewMode("mobile")}
+                  >
+                    <Smartphone className="h-4 w-4 mr-1" />
+                    Mobile
+                  </Button>
+                </div>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={goToPrevious}
+                  className="h-8 w-8"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={goToNext}
+                  className="h-8 w-8"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
               </div>
+            </div>
+
+            {/* Sample Number Buttons */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {clientData.newsletters.map((_, index) => (
+                <Button
+                  key={index}
+                  variant={selectedIndex === index ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedIndex(index)}
+                  className="text-sm"
+                >
+                  Sample {index + 1}
+                </Button>
+              ))}
             </div>
 
             {/* Preview Frame */}
-            <div className="flex items-center gap-4">
-              <Button
-                variant="default"
-                size="icon"
-                onClick={goToPrevious}
-                className="shrink-0 h-12 w-12 rounded-full shadow-lg"
+            <div className="flex justify-center">
+              <div
+                className={cn(
+                  "bg-muted/30 rounded-xl border border-border overflow-hidden transition-all duration-300",
+                  viewMode === "desktop" ? "w-full max-w-4xl" : "w-[400px]"
+                )}
               >
-                <ChevronLeft className="h-6 w-6" />
-              </Button>
-
-              <div className="flex-1 flex justify-center">
                 <div
                   className={cn(
-                    "bg-background rounded-lg shadow-xl border border-border overflow-hidden transition-all duration-300",
-                    viewMode === "desktop" ? "w-full max-w-3xl" : "w-[375px]"
+                    "overflow-auto bg-background",
+                    viewMode === "desktop" ? "h-[650px]" : "h-[700px]"
                   )}
                 >
-                  <div className="bg-muted/50 px-4 py-2 border-b border-border flex items-center justify-between">
-                    <span className="text-xs text-muted-foreground">{currentNewsletter.title}</span>
-                    {/* View Mode Toggle */}
-                    <div className="flex items-center bg-muted rounded-md p-0.5">
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className={cn(
-                          "h-7 px-2 text-xs",
-                          viewMode === "desktop" 
-                            ? "bg-primary text-primary-foreground hover:bg-primary/90" 
-                            : "hover:bg-background"
-                        )}
-                        onClick={() => setViewMode("desktop")}
-                      >
-                        <Monitor className="h-3.5 w-3.5 mr-1" />
-                        Desktop
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className={cn(
-                          "h-7 px-2 text-xs",
-                          viewMode === "mobile" 
-                            ? "bg-primary text-primary-foreground hover:bg-primary/90" 
-                            : "hover:bg-background"
-                        )}
-                        onClick={() => setViewMode("mobile")}
-                      >
-                        <Smartphone className="h-3.5 w-3.5 mr-1" />
-                        Mobile
-                      </Button>
-                    </div>
-                  </div>
-                  <div
-                    className={cn(
-                      "overflow-auto",
-                      viewMode === "desktop" ? "h-[600px]" : "h-[667px]"
-                    )}
-                  >
-                    <iframe
-                      srcDoc={currentNewsletter.htmlContent}
-                      className="w-full h-full"
-                      title={currentNewsletter.title}
-                    />
-                  </div>
+                  <iframe
+                    srcDoc={currentNewsletter.htmlContent}
+                    className="w-full h-full"
+                    title={currentNewsletter.title}
+                  />
                 </div>
               </div>
-
-              <Button
-                variant="default"
-                size="icon"
-                onClick={goToNext}
-                className="shrink-0 h-12 w-12 rounded-full shadow-lg"
-              >
-                <ChevronRight className="h-6 w-6" />
-              </Button>
-            </div>
-
-            {/* Thumbnail Navigation */}
-            <div className="flex justify-center gap-2 mt-6">
-              {clientData.newsletters.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedIndex(index)}
-                  className={cn(
-                    "w-2.5 h-2.5 rounded-full transition-all",
-                    selectedIndex === index
-                      ? "bg-primary w-8"
-                      : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                  )}
-                />
-              ))}
             </div>
           </div>
         )}
