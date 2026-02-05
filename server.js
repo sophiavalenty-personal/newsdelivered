@@ -40,7 +40,13 @@ const server = createServer((req, res) => {
 
   try {
     const content = readFileSync(filePath);
-    res.writeHead(200, { 'Content-Type': contentType });
+    const headers = { 
+      'Content-Type': contentType,
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    };
+    res.writeHead(200, headers);
     res.end(content);
   } catch (err) {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
