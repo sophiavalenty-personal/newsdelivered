@@ -1,4 +1,13 @@
+run = "npm run dev"
+entrypoint = "src/main.tsx"
 
-[[deployment.rewrites]]
-source = "/*"
-destination = "/index.html"
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "npm run build && npx serve dist -l 3000"]
+deploymentTarget = "static"
+
+[[ports]]
+localPort = 8080
+externalPort = 80
