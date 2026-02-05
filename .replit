@@ -1,18 +1,13 @@
 run = "npm run dev"
 entrypoint = "src/main.tsx"
-modules = ["nodejs-20"]
 
 [nix]
 channel = "stable-24_05"
 
 [deployment]
-deploymentTarget = "static"
+deploymentTarget = "autoscale"
 build = ["npm", "run", "build"]
-publicDir = "dist"
-
-[[deployment.rewrites]]
-from = "/*"
-to = "/index.html"
+run = ["node", "server.js"]
 
 [[ports]]
 localPort = 8080
