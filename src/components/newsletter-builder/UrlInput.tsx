@@ -11,9 +11,10 @@ interface UrlInputProps {
   setIsLoading: (loading: boolean) => void
   getConfig: () => any
   hasBrandData: boolean
+  compact?: boolean  // Mobile compact mode
 }
 
-export function UrlInput({ onBrandLoaded, isLoading, setIsLoading, getConfig, hasBrandData }: UrlInputProps) {
+export function UrlInput({ onBrandLoaded, isLoading, setIsLoading, getConfig, hasBrandData, compact = false }: UrlInputProps) {
   const [url, setUrl] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [shareStatus, setShareStatus] = useState<'idle' | 'saving' | 'copied'>('idle')
@@ -106,6 +107,87 @@ export function UrlInput({ onBrandLoaded, isLoading, setIsLoading, getConfig, ha
     }
   }
 
+  // Compact mobile layout
+  if (compact) {
+    return (
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2 w-full">
+        {/* URL + Analyze row */}
+        <div className="flex gap-2">
+          <div className="flex-1 relative">
+            <input
+              type="url"
+              value={url}
+              onChange={(e) => { setUrl(e.target.value); setError(null); }}
+              placeholder="Enter website URL..."
+              className="w-full px-3 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 text-sm"
+              disabled={isLoading}
+            />
+            {error && (
+              <div className="absolute top-full left-0 mt-1 text-red-200 text-xs">
+                {error}
+              </div>
+            )}
+          </div>
+          <button
+            type="submit"
+            disabled={isLoading || !url.trim()}
+            className="px-4 py-2.5 bg-white text-blue-600 font-medium rounded-lg hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center gap-1.5 text-sm whitespace-nowrap"
+          >
+            {isLoading ? (
+              <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+              </svg>
+            ) : (
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            )}
+            {isLoading ? 'Analyzing...' : 'Analyze'}
+          </button>
+          
+          {/* Icon-only Share */}
+          <button
+            type="button"
+            onClick={handleShare}
+            disabled={!hasBrandData || shareStatus === 'saving'}
+            className="p-2.5 bg-white/20 text-white rounded-lg hover:bg-white/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all border border-white/30"
+            title="Share"
+          >
+            {shareStatus === 'saving' ? (
+              <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+              </svg>
+            ) : shareStatus === 'copied' ? (
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            ) : (
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+              </svg>
+            )}
+          </button>
+          
+          {/* Icon-only Upgrade */}
+          <a
+            href="https://newsdelivered.com/contact"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2.5 bg-gradient-to-r from-amber-400 to-orange-500 text-white rounded-lg hover:from-amber-500 hover:to-orange-600 transition-all shadow-lg"
+            title="Upgrade"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </a>
+        </div>
+      </form>
+    )
+  }
+
+  // Desktop layout
   return (
     <form onSubmit={handleSubmit} className="flex-1 flex gap-2">
       <div className="flex-1 relative">
@@ -126,7 +208,7 @@ export function UrlInput({ onBrandLoaded, isLoading, setIsLoading, getConfig, ha
       <button
         type="submit"
         disabled={isLoading || !url.trim()}
-        className="px-6 py-2 bg-white text-purple-600 font-medium rounded-lg hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center gap-2"
+        className="px-6 py-2 bg-white text-blue-600 font-medium rounded-lg hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center gap-2"
       >
         {isLoading ? (
           <>

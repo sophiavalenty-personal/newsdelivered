@@ -356,6 +356,7 @@ function Demo() {
               setIsLoading={setIsLoading}
               getConfig={getConfig}
               hasBrandData={!!brandData}
+              compact={true}
             />
           </div>
         ) : (
