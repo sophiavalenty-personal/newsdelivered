@@ -339,7 +339,7 @@ function Demo() {
       <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-4 shadow-lg">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-2 md:gap-4">
-            <h1 className="text-lg md:text-xl font-bold text-white whitespace-nowrap">NewsDelivered</h1>
+            <h1 className="text-lg lg:text-xl font-bold text-white whitespace-nowrap">NewsDelivered Demo</h1>
             <UrlInput 
               onBrandLoaded={handleBrandLoaded}
               isLoading={isLoading}
@@ -409,14 +409,14 @@ function Demo() {
         {/* On mobile: show/hide based on mobileView state */}
         {/* On desktop (md+): always show */}
         <div className={`
-          flex-1 bg-gray-100 p-4 md:p-6 overflow-auto
+          flex-1 bg-gray-100 p-4 lg:p-6 overflow-auto
           ${mobileView === 'preview' ? 'block' : 'hidden'}
           lg:block
         `}>
           <div className="flex justify-center">
             {/* On small screens: full width. On large screens: respect previewSize toggle */}
-            <div className={`transition-all duration-300 w-full max-w-[375px] md:${
-              previewSize === 'mobile' ? 'max-w-[375px]' : 'max-w-2xl'
+            <div className={`transition-all duration-300 w-full ${
+              previewSize === 'mobile' ? 'max-w-[375px]' : 'lg:max-w-2xl max-w-[375px]'
             }`}>
               {/* Mobile: simple card. Desktop with mobile preview: phone frame */}
               
