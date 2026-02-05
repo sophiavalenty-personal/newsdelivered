@@ -344,7 +344,7 @@ function Demo() {
 
   // Shared header component
   const Header = () => (
-    <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-3 shadow-lg">
+    <div className="bg-red-600 p-3 shadow-lg">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-2">
           <h1 className="text-base font-bold text-white whitespace-nowrap">NewsDelivered</h1>
