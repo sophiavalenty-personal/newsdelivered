@@ -50,6 +50,18 @@ const Header = () => {
             Tools
           </NavLink>
           <NavLink 
+            to="/demo" 
+            className={({ isActive }) => 
+              `pb-1 transition-colors ${
+                isActive 
+                  ? "text-primary font-semibold border-b-2 border-primary" 
+                  : "text-foreground hover:text-primary"
+              }`
+            }
+          >
+            Demo
+          </NavLink>
+          <NavLink 
             to="/contact" 
             className={({ isActive }) => 
               `pb-1 transition-colors ${
