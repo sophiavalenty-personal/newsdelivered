@@ -49,6 +49,12 @@ export function UrlInput({ onBrandLoaded, isLoading, setIsLoading, getConfig, ha
     e.preventDefault()
     if (!url.trim()) return
     
+    // Normalize URL - add https:// if no protocol specified
+    let normalizedUrl = url.trim()
+    if (!normalizedUrl.match(/^https?:\/\//i)) {
+      normalizedUrl = 'https://' + normalizedUrl
+    }
+    
     setIsLoading(true)
     setError(null)
     
@@ -56,7 +62,7 @@ export function UrlInput({ onBrandLoaded, isLoading, setIsLoading, getConfig, ha
       const response = await fetch(`${API_BASE}/api/scrape`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url }),
+        body: JSON.stringify({ url: normalizedUrl }),
       })
       
       if (!response.ok) {
@@ -115,10 +121,10 @@ export function UrlInput({ onBrandLoaded, isLoading, setIsLoading, getConfig, ha
         <div className="flex gap-2">
           <div className="flex-1 relative">
             <input
-              type="url"
+              type="text"
               value={url}
               onChange={(e) => { setUrl(e.target.value); setError(null); }}
-              placeholder="Enter website URL..."
+              placeholder="example.com"
               className="w-full px-3 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 text-sm"
               disabled={isLoading}
             />
@@ -192,10 +198,10 @@ export function UrlInput({ onBrandLoaded, isLoading, setIsLoading, getConfig, ha
     <form onSubmit={handleSubmit} className="flex-1 flex gap-2">
       <div className="flex-1 relative">
         <input
-          type="url"
+          type="text"
           value={url}
           onChange={(e) => { setUrl(e.target.value); setError(null); }}
-          placeholder="Enter your website URL..."
+          placeholder="example.com"
           className="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30"
           disabled={isLoading}
         />
