@@ -208,6 +208,15 @@ function Demo() {
   const saved = useRef(loadSavedState())
   const [sharedLoaded, setSharedLoaded] = useState(false)
   const [mobileView, setMobileView] = useState<'settings' | 'preview'>('settings')
+  const [isMobile, setIsMobile] = useState(false)
+  
+  // Detect mobile viewport - same pattern as Stellabot
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
   
   const [brandData, setBrandData] = useState<BrandData | null>(saved.current?.brandData ?? null)
   const [isLoading, setIsLoading] = useState(false)
@@ -333,145 +342,167 @@ function Demo() {
     setIsLoading(false)
   }
 
-  return (
-    <div className="min-h-screen flex flex-col">
-      {/* Top Bar - URL Input */}
-      <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-4 shadow-lg">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-2 md:gap-4">
-            <h1 className="text-lg lg:text-xl font-bold text-white whitespace-nowrap">NewsDelivered Demo</h1>
-            <UrlInput 
-              onBrandLoaded={handleBrandLoaded}
-              isLoading={isLoading}
-              setIsLoading={setIsLoading}
-              getConfig={getConfig}
-              hasBrandData={!!brandData}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile View Toggle - visible only on small screens */}
-      <div className="lg:hidden bg-white border-b border-gray-200 px-4 py-2 flex justify-center">
-        <div className="inline-flex rounded-lg bg-gray-100 p-1">
-          <button
-            onClick={() => setMobileView('settings')}
-            className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
-              mobileView === 'settings'
-                ? 'bg-white text-purple-600 shadow-sm'
-                : 'text-gray-600 hover:text-gray-800'
-            }`}
-          >
-            ⚙️ Settings
-          </button>
-          <button
-            onClick={() => setMobileView('preview')}
-            className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
-              mobileView === 'preview'
-                ? 'bg-white text-purple-600 shadow-sm'
-                : 'text-gray-600 hover:text-gray-800'
-            }`}
-          >
-            👁️ Preview
-          </button>
-        </div>
-      </div>
-
-      {/* Main Content - Sidebar + Preview */}
-      <div className="flex-1 flex overflow-hidden">
-        {/* Left Sidebar - Edit Options */}
-        {/* On mobile: show/hide based on mobileView state */}
-        {/* On desktop (md+): always show */}
-        <div className={`
-          ${mobileView === 'settings' ? 'block' : 'hidden'} 
-          lg:block
-        `}>
-          <EditorSidebar
-            brandData={brandData}
-            features={features}
-            onFeaturesChange={setFeatures}
-            selectedTheme={selectedTheme}
-            onThemeChange={setSelectedTheme}
-            selectedLayout={selectedLayout}
-            onLayoutChange={setSelectedLayout}
-            previewSize={previewSize}
-            onPreviewSizeChange={setPreviewSize}
-            stories={stories}
-            onStoriesChange={setStories}
-            moduleOrder={moduleOrder}
-            onModuleOrderChange={setModuleOrder}
-            textSettings={textSettings}
-            onTextSettingsChange={setTextSettings}
+  // Shared header component
+  const Header = () => (
+    <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-3 shadow-lg">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center gap-2">
+          <h1 className="text-base font-bold text-white whitespace-nowrap">NewsDelivered</h1>
+          <UrlInput 
+            onBrandLoaded={handleBrandLoaded}
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+            getConfig={getConfig}
+            hasBrandData={!!brandData}
           />
         </div>
+      </div>
+    </div>
+  )
 
-        {/* Right - Preview Area */}
-        {/* On mobile: show/hide based on mobileView state */}
-        {/* On desktop (md+): always show */}
-        <div className={`
-          flex-1 bg-gray-100 p-4 lg:p-6 overflow-auto
-          ${mobileView === 'preview' ? 'block' : 'hidden'}
-          lg:block
-        `}>
-          <div className="flex justify-center">
-            {/* On small screens: full width. On large screens: respect previewSize toggle */}
-            <div className={`transition-all duration-300 w-full ${
-              previewSize === 'mobile' ? 'max-w-[375px]' : 'lg:max-w-2xl max-w-[375px]'
-            }`}>
-              {/* Mobile: simple card. Desktop with mobile preview: phone frame */}
-              
-              {/* Phone frame - only visible on md+ screens when mobile preview selected */}
-              {previewSize === 'mobile' && (
-                <div className="hidden lg:block bg-gray-800 rounded-[2.5rem] p-2 shadow-2xl">
-                  <div className="bg-gray-800 rounded-t-[2rem] h-6 flex justify-center items-end pb-1">
-                    <div className="w-20 h-4 bg-black rounded-full" />
-                  </div>
-                  <div className="bg-white rounded-b-[2rem] overflow-hidden">
-                    <NewsletterPreview
-                      brandData={brandData}
-                      features={features}
-                      theme={selectedTheme}
-                      layout={selectedLayout}
-                      stories={stories.filter(s => s.selected)}
-                      isMobile={true}
-                      isLoading={isLoading}
-                      imageSettings={imageSettings}
-                      onImageSettingsChange={setImageSettings}
-                      logoSettings={logoSettings}
-                      onLogoSettingsChange={setLogoSettings}
-                      moduleOrder={moduleOrder}
-                      textSettings={textSettings}
-                      headerColor={effectiveHeaderColor}
-                      onHeaderColorChange={setHeaderColor}
-                    />
-                  </div>
-                </div>
-              )}
-              
-              {/* Simple card - visible on small screens always, or desktop with desktop preview */}
-              <div className={`bg-white rounded-lg shadow-xl overflow-hidden ${
-                previewSize === 'mobile' ? 'lg:hidden' : ''
-              }`}>
-                <NewsletterPreview
-                  brandData={brandData}
-                  features={features}
-                  theme={selectedTheme}
-                  layout={selectedLayout}
-                  stories={stories.filter(s => s.selected)}
-                  isMobile={previewSize === 'mobile'}
-                  isLoading={isLoading}
-                  imageSettings={imageSettings}
-                  onImageSettingsChange={setImageSettings}
-                  logoSettings={logoSettings}
-                  onLogoSettingsChange={setLogoSettings}
-                  moduleOrder={moduleOrder}
-                  textSettings={textSettings}
-                  headerColor={effectiveHeaderColor}
-                  onHeaderColorChange={setHeaderColor}
-                />
-              </div>
+  // Shared preview component
+  const PreviewContent = ({ showPhoneFrame = false }: { showPhoneFrame?: boolean }) => (
+    <div className="flex justify-center h-full">
+      <div className={`w-full ${showPhoneFrame && previewSize === 'mobile' ? 'max-w-[375px]' : previewSize === 'mobile' ? 'max-w-[375px]' : 'max-w-2xl'}`}>
+        {showPhoneFrame && previewSize === 'mobile' ? (
+          <div className="bg-gray-800 rounded-[2.5rem] p-2 shadow-2xl">
+            <div className="bg-gray-800 rounded-t-[2rem] h-6 flex justify-center items-end pb-1">
+              <div className="w-20 h-4 bg-black rounded-full" />
+            </div>
+            <div className="bg-white rounded-b-[2rem] overflow-hidden">
+              <NewsletterPreview
+                brandData={brandData}
+                features={features}
+                theme={selectedTheme}
+                layout={selectedLayout}
+                stories={stories.filter(s => s.selected)}
+                isMobile={true}
+                isLoading={isLoading}
+                imageSettings={imageSettings}
+                onImageSettingsChange={setImageSettings}
+                logoSettings={logoSettings}
+                onLogoSettingsChange={setLogoSettings}
+                moduleOrder={moduleOrder}
+                textSettings={textSettings}
+                headerColor={effectiveHeaderColor}
+                onHeaderColorChange={setHeaderColor}
+              />
             </div>
           </div>
+        ) : (
+          <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+            <NewsletterPreview
+              brandData={brandData}
+              features={features}
+              theme={selectedTheme}
+              layout={selectedLayout}
+              stories={stories.filter(s => s.selected)}
+              isMobile={previewSize === 'mobile'}
+              isLoading={isLoading}
+              imageSettings={imageSettings}
+              onImageSettingsChange={setImageSettings}
+              logoSettings={logoSettings}
+              onLogoSettingsChange={setLogoSettings}
+              moduleOrder={moduleOrder}
+              textSettings={textSettings}
+              headerColor={effectiveHeaderColor}
+              onHeaderColorChange={setHeaderColor}
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  )
+
+  // Mobile toggle component
+  const MobileToggle = () => (
+    <div className="bg-white border-b border-gray-200 px-4 py-2 flex justify-center">
+      <div className="inline-flex rounded-lg bg-gray-100 p-1">
+        <button
+          onClick={() => setMobileView('settings')}
+          className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+            mobileView === 'settings'
+              ? 'bg-white text-purple-600 shadow-sm'
+              : 'text-gray-600 hover:text-gray-800'
+          }`}
+        >
+          ⚙️ Settings
+        </button>
+        <button
+          onClick={() => setMobileView('preview')}
+          className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+            mobileView === 'preview'
+              ? 'bg-white text-purple-600 shadow-sm'
+              : 'text-gray-600 hover:text-gray-800'
+          }`}
+        >
+          👁️ Preview
+        </button>
+      </div>
+    </div>
+  )
+
+  // MOBILE LAYOUT - completely separate from desktop
+  if (isMobile) {
+    return (
+      <div className="h-dvh flex flex-col overflow-hidden">
+        <Header />
+        <MobileToggle />
+        <div className="flex-1 min-h-0 overflow-hidden">
+          {mobileView === 'settings' ? (
+            <div className="h-full overflow-y-auto">
+              <EditorSidebar
+                brandData={brandData}
+                features={features}
+                onFeaturesChange={setFeatures}
+                selectedTheme={selectedTheme}
+                onThemeChange={setSelectedTheme}
+                selectedLayout={selectedLayout}
+                onLayoutChange={setSelectedLayout}
+                previewSize={previewSize}
+                onPreviewSizeChange={setPreviewSize}
+                stories={stories}
+                onStoriesChange={setStories}
+                moduleOrder={moduleOrder}
+                onModuleOrderChange={setModuleOrder}
+                textSettings={textSettings}
+                onTextSettingsChange={setTextSettings}
+              />
+            </div>
+          ) : (
+            <div className="h-full overflow-y-auto bg-gray-100 p-4">
+              <PreviewContent showPhoneFrame={false} />
+            </div>
+          )}
+        </div>
+      </div>
+    )
+  }
+
+  // DESKTOP LAYOUT - side by side
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <div className="flex-1 flex overflow-hidden">
+        <EditorSidebar
+          brandData={brandData}
+          features={features}
+          onFeaturesChange={setFeatures}
+          selectedTheme={selectedTheme}
+          onThemeChange={setSelectedTheme}
+          selectedLayout={selectedLayout}
+          onLayoutChange={setSelectedLayout}
+          previewSize={previewSize}
+          onPreviewSizeChange={setPreviewSize}
+          stories={stories}
+          onStoriesChange={setStories}
+          moduleOrder={moduleOrder}
+          onModuleOrderChange={setModuleOrder}
+          textSettings={textSettings}
+          onTextSettingsChange={setTextSettings}
+        />
+        <div className="flex-1 bg-gray-100 p-6 overflow-auto">
+          <PreviewContent showPhoneFrame={true} />
         </div>
       </div>
     </div>
