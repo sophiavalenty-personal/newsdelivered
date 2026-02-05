@@ -491,9 +491,9 @@ function Demo() {
     </div>
   )
 
-  // Mobile toggle component - full width buttons
+  // Mobile toggle component - fixed at bottom for easy thumb access
   const MobileToggle = () => (
-    <div className="bg-white border-b border-gray-200 px-3 py-2">
+    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-3 py-2 pb-safe z-50 shadow-lg">
       <div className="flex rounded-lg bg-gray-100 p-1 gap-1">
         <button
           onClick={() => setMobileView('settings')}
@@ -524,10 +524,9 @@ function Demo() {
     return (
       <div className="h-dvh flex flex-col overflow-hidden">
         <Header stacked={true} />
-        <MobileToggle />
         <div className="flex-1 min-h-0 overflow-hidden">
           {mobileView === 'settings' ? (
-            <div className="h-full overflow-y-auto">
+            <div className="h-full overflow-y-auto pb-16">
               <EditorSidebar
                 brandData={brandData}
                 features={features}
@@ -547,11 +546,12 @@ function Demo() {
               />
             </div>
           ) : (
-            <div className="h-full overflow-y-auto bg-gray-100 p-4">
+            <div className="h-full overflow-y-auto bg-gray-100 p-4 pb-20">
               <PreviewContent showPhoneFrame={false} />
             </div>
           )}
         </div>
+        <MobileToggle />
       </div>
     )
   }
