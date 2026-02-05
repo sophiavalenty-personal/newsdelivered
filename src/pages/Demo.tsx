@@ -392,6 +392,11 @@ function Demo() {
     setStories(generatedStories)
     setIsLoading(false)
     
+    // Apply brand's primary color as header color (if available)
+    if (data.colors && data.colors.length > 0 && !saved.current?.headerColor) {
+      setHeaderColor(data.colors[0])
+    }
+    
     // Auto-select dark theme if logo is bright/white
     if (data.logo && !saved.current?.themeId) {
       const isBrightLogo = await analyzeLogoBrightness(data.logo)
