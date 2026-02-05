@@ -105,7 +105,7 @@ export function EditorSidebar({
   }
 
   return (
-    <div className="w-72 bg-white border-r border-gray-200 overflow-y-auto flex-shrink-0">
+    <div className="w-full md:w-72 bg-white md:border-r border-gray-200 overflow-y-auto md:flex-shrink-0">
       {/* Brand Info */}
       {brandData && (
         <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-purple-50 to-indigo-50">

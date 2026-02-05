@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { EditorSidebar } from '@/components/newsletter-builder/EditorSidebar'
 import { NewsletterPreview } from '@/components/newsletter-builder/NewsletterPreview'
 import { UrlInput } from '@/components/newsletter-builder/UrlInput'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 const STORAGE_KEY = 'newsdelivered_demo'
 
@@ -207,6 +208,8 @@ const API_BASE = import.meta.env.PROD
 function Demo() {
   const saved = useRef(loadSavedState())
   const [sharedLoaded, setSharedLoaded] = useState(false)
+  const isMobile = useIsMobile()
+  const [mobileView, setMobileView] = useState<'settings' | 'preview'>('settings')
   
   const [brandData, setBrandData] = useState<BrandData | null>(saved.current?.brandData ?? null)
   const [isLoading, setIsLoading] = useState(false)
@@ -337,8 +340,8 @@ function Demo() {
       {/* Top Bar - URL Input */}
       <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-4 shadow-lg">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-4">
-            <h1 className="text-xl font-bold text-white whitespace-nowrap">NewsDelivered</h1>
+          <div className="flex items-center gap-2 md:gap-4">
+            <h1 className="text-lg md:text-xl font-bold text-white whitespace-nowrap">NewsDelivered</h1>
             <UrlInput 
               onBrandLoaded={handleBrandLoaded}
               isLoading={isLoading}
@@ -350,42 +353,74 @@ function Demo() {
         </div>
       </div>
 
-      {/* Main Content - Sidebar + Preview */}
-      <div className="flex-1 flex">
-        {/* Left Sidebar - Edit Options */}
-        <EditorSidebar
-          brandData={brandData}
-          features={features}
-          onFeaturesChange={setFeatures}
-          selectedTheme={selectedTheme}
-          onThemeChange={setSelectedTheme}
-          selectedLayout={selectedLayout}
-          onLayoutChange={setSelectedLayout}
-          previewSize={previewSize}
-          onPreviewSizeChange={setPreviewSize}
-          stories={stories}
-          onStoriesChange={setStories}
-          moduleOrder={moduleOrder}
-          onModuleOrderChange={setModuleOrder}
-          textSettings={textSettings}
-          onTextSettingsChange={setTextSettings}
-        />
+      {/* Mobile View Toggle */}
+      {isMobile && (
+        <div className="bg-white border-b border-gray-200 px-4 py-2 flex justify-center">
+          <div className="inline-flex rounded-lg bg-gray-100 p-1">
+            <button
+              onClick={() => setMobileView('settings')}
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+                mobileView === 'settings'
+                  ? 'bg-white text-purple-600 shadow-sm'
+                  : 'text-gray-600 hover:text-gray-800'
+              }`}
+            >
+              ⚙️ Settings
+            </button>
+            <button
+              onClick={() => setMobileView('preview')}
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+                mobileView === 'preview'
+                  ? 'bg-white text-purple-600 shadow-sm'
+                  : 'text-gray-600 hover:text-gray-800'
+              }`}
+            >
+              👁️ Preview
+            </button>
+          </div>
+        </div>
+      )}
 
-        {/* Right - Preview Area */}
-        <div className="flex-1 bg-gray-100 p-6 overflow-auto">
+      {/* Main Content - Sidebar + Preview */}
+      <div className="flex-1 flex overflow-hidden">
+        {/* Left Sidebar - Edit Options (hidden on mobile when viewing preview) */}
+        <div className={`${isMobile ? (mobileView === 'settings' ? 'w-full' : 'hidden') : ''}`}>
+          <EditorSidebar
+            brandData={brandData}
+            features={features}
+            onFeaturesChange={setFeatures}
+            selectedTheme={selectedTheme}
+            onThemeChange={setSelectedTheme}
+            selectedLayout={selectedLayout}
+            onLayoutChange={setSelectedLayout}
+            previewSize={previewSize}
+            onPreviewSizeChange={setPreviewSize}
+            stories={stories}
+            onStoriesChange={setStories}
+            moduleOrder={moduleOrder}
+            onModuleOrderChange={setModuleOrder}
+            textSettings={textSettings}
+            onTextSettingsChange={setTextSettings}
+          />
+        </div>
+
+        {/* Right - Preview Area (hidden on mobile when viewing settings) */}
+        <div className={`flex-1 bg-gray-100 p-4 md:p-6 overflow-auto ${isMobile ? (mobileView === 'preview' ? 'block' : 'hidden') : ''}`}>
           <div className="flex justify-center">
             <div className={`transition-all duration-300 ${
-              previewSize === 'mobile' 
-                ? 'w-[375px]' 
+              previewSize === 'mobile' || isMobile
+                ? 'w-full max-w-[375px]' 
                 : 'w-full max-w-2xl'
             }`}>
-              {/* Device Frame for Mobile */}
-              {previewSize === 'mobile' && (
-                <div className="bg-gray-800 rounded-[2.5rem] p-2 shadow-2xl">
-                  <div className="bg-gray-800 rounded-t-[2rem] h-6 flex justify-center items-end pb-1">
-                    <div className="w-20 h-4 bg-black rounded-full" />
-                  </div>
-                  <div className="bg-white rounded-b-[2rem] overflow-hidden">
+              {/* Device Frame for Mobile Preview */}
+              {(previewSize === 'mobile' || isMobile) && (
+                <div className={`${isMobile ? '' : 'bg-gray-800 rounded-[2.5rem] p-2 shadow-2xl'}`}>
+                  {!isMobile && (
+                    <div className="bg-gray-800 rounded-t-[2rem] h-6 flex justify-center items-end pb-1">
+                      <div className="w-20 h-4 bg-black rounded-full" />
+                    </div>
+                  )}
+                  <div className={`bg-white overflow-hidden ${isMobile ? 'rounded-lg shadow-xl' : 'rounded-b-[2rem]'}`}>
                     <NewsletterPreview
                       brandData={brandData}
                       features={features}
@@ -407,8 +442,8 @@ function Demo() {
                 </div>
               )}
               
-              {/* Desktop Preview */}
-              {previewSize === 'desktop' && (
+              {/* Desktop Preview (only on desktop with desktop preview size) */}
+              {previewSize === 'desktop' && !isMobile && (
                 <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
                   <NewsletterPreview
                     brandData={brandData}
