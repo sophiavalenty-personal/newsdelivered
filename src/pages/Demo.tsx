@@ -352,7 +352,7 @@ function Demo() {
       </div>
 
       {/* Mobile View Toggle - visible only on small screens */}
-      <div className="md:hidden bg-white border-b border-gray-200 px-4 py-2 flex justify-center">
+      <div className="lg:hidden bg-white border-b border-gray-200 px-4 py-2 flex justify-center">
         <div className="inline-flex rounded-lg bg-gray-100 p-1">
           <button
             onClick={() => setMobileView('settings')}
@@ -384,7 +384,7 @@ function Demo() {
         {/* On desktop (md+): always show */}
         <div className={`
           ${mobileView === 'settings' ? 'block' : 'hidden'} 
-          md:block
+          lg:block
         `}>
           <EditorSidebar
             brandData={brandData}
@@ -411,7 +411,7 @@ function Demo() {
         <div className={`
           flex-1 bg-gray-100 p-4 md:p-6 overflow-auto
           ${mobileView === 'preview' ? 'block' : 'hidden'}
-          md:block
+          lg:block
         `}>
           <div className="flex justify-center">
             {/* On small screens: full width. On large screens: respect previewSize toggle */}
@@ -422,7 +422,7 @@ function Demo() {
               
               {/* Phone frame - only visible on md+ screens when mobile preview selected */}
               {previewSize === 'mobile' && (
-                <div className="hidden md:block bg-gray-800 rounded-[2.5rem] p-2 shadow-2xl">
+                <div className="hidden lg:block bg-gray-800 rounded-[2.5rem] p-2 shadow-2xl">
                   <div className="bg-gray-800 rounded-t-[2rem] h-6 flex justify-center items-end pb-1">
                     <div className="w-20 h-4 bg-black rounded-full" />
                   </div>
@@ -450,7 +450,7 @@ function Demo() {
               
               {/* Simple card - visible on small screens always, or desktop with desktop preview */}
               <div className={`bg-white rounded-lg shadow-xl overflow-hidden ${
-                previewSize === 'mobile' ? 'md:hidden' : ''
+                previewSize === 'mobile' ? 'lg:hidden' : ''
               }`}>
                 <NewsletterPreview
                   brandData={brandData}
