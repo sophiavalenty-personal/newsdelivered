@@ -18,6 +18,8 @@ interface EditorSidebarProps {
   onModuleOrderChange: (order: ModuleKey[]) => void
   textSettings: TextSettings
   onTextSettingsChange: (settings: TextSettings) => void
+  headerColor?: string
+  onHeaderColorChange?: (color: string) => void
 }
 
 // Modules that have adjustable text
@@ -52,6 +54,8 @@ export function EditorSidebar({
   onModuleOrderChange,
   textSettings,
   onTextSettingsChange,
+  headerColor,
+  onHeaderColorChange,
 }: EditorSidebarProps) {
   const [draggedModule, setDraggedModule] = useState<ModuleKey | null>(null)
   const [dragOverModule, setDragOverModule] = useState<ModuleKey | null>(null)
@@ -176,6 +180,38 @@ export function EditorSidebar({
           ))}
         </div>
       </div>
+
+      {/* Header Color */}
+      {onHeaderColorChange && (
+        <div className="p-4 border-b border-gray-200">
+          <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Header Color</h4>
+          <div className="flex items-center gap-3">
+            <label className="relative cursor-pointer">
+              <input
+                type="color"
+                value={headerColor || '#f3f4f6'}
+                onChange={(e) => onHeaderColorChange(e.target.value)}
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+              />
+              <div 
+                className="w-10 h-10 rounded-lg border-2 border-gray-300 shadow-sm"
+                style={{ backgroundColor: headerColor || '#f3f4f6' }}
+              />
+            </label>
+            <div className="flex-1">
+              <span className="text-sm text-gray-600">Tap to change</span>
+              {brandData?.colors?.[0] && headerColor !== brandData.colors[0] && (
+                <button
+                  onClick={() => onHeaderColorChange(brandData.colors![0])}
+                  className="block text-xs text-purple-600 mt-0.5"
+                >
+                  Use brand color
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Layout */}
       <div className="p-4 border-b border-gray-200">

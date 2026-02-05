@@ -548,6 +548,8 @@ function Demo() {
                 onModuleOrderChange={setModuleOrder}
                 textSettings={textSettings}
                 onTextSettingsChange={setTextSettings}
+                headerColor={effectiveHeaderColor}
+                onHeaderColorChange={setHeaderColor}
               />
             </div>
           ) : (
@@ -582,6 +584,8 @@ function Demo() {
           onModuleOrderChange={setModuleOrder}
           textSettings={textSettings}
           onTextSettingsChange={setTextSettings}
+          headerColor={effectiveHeaderColor}
+          onHeaderColorChange={setHeaderColor}
         />
         <div className="flex-1 bg-gray-100 p-6 overflow-auto">
           <PreviewContent showPhoneFrame={true} />
