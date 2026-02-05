@@ -214,16 +214,17 @@ export function NewsletterPreview({
 
   return (
     <div className={`${theme.bg}`}>
-      {/* Header - with hover color picker */}
+      {/* Header - with hover/tap color picker */}
       <div 
         className={`p-4 border-b ${borderClass} relative transition-colors`}
         style={{ backgroundColor: headerColor }}
         onMouseEnter={handleHeaderMouseEnter}
         onMouseLeave={handleHeaderMouseLeave}
+        onClick={isMobile ? () => setHeaderHovered(prev => !prev) : undefined}
       >
-        {/* Header color picker - visible on hover OR when locked */}
-        {(headerHovered || colorPickerLocked) && !isMobile && (
-          <div className="absolute top-2 right-2 z-50">
+        {/* Header color picker - visible on hover/tap OR when locked */}
+        {(headerHovered || colorPickerLocked) && (
+          <div className="absolute top-2 right-2 z-50" onClick={(e) => e.stopPropagation()}>
             <label 
               className="relative cursor-pointer group flex items-center gap-2 bg-black/70 hover:bg-black/90 text-white px-4 py-2.5 rounded-lg shadow-xl transition-all border border-white/20"
               onClick={handleColorPickerClick}
