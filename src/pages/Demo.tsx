@@ -336,10 +336,71 @@ function Demo() {
     textSettings,
   })
 
-  const handleBrandLoaded = (data: BrandData, generatedStories: Story[]) => {
+  // Detect if a logo is predominantly light/white (needs dark background)
+  const analyzeLogoBrightness = async (logoUrl: string): Promise<boolean> => {
+    return new Promise((resolve) => {
+      const img = new Image()
+      img.crossOrigin = 'anonymous'
+      img.onload = () => {
+        try {
+          const canvas = document.createElement('canvas')
+          const size = 50 // Sample at reduced size for performance
+          canvas.width = size
+          canvas.height = size
+          const ctx = canvas.getContext('2d')
+          if (!ctx) { resolve(false); return }
+          
+          ctx.drawImage(img, 0, 0, size, size)
+          const imageData = ctx.getImageData(0, 0, size, size)
+          const data = imageData.data
+          
+          let brightPixels = 0
+          let totalOpaque = 0
+          
+          for (let i = 0; i < data.length; i += 4) {
+            const r = data[i], g = data[i + 1], b = data[i + 2], a = data[i + 3]
+            // Skip transparent pixels
+            if (a < 128) continue
+            totalOpaque++
+            // Calculate perceived brightness (ITU-R BT.709)
+            const brightness = (r * 0.2126 + g * 0.7152 + b * 0.0722)
+            // Consider pixel "bright" if brightness > 200 (out of 255)
+            if (brightness > 200) brightPixels++
+          }
+          
+          // Logo is "bright" if >50% of opaque pixels are very light
+          const brightRatio = totalOpaque > 0 ? brightPixels / totalOpaque : 0
+          console.log('[Logo Analysis] Bright ratio:', brightRatio.toFixed(2), 'of', totalOpaque, 'pixels')
+          resolve(brightRatio > 0.5)
+        } catch (e) {
+          console.log('[Logo Analysis] Canvas analysis failed (CORS?):', e)
+          resolve(false)
+        }
+      }
+      img.onerror = () => {
+        console.log('[Logo Analysis] Failed to load image')
+        resolve(false)
+      }
+      // Timeout fallback
+      setTimeout(() => resolve(false), 3000)
+      img.src = logoUrl
+    })
+  }
+
+  const handleBrandLoaded = async (data: BrandData, generatedStories: Story[]) => {
     setBrandData(data)
     setStories(generatedStories)
     setIsLoading(false)
+    
+    // Auto-select dark theme if logo is bright/white
+    if (data.logo && !saved.current?.themeId) {
+      const isBrightLogo = await analyzeLogoBrightness(data.logo)
+      if (isBrightLogo) {
+        console.log('[NewsDelivered] Bright logo detected, switching to dark theme')
+        const darkTheme = colorThemes.find(t => t.id === 'modern') || colorThemes[1]
+        setSelectedTheme(darkTheme)
+      }
+    }
   }
 
   // Shared header component
