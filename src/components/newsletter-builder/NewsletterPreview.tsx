@@ -31,6 +31,21 @@ function truncateBySentences(text: string, sentenceCount: number): string {
   return result || text.slice(0, 150) + '...'
 }
 
+// Helper to strip HTML tags and decode common entities
+function stripHtml(html: string | null | undefined): string {
+  if (!html) return ''
+  return html
+    .replace(/<[^>]*>/g, '') // Remove HTML tags
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
+    .replace(/\s+/g, ' ') // Collapse whitespace
+    .trim()
+}
+
 export function NewsletterPreview({ 
   brandData, 
   features, 
@@ -616,22 +631,22 @@ export function NewsletterPreview({
         
         {/* Contact info */}
         <div className={`${isMobile ? 'text-[10px]' : 'text-xs'} ${theme.muted} space-y-1`}>
-          <p>{brandData.scrapedAddress || brandData.address || `${brandData.name || 'Company'} HQ`}</p>
+          <p>{stripHtml(brandData.scrapedAddress) || brandData.address || `${brandData.name || 'Company'} HQ`}</p>
           
           {(brandData.scrapedPhone || brandData.scrapedEmail) && (
             <p>
-              {brandData.scrapedPhone && <span>{brandData.scrapedPhone}</span>}
+              {brandData.scrapedPhone && <span>{stripHtml(brandData.scrapedPhone)}</span>}
               {brandData.scrapedPhone && brandData.scrapedEmail && <span> • </span>}
               {brandData.scrapedEmail && (
-                <a href={`mailto:${brandData.scrapedEmail}`} className={theme.accent}>
-                  {brandData.scrapedEmail}
+                <a href={`mailto:${stripHtml(brandData.scrapedEmail)}`} className={theme.accent}>
+                  {stripHtml(brandData.scrapedEmail)}
                 </a>
               )}
             </p>
           )}
           
           <p className="mt-2">
-            {brandData.copyright || `© ${new Date().getFullYear()} ${brandData.name || 'Company'}. All rights reserved.`}
+            {stripHtml(brandData.copyright) || `© ${new Date().getFullYear()} ${brandData.name || 'Company'}. All rights reserved.`}
           </p>
           
           <p className="mt-1">
