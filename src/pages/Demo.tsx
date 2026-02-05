@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react'
 import { EditorSidebar } from '@/components/newsletter-builder/EditorSidebar'
 import { NewsletterPreview } from '@/components/newsletter-builder/NewsletterPreview'
 import { UrlInput } from '@/components/newsletter-builder/UrlInput'
-import { useIsMobile } from '@/hooks/use-mobile'
 
 const STORAGE_KEY = 'newsdelivered_demo'
 
@@ -208,7 +207,6 @@ const API_BASE = import.meta.env.PROD
 function Demo() {
   const saved = useRef(loadSavedState())
   const [sharedLoaded, setSharedLoaded] = useState(false)
-  const isMobile = useIsMobile()
   const [mobileView, setMobileView] = useState<'settings' | 'preview'>('settings')
   
   const [brandData, setBrandData] = useState<BrandData | null>(saved.current?.brandData ?? null)
@@ -353,38 +351,41 @@ function Demo() {
         </div>
       </div>
 
-      {/* Mobile View Toggle */}
-      {isMobile && (
-        <div className="bg-white border-b border-gray-200 px-4 py-2 flex justify-center">
-          <div className="inline-flex rounded-lg bg-gray-100 p-1">
-            <button
-              onClick={() => setMobileView('settings')}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
-                mobileView === 'settings'
-                  ? 'bg-white text-purple-600 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-800'
-              }`}
-            >
-              ⚙️ Settings
-            </button>
-            <button
-              onClick={() => setMobileView('preview')}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
-                mobileView === 'preview'
-                  ? 'bg-white text-purple-600 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-800'
-              }`}
-            >
-              👁️ Preview
-            </button>
-          </div>
+      {/* Mobile View Toggle - visible only on small screens */}
+      <div className="md:hidden bg-white border-b border-gray-200 px-4 py-2 flex justify-center">
+        <div className="inline-flex rounded-lg bg-gray-100 p-1">
+          <button
+            onClick={() => setMobileView('settings')}
+            className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+              mobileView === 'settings'
+                ? 'bg-white text-purple-600 shadow-sm'
+                : 'text-gray-600 hover:text-gray-800'
+            }`}
+          >
+            ⚙️ Settings
+          </button>
+          <button
+            onClick={() => setMobileView('preview')}
+            className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+              mobileView === 'preview'
+                ? 'bg-white text-purple-600 shadow-sm'
+                : 'text-gray-600 hover:text-gray-800'
+            }`}
+          >
+            👁️ Preview
+          </button>
         </div>
-      )}
+      </div>
 
       {/* Main Content - Sidebar + Preview */}
       <div className="flex-1 flex overflow-hidden">
-        {/* Left Sidebar - Edit Options (hidden on mobile when viewing preview) */}
-        <div className={`${isMobile ? (mobileView === 'settings' ? 'w-full' : 'hidden') : ''}`}>
+        {/* Left Sidebar - Edit Options */}
+        {/* On mobile: show/hide based on mobileView state */}
+        {/* On desktop (md+): always show */}
+        <div className={`
+          ${mobileView === 'settings' ? 'block' : 'hidden'} 
+          md:block
+        `}>
           <EditorSidebar
             brandData={brandData}
             features={features}
@@ -404,23 +405,28 @@ function Demo() {
           />
         </div>
 
-        {/* Right - Preview Area (hidden on mobile when viewing settings) */}
-        <div className={`flex-1 bg-gray-100 p-4 md:p-6 overflow-auto ${isMobile ? (mobileView === 'preview' ? 'block' : 'hidden') : ''}`}>
+        {/* Right - Preview Area */}
+        {/* On mobile: show/hide based on mobileView state */}
+        {/* On desktop (md+): always show */}
+        <div className={`
+          flex-1 bg-gray-100 p-4 md:p-6 overflow-auto
+          ${mobileView === 'preview' ? 'block' : 'hidden'}
+          md:block
+        `}>
           <div className="flex justify-center">
-            <div className={`transition-all duration-300 ${
-              previewSize === 'mobile' || isMobile
-                ? 'w-full max-w-[375px]' 
-                : 'w-full max-w-2xl'
+            {/* On small screens: full width. On large screens: respect previewSize toggle */}
+            <div className={`transition-all duration-300 w-full max-w-[375px] md:${
+              previewSize === 'mobile' ? 'max-w-[375px]' : 'max-w-2xl'
             }`}>
-              {/* Device Frame for Mobile Preview */}
-              {(previewSize === 'mobile' || isMobile) && (
-                <div className={`${isMobile ? '' : 'bg-gray-800 rounded-[2.5rem] p-2 shadow-2xl'}`}>
-                  {!isMobile && (
-                    <div className="bg-gray-800 rounded-t-[2rem] h-6 flex justify-center items-end pb-1">
-                      <div className="w-20 h-4 bg-black rounded-full" />
-                    </div>
-                  )}
-                  <div className={`bg-white overflow-hidden ${isMobile ? 'rounded-lg shadow-xl' : 'rounded-b-[2rem]'}`}>
+              {/* Mobile: simple card. Desktop with mobile preview: phone frame */}
+              
+              {/* Phone frame - only visible on md+ screens when mobile preview selected */}
+              {previewSize === 'mobile' && (
+                <div className="hidden md:block bg-gray-800 rounded-[2.5rem] p-2 shadow-2xl">
+                  <div className="bg-gray-800 rounded-t-[2rem] h-6 flex justify-center items-end pb-1">
+                    <div className="w-20 h-4 bg-black rounded-full" />
+                  </div>
+                  <div className="bg-white rounded-b-[2rem] overflow-hidden">
                     <NewsletterPreview
                       brandData={brandData}
                       features={features}
@@ -442,28 +448,28 @@ function Demo() {
                 </div>
               )}
               
-              {/* Desktop Preview (only on desktop with desktop preview size) */}
-              {previewSize === 'desktop' && !isMobile && (
-                <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
-                  <NewsletterPreview
-                    brandData={brandData}
-                    features={features}
-                    theme={selectedTheme}
-                    layout={selectedLayout}
-                    stories={stories.filter(s => s.selected)}
-                    isMobile={false}
-                    isLoading={isLoading}
-                    imageSettings={imageSettings}
-                    onImageSettingsChange={setImageSettings}
-                    logoSettings={logoSettings}
-                    onLogoSettingsChange={setLogoSettings}
-                    moduleOrder={moduleOrder}
-                    textSettings={textSettings}
-                    headerColor={effectiveHeaderColor}
-                    onHeaderColorChange={setHeaderColor}
-                  />
-                </div>
-              )}
+              {/* Simple card - visible on small screens always, or desktop with desktop preview */}
+              <div className={`bg-white rounded-lg shadow-xl overflow-hidden ${
+                previewSize === 'mobile' ? 'md:hidden' : ''
+              }`}>
+                <NewsletterPreview
+                  brandData={brandData}
+                  features={features}
+                  theme={selectedTheme}
+                  layout={selectedLayout}
+                  stories={stories.filter(s => s.selected)}
+                  isMobile={previewSize === 'mobile'}
+                  isLoading={isLoading}
+                  imageSettings={imageSettings}
+                  onImageSettingsChange={setImageSettings}
+                  logoSettings={logoSettings}
+                  onLogoSettingsChange={setLogoSettings}
+                  moduleOrder={moduleOrder}
+                  textSettings={textSettings}
+                  headerColor={effectiveHeaderColor}
+                  onHeaderColorChange={setHeaderColor}
+                />
+              </div>
             </div>
           </div>
         </div>
