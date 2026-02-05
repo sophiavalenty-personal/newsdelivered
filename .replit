@@ -6,7 +6,6 @@ modules = ["nodejs-20", "web", "nix"]
 channel = "stable-25_05"
 
 [deployment]
-run = ["node", "./dist/index.cjs"]
 deploymentTarget = "static"
 build = ["npm", "run", "build"]
 publicDir = "dist"
