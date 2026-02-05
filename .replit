@@ -1,13 +1,43 @@
 run = "npm run dev"
 entrypoint = "src/main.tsx"
+modules = ["nodejs-20", "web", "nix"]
 
 [nix]
-channel = "stable-24_05"
+channel = "stable-25_05"
 
 [deployment]
-run = ["sh", "-c", "npm run build && npx serve dist -l 3000"]
-deploymentTarget = "static"
+run = ["node", "./dist/index.cjs"]
+deploymentTarget = "autoscale"
+build = ["npm", "run", "build"]
+
+[[ports]]
+localPort = 5000
+externalPort = 5000
 
 [[ports]]
 localPort = 8080
 externalPort = 80
+
+[agent]
+expertMode = true
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+waitForPort = 5000
