@@ -343,19 +343,34 @@ function Demo() {
   }
 
   // Shared header component
-  const Header = () => (
-    <div className="bg-red-600 p-3 shadow-lg">
+  const Header = ({ stacked = false }: { stacked?: boolean }) => (
+    <div className="bg-gradient-to-r from-blue-600 to-blue-500 p-3 shadow-lg">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center gap-2">
-          <h1 className="text-base font-bold text-white whitespace-nowrap">NewsDelivered</h1>
-          <UrlInput 
-            onBrandLoaded={handleBrandLoaded}
-            isLoading={isLoading}
-            setIsLoading={setIsLoading}
-            getConfig={getConfig}
-            hasBrandData={!!brandData}
-          />
-        </div>
+        {stacked ? (
+          // Mobile: stacked layout - logo on top, URL input below
+          <div className="flex flex-col gap-2">
+            <h1 className="text-lg font-bold text-white">NewsDelivered</h1>
+            <UrlInput 
+              onBrandLoaded={handleBrandLoaded}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+              getConfig={getConfig}
+              hasBrandData={!!brandData}
+            />
+          </div>
+        ) : (
+          // Desktop: side by side
+          <div className="flex items-center gap-4">
+            <h1 className="text-xl font-bold text-white whitespace-nowrap">NewsDelivered</h1>
+            <UrlInput 
+              onBrandLoaded={handleBrandLoaded}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+              getConfig={getConfig}
+              hasBrandData={!!brandData}
+            />
+          </div>
+        )}
       </div>
     </div>
   )
@@ -414,15 +429,15 @@ function Demo() {
     </div>
   )
 
-  // Mobile toggle component
+  // Mobile toggle component - full width buttons
   const MobileToggle = () => (
-    <div className="bg-white border-b border-gray-200 px-4 py-2 flex justify-center">
-      <div className="inline-flex rounded-lg bg-gray-100 p-1">
+    <div className="bg-white border-b border-gray-200 px-3 py-2">
+      <div className="flex rounded-lg bg-gray-100 p-1 gap-1">
         <button
           onClick={() => setMobileView('settings')}
-          className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+          className={`flex-1 py-2.5 text-sm font-medium rounded-md transition-all ${
             mobileView === 'settings'
-              ? 'bg-white text-purple-600 shadow-sm'
+              ? 'bg-white text-blue-600 shadow-sm'
               : 'text-gray-600 hover:text-gray-800'
           }`}
         >
@@ -430,9 +445,9 @@ function Demo() {
         </button>
         <button
           onClick={() => setMobileView('preview')}
-          className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+          className={`flex-1 py-2.5 text-sm font-medium rounded-md transition-all ${
             mobileView === 'preview'
-              ? 'bg-white text-purple-600 shadow-sm'
+              ? 'bg-white text-blue-600 shadow-sm'
               : 'text-gray-600 hover:text-gray-800'
           }`}
         >
@@ -446,7 +461,7 @@ function Demo() {
   if (isMobile) {
     return (
       <div className="h-dvh flex flex-col overflow-hidden">
-        <Header />
+        <Header stacked={true} />
         <MobileToggle />
         <div className="flex-1 min-h-0 overflow-hidden">
           {mobileView === 'settings' ? (
