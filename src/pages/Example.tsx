@@ -216,10 +216,9 @@ const clientDemos: Record<string, ClientDemo> = {
   <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #f5f3ef;">
     <tr><td align="center" style="padding: 20px;">
       <table cellpadding="0" cellspacing="0" border="0" width="600" class="container" style="background-color: #ffffff; max-width: 100%;">
-        <!-- Header -->
+        <!-- Header with Logo -->
         <tr><td style="background-color: #ffffff; padding: 30px 40px; text-align: center;">
-          <p style="color: #1a4a6e; margin: 0; font-size: 14px; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: 2px;">Monthly Newsletter</p>
-          <h1 style="color: #1a4a6e; margin: 10px 0 0 0; font-size: 24px; font-weight: bold;">Kevin Thompson, CPAs and Advisors</h1>
+          <img src="/images/ht-logo-stacked-sm.jpg" alt="Harik Thompson CPAs and Advisors" style="max-width: 250px; display: block; margin: 0 auto;" />
         </td></tr>
         <!-- Contact Bar -->
         <tr><td style="background-color: #1a4a6e; padding: 12px 40px; text-align: center;">
@@ -229,19 +228,19 @@ const clientDemos: Record<string, ClientDemo> = {
             <a href="https://www.harikthompsoncpas.com/" style="color: #ffffff; text-decoration: none;">Visit Website</a>
           </p>
         </td></tr>
-        <!-- Headlines -->
+        <!-- Headlines with Links -->
         <tr><td style="padding: 30px 40px;">
           <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin-bottom: 20px; border-bottom: 2px solid #86C733; padding-bottom: 10px;">Featured</h2>
           <div style="margin-bottom: 15px;">
-            <h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0;">Trump Tax Accounts Update</h3>
+            <a href="https://cheerful-broadcast.lovable.app/blog/trump-accounts" style="text-decoration: none;"><h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0; text-decoration: underline;">Trump Tax Accounts Update</h3></a>
             <p style="color: #4a5568; font-size: 14px; margin: 0; line-height: 1.5;">New guidance on retirement savings vehicles may impact your 2026 tax planning strategy.</p>
           </div>
           <div style="margin-bottom: 15px;">
-            <h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0;">RMD Rules for Inherited IRAs</h3>
+            <a href="https://cheerful-broadcast.lovable.app/blog/rmd-inherited-ira" style="text-decoration: none;"><h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0; text-decoration: underline;">RMD Rules for Inherited IRAs</h3></a>
             <p style="color: #4a5568; font-size: 14px; margin: 0; line-height: 1.5;">SECURE Act 2.0 brings major changes to required minimum distributions for beneficiaries.</p>
           </div>
           <div style="margin-bottom: 15px;">
-            <h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0;">Wildfire Personal Casualty Loss</h3>
+            <a href="https://cheerful-broadcast.lovable.app/blog/wildfire-casualty-loss" style="text-decoration: none;"><h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0; text-decoration: underline;">Wildfire Personal Casualty Loss</h3></a>
             <p style="color: #4a5568; font-size: 14px; margin: 0; line-height: 1.5;">Important tax relief provisions available for those affected by recent California wildfires.</p>
           </div>
         </td></tr>
@@ -332,14 +331,36 @@ const clientDemos: Record<string, ClientDemo> = {
             Need help with your specific situation? <a href="https://www.harikthompsoncpas.com/contact.html" style="color: #86C733; font-weight: bold; text-decoration: underline;">Schedule a quick call</a>
           </p>
         </td></tr>
+        <!-- Humor Section with Pug Meme -->
+        <tr><td style="background-color: #f5f3ef; padding: 30px 40px; text-align: center;">
+          <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; border: 2px dashed #86C733; text-align: center;">
+            <img src="/images/pug-meme.jpg" alt="Pug tax meme - When you do your taxes alone vs when HarikThompson takes care of it" style="max-width: 100%; height: auto; border-radius: 6px;" />
+          </div>
+        </td></tr>
         <!-- CTA Section -->
         <tr><td style="padding: 40px; text-align: center; background-color: #1a4a6e;">
           <p style="color: #ffffff; font-size: 18px; margin: 0 0 20px 0;">Ready to protect your retirement?</p>
           <a href="https://www.harikthompsoncpas.com/contact.html" style="background-color: #86C733; color: #1a4a6e; padding: 15px 35px; font-size: 16px; font-weight: bold; text-decoration: none; border-radius: 5px; display: inline-block; font-family: Arial, sans-serif;">Book Your Tax Savings Strategy Session →</a>
         </td></tr>
-        <!-- Footer -->
+        <!-- Footer with Feedback + Social -->
         <tr><td style="background-color: #2d3748; padding: 30px 40px; text-align: center;">
+          <!-- Feedback -->
+          <div style="margin-bottom: 20px;">
+            <p style="color: #a0aec0; font-size: 14px; margin: 0 0 10px 0;">Was this info helpful?</p>
+            <div style="display: inline-block;">
+              <a href="#" style="background-color: transparent; border: 1px solid #4a5568; color: #a0aec0; padding: 8px 20px; margin: 0 5px; font-size: 14px; text-decoration: none; border-radius: 5px; display: inline-block;">Yes</a>
+              <a href="#" style="background-color: transparent; border: 1px solid #4a5568; color: #a0aec0; padding: 8px 20px; margin: 0 5px; font-size: 14px; text-decoration: none; border-radius: 5px; display: inline-block;">No</a>
+            </div>
+          </div>
+          <!-- Social Icons -->
+          <div style="margin-bottom: 20px;">
+            <a href="#" style="display: inline-block; width: 35px; height: 35px; background-color: #4a5568; border-radius: 50%; margin: 0 5px; line-height: 35px; color: #ffffff; text-decoration: none; font-size: 14px;">f</a>
+            <a href="#" style="display: inline-block; width: 35px; height: 35px; background-color: #4a5568; border-radius: 50%; margin: 0 5px; line-height: 35px; color: #ffffff; text-decoration: none; font-size: 14px;">in</a>
+            <a href="#" style="display: inline-block; width: 35px; height: 35px; background-color: #4a5568; border-radius: 50%; margin: 0 5px; line-height: 35px; color: #ffffff; text-decoration: none; font-size: 14px;">X</a>
+          </div>
+          <!-- Disclaimer -->
           <p style="color: #718096; font-size: 11px; line-height: 1.5; margin: 0 0 15px 0;">This newsletter is for informational purposes only and does not constitute tax, legal, or financial advice. Please consult with a qualified professional regarding your specific situation.</p>
+          <!-- Unsubscribe -->
           <p style="color: #a0aec0; font-size: 12px; margin: 0;">
             <a href="#" style="color: #a0aec0;">Unsubscribe</a> | 
             <a href="#" style="color: #a0aec0;">Update Preferences</a>
