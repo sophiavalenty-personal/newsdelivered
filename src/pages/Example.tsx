@@ -194,8 +194,8 @@ const clientDemos: Record<string, ClientDemo> = {
     newsletters: [
       {
         id: "1",
-        title: "Monthly Tax & Financial Newsletter",
-        description: "SECURE Act updates, RMD rules, and tax planning strategies for inherited IRAs",
+        title: "Newsletter Prototype",
+        description: "Trump Accounts, RMD, Fire Loss",
         htmlContent: `<!DOCTYPE html>
 <html lang="en">
 <head>
