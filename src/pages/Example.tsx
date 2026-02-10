@@ -188,6 +188,171 @@ const clientDemos: Record<string, ClientDemo> = {
       },
     ],
   },
+  harikthompsoncpas: {
+    clientName: "HarikThompson CPAs",
+    brandColor: "#1a4a6e",
+    newsletters: [
+      {
+        id: "1",
+        title: "Monthly Tax & Financial Newsletter",
+        description: "SECURE Act updates, RMD rules, and tax planning strategies for inherited IRAs",
+        htmlContent: `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevin Thompson, CPAs and Advisors Newsletter</title>
+  <style>
+    body, table, td, p, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    body { margin: 0; padding: 0; width: 100% !important; }
+    @media screen and (max-width: 600px) {
+      .container { width: 100% !important; }
+      .content-padding { padding-left: 20px !important; padding-right: 20px !important; }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f5f3ef; font-family: Georgia, Times, serif;">
+  <div style="display: none; max-height: 0; overflow: hidden;">Trump Tax Accounts Update - Your monthly tax and financial insights</div>
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #f5f3ef;">
+    <tr><td align="center" style="padding: 20px;">
+      <table cellpadding="0" cellspacing="0" border="0" width="600" class="container" style="background-color: #ffffff; max-width: 100%;">
+        <!-- Header -->
+        <tr><td style="background-color: #ffffff; padding: 30px 40px; text-align: center;">
+          <p style="color: #1a4a6e; margin: 0; font-size: 14px; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: 2px;">Monthly Newsletter</p>
+          <h1 style="color: #1a4a6e; margin: 10px 0 0 0; font-size: 24px; font-weight: bold;">Kevin Thompson, CPAs and Advisors</h1>
+        </td></tr>
+        <!-- Contact Bar -->
+        <tr><td style="background-color: #1a4a6e; padding: 12px 40px; text-align: center;">
+          <p style="color: #ffffff; margin: 0; font-size: 13px; font-family: Arial, sans-serif;">
+            <a href="mailto:kthompson@harikthompsoncpas.com" style="color: #ffffff; text-decoration: none;">kthompson@harikthompsoncpas.com</a> | 
+            <a href="tel:3103789911" style="color: #ffffff; text-decoration: none;">(310) 378-9911</a> | 
+            <a href="https://www.harikthompsoncpas.com/" style="color: #ffffff; text-decoration: none;">Visit Website</a>
+          </p>
+        </td></tr>
+        <!-- Headlines -->
+        <tr><td style="padding: 30px 40px;">
+          <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin-bottom: 20px; border-bottom: 2px solid #86C733; padding-bottom: 10px;">Featured</h2>
+          <div style="margin-bottom: 15px;">
+            <h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0;">Trump Tax Accounts Update</h3>
+            <p style="color: #4a5568; font-size: 14px; margin: 0; line-height: 1.5;">New guidance on retirement savings vehicles may impact your 2026 tax planning strategy.</p>
+          </div>
+          <div style="margin-bottom: 15px;">
+            <h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0;">RMD Rules for Inherited IRAs</h3>
+            <p style="color: #4a5568; font-size: 14px; margin: 0; line-height: 1.5;">SECURE Act 2.0 brings major changes to required minimum distributions for beneficiaries.</p>
+          </div>
+          <div style="margin-bottom: 15px;">
+            <h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0;">Wildfire Personal Casualty Loss</h3>
+            <p style="color: #4a5568; font-size: 14px; margin: 0; line-height: 1.5;">Important tax relief provisions available for those affected by recent California wildfires.</p>
+          </div>
+        </td></tr>
+        <!-- Soft CTA -->
+        <tr><td style="background-color: #f0f7e6; padding: 20px 40px; text-align: center;">
+          <p style="color: #1a4a6e; font-size: 14px; margin: 0;">
+            Have questions about these updates? <a href="https://www.harikthompsoncpas.com/contact.html" style="color: #86C733; font-weight: bold; text-decoration: underline;">Let's talk</a>
+          </p>
+        </td></tr>
+        <!-- Divider -->
+        <tr><td style="padding: 0 40px;"><hr style="border: none; border-top: 1px solid #d4e8c0; margin: 0;" /></td></tr>
+        <!-- Story -->
+        <tr><td style="padding: 30px 40px;">
+          <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin-bottom: 20px; border-bottom: 2px solid #86C733; padding-bottom: 10px;">Real-World Scenario</h2>
+          <h3 style="color: #1a4a6e; font-size: 22px; font-weight: bold; margin-bottom: 15px;">The $47,000 Mistake Sarah Almost Made</h3>
+          <p style="color: #2d3748; font-size: 15px; line-height: 1.7; margin-bottom: 15px;">Sarah inherited her father's IRA in 2022. At 45, she thought she had decades before worrying about withdrawals. Wrong.</p>
+          <p style="color: #2d3748; font-size: 15px; line-height: 1.7; margin-bottom: 15px;">Under the new SECURE Act rules, most non-spouse beneficiaries must now empty inherited IRAs within 10 years. But here's what caught Sarah off guard: she also needs to take annual RMDs during those 10 years.</p>
+          <p style="color: #2d3748; font-size: 15px; line-height: 1.7; margin-bottom: 15px;">Sarah came to us in January, panicked. She'd missed her 2024 RMD entirely—a 25% penalty on the amount she should have withdrawn.</p>
+          <p style="color: #2d3748; font-size: 15px; line-height: 1.7; margin-bottom: 15px;">We acted fast. Using the IRS's new reasonable error waiver, we helped Sarah request penalty relief. We then created a 10-year withdrawal strategy that minimizes her tax burden while meeting all requirements.</p>
+          <p style="color: #2d3748; font-size: 15px; line-height: 1.7; margin-bottom: 15px;">The result? Sarah avoided the penalty and now has a clear roadmap. She's withdrawing in her lower-income years before retirement, saving an estimated $47,000 in taxes over the decade.</p>
+          <p style="color: #2d3748; font-size: 15px; line-height: 1.7; font-weight: bold;">Don't let inherited IRA rules catch you off guard. The 10-year clock is ticking.</p>
+        </td></tr>
+        <!-- Key Insights -->
+        <tr><td style="padding: 30px 40px;">
+          <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin-bottom: 20px; border-bottom: 2px solid #86C733; padding-bottom: 10px;">Key Insights</h2>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 10px;">
+            <tr>
+              <td style="width: 4px; background-color: #86C733;"></td>
+              <td style="background-color: #f5f3ef; padding: 20px 25px;">
+                <p style="color: #2d3748; font-size: 14px; margin: 0; line-height: 1.6;">Non-spouse beneficiaries must empty inherited IRAs within 10 years under SECURE Act rules—AND take annual RMDs during that period.</p>
+              </td>
+            </tr>
+          </table>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 10px;">
+            <tr>
+              <td style="width: 4px; background-color: #86C733;"></td>
+              <td style="background-color: #f5f3ef; padding: 20px 25px;">
+                <p style="color: #2d3748; font-size: 14px; margin: 0; line-height: 1.6;">Missing an RMD triggers a 25% penalty, but the IRS may waive it for reasonable errors if you act quickly.</p>
+              </td>
+            </tr>
+          </table>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 10px;">
+            <tr>
+              <td style="width: 4px; background-color: #86C733;"></td>
+              <td style="background-color: #f5f3ef; padding: 20px 25px;">
+                <p style="color: #2d3748; font-size: 14px; margin: 0; line-height: 1.6;">Strategic withdrawal timing can save tens of thousands in taxes—consider pulling more in lower-income years.</p>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+        <!-- Action Steps -->
+        <tr><td style="padding: 30px 40px;">
+          <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin-bottom: 20px; border-bottom: 2px solid #86C733; padding-bottom: 10px;">Your Action Steps</h2>
+          <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 15px; width: 100%;">
+            <tr>
+              <td style="width: 43px; vertical-align: top;">
+                <div style="background-color: #1a4a6e; color: #ffffff; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; font-size: 14px; font-weight: bold; font-family: Arial, sans-serif;">1</div>
+              </td>
+              <td style="vertical-align: top;">
+                <p style="color: #2d3748; font-size: 14px; line-height: 1.6; margin: 0;">Review any inherited IRAs you hold and confirm your 10-year deadline date. Mark your calendar for the final distribution year.</p>
+              </td>
+            </tr>
+          </table>
+          <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 15px; width: 100%;">
+            <tr>
+              <td style="width: 43px; vertical-align: top;">
+                <div style="background-color: #1a4a6e; color: #ffffff; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; font-size: 14px; font-weight: bold; font-family: Arial, sans-serif;">2</div>
+              </td>
+              <td style="vertical-align: top;">
+                <p style="color: #2d3748; font-size: 14px; line-height: 1.6; margin: 0;">Calculate your required annual RMD using IRS life expectancy tables. Ensure this year's withdrawal is scheduled before December 31st.</p>
+              </td>
+            </tr>
+          </table>
+          <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 15px; width: 100%;">
+            <tr>
+              <td style="width: 43px; vertical-align: top;">
+                <div style="background-color: #1a4a6e; color: #ffffff; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; font-size: 14px; font-weight: bold; font-family: Arial, sans-serif;">3</div>
+              </td>
+              <td style="vertical-align: top;">
+                <p style="color: #2d3748; font-size: 14px; line-height: 1.6; margin: 0;">Schedule a tax planning session to create a 10-year withdrawal strategy optimized for your income situation and tax brackets.</p>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+        <!-- Soft CTA 2 -->
+        <tr><td style="background-color: #f0f7e6; padding: 20px 40px; text-align: center;">
+          <p style="color: #1a4a6e; font-size: 14px; margin: 0;">
+            Need help with your specific situation? <a href="https://www.harikthompsoncpas.com/contact.html" style="color: #86C733; font-weight: bold; text-decoration: underline;">Schedule a quick call</a>
+          </p>
+        </td></tr>
+        <!-- CTA Section -->
+        <tr><td style="padding: 40px; text-align: center; background-color: #1a4a6e;">
+          <p style="color: #ffffff; font-size: 18px; margin: 0 0 20px 0;">Ready to protect your retirement?</p>
+          <a href="https://www.harikthompsoncpas.com/contact.html" style="background-color: #86C733; color: #1a4a6e; padding: 15px 35px; font-size: 16px; font-weight: bold; text-decoration: none; border-radius: 5px; display: inline-block; font-family: Arial, sans-serif;">Book Your Tax Savings Strategy Session →</a>
+        </td></tr>
+        <!-- Footer -->
+        <tr><td style="background-color: #2d3748; padding: 30px 40px; text-align: center;">
+          <p style="color: #718096; font-size: 11px; line-height: 1.5; margin: 0 0 15px 0;">This newsletter is for informational purposes only and does not constitute tax, legal, or financial advice. Please consult with a qualified professional regarding your specific situation.</p>
+          <p style="color: #a0aec0; font-size: 12px; margin: 0;">
+            <a href="#" style="color: #a0aec0;">Unsubscribe</a> | 
+            <a href="#" style="color: #a0aec0;">Update Preferences</a>
+          </p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`,
+      },
+    ],
+  },
 };
 
 const Example = () => {
