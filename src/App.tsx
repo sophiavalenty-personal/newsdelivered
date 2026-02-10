@@ -13,6 +13,9 @@ import Tools from "./pages/Tools";
 import ClearCardio from "./pages/ClearCardio";
 import Demo from "./pages/Demo";
 import Example from "./pages/Example";
+import TrumpAccounts from "./pages/blog/TrumpAccounts";
+import RmdInheritedIra from "./pages/blog/RmdInheritedIra";
+import WildfireCasualtyLoss from "./pages/blog/WildfireCasualtyLoss";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +36,9 @@ const App = () => (
           <Route path="/clearcardio" element={<ClearCardio />} />
           <Route path="/demo" element={<Demo />} />
           <Route path="/example/:clientId" element={<Example />} />
+          <Route path="/example/harikthompsoncpas/blog/trump-accounts" element={<TrumpAccounts />} />
+          <Route path="/example/harikthompsoncpas/blog/rmd-inherited-ira" element={<RmdInheritedIra />} />
+          <Route path="/example/harikthompsoncpas/blog/wildfire-casualty-loss" element={<WildfireCasualtyLoss />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

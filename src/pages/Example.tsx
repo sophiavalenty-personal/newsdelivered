@@ -232,15 +232,15 @@ const clientDemos: Record<string, ClientDemo> = {
         <tr><td style="padding: 30px 40px;">
           <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin-bottom: 20px; border-bottom: 2px solid #86C733; padding-bottom: 10px;">Featured</h2>
           <div style="margin-bottom: 15px;">
-            <a href="https://cheerful-broadcast.lovable.app/blog/trump-accounts" style="text-decoration: none;"><h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0; text-decoration: underline;">Trump Tax Accounts Update</h3></a>
+            <a href="/example/harikthompsoncpas/blog/trump-accounts" style="text-decoration: none;"><h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0; text-decoration: underline;">Trump Tax Accounts Update</h3></a>
             <p style="color: #4a5568; font-size: 14px; margin: 0; line-height: 1.5;">New guidance on retirement savings vehicles may impact your 2026 tax planning strategy.</p>
           </div>
           <div style="margin-bottom: 15px;">
-            <a href="https://cheerful-broadcast.lovable.app/blog/rmd-inherited-ira" style="text-decoration: none;"><h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0; text-decoration: underline;">RMD Rules for Inherited IRAs</h3></a>
+            <a href="/example/harikthompsoncpas/blog/rmd-inherited-ira" style="text-decoration: none;"><h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0; text-decoration: underline;">RMD Rules for Inherited IRAs</h3></a>
             <p style="color: #4a5568; font-size: 14px; margin: 0; line-height: 1.5;">SECURE Act 2.0 brings major changes to required minimum distributions for beneficiaries.</p>
           </div>
           <div style="margin-bottom: 15px;">
-            <a href="https://cheerful-broadcast.lovable.app/blog/wildfire-casualty-loss" style="text-decoration: none;"><h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0; text-decoration: underline;">Wildfire Personal Casualty Loss</h3></a>
+            <a href="/example/harikthompsoncpas/blog/wildfire-casualty-loss" style="text-decoration: none;"><h3 style="color: #1a4a6e; font-size: 16px; font-weight: bold; margin: 0 0 5px 0; text-decoration: underline;">Wildfire Personal Casualty Loss</h3></a>
             <p style="color: #4a5568; font-size: 14px; margin: 0; line-height: 1.5;">Important tax relief provisions available for those affected by recent California wildfires.</p>
           </div>
         </td></tr>
