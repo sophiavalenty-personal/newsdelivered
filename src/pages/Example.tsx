@@ -391,14 +391,21 @@ const Example = () => {
     }
   }, [selectedIndex]);
 
-  // Inject CSS to disable all links in newsletter previews
   const getDisabledLinksHtml = useCallback((html: string) => {
     const disableLinksStyle = `<style>a, button { pointer-events: none !important; cursor: default !important; } a:hover, button:hover { text-decoration: none !important; }</style>`;
-    // Insert before closing </head> or at start of content
     if (html.includes('</head>')) {
       return html.replace('</head>', `${disableLinksStyle}</head>`);
     }
     return disableLinksStyle + html;
+  }, []);
+
+  const getClickableLinksHtml = useCallback((html: string) => {
+    const clickableStyle = `<style>a { cursor: pointer !important; } a:hover { opacity: 0.85; }</style>`;
+    const baseTag = `<base target="_top" />`;
+    if (html.includes('</head>')) {
+      return html.replace('</head>', `${baseTag}${clickableStyle}</head>`);
+    }
+    return baseTag + clickableStyle + html;
   }, []);
 
   const handleIframeLoad = useCallback((e: React.SyntheticEvent<HTMLIFrameElement>) => {
@@ -610,12 +617,12 @@ const Example = () => {
                   )}
                 >
                   <iframe
-                    srcDoc={getDisabledLinksHtml(currentNewsletter.htmlContent)}
+                    srcDoc={getClickableLinksHtml(currentNewsletter.htmlContent)}
                     className="w-full border-0"
                     style={{ height: `${iframeHeight}px` }}
                     title={currentNewsletter.title}
                     onLoad={handleIframeLoad}
-                    sandbox="allow-same-origin"
+                    sandbox="allow-same-origin allow-popups allow-top-navigation"
                   />
                 </div>
               </div>
