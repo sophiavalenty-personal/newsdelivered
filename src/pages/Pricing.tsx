@@ -30,7 +30,7 @@ const features: FeatureRow[] = [
 ];
 
 const onboardingSteps = [
-  { step: 1, title: "Research and GTM Strategy", description: "Documented go-to-market strategy session (1-2 hrs)" },
+  { step: 1, title: "Research and GTM Strategy", description: "Documented go-to-market strategy session" },
   { step: 2, title: "Technical Implementation", description: "Platform setup, data validation, segmentation, and configuration" },
   { step: 3, title: "List Cleaning, Warming & First Send", description: "Prepare your list and deliver your first newsletter" },
   { step: 4, title: "Monitoring & Performance Tracking", description: "Open rates, click-throughs, and bookings analysis" },
