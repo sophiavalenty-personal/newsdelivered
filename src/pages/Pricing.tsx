@@ -104,6 +104,24 @@ const Pricing = () => {
                     <td className="py-4 px-4 text-center font-bold text-lg">$3k</td>
                     <td className="py-4 px-4 text-center font-bold text-lg">$4k</td>
                   </tr>
+                  <tr>
+                    <td className="py-4 pr-4"></td>
+                    <td className="py-4 px-4 text-center">
+                      <Button size="sm" onClick={() => window.open('https://buy.stripe.com/dRm28rd0Rcbd0Bw2ImeUU0j', '_blank')} data-testid="button-choose-start">
+                        Choose Plan <ArrowRight className="w-4 h-4 ml-1" />
+                      </Button>
+                    </td>
+                    <td className="py-4 px-4 text-center">
+                      <Button size="sm" onClick={() => window.open('https://buy.stripe.com/aFacN51i9cbdfwq82GeUU0i', '_blank')} data-testid="button-choose-grow">
+                        Choose Plan <ArrowRight className="w-4 h-4 ml-1" />
+                      </Button>
+                    </td>
+                    <td className="py-4 px-4 text-center">
+                      <Button size="sm" onClick={() => window.open('https://buy.stripe.com/fZucN5bWN3EHcke82GeUU0h', '_blank')} data-testid="button-choose-scale">
+                        Choose Plan <ArrowRight className="w-4 h-4 ml-1" />
+                      </Button>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
               <p className="text-xs text-muted-foreground text-center mt-4 max-w-2xl mx-auto">
