@@ -23,7 +23,6 @@ const features: FeatureRow[] = [
   { label: "Single point of contact (Content Strategist)", start: true, grow: true, scale: true },
   { label: "Website article posting (Blog)", start: true, grow: true, scale: true },
   { label: "Custom lead magnets (Mini-Course)", start: false, grow: true, scale: true },
-  { label: "+2x sub-agent/CPA branded newsletter", start: false, grow: false, scale: true },
   { label: "Email prospect follow-up sequences", start: false, grow: false, scale: true },
   { label: "Social media posting (LinkedIn, FB, IG)", start: false, grow: false, scale: true },
   { label: "Subscriber growth (Paid Meta Ads)", start: false, grow: false, scale: "By Quote" },
