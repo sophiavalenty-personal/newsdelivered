@@ -39,13 +39,13 @@ const App = () => (
           <Route path="/tools" element={<Tools />} />
           <Route path="/clearcardio" element={<ClearCardio />} />
           <Route path="/demo" element={<Demo />} />
-          <Route path="/example/:clientId" element={<Example />} />
           <Route path="/example/harikthompsoncpas/blog/trump-accounts" element={<TrumpAccounts />} />
           <Route path="/example/harikthompsoncpas/blog/rmd-inherited-ira" element={<RmdInheritedIra />} />
           <Route path="/example/harikthompsoncpas/blog/wildfire-casualty-loss" element={<WildfireCasualtyLoss />} />
           <Route path="/example/hegland/blog/financial-mistakes-50s" element={<FinancialMistakes50s />} />
           <Route path="/example/hegland/blog/roth-vs-traditional-ira" element={<RothVsTraditionalIra />} />
           <Route path="/example/hegland/blog/insurance-foundation" element={<InsuranceFoundation />} />
+          <Route path="/example/:clientId" element={<Example />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
