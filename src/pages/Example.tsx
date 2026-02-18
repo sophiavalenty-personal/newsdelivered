@@ -752,7 +752,7 @@ const clientDemos: Record<string, ClientDemo> = {
                       <span style="display:inline-block;width:26px;height:26px;border-radius:50%;background-color:#004712;color:#ffffff;font-size:13px;font-weight:700;text-align:center;line-height:26px;">1</span>
                     </td>
                     <td style="vertical-align:middle;padding-left:10px;">
-                      <a href="/example/hegland/blog/financial-mistakes-50s" target="_blank" style="color:#004712;text-decoration:none;font-weight:700;font-size:14px;">5 Biggest Financial Mistakes to Avoid In Your 50s &rarr;</a>
+                      <a href="/example/hegland/blog/financial-mistakes-50s" style="color:#004712;text-decoration:none;font-weight:700;font-size:14px;">5 Biggest Financial Mistakes to Avoid In Your 50s &rarr;</a>
                     </td>
                   </tr>
                 </table>
@@ -767,7 +767,7 @@ const clientDemos: Record<string, ClientDemo> = {
                       <span style="display:inline-block;width:26px;height:26px;border-radius:50%;background-color:#004712;color:#ffffff;font-size:13px;font-weight:700;text-align:center;line-height:26px;">2</span>
                     </td>
                     <td style="vertical-align:middle;padding-left:10px;">
-                      <a href="/example/hegland/blog/roth-vs-traditional-ira" target="_blank" style="color:#004712;text-decoration:none;font-weight:700;font-size:14px;">Roth vs Traditional IRA: Which Is Better for YOU? &rarr;</a>
+                      <a href="/example/hegland/blog/roth-vs-traditional-ira" style="color:#004712;text-decoration:none;font-weight:700;font-size:14px;">Roth vs Traditional IRA: Which Is Better for YOU? &rarr;</a>
                     </td>
                   </tr>
                 </table>
@@ -782,7 +782,7 @@ const clientDemos: Record<string, ClientDemo> = {
                       <span style="display:inline-block;width:26px;height:26px;border-radius:50%;background-color:#004712;color:#ffffff;font-size:13px;font-weight:700;text-align:center;line-height:26px;">3</span>
                     </td>
                     <td style="vertical-align:middle;padding-left:10px;">
-                      <a href="/example/hegland/blog/insurance-foundation" target="_blank" style="color:#004712;text-decoration:none;font-weight:700;font-size:14px;">The Insurance Foundation That Protects Your Family's Future &rarr;</a>
+                      <a href="/example/hegland/blog/insurance-foundation" style="color:#004712;text-decoration:none;font-weight:700;font-size:14px;">The Insurance Foundation That Protects Your Family's Future &rarr;</a>
                     </td>
                   </tr>
                 </table>
