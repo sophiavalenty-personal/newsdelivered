@@ -16,6 +16,9 @@ import Example from "./pages/Example";
 import TrumpAccounts from "./pages/blog/TrumpAccounts";
 import RmdInheritedIra from "./pages/blog/RmdInheritedIra";
 import WildfireCasualtyLoss from "./pages/blog/WildfireCasualtyLoss";
+import FinancialMistakes50s from "./pages/blog/FinancialMistakes50s";
+import RothVsTraditionalIra from "./pages/blog/RothVsTraditionalIra";
+import InsuranceFoundation from "./pages/blog/InsuranceFoundation";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 
@@ -40,6 +43,9 @@ const App = () => (
           <Route path="/example/harikthompsoncpas/blog/trump-accounts" element={<TrumpAccounts />} />
           <Route path="/example/harikthompsoncpas/blog/rmd-inherited-ira" element={<RmdInheritedIra />} />
           <Route path="/example/harikthompsoncpas/blog/wildfire-casualty-loss" element={<WildfireCasualtyLoss />} />
+          <Route path="/example/hegland/blog/financial-mistakes-50s" element={<FinancialMistakes50s />} />
+          <Route path="/example/hegland/blog/roth-vs-traditional-ira" element={<RothVsTraditionalIra />} />
+          <Route path="/example/hegland/blog/insurance-foundation" element={<InsuranceFoundation />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
