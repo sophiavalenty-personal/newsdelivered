@@ -802,7 +802,7 @@ const clientDemos: Record<string, ClientDemo> = {
                 <p style="margin:0 0 12px 0;font-size:14px;color:#555555;line-height:1.7;"><strong>The Challenge:</strong> David and Sarah Martin, both 52, were paying over $18,000 annually across life, disability, and long-term care insurance &mdash; but hadn't reviewed their policies in 8 years.</p>
                 <p style="margin:0 0 12px 0;font-size:14px;color:#555555;line-height:1.7;"><strong>Our Approach:</strong> We conducted a comprehensive coverage audit, identified $400K in redundant life insurance overlap, and restructured their disability policy to reflect their current income.</p>
                 <p style="margin:0 0 20px 0;font-size:14px;color:#555555;line-height:1.7;"><strong>The Result:</strong> The Martins now save <strong style="color:#004712;">$12,200/year</strong> while maintaining the same level of protection &mdash; and redirected those savings into a Roth IRA for tax-free retirement growth.</p>
-                <p style="margin:0;text-align:center;"><a href="/contact" style="display:inline-block;padding:10px 24px;font-size:13px;color:#004712;font-weight:600;border:1px solid #004712;border-radius:6px;text-decoration:none;">See If You're Overpaying &rarr;</a></p>
+                <p style="margin:0;text-align:center;"><a href="https://www.heglandmainz.com/contact" target="_blank" style="display:inline-block;padding:10px 24px;font-size:13px;color:#004712;font-weight:600;border:1px solid #004712;border-radius:6px;text-decoration:none;">See If You're Overpaying &rarr;</a></p>
               </td>
             </tr>
           </table>

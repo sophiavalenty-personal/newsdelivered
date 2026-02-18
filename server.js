@@ -29,9 +29,12 @@ const mimeTypes = {
 };
 
 const server = createServer((req, res) => {
-  let filePath = join(DIST_DIR, req.url === '/' ? 'index.html' : req.url);
+  const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
+  const pathname = decodeURIComponent(parsedUrl.pathname);
   
-  if (!existsSync(filePath) || (existsSync(filePath) && statSync(filePath).isDirectory())) {
+  let filePath = join(DIST_DIR, pathname === '/' ? 'index.html' : pathname);
+  
+  if (!existsSync(filePath) || statSync(filePath).isDirectory()) {
     filePath = join(DIST_DIR, 'index.html');
   }
 
