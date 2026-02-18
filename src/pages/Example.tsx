@@ -969,7 +969,7 @@ const Example = () => {
 
   const getClickableLinksHtml = useCallback((html: string) => {
     const clickableStyle = `<style>a { cursor: pointer !important; } a:hover { opacity: 0.85; }</style>`;
-    const baseTag = `<base target="_top" />`;
+    const baseTag = `<base href="${window.location.origin}" target="_top" />`;
     if (html.includes('</head>')) {
       return html.replace('</head>', `${baseTag}${clickableStyle}</head>`);
     }
@@ -1190,7 +1190,7 @@ const Example = () => {
                     style={{ height: `${iframeHeight}px` }}
                     title={currentNewsletter.title}
                     onLoad={handleIframeLoad}
-                    sandbox="allow-same-origin allow-popups allow-top-navigation"
+                    sandbox="allow-same-origin allow-popups allow-top-navigation allow-top-navigation-by-user-activation"
                   />
                 </div>
               </div>
