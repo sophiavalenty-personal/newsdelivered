@@ -893,6 +893,10 @@ const clientDemos: Record<string, ClientDemo> = {
           <img src="/images/jim-hegland-profile.png" alt="Jim Hegland" style="width:72px;height:72px;border-radius:50%;object-fit:cover;display:inline-block;border:3px solid #e8f0e2;" />
           <p style="margin:10px 0 2px 0;font-size:16px;font-weight:700;color:#004712;">Jim Hegland</p>
           <p style="margin:0 0 2px 0;font-size:13px;color:#555555;">Hegland Mainz Financial</p>
+          <p style="margin:0 0 2px 0;font-size:13px;color:#555555;">&#9742; (555) 123-4567</p>
+          <p style="margin:0;font-size:13px;">
+            <a href="mailto:jim@heglandmainz.com" style="color:#004712;text-decoration:underline;">jim@heglandmainz.com</a>
+          </p>
         </td>
       </tr>
       <tr>
@@ -912,8 +916,15 @@ const clientDemos: Record<string, ClientDemo> = {
       </tr>
       <tr>
         <td style="background-color:#004712;padding:24px 30px;text-align:center;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin-bottom:16px;">
+            <tr>
+              <td style="padding:0 8px;"><a href="#" style="color:#ffffff;text-decoration:none;font-size:14px;font-weight:bold;font-family:Arial,sans-serif;display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;border:1px solid #8abf97;border-radius:50%;">&#120143;</a></td>
+              <td style="padding:0 8px;"><a href="#" style="color:#ffffff;text-decoration:none;font-size:16px;font-weight:bold;font-family:Arial,sans-serif;display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;border:1px solid #8abf97;border-radius:50%;">in</a></td>
+              <td style="padding:0 8px;"><a href="#" style="color:#ffffff;text-decoration:none;font-size:14px;font-weight:bold;font-family:Arial,sans-serif;display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;border:1px solid #8abf97;border-radius:50%;">f</a></td>
+            </tr>
+          </table>
           <p style="margin:0 0 10px 0;font-size:11px;color:#8abf97;line-height:1.6;">
-            Hegland Mainz Financial | Minneapolis, MN
+            Hegland Mainz Financial | 123 Main Street, Suite 200 | Minneapolis, MN 55401
           </p>
           <p style="margin:0 0 10px 0;font-size:10px;color:#6ba87a;line-height:1.5;">
             This newsletter is for informational purposes only and does not constitute financial, tax, or legal advice.
