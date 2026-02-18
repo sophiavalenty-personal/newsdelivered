@@ -16,6 +16,7 @@ const paragraph: React.CSSProperties = {
 const list: React.CSSProperties = {
   paddingLeft: '24px',
   marginBottom: '16px',
+  listStyleType: 'disc',
 };
 
 const listItem: React.CSSProperties = {
