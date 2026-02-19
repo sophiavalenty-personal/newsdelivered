@@ -99,9 +99,9 @@ const Pricing = () => {
                   ))}
                   <tr className="border-t-2 border-primary/20">
                     <td className="py-4 pr-4 text-sm font-bold text-foreground">Monthly Investment</td>
-                    <td className="py-4 px-4 text-center font-bold text-lg">$2k</td>
-                    <td className="py-4 px-4 text-center font-bold text-lg">$3k</td>
-                    <td className="py-4 px-4 text-center font-bold text-lg">$4k</td>
+                    <td className="py-4 px-4 text-center font-bold text-lg">$2,500</td>
+                    <td className="py-4 px-4 text-center font-bold text-lg">$3,500</td>
+                    <td className="py-4 px-4 text-center font-bold text-lg">$4,500</td>
                   </tr>
                   <tr>
                     <td className="py-4 pr-4"></td>
