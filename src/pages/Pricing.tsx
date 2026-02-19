@@ -106,17 +106,17 @@ const Pricing = () => {
                   <tr>
                     <td className="py-4 pr-4"></td>
                     <td className="py-4 px-4 text-center">
-                      <Button size="sm" onClick={() => window.open('https://buy.stripe.com/dRm28rd0Rcbd0Bw2ImeUU0j', '_blank')} data-testid="button-choose-start">
+                      <Button size="sm" onClick={() => window.open('https://buy.stripe.com/eVq28rd0Rdfh3NIbeSeUU0n', '_blank')} data-testid="button-choose-start">
                         Choose Plan <ArrowRight className="w-4 h-4 ml-1" />
                       </Button>
                     </td>
                     <td className="py-4 px-4 text-center">
-                      <Button size="sm" onClick={() => window.open('https://buy.stripe.com/aFacN51i9cbdfwq82GeUU0i', '_blank')} data-testid="button-choose-grow">
+                      <Button size="sm" onClick={() => window.open('https://buy.stripe.com/4gM28rbWN4IL0Bw0AeeUU0m', '_blank')} data-testid="button-choose-grow">
                         Choose Plan <ArrowRight className="w-4 h-4 ml-1" />
                       </Button>
                     </td>
                     <td className="py-4 px-4 text-center">
-                      <Button size="sm" onClick={() => window.open('https://buy.stripe.com/fZucN5bWN3EHcke82GeUU0h', '_blank')} data-testid="button-choose-scale">
+                      <Button size="sm" onClick={() => window.open('https://buy.stripe.com/4gM28rd0Rfnp5VQ82GeUU0l', '_blank')} data-testid="button-choose-scale">
                         Choose Plan <ArrowRight className="w-4 h-4 ml-1" />
                       </Button>
                     </td>
