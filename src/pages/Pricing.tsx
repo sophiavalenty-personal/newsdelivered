@@ -76,15 +76,15 @@ const Pricing = () => {
                     <th className="py-3 pr-4 text-sm font-semibold text-foreground w-1/2">Included</th>
                     <th className="py-3 px-4 text-sm font-semibold text-center text-foreground">
                       Start
-                      <div className="text-xs font-normal text-muted-foreground mt-1">Up to 4x / Mo.</div>
+                      <div className="text-xs font-normal text-muted-foreground mt-1">Up to 4 Newsletters per month</div>
                     </th>
                     <th className="py-3 px-4 text-sm font-semibold text-center text-foreground">
                       Grow
-                      <div className="text-xs font-normal text-muted-foreground mt-1">Up to 8x / Mo.</div>
+                      <div className="text-xs font-normal text-muted-foreground mt-1">Up to 8 Newsletters per month</div>
                     </th>
                     <th className="py-3 px-4 text-sm font-semibold text-center text-foreground">
                       Scale
-                      <div className="text-xs font-normal text-muted-foreground mt-1">10+ / Mo.</div>
+                      <div className="text-xs font-normal text-muted-foreground mt-1">Up to 10+ Newsletters per month</div>
                     </th>
                   </tr>
                 </thead>
