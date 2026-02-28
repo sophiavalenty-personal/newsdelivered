@@ -19,6 +19,8 @@ import WildfireCasualtyLoss from "./pages/blog/WildfireCasualtyLoss";
 import FinancialMistakes50s from "./pages/blog/FinancialMistakes50s";
 import RothVsTraditionalIra from "./pages/blog/RothVsTraditionalIra";
 import InsuranceFoundation from "./pages/blog/InsuranceFoundation";
+import MaximizeTaxRefund from "./pages/blog/MaximizeTaxRefund";
+import NewYearsResolutions from "./pages/blog/NewYearsResolutions";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 
@@ -45,6 +47,8 @@ const App = () => (
           <Route path="/example/hegland/blog/financial-mistakes-50s" element={<FinancialMistakes50s />} />
           <Route path="/example/hegland/blog/roth-vs-traditional-ira" element={<RothVsTraditionalIra />} />
           <Route path="/example/hegland/blog/insurance-foundation" element={<InsuranceFoundation />} />
+          <Route path="/example/derickgant/blog/maximize-tax-refund" element={<MaximizeTaxRefund />} />
+          <Route path="/example/derickgant/blog/new-years-resolutions" element={<NewYearsResolutions />} />
           <Route path="/example/:clientId" element={<Example />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />

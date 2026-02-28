@@ -725,9 +725,9 @@ const clientDemos: Record<string, ClientDemo> = {
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr>
                   <td style="padding-left:0;">
-                    <a href="https://derickgant.com/" style="font-family:Georgia, serif; font-size:17px; color:#ffffff; text-decoration:none; font-weight:700; line-height:24px;">How to Best Use a Tax Refund - And What To Avoid &rarr;</a>
+                    <a href="/example/derickgant/blog/maximize-tax-refund" style="font-family:Georgia, serif; font-size:17px; color:#ffffff; text-decoration:none; font-weight:700; line-height:24px;">How to Best Use a Tax Refund - And What To Avoid &rarr;</a>
                     <p style="font-family:Arial, sans-serif; font-size:14px; color:#cccccc; margin:4px 0 0; line-height:20px;">Tax season is here. Make sure every dollar works in your favor&hellip;</p>
-                    <a href="https://derickgant.com/" style="font-family:Arial, sans-serif; font-size:13px; color:#C9A94E; text-decoration:none; letter-spacing:1px; display:inline-block; margin-top:6px;">READ MORE &rarr;</a>
+                    <a href="/example/derickgant/blog/maximize-tax-refund" style="font-family:Arial, sans-serif; font-size:13px; color:#C9A94E; text-decoration:none; letter-spacing:1px; display:inline-block; margin-top:6px;">READ MORE &rarr;</a>
                   </td>
                 </tr>
               </table>
@@ -738,9 +738,9 @@ const clientDemos: Record<string, ClientDemo> = {
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr>
                   <td style="padding-left:0;">
-                    <a href="https://derickgant.com/" style="font-family:Georgia, serif; font-size:17px; color:#ffffff; text-decoration:none; font-weight:700; line-height:24px;">Jump Start Your New Year's Resolutions &rarr;</a>
+                    <a href="/example/derickgant/blog/new-years-resolutions" style="font-family:Georgia, serif; font-size:17px; color:#ffffff; text-decoration:none; font-weight:700; line-height:24px;">Jump Start Your New Year's Resolutions &rarr;</a>
                     <p style="font-family:Arial, sans-serif; font-size:14px; color:#cccccc; margin:4px 0 0; line-height:20px;">Most resolutions fail by February. Here\u2019s how to make yours stick&hellip;</p>
-                    <a href="https://derickgant.com/" style="font-family:Arial, sans-serif; font-size:13px; color:#C9A94E; text-decoration:none; letter-spacing:1px; display:inline-block; margin-top:6px;">READ MORE &rarr;</a>
+                    <a href="/example/derickgant/blog/new-years-resolutions" style="font-family:Arial, sans-serif; font-size:13px; color:#C9A94E; text-decoration:none; letter-spacing:1px; display:inline-block; margin-top:6px;">READ MORE &rarr;</a>
                   </td>
                 </tr>
               </table>
