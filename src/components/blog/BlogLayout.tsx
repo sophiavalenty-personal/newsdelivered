@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 interface BlogLayoutProps {
   title: string;
@@ -7,24 +7,35 @@ interface BlogLayoutProps {
 }
 
 const BlogLayout: React.FC<BlogLayoutProps> = ({ title, children }) => {
+  const navigate = useNavigate();
+
+  const handleBack = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate('/example/harikthompsoncpas');
+    }
+  };
+
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#ffffff', fontFamily: 'Georgia, Times, serif' }}>
       {/* Header */}
       <header style={{ backgroundColor: '#ffffff', borderBottom: '3px solid #1a4a6e', padding: '20px 0', textAlign: 'center' }}>
-        <Link to="/example/harikthompsoncpas">
+        <a href="/example/harikthompsoncpas" onClick={handleBack}>
           <img
             src="/images/ht-logo-stacked-sm.jpg"
             alt="Harik Thompson CPAs"
             style={{ maxWidth: '200px', display: 'block', margin: '0 auto', cursor: 'pointer' }}
           />
-        </Link>
+        </a>
       </header>
 
       {/* Nav bar */}
       <nav style={{ backgroundColor: '#1a4a6e', padding: '12px 40px', textAlign: 'center' }}>
-        <Link to="/example/harikthompsoncpas" style={{ color: '#ffffff', textDecoration: 'none', fontSize: '13px', fontFamily: 'Arial, sans-serif', letterSpacing: '1px', textTransform: 'uppercase' }}>
+        <a href="/example/harikthompsoncpas" onClick={handleBack} style={{ color: '#ffffff', textDecoration: 'none', fontSize: '13px', fontFamily: 'Arial, sans-serif', letterSpacing: '1px', textTransform: 'uppercase', cursor: 'pointer' }}>
           ← Back to Harik Thompson CPAs
-        </Link>
+        </a>
       </nav>
 
       {/* Article */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 interface DerickGantBlogLayoutProps {
   title: string;
@@ -7,18 +7,29 @@ interface DerickGantBlogLayoutProps {
 }
 
 const DerickGantBlogLayout: React.FC<DerickGantBlogLayoutProps> = ({ title, children }) => {
+  const navigate = useNavigate();
+
+  const handleBack = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate('/example/derickgant');
+    }
+  };
+
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#000000', fontFamily: 'Georgia, Times, serif' }}>
       <header style={{ backgroundColor: '#000000', borderBottom: '2px solid #C9A94E', padding: '20px 30px', textAlign: 'center' }}>
-        <Link to="/example/derickgant" style={{ textDecoration: 'none' }}>
+        <a href="/example/derickgant" onClick={handleBack} style={{ textDecoration: 'none' }}>
           <img src="/images/dg-banner.png" alt="Derick Gant - 24K Life" style={{ maxWidth: '280px', height: 'auto' }} />
-        </Link>
+        </a>
       </header>
 
       <nav style={{ backgroundColor: '#1a1a1a', padding: '12px 40px', textAlign: 'center' }}>
-        <Link to="/example/derickgant" style={{ color: '#C9A94E', textDecoration: 'none', fontSize: '13px', fontFamily: 'Arial, sans-serif', letterSpacing: '1px', textTransform: 'uppercase' }}>
+        <a href="/example/derickgant" onClick={handleBack} style={{ color: '#C9A94E', textDecoration: 'none', fontSize: '13px', fontFamily: 'Arial, sans-serif', letterSpacing: '1px', textTransform: 'uppercase', cursor: 'pointer' }}>
           &larr; Back to 24K Life Newsletters
-        </Link>
+        </a>
       </nav>
 
       <main style={{ maxWidth: '720px', margin: '0 auto', padding: '50px 24px 80px' }}>
