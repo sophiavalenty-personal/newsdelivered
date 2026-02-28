@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams, useNavigate } from "react-router-dom";
 import { Monitor, Smartphone, Expand, Grid, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -1184,11 +1184,42 @@ const clientDemos: Record<string, ClientDemo> = {
 
 const Example = () => {
   const { clientId } = useParams<{ clientId: string }>();
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  const sampleParam = searchParams.get('sample');
+
+  const [selectedIndex, setSelectedIndex] = useState(() => {
+    const idx = sampleParam ? parseInt(sampleParam, 10) - 1 : 0;
+    return idx >= 0 ? idx : 0;
+  });
   const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
-  const [showGallery, setShowGallery] = useState(true);
+  const [showGallery, setShowGallery] = useState(!sampleParam);
   const [iframeHeight, setIframeHeight] = useState(1600);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (sampleParam) {
+      const idx = parseInt(sampleParam, 10) - 1;
+      if (idx >= 0) {
+        setSelectedIndex(idx);
+        setShowGallery(false);
+      }
+    } else {
+      setShowGallery(true);
+    }
+  }, [sampleParam]);
+
+  const selectSample = useCallback((index: number) => {
+    setSelectedIndex(index);
+    setShowGallery(false);
+    setSearchParams({ sample: String(index + 1) }, { replace: true });
+  }, [setSearchParams]);
+
+  const returnToGallery = useCallback(() => {
+    setShowGallery(true);
+    setSearchParams({}, { replace: true });
+  }, [setSearchParams]);
 
   // Scroll to top when switching samples
   useEffect(() => {
@@ -1245,11 +1276,13 @@ const Example = () => {
   const totalSamples = clientData.newsletters.length;
 
   const goToPrevious = () => {
-    setSelectedIndex((prev) => (prev === 0 ? totalSamples - 1 : prev - 1));
+    const newIndex = selectedIndex === 0 ? totalSamples - 1 : selectedIndex - 1;
+    selectSample(newIndex);
   };
 
   const goToNext = () => {
-    setSelectedIndex((prev) => (prev === totalSamples - 1 ? 0 : prev + 1));
+    const newIndex = selectedIndex === totalSamples - 1 ? 0 : selectedIndex + 1;
+    selectSample(newIndex);
   };
 
   return (
@@ -1281,10 +1314,7 @@ const Example = () => {
                   "cursor-pointer transition-all hover:shadow-lg",
                   selectedIndex === index && "ring-2 ring-primary"
                 )}
-                onClick={() => {
-                  setSelectedIndex(index);
-                  setShowGallery(false);
-                }}
+                onClick={() => selectSample(index)}
               >
                 <CardContent className="p-0">
                   <div className="p-4 flex items-start justify-between border-b border-border">
@@ -1314,8 +1344,7 @@ const Example = () => {
                       className="w-full"
                       onClick={(e) => {
                         e.stopPropagation();
-                        setSelectedIndex(index);
-                        setShowGallery(false);
+                        selectSample(index);
                       }}
                     >
                       View Sample {index + 1}
@@ -1336,7 +1365,7 @@ const Example = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => setShowGallery(true)}
+                    onClick={() => returnToGallery()}
                     className="text-sm"
                   >
                     <Grid className="h-4 w-4 mr-1" />
@@ -1347,7 +1376,7 @@ const Example = () => {
                   <div className="md:hidden">
                     <Select
                       value={selectedIndex.toString()}
-                      onValueChange={(value) => setSelectedIndex(parseInt(value))}
+                      onValueChange={(value) => selectSample(parseInt(value))}
                     >
                       <SelectTrigger className="w-[130px] h-9 text-sm bg-background">
                         <SelectValue placeholder="Select sample" />
@@ -1369,7 +1398,7 @@ const Example = () => {
                         key={index}
                         variant={selectedIndex === index ? "default" : "outline"}
                         size="sm"
-                        onClick={() => setSelectedIndex(index)}
+                        onClick={() => selectSample(index)}
                         className="text-sm"
                       >
                         Sample {index + 1}
