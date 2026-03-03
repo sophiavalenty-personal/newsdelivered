@@ -915,6 +915,244 @@ const clientDemos: Record<string, ClientDemo> = {
 </body>
 </html>`,
       },
+      {
+        id: "3",
+        title: "24K Life Newsletter - Issue 3 (Light)",
+        description: "White background version — same content, clean modern look",
+        htmlContent: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no" />
+  <title>24K Life Newsletter</title>
+  <style type="text/css">
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; background-color: #ffffff; color: #1a1a1a; }
+    a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; }
+    :root { color-scheme: light dark; supported-color-schemes: light dark; }
+    @media only screen and (max-width: 620px) {
+      .email-container { width: 100% !important; max-width: 100% !important; }
+      .fluid { max-width: 100% !important; height: auto !important; }
+      .stack-column { display: block !important; width: 100% !important; }
+      .mobile-padding { padding-left: 16px !important; padding-right: 16px !important; }
+      .mobile-center { text-align: center !important; }
+      .social-link { display: inline-block !important; padding: 6px 8px !important; }
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#ffffff;">
+  <div style="display:none; font-size:1px; color:#ffffff; line-height:1px; max-height:0px; max-width:0px; opacity:0; overflow:hidden;">
+    Your standards shape your habits; and your habits shape your results.
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#ffffff; margin:0; padding:0;">
+    <tr>
+      <td align="center" style="padding:0 16px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="email-container" style="max-width:600px; width:100%;">
+          <tr>
+            <td align="center" style="padding:32px 0 16px;">
+              <img src="/images/dg-banner.png" alt="Derick Gant - 24K Life" width="400" style="display:block; border:0; max-width:100%; height:auto;" class="fluid" />
+            </td>
+          </tr>
+          <tr><td style="padding:0 0 24px; font-size:0; line-height:0;">&nbsp;</td></tr>
+          <tr>
+            <td style="padding:0 24px 16px;" class="mobile-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td style="padding-left:0;">
+                    <a href="/example/derickgant/blog/maximize-tax-refund" style="font-family:Georgia, serif; font-size:17px; color:#1a1a1a; text-decoration:none; font-weight:700; line-height:24px;">How to Best Use a Tax Refund - And What To Avoid &rarr;</a>
+                    <p style="font-family:Arial, sans-serif; font-size:14px; color:#555555; margin:4px 0 0; line-height:20px;">Tax season is here. Make sure every dollar works in your favor&hellip;</p>
+                    <a href="/example/derickgant/blog/maximize-tax-refund" style="font-family:Arial, sans-serif; font-size:13px; color:#C9A94E; text-decoration:none; letter-spacing:1px; display:inline-block; margin-top:6px;">READ MORE &rarr;</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 24px 16px;" class="mobile-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td style="padding-left:0;">
+                    <a href="/example/derickgant/blog/new-years-resolutions" style="font-family:Georgia, serif; font-size:17px; color:#1a1a1a; text-decoration:none; font-weight:700; line-height:24px;">Jump Start Your New Year's Resolutions &rarr;</a>
+                    <p style="font-family:Arial, sans-serif; font-size:14px; color:#555555; margin:4px 0 0; line-height:20px;">Most resolutions fail by February. Here\u2019s how to make yours stick&hellip;</p>
+                    <a href="/example/derickgant/blog/new-years-resolutions" style="font-family:Arial, sans-serif; font-size:13px; color:#C9A94E; text-decoration:none; letter-spacing:1px; display:inline-block; margin-top:6px;">READ MORE &rarr;</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 24px 24px;" class="mobile-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td style="padding-left:0;">
+                    <a href="https://derickgant.com/financial-coherence/" style="font-family:Georgia, serif; font-size:17px; color:#1a1a1a; text-decoration:none; font-weight:700; line-height:24px;">Why Money Problems Are NOT Income Problems &rarr;</a>
+                    <p style="font-family:Arial, sans-serif; font-size:14px; color:#555555; margin:4px 0 0; line-height:20px;">Most people believe they have a money problem. They don't. But here's the deal&hellip;</p>
+                    <a href="https://derickgant.com/financial-coherence/" style="font-family:Arial, sans-serif; font-size:13px; color:#C9A94E; text-decoration:none; letter-spacing:1px; display:inline-block; margin-top:6px;">READ MORE &rarr;</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 24px 24px;" class="mobile-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td style="background-color:#f5f5f0; border:1px solid #C9A94E30; border-radius:4px; padding:24px; font-family:Arial, sans-serif; font-size:15px; color:#1a1a1a; line-height:24px;">
+                     <p style="margin:0 0 14px; font-family:Georgia, serif; font-size:15px; color:#C9A94E; font-weight:700; letter-spacing:0.5px;">From $65K in Debt to $8K in Savings</p>
+                     <p style="margin:0 0 12px;">Husband and wife, high income earners, <strong>$65,000 in credit card debt</strong> and NO savings.</p>
+                     <p style="margin:0 0 12px;">Two young boys under 6 years of age.</p>
+                     <p style="margin:0 0 12px;">Mom and Dad started working with me 10 months ago. They\u2019ve paid down <strong>$25,000 in debt</strong> and now have <strong>$8,000 in savings!</strong></p>
+                     <p style="margin:0 0 0; font-weight:700; color:#C9A94E;">No longer living paycheck to paycheck. Huge gamechanger for them!</p>
+                     <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td style="border-bottom:1px solid #C9A94E30; font-size:0; line-height:0; padding:0 0 16px;">&nbsp;</td></tr></table>
+                     <p style="margin:16px 0 12px; text-align:center; font-family:Georgia, serif; font-size:13px; color:#C9A94E; text-transform:uppercase; letter-spacing:3px; font-weight:700;">&#9670;&nbsp; Takeaways &nbsp;&#9670;</p>
+                     <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
+                       <tr>
+                         <td width="20" valign="top" style="color:#C9A94E; font-family:Georgia, serif; font-size:14px; line-height:22px;">&#9670;</td>
+                         <td style="padding-left:6px; color:#1a1a1a; font-family:Arial, sans-serif; font-size:15px; line-height:22px;">High Income Doesn\u2019t Equal Financial Security</td>
+                       </tr>
+                     </table>
+                     <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
+                       <tr>
+                         <td width="20" valign="top" style="color:#C9A94E; font-family:Georgia, serif; font-size:14px; line-height:22px;">&#9670;</td>
+                         <td style="padding-left:6px; color:#1a1a1a; font-family:Arial, sans-serif; font-size:15px; line-height:22px;">Small, Consistent Changes Create Big Results</td>
+                       </tr>
+                     </table>
+                     <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
+                       <tr>
+                         <td width="20" valign="top" style="color:#C9A94E; font-family:Georgia, serif; font-size:14px; line-height:22px;">&#9670;</td>
+                         <td style="padding-left:6px; color:#1a1a1a; font-family:Arial, sans-serif; font-size:15px; line-height:22px;">A Plan Brings Peace of Mind</td>
+                       </tr>
+                     </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 24px 8px;" class="mobile-padding">
+              <p style="font-family:Georgia, serif; font-size:13px; color:#C9A94E; text-transform:uppercase; letter-spacing:3px; margin:0 0 16px; text-align:center;">Your Next Steps</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 24px 16px;" class="mobile-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td width="40" valign="top" style="font-family:Georgia, serif; font-size:22px; color:#C9A94E; font-weight:700; line-height:28px;">01</td>
+                   <td style="padding-left:12px; font-family:Arial, sans-serif; font-size:15px; color:#555555; line-height:22px;"><strong style="color:#1a1a1a;">Stop the Bleeding</strong><br/>Commit to no new credit card debt starting today. If needed, remove cards from your wallet or online accounts.</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 24px 16px;" class="mobile-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td width="40" valign="top" style="font-family:Georgia, serif; font-size:22px; color:#C9A94E; font-weight:700; line-height:28px;">02</td>
+                   <td style="padding-left:12px; font-family:Arial, sans-serif; font-size:15px; color:#555555; line-height:22px;"><strong style="color:#1a1a1a;">Quick Debt Count</strong><br/>Add up your debt \u2014 write down the number. You can\u2019t fix what you haven\u2019t measured.</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 24px 16px;" class="mobile-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td width="40" valign="top" style="font-family:Georgia, serif; font-size:22px; color:#C9A94E; font-weight:700; line-height:28px;">03</td>
+                   <td style="padding-left:12px; font-family:Arial, sans-serif; font-size:15px; color:#555555; line-height:22px;"><strong style="color:#1a1a1a;">Redirect One Monthly Expense</strong><br/>Identify one recurring expense to reduce or eliminate. Redirect that amount toward debt payoff or savings.</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding:8px 24px 24px;" class="mobile-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="border:1px solid #C9A94E; border-radius:6px; font-family:Arial, sans-serif; font-size:14px; font-weight:400;">
+                    <a href="https://api.leadconnectorhq.com/widget/groups/24k" style="display:inline-block; padding:12px 32px; color:#C9A94E; text-decoration:none; letter-spacing:0.5px;">Need help putting these into action? Let\u2019s talk &rarr;</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 40px 24px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td style="border-bottom:1px solid #C9A94E40; font-size:0; line-height:0;">&nbsp;</td></tr></table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 24px 24px;" class="mobile-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border:2px solid #C9A94E; border-radius:8px; background-color:#f5f5f0;">
+                <tr>
+                  <td style="padding:16px 24px 8px; text-align:center; font-family:Georgia, serif; font-size:14px; font-weight:700; color:#C9A94E; letter-spacing:2px; text-transform:uppercase;">
+                    &#9670;&nbsp; Today's Gold Nugget &nbsp;&#9670;
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:4px 28px 20px; text-align:center; font-family:Georgia, serif; font-size:18px; font-style:italic; color:#1a1a1a; line-height:28px;">
+                    &quot;Your standards shape your habits; and your habits shape your results.&quot;
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding:0 24px 8px;" class="mobile-padding">
+              <img src="/images/dg-meme1.jpg" alt="High income doesn't mean financial freedom" width="350" style="display:block; border:0; max-width:100%; height:auto; border-radius:6px;" class="fluid" />
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding:0 24px 12px;">
+              <p style="font-family:Georgia, serif; font-size:16px; font-style:italic; color:#C9A94E; margin:0;">Are you spending more than you're earning?</p>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding:0 24px 32px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="background-color:#C9A94E; border-radius:6px;">
+                    <a href="https://api.leadconnectorhq.com/widget/groups/24k" target="_blank" style="font-family:Georgia, serif; font-size:17px; color:#000000; text-decoration:none; font-weight:700; letter-spacing:1px; display:inline-block; padding:16px 40px; border-radius:6px; background-color:#C9A94E;">Book a Savings Strategy Session &rarr;</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#f5f5f0; padding:24px; text-align:center; border-top:1px solid #C9A94E30;">
+              <p style="font-family:Georgia, serif; font-size:14px; color:#1a1a1a; margin:0 0 8px;">Was this helpful?</p>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 16px;">
+                <tr>
+                  <td style="padding:0 12px;"><a href="#" style="text-decoration:none; font-size:14px; color:#C9A94E; font-family:Arial, sans-serif;">Yes</a></td>
+                  <td style="padding:0 12px;"><a href="#" style="text-decoration:none; font-size:14px; color:#555555; font-family:Arial, sans-serif;">No</a></td>
+                </tr>
+              </table>
+              <p style="font-family:Georgia, serif; font-size:11px; color:#C9A94E; text-transform:uppercase; letter-spacing:3px; margin:0 0 10px;">Connect With Derick</p>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 16px;">
+                <tr>
+                  <td style="padding:0 10px;"><a href="https://derickgant.com" style="font-family:Arial, sans-serif; font-size:12px; color:#C9A94E; text-decoration:none; font-weight:600;">Website</a></td>
+                  <td style="padding:0 10px;"><a href="#" style="font-family:Arial, sans-serif; font-size:12px; color:#C9A94E; text-decoration:none; font-weight:600;">LinkedIn</a></td>
+                  <td style="padding:0 10px;"><a href="#" style="font-family:Arial, sans-serif; font-size:12px; color:#C9A94E; text-decoration:none; font-weight:600;">Instagram</a></td>
+                  <td style="padding:0 10px;"><a href="#" style="font-family:Arial, sans-serif; font-size:12px; color:#C9A94E; text-decoration:none; font-weight:600;">X (Twitter)</a></td>
+                </tr>
+              </table>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="80%" style="margin:0 auto 16px;"><tr><td style="border-bottom:1px solid #C9A94E30; font-size:0; line-height:0;">&nbsp;</td></tr></table>
+              <img src="/images/dg-shield.png" alt="Derick Gant" width="40" height="40" style="display:inline-block; border:0; margin-bottom:12px;" />
+              <p style="font-family:Arial, sans-serif; font-size:12px; color:#888888; margin:0 0 8px; line-height:18px;">&copy; 2026 Derick Gant / 24K Life. All rights reserved.</p>
+              <p style="font-family:Arial, sans-serif; font-size:12px; color:#888888; margin:0 0 8px; line-height:18px;">You're receiving this because you subscribed to the 24K Life newsletter.</p>
+              <p style="margin:0;"><a href="#" style="font-family:Arial, sans-serif; font-size:12px; color:#C9A94E; text-decoration:underline;">Unsubscribe</a></p>
+            </td>
+          </tr>
+          <tr><td style="height:32px; font-size:0; line-height:0;">&nbsp;</td></tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`,
+      },
     ],
   },
   hegland: {
