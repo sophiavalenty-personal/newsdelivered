@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import PainSolution from "@/components/PainSolution";
 import HowItWorks from "@/components/HowItWorks";
-import Pricing from "@/components/Pricing";
+// import Pricing from "@/components/Pricing"; // SHELVED — uncomment to restore
 import ServicesOverview from "@/components/ServicesOverview";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
@@ -15,7 +15,7 @@ const Index = () => {
         <Hero />
         <PainSolution />
         <HowItWorks />
-        <Pricing />
+        {/* <Pricing /> */}{/* SHELVED — uncomment to restore */}
         <ServicesOverview />
         <FinalCTA />
       </main>

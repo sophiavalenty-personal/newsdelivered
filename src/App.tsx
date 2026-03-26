@@ -21,7 +21,7 @@ import RothVsTraditionalIra from "./pages/blog/RothVsTraditionalIra";
 import InsuranceFoundation from "./pages/blog/InsuranceFoundation";
 import MaximizeTaxRefund from "./pages/blog/MaximizeTaxRefund";
 import NewYearsResolutions from "./pages/blog/NewYearsResolutions";
-import Pricing from "./pages/Pricing";
+// import Pricing from "./pages/Pricing"; // SHELVED — uncomment to restore
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,7 +50,7 @@ const App = () => (
           <Route path="/example/derickgant/blog/maximize-tax-refund" element={<MaximizeTaxRefund />} />
           <Route path="/example/derickgant/blog/new-years-resolutions" element={<NewYearsResolutions />} />
           <Route path="/example/:clientId" element={<Example />} />
-          <Route path="/pricing" element={<Pricing />} />
+          {/* <Route path="/pricing" element={<Pricing />} /> */}{/* SHELVED — uncomment to restore */}
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

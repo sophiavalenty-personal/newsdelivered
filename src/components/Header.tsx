@@ -8,7 +8,7 @@ const Header = () => {
 
   const navLinks = [
     { to: "/services", label: "Services" },
-    { to: "/pricing", label: "Pricing" },
+    // { to: "/pricing", label: "Pricing" }, // SHELVED — uncomment to restore
     { to: "/channels", label: "Channels" },
     { to: "/tools", label: "Tools" },
     { to: "/demo", label: "Demo" },
